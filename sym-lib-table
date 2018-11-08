@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name usb-c-otter-rescue)(type Legacy)(uri /home/janhenrik/KiCAD/usb-c-otter/usb-c-otter-rescue.lib)(options "")(descr ""))
+  (lib (name otter)(type Legacy)(uri ${KIPRJMOD}/KiCAD-libs/otter.lib)(options "")(descr ""))
+)
