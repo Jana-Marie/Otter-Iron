@@ -1,3 +1,3 @@
 (fp_lib_table
-  (lib (name otter)(type KiCad)(uri ${KIPRJMOD}/KiCAD-libs/otter.pretty)(options "")(descr ""))
+  (lib (name otter)(type KiCad)(uri /home/janhenrik/kiCAD/KiCAD-libs/otter.pretty)(options "")(descr ""))
 )

@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:usb-c-otter-cache
+LIBS:TS100C-cache
 EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
@@ -507,7 +507,7 @@ Wire Wire Line
 Text Label 14950 2500 0    60   ~ 0
 OUT
 $Comp
-L usb-c-otter-rescue:DMP3017SFG-pd-buddy-pd-buddy-sink-rescue-pd-buddy-sink-rescue-usb-c-otter-rescue Q?
+L TS100C-rescue:DMP3017SFG-pd-buddy-pd-buddy-sink-rescue-pd-buddy-sink-rescue-usb-c-otter-rescue-usb-c-otter-rescue Q?
 U 1 1 5BD78C00
 P 14700 2200
 AR Path="/588FA3A4/5BD78C00" Ref="Q?"  Part="1" 
@@ -861,7 +861,7 @@ Wire Wire Line
 Wire Wire Line
 	9200 3800 9200 4000
 $Comp
-L usb-c-otter-rescue:TC2030-CTX-Tag-Connect-pd-buddy-sink-rescue-usb-c-otter-rescue P1
+L TS100C-rescue:TC2030-CTX-Tag-Connect-pd-buddy-sink-rescue-usb-c-otter-rescue-usb-c-otter-rescue P1
 U 1 1 5BE3611C
 P 1900 3850
 F 0 "P1" H 1900 4142 40  0000 C CNN
@@ -1031,7 +1031,7 @@ U 1 1 5BF238C9
 P 14150 7100
 F 0 "J2" H 14230 7092 50  0000 L CNN
 F 1 "OLED_64x32" H 14230 7001 50  0000 L CNN
-F 2 "Connector_Harwin:Harwin_M20-89014xx_1x14_P2.54mm_Horizontal" H 14150 7100 50  0001 C CNN
+F 2 "otter:0.69OLED" H 14150 7100 50  0001 C CNN
 F 3 "~" H 14150 7100 50  0001 C CNN
 	1    14150 7100
 	1    0    0    -1  
@@ -1361,7 +1361,7 @@ CC1_P
 Text GLabel 2400 4950 2    50   Input ~ 0
 CC2_P
 $Comp
-L otter:USB-C_Power J1
+L TS100C-rescue:USB-C_Power-otter J1
 U 1 1 5BF68277
 P 1000 2550
 F 0 "J1" H 1031 3175 50  0000 C CNN
