@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name otter)(type KiCad)(uri /home/janhenrik/kiCAD/KiCAD-libs/otter.pretty)(options "")(descr ""))
+  (lib (name Tag-Connect)(type Legacy)(uri /home/janhenrik/KiCAD/Tag-Connect.mod)(options "")(descr ""))
 )

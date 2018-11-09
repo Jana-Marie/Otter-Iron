@@ -1644,4 +1644,15 @@ F 3 "~" H 5750 1350 50  0001 C CNN
 	1    5750 1350
 	-1   0    0    1   
 $EndComp
+$Comp
+L Device:C C6
+U 1 1 5A9C1A0C
+P 4650 5150
+F 0 "C6" H 4765 5196 50  0000 L CNN
+F 1 "0.1μF" H 4765 5105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 4688 5000 50  0001 C CNN
+F 3 "~" H 4650 5150 50  0001 C CNN
+	1    4650 5150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
