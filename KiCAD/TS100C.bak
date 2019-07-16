@@ -573,7 +573,7 @@ AR Path="/588FD270/5BD78C54" Ref="D?"  Part="1"
 AR Path="/5BD78C54" Ref="D3"  Part="1" 
 F 0 "D3" V 14504 4179 50  0000 L CNN
 F 1 "B140-E3" V 14595 4179 50  0000 L CNN
-F 2 "Diode_SMD:D_SMA" H 14550 3925 50  0001 C CNN
+F 2 "Diode_SMD:D_SOD-123F" H 14550 3925 50  0001 C CNN
 F 3 "http://www.vishay.com/docs/88946/b120.pdf" H 14550 4100 50  0001 C CNN
 	1    14550 4100
 	0    1    1    0   

@@ -1641,7 +1641,6 @@ NoConn ~ 5100 7700
 NoConn ~ 5100 7800
 NoConn ~ 5100 7900
 NoConn ~ 5100 8000
-NoConn ~ 3500 7550
 NoConn ~ 3500 8250
 NoConn ~ 3500 8350
 $Comp
@@ -1849,4 +1848,33 @@ Text GLabel 8350 2500 2    50   Input ~ 0
 IIN
 Text GLabel 12550 2100 0    50   Input ~ 0
 IIN
+$Comp
+L Device:R R?
+U 1 1 5D2E68C3
+P 3350 7400
+F 0 "R?" H 3419 7446 50  0000 L CNN
+F 1 "2kΩ" H 3419 7355 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 3280 7400 50  0001 C CNN
+F 3 "~" H 3350 7400 50  0001 C CNN
+	1    3350 7400
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:VBUS #PWR?
+U 1 1 5D2F1212
+P 3350 7200
+AR Path="/588FB1D7/5D2F1212" Ref="#PWR?"  Part="1" 
+AR Path="/588FD270/5D2F1212" Ref="#PWR?"  Part="1" 
+AR Path="/5D2F1212" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3350 7050 50  0001 C CNN
+F 1 "VBUS" H 3365 7373 50  0000 C CNN
+F 2 "" H 3350 7200 50  0001 C CNN
+F 3 "" H 3350 7200 50  0001 C CNN
+	1    3350 7200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 7250 3350 7200
+Wire Wire Line
+	3350 7550 3500 7550
 $EndSCHEMATC
