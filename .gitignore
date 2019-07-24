@@ -1,0 +1,11 @@
+build/*
+.mxproject
+*.jdebug.user
+*.stl
+*.000
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.net
+.dsn
+
