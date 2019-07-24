@@ -1,0 +1,2547 @@
+ARM GAS  /tmp/ccaHSKts.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"stm32f0xx_hal_cortex.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.HAL_NVIC_SetPriority,"ax",%progbits
+  16              		.align	1
+  17              		.global	HAL_NVIC_SetPriority
+  18              		.arch armv6s-m
+  19              		.syntax unified
+  20              		.code	16
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	HAL_NVIC_SetPriority:
+  25              	.LVL0:
+  26              	.LFB37:
+  27              		.file 1 "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c"
+   1:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /**
+   2:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   ******************************************************************************
+   3:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @file    stm32f0xx_hal_cortex.c
+   4:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @author  MCD Application Team
+   5:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @brief   CORTEX HAL module driver.
+   6:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *          This file provides firmware functions to manage the following
+   7:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *          functionalities of the CORTEX:
+   8:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *           + Initialization and de-initialization functions
+   9:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *           + Peripheral Control functions 
+  10:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *
+  11:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *  @verbatim
+  12:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   ==============================================================================
+  13:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****                         ##### How to use this driver #####
+  14:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   ==============================================================================
+  15:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+  16:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     [..]  
+  17:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     *** How to configure Interrupts using CORTEX HAL driver ***
+  18:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     ===========================================================
+  19:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     [..]
+  20:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     This section provides functions allowing to configure the NVIC interrupts (IRQ).
+  21:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     The Cortex-M0 exceptions are managed by CMSIS functions.
+  22:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****       (#) Enable and Configure the priority of the selected IRQ Channels. 
+  23:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****              The priority can be 0..3. 
+  24:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+  25:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****         -@- Lower priority values gives higher priority.
+  26:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****         -@- Priority Order:
+  27:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****             (#@) Lowest priority.
+  28:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****             (#@) Lowest hardware priority (IRQn position).  
+  29:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+  30:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****       (#)  Configure the priority of the selected IRQ Channels using HAL_NVIC_SetPriority()
+  31:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ARM GAS  /tmp/ccaHSKts.s 			page 2
+
+
+  32:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****       (#)  Enable the selected IRQ Channels using HAL_NVIC_EnableIRQ()
+  33:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****       
+  34:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****       -@-  Negative value of IRQn_Type are not allowed.
+  35:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+  36:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+  37:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     [..]
+  38:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     *** How to configure Systick using CORTEX HAL driver ***
+  39:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     ========================================================
+  40:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     [..]
+  41:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     Setup SysTick Timer for time base. 
+  42:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****            
+  43:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****    (+) The HAL_SYSTICK_Config()function calls the SysTick_Config() function which
+  44:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****        is a CMSIS function that:
+  45:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****         (++) Configures the SysTick Reload register with value passed as function parameter.
+  46:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****         (++) Configures the SysTick IRQ priority to the lowest value (0x03).
+  47:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****         (++) Resets the SysTick Counter register.
+  48:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****         (++) Configures the SysTick Counter clock source to be Core Clock Source (HCLK).
+  49:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****         (++) Enables the SysTick Interrupt.
+  50:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****         (++) Starts the SysTick Counter.
+  51:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     
+  52:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****    (+) You can change the SysTick Clock source to be HCLK_Div8 by calling the macro
+  53:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****        HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK_DIV8) just after the
+  54:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****        HAL_SYSTICK_Config() function call. The HAL_SYSTICK_CLKSourceConfig() macro is defined
+  55:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****        inside the stm32f0xx_hal_cortex.h file.
+  56:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+  57:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****    (+) You can change the SysTick IRQ priority by calling the
+  58:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****        HAL_NVIC_SetPriority(SysTick_IRQn,...) function just after the HAL_SYSTICK_Config() function
+  59:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****        call. The HAL_NVIC_SetPriority() call the NVIC_SetPriority() function which is a CMSIS funct
+  60:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+  61:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****    (+) To adjust the SysTick time base, use the following formula:
+  62:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+  63:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****        Reload Value = SysTick Counter Clock (Hz) x  Desired Time base (s)
+  64:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****        (++) Reload Value is the parameter to be passed for HAL_SYSTICK_Config() function
+  65:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****        (++) Reload Value should not exceed 0xFFFFFF
+  66:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+  67:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   @endverbatim
+  68:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   ******************************************************************************
+  69:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @attention
+  70:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *
+  71:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * <h2><center>&copy; COPYRIGHT(c) 2016 STMicroelectronics</center></h2>
+  72:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *
+  73:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * Redistribution and use in source and binary forms, with or without modification,
+  74:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * are permitted provided that the following conditions are met:
+  75:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *   1. Redistributions of source code must retain the above copyright notice,
+  76:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *      this list of conditions and the following disclaimer.
+  77:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *   2. Redistributions in binary form must reproduce the above copyright notice,
+  78:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *      this list of conditions and the following disclaimer in the documentation
+  79:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *      and/or other materials provided with the distribution.
+  80:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *   3. Neither the name of STMicroelectronics nor the names of its contributors
+  81:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *      may be used to endorse or promote products derived from this software
+  82:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *      without specific prior written permission.
+  83:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *
+  84:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  85:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  86:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  87:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  88:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ARM GAS  /tmp/ccaHSKts.s 			page 3
+
+
+  89:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  90:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  91:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  92:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  93:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  94:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *
+  95:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   ******************************************************************************  
+  96:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+  97:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+  98:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /* Includes ------------------------------------------------------------------*/
+  99:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** #include "stm32f0xx_hal.h"
+ 100:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 101:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /** @addtogroup STM32F0xx_HAL_Driver
+ 102:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @{
+ 103:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 104:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 105:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /** @defgroup CORTEX CORTEX
+ 106:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @brief CORTEX CORTEX HAL module driver
+ 107:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @{
+ 108:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 109:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 110:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** #ifdef HAL_CORTEX_MODULE_ENABLED
+ 111:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 112:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /* Private typedef -----------------------------------------------------------*/
+ 113:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /* Private define ------------------------------------------------------------*/
+ 114:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /* Private macro -------------------------------------------------------------*/
+ 115:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /* Private variables ---------------------------------------------------------*/
+ 116:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /* Private function prototypes -----------------------------------------------*/
+ 117:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /* Exported functions ---------------------------------------------------------*/
+ 118:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 119:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /** @defgroup CORTEX_Exported_Functions CORTEX Exported Functions
+ 120:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @{
+ 121:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 122:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 123:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 124:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /** @defgroup CORTEX_Exported_Functions_Group1 Initialization and de-initialization functions 
+ 125:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****  *  @brief    Initialization and Configuration functions
+ 126:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****  *
+ 127:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** @verbatim
+ 128:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   ==============================================================================
+ 129:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****               ##### Initialization and de-initialization functions #####
+ 130:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   ==============================================================================
+ 131:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     [..]
+ 132:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****       This section provides the CORTEX HAL driver functions allowing to configure Interrupts
+ 133:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****       Systick functionalities 
+ 134:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 135:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** @endverbatim
+ 136:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @{
+ 137:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 138:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 139:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /**
+ 140:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @brief  Sets the priority of an interrupt.
+ 141:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @param  IRQn External interrupt number .
+ 142:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
+ 143:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to stm32f0xx.h file)
+ 144:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @param  PreemptPriority The preemption priority for the IRQn channel.
+ 145:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         This parameter can be a value between 0 and 3.
+ARM GAS  /tmp/ccaHSKts.s 			page 4
+
+
+ 146:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         A lower priority value indicates a higher priority
+ 147:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @param  SubPriority the subpriority level for the IRQ channel.
+ 148:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         with stm32f0xx devices, this parameter is a dummy value and it is ignored, because 
+ 149:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         no subpriority supported in Cortex M0 based products.   
+ 150:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @retval None
+ 151:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 152:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** void HAL_NVIC_SetPriority(IRQn_Type IRQn, uint32_t PreemptPriority, uint32_t SubPriority)
+ 153:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** { 
+  28              		.loc 1 153 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		.loc 1 153 1 is_stmt 0 view .LVU1
+  33 0000 70B5     		push	{r4, r5, r6, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 16
+  36              		.cfi_offset 4, -16
+  37              		.cfi_offset 5, -12
+  38              		.cfi_offset 6, -8
+  39              		.cfi_offset 14, -4
+ 154:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   /* Check the parameters */
+ 155:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   assert_param(IS_NVIC_PREEMPTION_PRIORITY(PreemptPriority));
+  40              		.loc 1 155 3 is_stmt 1 view .LVU2
+ 156:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   NVIC_SetPriority(IRQn,PreemptPriority);
+  41              		.loc 1 156 3 view .LVU3
+  42              	.LVL1:
+  43              	.LBB26:
+  44              	.LBI26:
+  45              		.file 2 "Drivers/CMSIS/Include/core_cm0.h"
+   1:Drivers/CMSIS/Include/core_cm0.h **** /**************************************************************************//**
+   2:Drivers/CMSIS/Include/core_cm0.h ****  * @file     core_cm0.h
+   3:Drivers/CMSIS/Include/core_cm0.h ****  * @brief    CMSIS Cortex-M0 Core Peripheral Access Layer Header File
+   4:Drivers/CMSIS/Include/core_cm0.h ****  * @version  V4.30
+   5:Drivers/CMSIS/Include/core_cm0.h ****  * @date     20. October 2015
+   6:Drivers/CMSIS/Include/core_cm0.h ****  ******************************************************************************/
+   7:Drivers/CMSIS/Include/core_cm0.h **** /* Copyright (c) 2009 - 2015 ARM LIMITED
+   8:Drivers/CMSIS/Include/core_cm0.h **** 
+   9:Drivers/CMSIS/Include/core_cm0.h ****    All rights reserved.
+  10:Drivers/CMSIS/Include/core_cm0.h ****    Redistribution and use in source and binary forms, with or without
+  11:Drivers/CMSIS/Include/core_cm0.h ****    modification, are permitted provided that the following conditions are met:
+  12:Drivers/CMSIS/Include/core_cm0.h ****    - Redistributions of source code must retain the above copyright
+  13:Drivers/CMSIS/Include/core_cm0.h ****      notice, this list of conditions and the following disclaimer.
+  14:Drivers/CMSIS/Include/core_cm0.h ****    - Redistributions in binary form must reproduce the above copyright
+  15:Drivers/CMSIS/Include/core_cm0.h ****      notice, this list of conditions and the following disclaimer in the
+  16:Drivers/CMSIS/Include/core_cm0.h ****      documentation and/or other materials provided with the distribution.
+  17:Drivers/CMSIS/Include/core_cm0.h ****    - Neither the name of ARM nor the names of its contributors may be used
+  18:Drivers/CMSIS/Include/core_cm0.h ****      to endorse or promote products derived from this software without
+  19:Drivers/CMSIS/Include/core_cm0.h ****      specific prior written permission.
+  20:Drivers/CMSIS/Include/core_cm0.h ****    *
+  21:Drivers/CMSIS/Include/core_cm0.h ****    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  22:Drivers/CMSIS/Include/core_cm0.h ****    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  23:Drivers/CMSIS/Include/core_cm0.h ****    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  24:Drivers/CMSIS/Include/core_cm0.h ****    ARE DISCLAIMED. IN NO EVENT SHALL COPYRIGHT HOLDERS AND CONTRIBUTORS BE
+  25:Drivers/CMSIS/Include/core_cm0.h ****    LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  26:Drivers/CMSIS/Include/core_cm0.h ****    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  27:Drivers/CMSIS/Include/core_cm0.h ****    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  28:Drivers/CMSIS/Include/core_cm0.h ****    INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ARM GAS  /tmp/ccaHSKts.s 			page 5
+
+
+  29:Drivers/CMSIS/Include/core_cm0.h ****    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  30:Drivers/CMSIS/Include/core_cm0.h ****    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  31:Drivers/CMSIS/Include/core_cm0.h ****    POSSIBILITY OF SUCH DAMAGE.
+  32:Drivers/CMSIS/Include/core_cm0.h ****    ---------------------------------------------------------------------------*/
+  33:Drivers/CMSIS/Include/core_cm0.h **** 
+  34:Drivers/CMSIS/Include/core_cm0.h **** 
+  35:Drivers/CMSIS/Include/core_cm0.h **** #if   defined ( __ICCARM__ )
+  36:Drivers/CMSIS/Include/core_cm0.h ****  #pragma system_include         /* treat file as system include file for MISRA check */
+  37:Drivers/CMSIS/Include/core_cm0.h **** #elif defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+  38:Drivers/CMSIS/Include/core_cm0.h ****   #pragma clang system_header   /* treat file as system include file */
+  39:Drivers/CMSIS/Include/core_cm0.h **** #endif
+  40:Drivers/CMSIS/Include/core_cm0.h **** 
+  41:Drivers/CMSIS/Include/core_cm0.h **** #ifndef __CORE_CM0_H_GENERIC
+  42:Drivers/CMSIS/Include/core_cm0.h **** #define __CORE_CM0_H_GENERIC
+  43:Drivers/CMSIS/Include/core_cm0.h **** 
+  44:Drivers/CMSIS/Include/core_cm0.h **** #include <stdint.h>
+  45:Drivers/CMSIS/Include/core_cm0.h **** 
+  46:Drivers/CMSIS/Include/core_cm0.h **** #ifdef __cplusplus
+  47:Drivers/CMSIS/Include/core_cm0.h ****  extern "C" {
+  48:Drivers/CMSIS/Include/core_cm0.h **** #endif
+  49:Drivers/CMSIS/Include/core_cm0.h **** 
+  50:Drivers/CMSIS/Include/core_cm0.h **** /**
+  51:Drivers/CMSIS/Include/core_cm0.h ****   \page CMSIS_MISRA_Exceptions  MISRA-C:2004 Compliance Exceptions
+  52:Drivers/CMSIS/Include/core_cm0.h ****   CMSIS violates the following MISRA-C:2004 rules:
+  53:Drivers/CMSIS/Include/core_cm0.h **** 
+  54:Drivers/CMSIS/Include/core_cm0.h ****    \li Required Rule 8.5, object/function definition in header file.<br>
+  55:Drivers/CMSIS/Include/core_cm0.h ****      Function definitions in header files are used to allow 'inlining'.
+  56:Drivers/CMSIS/Include/core_cm0.h **** 
+  57:Drivers/CMSIS/Include/core_cm0.h ****    \li Required Rule 18.4, declaration of union type or object of union type: '{...}'.<br>
+  58:Drivers/CMSIS/Include/core_cm0.h ****      Unions are used for effective representation of core registers.
+  59:Drivers/CMSIS/Include/core_cm0.h **** 
+  60:Drivers/CMSIS/Include/core_cm0.h ****    \li Advisory Rule 19.7, Function-like macro defined.<br>
+  61:Drivers/CMSIS/Include/core_cm0.h ****      Function-like macros are used to allow more efficient code.
+  62:Drivers/CMSIS/Include/core_cm0.h ****  */
+  63:Drivers/CMSIS/Include/core_cm0.h **** 
+  64:Drivers/CMSIS/Include/core_cm0.h **** 
+  65:Drivers/CMSIS/Include/core_cm0.h **** /*******************************************************************************
+  66:Drivers/CMSIS/Include/core_cm0.h ****  *                 CMSIS definitions
+  67:Drivers/CMSIS/Include/core_cm0.h ****  ******************************************************************************/
+  68:Drivers/CMSIS/Include/core_cm0.h **** /**
+  69:Drivers/CMSIS/Include/core_cm0.h ****   \ingroup Cortex_M0
+  70:Drivers/CMSIS/Include/core_cm0.h ****   @{
+  71:Drivers/CMSIS/Include/core_cm0.h ****  */
+  72:Drivers/CMSIS/Include/core_cm0.h **** 
+  73:Drivers/CMSIS/Include/core_cm0.h **** /*  CMSIS CM0 definitions */
+  74:Drivers/CMSIS/Include/core_cm0.h **** #define __CM0_CMSIS_VERSION_MAIN  (0x04U)                                      /*!< [31:16] CMSIS H
+  75:Drivers/CMSIS/Include/core_cm0.h **** #define __CM0_CMSIS_VERSION_SUB   (0x1EU)                                      /*!< [15:0]  CMSIS H
+  76:Drivers/CMSIS/Include/core_cm0.h **** #define __CM0_CMSIS_VERSION       ((__CM0_CMSIS_VERSION_MAIN << 16U) | \
+  77:Drivers/CMSIS/Include/core_cm0.h ****                                     __CM0_CMSIS_VERSION_SUB           )        /*!< CMSIS HAL versi
+  78:Drivers/CMSIS/Include/core_cm0.h **** 
+  79:Drivers/CMSIS/Include/core_cm0.h **** #define __CORTEX_M                (0x00U)                                      /*!< Cortex-M Core *
+  80:Drivers/CMSIS/Include/core_cm0.h **** 
+  81:Drivers/CMSIS/Include/core_cm0.h **** 
+  82:Drivers/CMSIS/Include/core_cm0.h **** #if   defined ( __CC_ARM )
+  83:Drivers/CMSIS/Include/core_cm0.h ****   #define __ASM            __asm                                      /*!< asm keyword for ARM Comp
+  84:Drivers/CMSIS/Include/core_cm0.h ****   #define __INLINE         __inline                                   /*!< inline keyword for ARM C
+  85:Drivers/CMSIS/Include/core_cm0.h ****   #define __STATIC_INLINE  static __inline
+ARM GAS  /tmp/ccaHSKts.s 			page 6
+
+
+  86:Drivers/CMSIS/Include/core_cm0.h **** 
+  87:Drivers/CMSIS/Include/core_cm0.h **** #elif defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+  88:Drivers/CMSIS/Include/core_cm0.h ****   #define __ASM            __asm                                      /*!< asm keyword for ARM Comp
+  89:Drivers/CMSIS/Include/core_cm0.h ****   #define __INLINE         __inline                                   /*!< inline keyword for ARM C
+  90:Drivers/CMSIS/Include/core_cm0.h ****   #define __STATIC_INLINE  static __inline
+  91:Drivers/CMSIS/Include/core_cm0.h **** 
+  92:Drivers/CMSIS/Include/core_cm0.h **** #elif defined ( __GNUC__ )
+  93:Drivers/CMSIS/Include/core_cm0.h ****   #define __ASM            __asm                                      /*!< asm keyword for GNU Comp
+  94:Drivers/CMSIS/Include/core_cm0.h ****   #define __INLINE         inline                                     /*!< inline keyword for GNU C
+  95:Drivers/CMSIS/Include/core_cm0.h ****   #define __STATIC_INLINE  static inline
+  96:Drivers/CMSIS/Include/core_cm0.h **** 
+  97:Drivers/CMSIS/Include/core_cm0.h **** #elif defined ( __ICCARM__ )
+  98:Drivers/CMSIS/Include/core_cm0.h ****   #define __ASM            __asm                                      /*!< asm keyword for IAR Comp
+  99:Drivers/CMSIS/Include/core_cm0.h ****   #define __INLINE         inline                                     /*!< inline keyword for IAR C
+ 100:Drivers/CMSIS/Include/core_cm0.h ****   #define __STATIC_INLINE  static inline
+ 101:Drivers/CMSIS/Include/core_cm0.h **** 
+ 102:Drivers/CMSIS/Include/core_cm0.h **** #elif defined ( __TMS470__ )
+ 103:Drivers/CMSIS/Include/core_cm0.h ****   #define __ASM            __asm                                      /*!< asm keyword for TI CCS C
+ 104:Drivers/CMSIS/Include/core_cm0.h ****   #define __STATIC_INLINE  static inline
+ 105:Drivers/CMSIS/Include/core_cm0.h **** 
+ 106:Drivers/CMSIS/Include/core_cm0.h **** #elif defined ( __TASKING__ )
+ 107:Drivers/CMSIS/Include/core_cm0.h ****   #define __ASM            __asm                                      /*!< asm keyword for TASKING 
+ 108:Drivers/CMSIS/Include/core_cm0.h ****   #define __INLINE         inline                                     /*!< inline keyword for TASKI
+ 109:Drivers/CMSIS/Include/core_cm0.h ****   #define __STATIC_INLINE  static inline
+ 110:Drivers/CMSIS/Include/core_cm0.h **** 
+ 111:Drivers/CMSIS/Include/core_cm0.h **** #elif defined ( __CSMC__ )
+ 112:Drivers/CMSIS/Include/core_cm0.h ****   #define __packed
+ 113:Drivers/CMSIS/Include/core_cm0.h ****   #define __ASM            _asm                                      /*!< asm keyword for COSMIC Co
+ 114:Drivers/CMSIS/Include/core_cm0.h ****   #define __INLINE         inline                                    /*!< inline keyword for COSMIC
+ 115:Drivers/CMSIS/Include/core_cm0.h ****   #define __STATIC_INLINE  static inline
+ 116:Drivers/CMSIS/Include/core_cm0.h **** 
+ 117:Drivers/CMSIS/Include/core_cm0.h **** #else
+ 118:Drivers/CMSIS/Include/core_cm0.h ****   #error Unknown compiler
+ 119:Drivers/CMSIS/Include/core_cm0.h **** #endif
+ 120:Drivers/CMSIS/Include/core_cm0.h **** 
+ 121:Drivers/CMSIS/Include/core_cm0.h **** /** __FPU_USED indicates whether an FPU is used or not.
+ 122:Drivers/CMSIS/Include/core_cm0.h ****     This core does not support an FPU at all
+ 123:Drivers/CMSIS/Include/core_cm0.h **** */
+ 124:Drivers/CMSIS/Include/core_cm0.h **** #define __FPU_USED       0U
+ 125:Drivers/CMSIS/Include/core_cm0.h **** 
+ 126:Drivers/CMSIS/Include/core_cm0.h **** #if defined ( __CC_ARM )
+ 127:Drivers/CMSIS/Include/core_cm0.h ****   #if defined __TARGET_FPU_VFP
+ 128:Drivers/CMSIS/Include/core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 129:Drivers/CMSIS/Include/core_cm0.h ****   #endif
+ 130:Drivers/CMSIS/Include/core_cm0.h **** 
+ 131:Drivers/CMSIS/Include/core_cm0.h **** #elif defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
+ 132:Drivers/CMSIS/Include/core_cm0.h ****   #if defined __ARM_PCS_VFP
+ 133:Drivers/CMSIS/Include/core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 134:Drivers/CMSIS/Include/core_cm0.h ****   #endif
+ 135:Drivers/CMSIS/Include/core_cm0.h **** 
+ 136:Drivers/CMSIS/Include/core_cm0.h **** #elif defined ( __GNUC__ )
+ 137:Drivers/CMSIS/Include/core_cm0.h ****   #if defined (__VFP_FP__) && !defined(__SOFTFP__)
+ 138:Drivers/CMSIS/Include/core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 139:Drivers/CMSIS/Include/core_cm0.h ****   #endif
+ 140:Drivers/CMSIS/Include/core_cm0.h **** 
+ 141:Drivers/CMSIS/Include/core_cm0.h **** #elif defined ( __ICCARM__ )
+ 142:Drivers/CMSIS/Include/core_cm0.h ****   #if defined __ARMVFP__
+ARM GAS  /tmp/ccaHSKts.s 			page 7
+
+
+ 143:Drivers/CMSIS/Include/core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 144:Drivers/CMSIS/Include/core_cm0.h ****   #endif
+ 145:Drivers/CMSIS/Include/core_cm0.h **** 
+ 146:Drivers/CMSIS/Include/core_cm0.h **** #elif defined ( __TMS470__ )
+ 147:Drivers/CMSIS/Include/core_cm0.h ****   #if defined __TI_VFP_SUPPORT__
+ 148:Drivers/CMSIS/Include/core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 149:Drivers/CMSIS/Include/core_cm0.h ****   #endif
+ 150:Drivers/CMSIS/Include/core_cm0.h **** 
+ 151:Drivers/CMSIS/Include/core_cm0.h **** #elif defined ( __TASKING__ )
+ 152:Drivers/CMSIS/Include/core_cm0.h ****   #if defined __FPU_VFP__
+ 153:Drivers/CMSIS/Include/core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 154:Drivers/CMSIS/Include/core_cm0.h ****   #endif
+ 155:Drivers/CMSIS/Include/core_cm0.h **** 
+ 156:Drivers/CMSIS/Include/core_cm0.h **** #elif defined ( __CSMC__ )
+ 157:Drivers/CMSIS/Include/core_cm0.h ****   #if ( __CSMC__ & 0x400U)
+ 158:Drivers/CMSIS/Include/core_cm0.h ****     #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+ 159:Drivers/CMSIS/Include/core_cm0.h ****   #endif
+ 160:Drivers/CMSIS/Include/core_cm0.h **** 
+ 161:Drivers/CMSIS/Include/core_cm0.h **** #endif
+ 162:Drivers/CMSIS/Include/core_cm0.h **** 
+ 163:Drivers/CMSIS/Include/core_cm0.h **** #include "core_cmInstr.h"                /* Core Instruction Access */
+ 164:Drivers/CMSIS/Include/core_cm0.h **** #include "core_cmFunc.h"                 /* Core Function Access */
+ 165:Drivers/CMSIS/Include/core_cm0.h **** 
+ 166:Drivers/CMSIS/Include/core_cm0.h **** #ifdef __cplusplus
+ 167:Drivers/CMSIS/Include/core_cm0.h **** }
+ 168:Drivers/CMSIS/Include/core_cm0.h **** #endif
+ 169:Drivers/CMSIS/Include/core_cm0.h **** 
+ 170:Drivers/CMSIS/Include/core_cm0.h **** #endif /* __CORE_CM0_H_GENERIC */
+ 171:Drivers/CMSIS/Include/core_cm0.h **** 
+ 172:Drivers/CMSIS/Include/core_cm0.h **** #ifndef __CMSIS_GENERIC
+ 173:Drivers/CMSIS/Include/core_cm0.h **** 
+ 174:Drivers/CMSIS/Include/core_cm0.h **** #ifndef __CORE_CM0_H_DEPENDANT
+ 175:Drivers/CMSIS/Include/core_cm0.h **** #define __CORE_CM0_H_DEPENDANT
+ 176:Drivers/CMSIS/Include/core_cm0.h **** 
+ 177:Drivers/CMSIS/Include/core_cm0.h **** #ifdef __cplusplus
+ 178:Drivers/CMSIS/Include/core_cm0.h ****  extern "C" {
+ 179:Drivers/CMSIS/Include/core_cm0.h **** #endif
+ 180:Drivers/CMSIS/Include/core_cm0.h **** 
+ 181:Drivers/CMSIS/Include/core_cm0.h **** /* check device defines and use defaults */
+ 182:Drivers/CMSIS/Include/core_cm0.h **** #if defined __CHECK_DEVICE_DEFINES
+ 183:Drivers/CMSIS/Include/core_cm0.h ****   #ifndef __CM0_REV
+ 184:Drivers/CMSIS/Include/core_cm0.h ****     #define __CM0_REV               0x0000U
+ 185:Drivers/CMSIS/Include/core_cm0.h ****     #warning "__CM0_REV not defined in device header file; using default!"
+ 186:Drivers/CMSIS/Include/core_cm0.h ****   #endif
+ 187:Drivers/CMSIS/Include/core_cm0.h **** 
+ 188:Drivers/CMSIS/Include/core_cm0.h ****   #ifndef __NVIC_PRIO_BITS
+ 189:Drivers/CMSIS/Include/core_cm0.h ****     #define __NVIC_PRIO_BITS          2U
+ 190:Drivers/CMSIS/Include/core_cm0.h ****     #warning "__NVIC_PRIO_BITS not defined in device header file; using default!"
+ 191:Drivers/CMSIS/Include/core_cm0.h ****   #endif
+ 192:Drivers/CMSIS/Include/core_cm0.h **** 
+ 193:Drivers/CMSIS/Include/core_cm0.h ****   #ifndef __Vendor_SysTickConfig
+ 194:Drivers/CMSIS/Include/core_cm0.h ****     #define __Vendor_SysTickConfig    0U
+ 195:Drivers/CMSIS/Include/core_cm0.h ****     #warning "__Vendor_SysTickConfig not defined in device header file; using default!"
+ 196:Drivers/CMSIS/Include/core_cm0.h ****   #endif
+ 197:Drivers/CMSIS/Include/core_cm0.h **** #endif
+ 198:Drivers/CMSIS/Include/core_cm0.h **** 
+ 199:Drivers/CMSIS/Include/core_cm0.h **** /* IO definitions (access restrictions to peripheral registers) */
+ARM GAS  /tmp/ccaHSKts.s 			page 8
+
+
+ 200:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 201:Drivers/CMSIS/Include/core_cm0.h ****     \defgroup CMSIS_glob_defs CMSIS Global Defines
+ 202:Drivers/CMSIS/Include/core_cm0.h **** 
+ 203:Drivers/CMSIS/Include/core_cm0.h ****     <strong>IO Type Qualifiers</strong> are used
+ 204:Drivers/CMSIS/Include/core_cm0.h ****     \li to specify the access to peripheral variables.
+ 205:Drivers/CMSIS/Include/core_cm0.h ****     \li for automatic generation of peripheral register debug information.
+ 206:Drivers/CMSIS/Include/core_cm0.h **** */
+ 207:Drivers/CMSIS/Include/core_cm0.h **** #ifdef __cplusplus
+ 208:Drivers/CMSIS/Include/core_cm0.h ****   #define   __I     volatile             /*!< Defines 'read only' permissions */
+ 209:Drivers/CMSIS/Include/core_cm0.h **** #else
+ 210:Drivers/CMSIS/Include/core_cm0.h ****   #define   __I     volatile const       /*!< Defines 'read only' permissions */
+ 211:Drivers/CMSIS/Include/core_cm0.h **** #endif
+ 212:Drivers/CMSIS/Include/core_cm0.h **** #define     __O     volatile             /*!< Defines 'write only' permissions */
+ 213:Drivers/CMSIS/Include/core_cm0.h **** #define     __IO    volatile             /*!< Defines 'read / write' permissions */
+ 214:Drivers/CMSIS/Include/core_cm0.h **** 
+ 215:Drivers/CMSIS/Include/core_cm0.h **** /* following defines should be used for structure members */
+ 216:Drivers/CMSIS/Include/core_cm0.h **** #define     __IM     volatile const      /*! Defines 'read only' structure member permissions */
+ 217:Drivers/CMSIS/Include/core_cm0.h **** #define     __OM     volatile            /*! Defines 'write only' structure member permissions */
+ 218:Drivers/CMSIS/Include/core_cm0.h **** #define     __IOM    volatile            /*! Defines 'read / write' structure member permissions */
+ 219:Drivers/CMSIS/Include/core_cm0.h **** 
+ 220:Drivers/CMSIS/Include/core_cm0.h **** /*@} end of group Cortex_M0 */
+ 221:Drivers/CMSIS/Include/core_cm0.h **** 
+ 222:Drivers/CMSIS/Include/core_cm0.h **** 
+ 223:Drivers/CMSIS/Include/core_cm0.h **** 
+ 224:Drivers/CMSIS/Include/core_cm0.h **** /*******************************************************************************
+ 225:Drivers/CMSIS/Include/core_cm0.h ****  *                 Register Abstraction
+ 226:Drivers/CMSIS/Include/core_cm0.h ****   Core Register contain:
+ 227:Drivers/CMSIS/Include/core_cm0.h ****   - Core Register
+ 228:Drivers/CMSIS/Include/core_cm0.h ****   - Core NVIC Register
+ 229:Drivers/CMSIS/Include/core_cm0.h ****   - Core SCB Register
+ 230:Drivers/CMSIS/Include/core_cm0.h ****   - Core SysTick Register
+ 231:Drivers/CMSIS/Include/core_cm0.h ****  ******************************************************************************/
+ 232:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 233:Drivers/CMSIS/Include/core_cm0.h ****   \defgroup CMSIS_core_register Defines and Type Definitions
+ 234:Drivers/CMSIS/Include/core_cm0.h ****   \brief Type definitions and defines for Cortex-M processor based devices.
+ 235:Drivers/CMSIS/Include/core_cm0.h **** */
+ 236:Drivers/CMSIS/Include/core_cm0.h **** 
+ 237:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 238:Drivers/CMSIS/Include/core_cm0.h ****   \ingroup    CMSIS_core_register
+ 239:Drivers/CMSIS/Include/core_cm0.h ****   \defgroup   CMSIS_CORE  Status and Control Registers
+ 240:Drivers/CMSIS/Include/core_cm0.h ****   \brief      Core Register type definitions.
+ 241:Drivers/CMSIS/Include/core_cm0.h ****   @{
+ 242:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 243:Drivers/CMSIS/Include/core_cm0.h **** 
+ 244:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 245:Drivers/CMSIS/Include/core_cm0.h ****   \brief  Union type to access the Application Program Status Register (APSR).
+ 246:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 247:Drivers/CMSIS/Include/core_cm0.h **** typedef union
+ 248:Drivers/CMSIS/Include/core_cm0.h **** {
+ 249:Drivers/CMSIS/Include/core_cm0.h ****   struct
+ 250:Drivers/CMSIS/Include/core_cm0.h ****   {
+ 251:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t _reserved0:28;              /*!< bit:  0..27  Reserved */
+ 252:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t V:1;                        /*!< bit:     28  Overflow condition code flag */
+ 253:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t C:1;                        /*!< bit:     29  Carry condition code flag */
+ 254:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t Z:1;                        /*!< bit:     30  Zero condition code flag */
+ 255:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t N:1;                        /*!< bit:     31  Negative condition code flag */
+ 256:Drivers/CMSIS/Include/core_cm0.h ****   } b;                                   /*!< Structure used for bit  access */
+ARM GAS  /tmp/ccaHSKts.s 			page 9
+
+
+ 257:Drivers/CMSIS/Include/core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access */
+ 258:Drivers/CMSIS/Include/core_cm0.h **** } APSR_Type;
+ 259:Drivers/CMSIS/Include/core_cm0.h **** 
+ 260:Drivers/CMSIS/Include/core_cm0.h **** /* APSR Register Definitions */
+ 261:Drivers/CMSIS/Include/core_cm0.h **** #define APSR_N_Pos                         31U                                            /*!< APSR
+ 262:Drivers/CMSIS/Include/core_cm0.h **** #define APSR_N_Msk                         (1UL << APSR_N_Pos)                            /*!< APSR
+ 263:Drivers/CMSIS/Include/core_cm0.h **** 
+ 264:Drivers/CMSIS/Include/core_cm0.h **** #define APSR_Z_Pos                         30U                                            /*!< APSR
+ 265:Drivers/CMSIS/Include/core_cm0.h **** #define APSR_Z_Msk                         (1UL << APSR_Z_Pos)                            /*!< APSR
+ 266:Drivers/CMSIS/Include/core_cm0.h **** 
+ 267:Drivers/CMSIS/Include/core_cm0.h **** #define APSR_C_Pos                         29U                                            /*!< APSR
+ 268:Drivers/CMSIS/Include/core_cm0.h **** #define APSR_C_Msk                         (1UL << APSR_C_Pos)                            /*!< APSR
+ 269:Drivers/CMSIS/Include/core_cm0.h **** 
+ 270:Drivers/CMSIS/Include/core_cm0.h **** #define APSR_V_Pos                         28U                                            /*!< APSR
+ 271:Drivers/CMSIS/Include/core_cm0.h **** #define APSR_V_Msk                         (1UL << APSR_V_Pos)                            /*!< APSR
+ 272:Drivers/CMSIS/Include/core_cm0.h **** 
+ 273:Drivers/CMSIS/Include/core_cm0.h **** 
+ 274:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 275:Drivers/CMSIS/Include/core_cm0.h ****   \brief  Union type to access the Interrupt Program Status Register (IPSR).
+ 276:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 277:Drivers/CMSIS/Include/core_cm0.h **** typedef union
+ 278:Drivers/CMSIS/Include/core_cm0.h **** {
+ 279:Drivers/CMSIS/Include/core_cm0.h ****   struct
+ 280:Drivers/CMSIS/Include/core_cm0.h ****   {
+ 281:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t ISR:9;                      /*!< bit:  0.. 8  Exception number */
+ 282:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t _reserved0:23;              /*!< bit:  9..31  Reserved */
+ 283:Drivers/CMSIS/Include/core_cm0.h ****   } b;                                   /*!< Structure used for bit  access */
+ 284:Drivers/CMSIS/Include/core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access */
+ 285:Drivers/CMSIS/Include/core_cm0.h **** } IPSR_Type;
+ 286:Drivers/CMSIS/Include/core_cm0.h **** 
+ 287:Drivers/CMSIS/Include/core_cm0.h **** /* IPSR Register Definitions */
+ 288:Drivers/CMSIS/Include/core_cm0.h **** #define IPSR_ISR_Pos                        0U                                            /*!< IPSR
+ 289:Drivers/CMSIS/Include/core_cm0.h **** #define IPSR_ISR_Msk                       (0x1FFUL /*<< IPSR_ISR_Pos*/)                  /*!< IPSR
+ 290:Drivers/CMSIS/Include/core_cm0.h **** 
+ 291:Drivers/CMSIS/Include/core_cm0.h **** 
+ 292:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 293:Drivers/CMSIS/Include/core_cm0.h ****   \brief  Union type to access the Special-Purpose Program Status Registers (xPSR).
+ 294:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 295:Drivers/CMSIS/Include/core_cm0.h **** typedef union
+ 296:Drivers/CMSIS/Include/core_cm0.h **** {
+ 297:Drivers/CMSIS/Include/core_cm0.h ****   struct
+ 298:Drivers/CMSIS/Include/core_cm0.h ****   {
+ 299:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t ISR:9;                      /*!< bit:  0.. 8  Exception number */
+ 300:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t _reserved0:15;              /*!< bit:  9..23  Reserved */
+ 301:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t T:1;                        /*!< bit:     24  Thumb bit        (read 0) */
+ 302:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t _reserved1:3;               /*!< bit: 25..27  Reserved */
+ 303:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t V:1;                        /*!< bit:     28  Overflow condition code flag */
+ 304:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t C:1;                        /*!< bit:     29  Carry condition code flag */
+ 305:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t Z:1;                        /*!< bit:     30  Zero condition code flag */
+ 306:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t N:1;                        /*!< bit:     31  Negative condition code flag */
+ 307:Drivers/CMSIS/Include/core_cm0.h ****   } b;                                   /*!< Structure used for bit  access */
+ 308:Drivers/CMSIS/Include/core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access */
+ 309:Drivers/CMSIS/Include/core_cm0.h **** } xPSR_Type;
+ 310:Drivers/CMSIS/Include/core_cm0.h **** 
+ 311:Drivers/CMSIS/Include/core_cm0.h **** /* xPSR Register Definitions */
+ 312:Drivers/CMSIS/Include/core_cm0.h **** #define xPSR_N_Pos                         31U                                            /*!< xPSR
+ 313:Drivers/CMSIS/Include/core_cm0.h **** #define xPSR_N_Msk                         (1UL << xPSR_N_Pos)                            /*!< xPSR
+ARM GAS  /tmp/ccaHSKts.s 			page 10
+
+
+ 314:Drivers/CMSIS/Include/core_cm0.h **** 
+ 315:Drivers/CMSIS/Include/core_cm0.h **** #define xPSR_Z_Pos                         30U                                            /*!< xPSR
+ 316:Drivers/CMSIS/Include/core_cm0.h **** #define xPSR_Z_Msk                         (1UL << xPSR_Z_Pos)                            /*!< xPSR
+ 317:Drivers/CMSIS/Include/core_cm0.h **** 
+ 318:Drivers/CMSIS/Include/core_cm0.h **** #define xPSR_C_Pos                         29U                                            /*!< xPSR
+ 319:Drivers/CMSIS/Include/core_cm0.h **** #define xPSR_C_Msk                         (1UL << xPSR_C_Pos)                            /*!< xPSR
+ 320:Drivers/CMSIS/Include/core_cm0.h **** 
+ 321:Drivers/CMSIS/Include/core_cm0.h **** #define xPSR_V_Pos                         28U                                            /*!< xPSR
+ 322:Drivers/CMSIS/Include/core_cm0.h **** #define xPSR_V_Msk                         (1UL << xPSR_V_Pos)                            /*!< xPSR
+ 323:Drivers/CMSIS/Include/core_cm0.h **** 
+ 324:Drivers/CMSIS/Include/core_cm0.h **** #define xPSR_T_Pos                         24U                                            /*!< xPSR
+ 325:Drivers/CMSIS/Include/core_cm0.h **** #define xPSR_T_Msk                         (1UL << xPSR_T_Pos)                            /*!< xPSR
+ 326:Drivers/CMSIS/Include/core_cm0.h **** 
+ 327:Drivers/CMSIS/Include/core_cm0.h **** #define xPSR_ISR_Pos                        0U                                            /*!< xPSR
+ 328:Drivers/CMSIS/Include/core_cm0.h **** #define xPSR_ISR_Msk                       (0x1FFUL /*<< xPSR_ISR_Pos*/)                  /*!< xPSR
+ 329:Drivers/CMSIS/Include/core_cm0.h **** 
+ 330:Drivers/CMSIS/Include/core_cm0.h **** 
+ 331:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 332:Drivers/CMSIS/Include/core_cm0.h ****   \brief  Union type to access the Control Registers (CONTROL).
+ 333:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 334:Drivers/CMSIS/Include/core_cm0.h **** typedef union
+ 335:Drivers/CMSIS/Include/core_cm0.h **** {
+ 336:Drivers/CMSIS/Include/core_cm0.h ****   struct
+ 337:Drivers/CMSIS/Include/core_cm0.h ****   {
+ 338:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t _reserved0:1;               /*!< bit:      0  Reserved */
+ 339:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t SPSEL:1;                    /*!< bit:      1  Stack to be used */
+ 340:Drivers/CMSIS/Include/core_cm0.h ****     uint32_t _reserved1:30;              /*!< bit:  2..31  Reserved */
+ 341:Drivers/CMSIS/Include/core_cm0.h ****   } b;                                   /*!< Structure used for bit  access */
+ 342:Drivers/CMSIS/Include/core_cm0.h ****   uint32_t w;                            /*!< Type      used for word access */
+ 343:Drivers/CMSIS/Include/core_cm0.h **** } CONTROL_Type;
+ 344:Drivers/CMSIS/Include/core_cm0.h **** 
+ 345:Drivers/CMSIS/Include/core_cm0.h **** /* CONTROL Register Definitions */
+ 346:Drivers/CMSIS/Include/core_cm0.h **** #define CONTROL_SPSEL_Pos                   1U                                            /*!< CONT
+ 347:Drivers/CMSIS/Include/core_cm0.h **** #define CONTROL_SPSEL_Msk                  (1UL << CONTROL_SPSEL_Pos)                     /*!< CONT
+ 348:Drivers/CMSIS/Include/core_cm0.h **** 
+ 349:Drivers/CMSIS/Include/core_cm0.h **** /*@} end of group CMSIS_CORE */
+ 350:Drivers/CMSIS/Include/core_cm0.h **** 
+ 351:Drivers/CMSIS/Include/core_cm0.h **** 
+ 352:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 353:Drivers/CMSIS/Include/core_cm0.h ****   \ingroup    CMSIS_core_register
+ 354:Drivers/CMSIS/Include/core_cm0.h ****   \defgroup   CMSIS_NVIC  Nested Vectored Interrupt Controller (NVIC)
+ 355:Drivers/CMSIS/Include/core_cm0.h ****   \brief      Type definitions for the NVIC Registers
+ 356:Drivers/CMSIS/Include/core_cm0.h ****   @{
+ 357:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 358:Drivers/CMSIS/Include/core_cm0.h **** 
+ 359:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 360:Drivers/CMSIS/Include/core_cm0.h ****   \brief  Structure type to access the Nested Vectored Interrupt Controller (NVIC).
+ 361:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 362:Drivers/CMSIS/Include/core_cm0.h **** typedef struct
+ 363:Drivers/CMSIS/Include/core_cm0.h **** {
+ 364:Drivers/CMSIS/Include/core_cm0.h ****   __IOM uint32_t ISER[1U];               /*!< Offset: 0x000 (R/W)  Interrupt Set Enable Register */
+ 365:Drivers/CMSIS/Include/core_cm0.h ****         uint32_t RESERVED0[31U];
+ 366:Drivers/CMSIS/Include/core_cm0.h ****   __IOM uint32_t ICER[1U];               /*!< Offset: 0x080 (R/W)  Interrupt Clear Enable Register 
+ 367:Drivers/CMSIS/Include/core_cm0.h ****         uint32_t RSERVED1[31U];
+ 368:Drivers/CMSIS/Include/core_cm0.h ****   __IOM uint32_t ISPR[1U];               /*!< Offset: 0x100 (R/W)  Interrupt Set Pending Register *
+ 369:Drivers/CMSIS/Include/core_cm0.h ****         uint32_t RESERVED2[31U];
+ 370:Drivers/CMSIS/Include/core_cm0.h ****   __IOM uint32_t ICPR[1U];               /*!< Offset: 0x180 (R/W)  Interrupt Clear Pending Register
+ARM GAS  /tmp/ccaHSKts.s 			page 11
+
+
+ 371:Drivers/CMSIS/Include/core_cm0.h ****         uint32_t RESERVED3[31U];
+ 372:Drivers/CMSIS/Include/core_cm0.h ****         uint32_t RESERVED4[64U];
+ 373:Drivers/CMSIS/Include/core_cm0.h ****   __IOM uint32_t IP[8U];                 /*!< Offset: 0x300 (R/W)  Interrupt Priority Register */
+ 374:Drivers/CMSIS/Include/core_cm0.h **** }  NVIC_Type;
+ 375:Drivers/CMSIS/Include/core_cm0.h **** 
+ 376:Drivers/CMSIS/Include/core_cm0.h **** /*@} end of group CMSIS_NVIC */
+ 377:Drivers/CMSIS/Include/core_cm0.h **** 
+ 378:Drivers/CMSIS/Include/core_cm0.h **** 
+ 379:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 380:Drivers/CMSIS/Include/core_cm0.h ****   \ingroup  CMSIS_core_register
+ 381:Drivers/CMSIS/Include/core_cm0.h ****   \defgroup CMSIS_SCB     System Control Block (SCB)
+ 382:Drivers/CMSIS/Include/core_cm0.h ****   \brief    Type definitions for the System Control Block Registers
+ 383:Drivers/CMSIS/Include/core_cm0.h ****   @{
+ 384:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 385:Drivers/CMSIS/Include/core_cm0.h **** 
+ 386:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 387:Drivers/CMSIS/Include/core_cm0.h ****   \brief  Structure type to access the System Control Block (SCB).
+ 388:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 389:Drivers/CMSIS/Include/core_cm0.h **** typedef struct
+ 390:Drivers/CMSIS/Include/core_cm0.h **** {
+ 391:Drivers/CMSIS/Include/core_cm0.h ****   __IM  uint32_t CPUID;                  /*!< Offset: 0x000 (R/ )  CPUID Base Register */
+ 392:Drivers/CMSIS/Include/core_cm0.h ****   __IOM uint32_t ICSR;                   /*!< Offset: 0x004 (R/W)  Interrupt Control and State Regi
+ 393:Drivers/CMSIS/Include/core_cm0.h ****         uint32_t RESERVED0;
+ 394:Drivers/CMSIS/Include/core_cm0.h ****   __IOM uint32_t AIRCR;                  /*!< Offset: 0x00C (R/W)  Application Interrupt and Reset 
+ 395:Drivers/CMSIS/Include/core_cm0.h ****   __IOM uint32_t SCR;                    /*!< Offset: 0x010 (R/W)  System Control Register */
+ 396:Drivers/CMSIS/Include/core_cm0.h ****   __IOM uint32_t CCR;                    /*!< Offset: 0x014 (R/W)  Configuration Control Register *
+ 397:Drivers/CMSIS/Include/core_cm0.h ****         uint32_t RESERVED1;
+ 398:Drivers/CMSIS/Include/core_cm0.h ****   __IOM uint32_t SHP[2U];                /*!< Offset: 0x01C (R/W)  System Handlers Priority Registe
+ 399:Drivers/CMSIS/Include/core_cm0.h ****   __IOM uint32_t SHCSR;                  /*!< Offset: 0x024 (R/W)  System Handler Control and State
+ 400:Drivers/CMSIS/Include/core_cm0.h **** } SCB_Type;
+ 401:Drivers/CMSIS/Include/core_cm0.h **** 
+ 402:Drivers/CMSIS/Include/core_cm0.h **** /* SCB CPUID Register Definitions */
+ 403:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_CPUID_IMPLEMENTER_Pos          24U                                            /*!< SCB 
+ 404:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_CPUID_IMPLEMENTER_Msk          (0xFFUL << SCB_CPUID_IMPLEMENTER_Pos)          /*!< SCB 
+ 405:Drivers/CMSIS/Include/core_cm0.h **** 
+ 406:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_CPUID_VARIANT_Pos              20U                                            /*!< SCB 
+ 407:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_CPUID_VARIANT_Msk              (0xFUL << SCB_CPUID_VARIANT_Pos)               /*!< SCB 
+ 408:Drivers/CMSIS/Include/core_cm0.h **** 
+ 409:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_CPUID_ARCHITECTURE_Pos         16U                                            /*!< SCB 
+ 410:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_CPUID_ARCHITECTURE_Msk         (0xFUL << SCB_CPUID_ARCHITECTURE_Pos)          /*!< SCB 
+ 411:Drivers/CMSIS/Include/core_cm0.h **** 
+ 412:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_CPUID_PARTNO_Pos                4U                                            /*!< SCB 
+ 413:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_CPUID_PARTNO_Msk               (0xFFFUL << SCB_CPUID_PARTNO_Pos)              /*!< SCB 
+ 414:Drivers/CMSIS/Include/core_cm0.h **** 
+ 415:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_CPUID_REVISION_Pos              0U                                            /*!< SCB 
+ 416:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_CPUID_REVISION_Msk             (0xFUL /*<< SCB_CPUID_REVISION_Pos*/)          /*!< SCB 
+ 417:Drivers/CMSIS/Include/core_cm0.h **** 
+ 418:Drivers/CMSIS/Include/core_cm0.h **** /* SCB Interrupt Control State Register Definitions */
+ 419:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_NMIPENDSET_Pos            31U                                            /*!< SCB 
+ 420:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_NMIPENDSET_Msk            (1UL << SCB_ICSR_NMIPENDSET_Pos)               /*!< SCB 
+ 421:Drivers/CMSIS/Include/core_cm0.h **** 
+ 422:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_PENDSVSET_Pos             28U                                            /*!< SCB 
+ 423:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_PENDSVSET_Msk             (1UL << SCB_ICSR_PENDSVSET_Pos)                /*!< SCB 
+ 424:Drivers/CMSIS/Include/core_cm0.h **** 
+ 425:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_PENDSVCLR_Pos             27U                                            /*!< SCB 
+ 426:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_PENDSVCLR_Msk             (1UL << SCB_ICSR_PENDSVCLR_Pos)                /*!< SCB 
+ 427:Drivers/CMSIS/Include/core_cm0.h **** 
+ARM GAS  /tmp/ccaHSKts.s 			page 12
+
+
+ 428:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_PENDSTSET_Pos             26U                                            /*!< SCB 
+ 429:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_PENDSTSET_Msk             (1UL << SCB_ICSR_PENDSTSET_Pos)                /*!< SCB 
+ 430:Drivers/CMSIS/Include/core_cm0.h **** 
+ 431:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_PENDSTCLR_Pos             25U                                            /*!< SCB 
+ 432:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_PENDSTCLR_Msk             (1UL << SCB_ICSR_PENDSTCLR_Pos)                /*!< SCB 
+ 433:Drivers/CMSIS/Include/core_cm0.h **** 
+ 434:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_ISRPREEMPT_Pos            23U                                            /*!< SCB 
+ 435:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_ISRPREEMPT_Msk            (1UL << SCB_ICSR_ISRPREEMPT_Pos)               /*!< SCB 
+ 436:Drivers/CMSIS/Include/core_cm0.h **** 
+ 437:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_ISRPENDING_Pos            22U                                            /*!< SCB 
+ 438:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_ISRPENDING_Msk            (1UL << SCB_ICSR_ISRPENDING_Pos)               /*!< SCB 
+ 439:Drivers/CMSIS/Include/core_cm0.h **** 
+ 440:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_VECTPENDING_Pos           12U                                            /*!< SCB 
+ 441:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_VECTPENDING_Msk           (0x1FFUL << SCB_ICSR_VECTPENDING_Pos)          /*!< SCB 
+ 442:Drivers/CMSIS/Include/core_cm0.h **** 
+ 443:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_VECTACTIVE_Pos             0U                                            /*!< SCB 
+ 444:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_ICSR_VECTACTIVE_Msk            (0x1FFUL /*<< SCB_ICSR_VECTACTIVE_Pos*/)       /*!< SCB 
+ 445:Drivers/CMSIS/Include/core_cm0.h **** 
+ 446:Drivers/CMSIS/Include/core_cm0.h **** /* SCB Application Interrupt and Reset Control Register Definitions */
+ 447:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_AIRCR_VECTKEY_Pos              16U                                            /*!< SCB 
+ 448:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_AIRCR_VECTKEY_Msk              (0xFFFFUL << SCB_AIRCR_VECTKEY_Pos)            /*!< SCB 
+ 449:Drivers/CMSIS/Include/core_cm0.h **** 
+ 450:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_AIRCR_VECTKEYSTAT_Pos          16U                                            /*!< SCB 
+ 451:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_AIRCR_VECTKEYSTAT_Msk          (0xFFFFUL << SCB_AIRCR_VECTKEYSTAT_Pos)        /*!< SCB 
+ 452:Drivers/CMSIS/Include/core_cm0.h **** 
+ 453:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_AIRCR_ENDIANESS_Pos            15U                                            /*!< SCB 
+ 454:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_AIRCR_ENDIANESS_Msk            (1UL << SCB_AIRCR_ENDIANESS_Pos)               /*!< SCB 
+ 455:Drivers/CMSIS/Include/core_cm0.h **** 
+ 456:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_AIRCR_SYSRESETREQ_Pos           2U                                            /*!< SCB 
+ 457:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_AIRCR_SYSRESETREQ_Msk          (1UL << SCB_AIRCR_SYSRESETREQ_Pos)             /*!< SCB 
+ 458:Drivers/CMSIS/Include/core_cm0.h **** 
+ 459:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_AIRCR_VECTCLRACTIVE_Pos         1U                                            /*!< SCB 
+ 460:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_AIRCR_VECTCLRACTIVE_Msk        (1UL << SCB_AIRCR_VECTCLRACTIVE_Pos)           /*!< SCB 
+ 461:Drivers/CMSIS/Include/core_cm0.h **** 
+ 462:Drivers/CMSIS/Include/core_cm0.h **** /* SCB System Control Register Definitions */
+ 463:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_SCR_SEVONPEND_Pos               4U                                            /*!< SCB 
+ 464:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_SCR_SEVONPEND_Msk              (1UL << SCB_SCR_SEVONPEND_Pos)                 /*!< SCB 
+ 465:Drivers/CMSIS/Include/core_cm0.h **** 
+ 466:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_SCR_SLEEPDEEP_Pos               2U                                            /*!< SCB 
+ 467:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_SCR_SLEEPDEEP_Msk              (1UL << SCB_SCR_SLEEPDEEP_Pos)                 /*!< SCB 
+ 468:Drivers/CMSIS/Include/core_cm0.h **** 
+ 469:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_SCR_SLEEPONEXIT_Pos             1U                                            /*!< SCB 
+ 470:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_SCR_SLEEPONEXIT_Msk            (1UL << SCB_SCR_SLEEPONEXIT_Pos)               /*!< SCB 
+ 471:Drivers/CMSIS/Include/core_cm0.h **** 
+ 472:Drivers/CMSIS/Include/core_cm0.h **** /* SCB Configuration Control Register Definitions */
+ 473:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_CCR_STKALIGN_Pos                9U                                            /*!< SCB 
+ 474:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_CCR_STKALIGN_Msk               (1UL << SCB_CCR_STKALIGN_Pos)                  /*!< SCB 
+ 475:Drivers/CMSIS/Include/core_cm0.h **** 
+ 476:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_CCR_UNALIGN_TRP_Pos             3U                                            /*!< SCB 
+ 477:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_CCR_UNALIGN_TRP_Msk            (1UL << SCB_CCR_UNALIGN_TRP_Pos)               /*!< SCB 
+ 478:Drivers/CMSIS/Include/core_cm0.h **** 
+ 479:Drivers/CMSIS/Include/core_cm0.h **** /* SCB System Handler Control and State Register Definitions */
+ 480:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_SHCSR_SVCALLPENDED_Pos         15U                                            /*!< SCB 
+ 481:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_SHCSR_SVCALLPENDED_Msk         (1UL << SCB_SHCSR_SVCALLPENDED_Pos)            /*!< SCB 
+ 482:Drivers/CMSIS/Include/core_cm0.h **** 
+ 483:Drivers/CMSIS/Include/core_cm0.h **** /*@} end of group CMSIS_SCB */
+ 484:Drivers/CMSIS/Include/core_cm0.h **** 
+ARM GAS  /tmp/ccaHSKts.s 			page 13
+
+
+ 485:Drivers/CMSIS/Include/core_cm0.h **** 
+ 486:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 487:Drivers/CMSIS/Include/core_cm0.h ****   \ingroup  CMSIS_core_register
+ 488:Drivers/CMSIS/Include/core_cm0.h ****   \defgroup CMSIS_SysTick     System Tick Timer (SysTick)
+ 489:Drivers/CMSIS/Include/core_cm0.h ****   \brief    Type definitions for the System Timer Registers.
+ 490:Drivers/CMSIS/Include/core_cm0.h ****   @{
+ 491:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 492:Drivers/CMSIS/Include/core_cm0.h **** 
+ 493:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 494:Drivers/CMSIS/Include/core_cm0.h ****   \brief  Structure type to access the System Timer (SysTick).
+ 495:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 496:Drivers/CMSIS/Include/core_cm0.h **** typedef struct
+ 497:Drivers/CMSIS/Include/core_cm0.h **** {
+ 498:Drivers/CMSIS/Include/core_cm0.h ****   __IOM uint32_t CTRL;                   /*!< Offset: 0x000 (R/W)  SysTick Control and Status Regis
+ 499:Drivers/CMSIS/Include/core_cm0.h ****   __IOM uint32_t LOAD;                   /*!< Offset: 0x004 (R/W)  SysTick Reload Value Register */
+ 500:Drivers/CMSIS/Include/core_cm0.h ****   __IOM uint32_t VAL;                    /*!< Offset: 0x008 (R/W)  SysTick Current Value Register *
+ 501:Drivers/CMSIS/Include/core_cm0.h ****   __IM  uint32_t CALIB;                  /*!< Offset: 0x00C (R/ )  SysTick Calibration Register */
+ 502:Drivers/CMSIS/Include/core_cm0.h **** } SysTick_Type;
+ 503:Drivers/CMSIS/Include/core_cm0.h **** 
+ 504:Drivers/CMSIS/Include/core_cm0.h **** /* SysTick Control / Status Register Definitions */
+ 505:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_CTRL_COUNTFLAG_Pos         16U                                            /*!< SysT
+ 506:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_CTRL_COUNTFLAG_Msk         (1UL << SysTick_CTRL_COUNTFLAG_Pos)            /*!< SysT
+ 507:Drivers/CMSIS/Include/core_cm0.h **** 
+ 508:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_CTRL_CLKSOURCE_Pos          2U                                            /*!< SysT
+ 509:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_CTRL_CLKSOURCE_Msk         (1UL << SysTick_CTRL_CLKSOURCE_Pos)            /*!< SysT
+ 510:Drivers/CMSIS/Include/core_cm0.h **** 
+ 511:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_CTRL_TICKINT_Pos            1U                                            /*!< SysT
+ 512:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_CTRL_TICKINT_Msk           (1UL << SysTick_CTRL_TICKINT_Pos)              /*!< SysT
+ 513:Drivers/CMSIS/Include/core_cm0.h **** 
+ 514:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_CTRL_ENABLE_Pos             0U                                            /*!< SysT
+ 515:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_CTRL_ENABLE_Msk            (1UL /*<< SysTick_CTRL_ENABLE_Pos*/)           /*!< SysT
+ 516:Drivers/CMSIS/Include/core_cm0.h **** 
+ 517:Drivers/CMSIS/Include/core_cm0.h **** /* SysTick Reload Register Definitions */
+ 518:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_LOAD_RELOAD_Pos             0U                                            /*!< SysT
+ 519:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_LOAD_RELOAD_Msk            (0xFFFFFFUL /*<< SysTick_LOAD_RELOAD_Pos*/)    /*!< SysT
+ 520:Drivers/CMSIS/Include/core_cm0.h **** 
+ 521:Drivers/CMSIS/Include/core_cm0.h **** /* SysTick Current Register Definitions */
+ 522:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_VAL_CURRENT_Pos             0U                                            /*!< SysT
+ 523:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_VAL_CURRENT_Msk            (0xFFFFFFUL /*<< SysTick_VAL_CURRENT_Pos*/)    /*!< SysT
+ 524:Drivers/CMSIS/Include/core_cm0.h **** 
+ 525:Drivers/CMSIS/Include/core_cm0.h **** /* SysTick Calibration Register Definitions */
+ 526:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_CALIB_NOREF_Pos            31U                                            /*!< SysT
+ 527:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_CALIB_NOREF_Msk            (1UL << SysTick_CALIB_NOREF_Pos)               /*!< SysT
+ 528:Drivers/CMSIS/Include/core_cm0.h **** 
+ 529:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_CALIB_SKEW_Pos             30U                                            /*!< SysT
+ 530:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_CALIB_SKEW_Msk             (1UL << SysTick_CALIB_SKEW_Pos)                /*!< SysT
+ 531:Drivers/CMSIS/Include/core_cm0.h **** 
+ 532:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_CALIB_TENMS_Pos             0U                                            /*!< SysT
+ 533:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_CALIB_TENMS_Msk            (0xFFFFFFUL /*<< SysTick_CALIB_TENMS_Pos*/)    /*!< SysT
+ 534:Drivers/CMSIS/Include/core_cm0.h **** 
+ 535:Drivers/CMSIS/Include/core_cm0.h **** /*@} end of group CMSIS_SysTick */
+ 536:Drivers/CMSIS/Include/core_cm0.h **** 
+ 537:Drivers/CMSIS/Include/core_cm0.h **** 
+ 538:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 539:Drivers/CMSIS/Include/core_cm0.h ****   \ingroup  CMSIS_core_register
+ 540:Drivers/CMSIS/Include/core_cm0.h ****   \defgroup CMSIS_CoreDebug       Core Debug Registers (CoreDebug)
+ 541:Drivers/CMSIS/Include/core_cm0.h ****   \brief    Cortex-M0 Core Debug Registers (DCB registers, SHCSR, and DFSR) are only accessible ove
+ARM GAS  /tmp/ccaHSKts.s 			page 14
+
+
+ 542:Drivers/CMSIS/Include/core_cm0.h ****             Therefore they are not covered by the Cortex-M0 header file.
+ 543:Drivers/CMSIS/Include/core_cm0.h ****   @{
+ 544:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 545:Drivers/CMSIS/Include/core_cm0.h **** /*@} end of group CMSIS_CoreDebug */
+ 546:Drivers/CMSIS/Include/core_cm0.h **** 
+ 547:Drivers/CMSIS/Include/core_cm0.h **** 
+ 548:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 549:Drivers/CMSIS/Include/core_cm0.h ****   \ingroup    CMSIS_core_register
+ 550:Drivers/CMSIS/Include/core_cm0.h ****   \defgroup   CMSIS_core_bitfield     Core register bit field macros
+ 551:Drivers/CMSIS/Include/core_cm0.h ****   \brief      Macros for use with bit field definitions (xxx_Pos, xxx_Msk).
+ 552:Drivers/CMSIS/Include/core_cm0.h ****   @{
+ 553:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 554:Drivers/CMSIS/Include/core_cm0.h **** 
+ 555:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 556:Drivers/CMSIS/Include/core_cm0.h ****   \brief   Mask and shift a bit field value for use in a register bit range.
+ 557:Drivers/CMSIS/Include/core_cm0.h ****   \param[in] field  Name of the register bit field.
+ 558:Drivers/CMSIS/Include/core_cm0.h ****   \param[in] value  Value of the bit field.
+ 559:Drivers/CMSIS/Include/core_cm0.h ****   \return           Masked and shifted value.
+ 560:Drivers/CMSIS/Include/core_cm0.h **** */
+ 561:Drivers/CMSIS/Include/core_cm0.h **** #define _VAL2FLD(field, value)    ((value << field ## _Pos) & field ## _Msk)
+ 562:Drivers/CMSIS/Include/core_cm0.h **** 
+ 563:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 564:Drivers/CMSIS/Include/core_cm0.h ****   \brief     Mask and shift a register value to extract a bit filed value.
+ 565:Drivers/CMSIS/Include/core_cm0.h ****   \param[in] field  Name of the register bit field.
+ 566:Drivers/CMSIS/Include/core_cm0.h ****   \param[in] value  Value of register.
+ 567:Drivers/CMSIS/Include/core_cm0.h ****   \return           Masked and shifted bit field value.
+ 568:Drivers/CMSIS/Include/core_cm0.h **** */
+ 569:Drivers/CMSIS/Include/core_cm0.h **** #define _FLD2VAL(field, value)    ((value & field ## _Msk) >> field ## _Pos)
+ 570:Drivers/CMSIS/Include/core_cm0.h **** 
+ 571:Drivers/CMSIS/Include/core_cm0.h **** /*@} end of group CMSIS_core_bitfield */
+ 572:Drivers/CMSIS/Include/core_cm0.h **** 
+ 573:Drivers/CMSIS/Include/core_cm0.h **** 
+ 574:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 575:Drivers/CMSIS/Include/core_cm0.h ****   \ingroup    CMSIS_core_register
+ 576:Drivers/CMSIS/Include/core_cm0.h ****   \defgroup   CMSIS_core_base     Core Definitions
+ 577:Drivers/CMSIS/Include/core_cm0.h ****   \brief      Definitions for base addresses, unions, and structures.
+ 578:Drivers/CMSIS/Include/core_cm0.h ****   @{
+ 579:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 580:Drivers/CMSIS/Include/core_cm0.h **** 
+ 581:Drivers/CMSIS/Include/core_cm0.h **** /* Memory mapping of Cortex-M0 Hardware */
+ 582:Drivers/CMSIS/Include/core_cm0.h **** #define SCS_BASE            (0xE000E000UL)                            /*!< System Control Space Bas
+ 583:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick_BASE        (SCS_BASE +  0x0010UL)                    /*!< SysTick Base Address */
+ 584:Drivers/CMSIS/Include/core_cm0.h **** #define NVIC_BASE           (SCS_BASE +  0x0100UL)                    /*!< NVIC Base Address */
+ 585:Drivers/CMSIS/Include/core_cm0.h **** #define SCB_BASE            (SCS_BASE +  0x0D00UL)                    /*!< System Control Block Bas
+ 586:Drivers/CMSIS/Include/core_cm0.h **** 
+ 587:Drivers/CMSIS/Include/core_cm0.h **** #define SCB                 ((SCB_Type       *)     SCB_BASE      )   /*!< SCB configuration struct
+ 588:Drivers/CMSIS/Include/core_cm0.h **** #define SysTick             ((SysTick_Type   *)     SysTick_BASE  )   /*!< SysTick configuration st
+ 589:Drivers/CMSIS/Include/core_cm0.h **** #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struc
+ 590:Drivers/CMSIS/Include/core_cm0.h **** 
+ 591:Drivers/CMSIS/Include/core_cm0.h **** 
+ 592:Drivers/CMSIS/Include/core_cm0.h **** /*@} */
+ 593:Drivers/CMSIS/Include/core_cm0.h **** 
+ 594:Drivers/CMSIS/Include/core_cm0.h **** 
+ 595:Drivers/CMSIS/Include/core_cm0.h **** 
+ 596:Drivers/CMSIS/Include/core_cm0.h **** /*******************************************************************************
+ 597:Drivers/CMSIS/Include/core_cm0.h ****  *                Hardware Abstraction Layer
+ 598:Drivers/CMSIS/Include/core_cm0.h ****   Core Function Interface contains:
+ARM GAS  /tmp/ccaHSKts.s 			page 15
+
+
+ 599:Drivers/CMSIS/Include/core_cm0.h ****   - Core NVIC Functions
+ 600:Drivers/CMSIS/Include/core_cm0.h ****   - Core SysTick Functions
+ 601:Drivers/CMSIS/Include/core_cm0.h ****   - Core Register Access Functions
+ 602:Drivers/CMSIS/Include/core_cm0.h ****  ******************************************************************************/
+ 603:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 604:Drivers/CMSIS/Include/core_cm0.h ****   \defgroup CMSIS_Core_FunctionInterface Functions and Instructions Reference
+ 605:Drivers/CMSIS/Include/core_cm0.h **** */
+ 606:Drivers/CMSIS/Include/core_cm0.h **** 
+ 607:Drivers/CMSIS/Include/core_cm0.h **** 
+ 608:Drivers/CMSIS/Include/core_cm0.h **** 
+ 609:Drivers/CMSIS/Include/core_cm0.h **** /* ##########################   NVIC functions  #################################### */
+ 610:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 611:Drivers/CMSIS/Include/core_cm0.h ****   \ingroup  CMSIS_Core_FunctionInterface
+ 612:Drivers/CMSIS/Include/core_cm0.h ****   \defgroup CMSIS_Core_NVICFunctions NVIC Functions
+ 613:Drivers/CMSIS/Include/core_cm0.h ****   \brief    Functions that manage interrupts and exceptions via the NVIC.
+ 614:Drivers/CMSIS/Include/core_cm0.h ****   @{
+ 615:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 616:Drivers/CMSIS/Include/core_cm0.h **** 
+ 617:Drivers/CMSIS/Include/core_cm0.h **** /* Interrupt Priorities are WORD accessible only under ARMv6M                   */
+ 618:Drivers/CMSIS/Include/core_cm0.h **** /* The following MACROS handle generation of the register offset and byte masks */
+ 619:Drivers/CMSIS/Include/core_cm0.h **** #define _BIT_SHIFT(IRQn)         (  ((((uint32_t)(int32_t)(IRQn))         )      &  0x03UL) * 8UL)
+ 620:Drivers/CMSIS/Include/core_cm0.h **** #define _SHP_IDX(IRQn)           ( (((((uint32_t)(int32_t)(IRQn)) & 0x0FUL)-8UL) >>    2UL)      )
+ 621:Drivers/CMSIS/Include/core_cm0.h **** #define _IP_IDX(IRQn)            (   (((uint32_t)(int32_t)(IRQn))                >>    2UL)      )
+ 622:Drivers/CMSIS/Include/core_cm0.h **** 
+ 623:Drivers/CMSIS/Include/core_cm0.h **** 
+ 624:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 625:Drivers/CMSIS/Include/core_cm0.h ****   \brief   Enable External Interrupt
+ 626:Drivers/CMSIS/Include/core_cm0.h ****   \details Enables a device-specific interrupt in the NVIC interrupt controller.
+ 627:Drivers/CMSIS/Include/core_cm0.h ****   \param [in]      IRQn  External interrupt number. Value cannot be negative.
+ 628:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 629:Drivers/CMSIS/Include/core_cm0.h **** __STATIC_INLINE void NVIC_EnableIRQ(IRQn_Type IRQn)
+ 630:Drivers/CMSIS/Include/core_cm0.h **** {
+ 631:Drivers/CMSIS/Include/core_cm0.h ****   NVIC->ISER[0U] = (uint32_t)(1UL << (((uint32_t)(int32_t)IRQn) & 0x1FUL));
+ 632:Drivers/CMSIS/Include/core_cm0.h **** }
+ 633:Drivers/CMSIS/Include/core_cm0.h **** 
+ 634:Drivers/CMSIS/Include/core_cm0.h **** 
+ 635:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 636:Drivers/CMSIS/Include/core_cm0.h ****   \brief   Disable External Interrupt
+ 637:Drivers/CMSIS/Include/core_cm0.h ****   \details Disables a device-specific interrupt in the NVIC interrupt controller.
+ 638:Drivers/CMSIS/Include/core_cm0.h ****   \param [in]      IRQn  External interrupt number. Value cannot be negative.
+ 639:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 640:Drivers/CMSIS/Include/core_cm0.h **** __STATIC_INLINE void NVIC_DisableIRQ(IRQn_Type IRQn)
+ 641:Drivers/CMSIS/Include/core_cm0.h **** {
+ 642:Drivers/CMSIS/Include/core_cm0.h ****   NVIC->ICER[0U] = (uint32_t)(1UL << (((uint32_t)(int32_t)IRQn) & 0x1FUL));
+ 643:Drivers/CMSIS/Include/core_cm0.h **** }
+ 644:Drivers/CMSIS/Include/core_cm0.h **** 
+ 645:Drivers/CMSIS/Include/core_cm0.h **** 
+ 646:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 647:Drivers/CMSIS/Include/core_cm0.h ****   \brief   Get Pending Interrupt
+ 648:Drivers/CMSIS/Include/core_cm0.h ****   \details Reads the pending register in the NVIC and returns the pending bit for the specified int
+ 649:Drivers/CMSIS/Include/core_cm0.h ****   \param [in]      IRQn  Interrupt number.
+ 650:Drivers/CMSIS/Include/core_cm0.h ****   \return             0  Interrupt status is not pending.
+ 651:Drivers/CMSIS/Include/core_cm0.h ****   \return             1  Interrupt status is pending.
+ 652:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 653:Drivers/CMSIS/Include/core_cm0.h **** __STATIC_INLINE uint32_t NVIC_GetPendingIRQ(IRQn_Type IRQn)
+ 654:Drivers/CMSIS/Include/core_cm0.h **** {
+ 655:Drivers/CMSIS/Include/core_cm0.h ****   return((uint32_t)(((NVIC->ISPR[0U] & (1UL << (((uint32_t)(int32_t)IRQn) & 0x1FUL))) != 0UL) ? 1UL
+ARM GAS  /tmp/ccaHSKts.s 			page 16
+
+
+ 656:Drivers/CMSIS/Include/core_cm0.h **** }
+ 657:Drivers/CMSIS/Include/core_cm0.h **** 
+ 658:Drivers/CMSIS/Include/core_cm0.h **** 
+ 659:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 660:Drivers/CMSIS/Include/core_cm0.h ****   \brief   Set Pending Interrupt
+ 661:Drivers/CMSIS/Include/core_cm0.h ****   \details Sets the pending bit of an external interrupt.
+ 662:Drivers/CMSIS/Include/core_cm0.h ****   \param [in]      IRQn  Interrupt number. Value cannot be negative.
+ 663:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 664:Drivers/CMSIS/Include/core_cm0.h **** __STATIC_INLINE void NVIC_SetPendingIRQ(IRQn_Type IRQn)
+ 665:Drivers/CMSIS/Include/core_cm0.h **** {
+ 666:Drivers/CMSIS/Include/core_cm0.h ****   NVIC->ISPR[0U] = (uint32_t)(1UL << (((uint32_t)(int32_t)IRQn) & 0x1FUL));
+ 667:Drivers/CMSIS/Include/core_cm0.h **** }
+ 668:Drivers/CMSIS/Include/core_cm0.h **** 
+ 669:Drivers/CMSIS/Include/core_cm0.h **** 
+ 670:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 671:Drivers/CMSIS/Include/core_cm0.h ****   \brief   Clear Pending Interrupt
+ 672:Drivers/CMSIS/Include/core_cm0.h ****   \details Clears the pending bit of an external interrupt.
+ 673:Drivers/CMSIS/Include/core_cm0.h ****   \param [in]      IRQn  External interrupt number. Value cannot be negative.
+ 674:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 675:Drivers/CMSIS/Include/core_cm0.h **** __STATIC_INLINE void NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+ 676:Drivers/CMSIS/Include/core_cm0.h **** {
+ 677:Drivers/CMSIS/Include/core_cm0.h ****   NVIC->ICPR[0U] = (uint32_t)(1UL << (((uint32_t)(int32_t)IRQn) & 0x1FUL));
+ 678:Drivers/CMSIS/Include/core_cm0.h **** }
+ 679:Drivers/CMSIS/Include/core_cm0.h **** 
+ 680:Drivers/CMSIS/Include/core_cm0.h **** 
+ 681:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 682:Drivers/CMSIS/Include/core_cm0.h ****   \brief   Set Interrupt Priority
+ 683:Drivers/CMSIS/Include/core_cm0.h ****   \details Sets the priority of an interrupt.
+ 684:Drivers/CMSIS/Include/core_cm0.h ****   \note    The priority cannot be set for every core interrupt.
+ 685:Drivers/CMSIS/Include/core_cm0.h ****   \param [in]      IRQn  Interrupt number.
+ 686:Drivers/CMSIS/Include/core_cm0.h ****   \param [in]  priority  Priority to set.
+ 687:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 688:Drivers/CMSIS/Include/core_cm0.h **** __STATIC_INLINE void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+  46              		.loc 2 688 22 view .LVU4
+  47              	.LBB27:
+ 689:Drivers/CMSIS/Include/core_cm0.h **** {
+ 690:Drivers/CMSIS/Include/core_cm0.h ****   if ((int32_t)(IRQn) < 0)
+  48              		.loc 2 690 3 view .LVU5
+  49              		.loc 2 690 6 is_stmt 0 view .LVU6
+  50 0002 0028     		cmp	r0, #0
+  51 0004 11DB     		blt	.L4
+ 691:Drivers/CMSIS/Include/core_cm0.h ****   {
+ 692:Drivers/CMSIS/Include/core_cm0.h ****     SCB->SHP[_SHP_IDX(IRQn)] = ((uint32_t)(SCB->SHP[_SHP_IDX(IRQn)] & ~(0xFFUL << _BIT_SHIFT(IRQn))
+ 693:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 694:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 695:Drivers/CMSIS/Include/core_cm0.h ****   else
+ 696:Drivers/CMSIS/Include/core_cm0.h ****   {
+ 697:Drivers/CMSIS/Include/core_cm0.h ****     NVIC->IP[_IP_IDX(IRQn)]  = ((uint32_t)(NVIC->IP[_IP_IDX(IRQn)]  & ~(0xFFUL << _BIT_SHIFT(IRQn))
+  52              		.loc 2 697 5 is_stmt 1 view .LVU7
+  53              		.loc 2 697 53 is_stmt 0 view .LVU8
+  54 0006 8308     		lsrs	r3, r0, #2
+  55              		.loc 2 697 52 view .LVU9
+  56 0008 134D     		ldr	r5, .L5
+  57 000a C033     		adds	r3, r3, #192
+  58 000c 9B00     		lsls	r3, r3, #2
+  59 000e 5C59     		ldr	r4, [r3, r5]
+  60              		.loc 2 697 83 view .LVU10
+ARM GAS  /tmp/ccaHSKts.s 			page 17
+
+
+  61 0010 0322     		movs	r2, #3
+  62              	.LVL2:
+  63              		.loc 2 697 83 view .LVU11
+  64 0012 1040     		ands	r0, r2
+  65              	.LVL3:
+  66              		.loc 2 697 83 view .LVU12
+  67 0014 C000     		lsls	r0, r0, #3
+  68              		.loc 2 697 80 view .LVU13
+  69 0016 FC32     		adds	r2, r2, #252
+  70 0018 1600     		movs	r6, r2
+  71 001a 8640     		lsls	r6, r6, r0
+  72              		.loc 2 697 33 view .LVU14
+  73 001c B443     		bics	r4, r6
+ 698:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+  74              		.loc 2 698 20 view .LVU15
+  75 001e 8901     		lsls	r1, r1, #6
+  76              	.LVL4:
+  77              		.loc 2 698 48 view .LVU16
+  78 0020 0A40     		ands	r2, r1
+  79              		.loc 2 698 68 view .LVU17
+  80 0022 8240     		lsls	r2, r2, r0
+ 697:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+  81              		.loc 2 697 102 view .LVU18
+  82 0024 2243     		orrs	r2, r4
+ 697:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+  83              		.loc 2 697 30 view .LVU19
+  84 0026 5A51     		str	r2, [r3, r5]
+  85              	.LVL5:
+  86              	.L1:
+ 697:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+  87              		.loc 2 697 30 view .LVU20
+  88              	.LBE27:
+  89              	.LBE26:
+ 157:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** }
+  90              		.loc 1 157 1 view .LVU21
+  91              		@ sp needed
+  92 0028 70BD     		pop	{r4, r5, r6, pc}
+  93              	.LVL6:
+  94              	.L4:
+  95              	.LBB29:
+  96              	.LBB28:
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+  97              		.loc 2 692 5 is_stmt 1 view .LVU22
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+  98              		.loc 2 692 53 is_stmt 0 view .LVU23
+  99 002a 0F23     		movs	r3, #15
+ 100 002c 0340     		ands	r3, r0
+ 101 002e 083B     		subs	r3, r3, #8
+ 102 0030 9B08     		lsrs	r3, r3, #2
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 103              		.loc 2 692 52 view .LVU24
+ 104 0032 0633     		adds	r3, r3, #6
+ 105 0034 9B00     		lsls	r3, r3, #2
+ 106 0036 094A     		ldr	r2, .L5+4
+ 107              	.LVL7:
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 108              		.loc 2 692 52 view .LVU25
+ARM GAS  /tmp/ccaHSKts.s 			page 18
+
+
+ 109 0038 9446     		mov	ip, r2
+ 110 003a 6344     		add	r3, r3, ip
+ 111 003c 5D68     		ldr	r5, [r3, #4]
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 112              		.loc 2 692 83 view .LVU26
+ 113 003e 0324     		movs	r4, #3
+ 114 0040 2040     		ands	r0, r4
+ 115              	.LVL8:
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 116              		.loc 2 692 83 view .LVU27
+ 117 0042 C000     		lsls	r0, r0, #3
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 118              		.loc 2 692 80 view .LVU28
+ 119 0044 FF22     		movs	r2, #255
+ 120 0046 1400     		movs	r4, r2
+ 121 0048 8440     		lsls	r4, r4, r0
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 122              		.loc 2 692 33 view .LVU29
+ 123 004a A543     		bics	r5, r4
+ 693:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 124              		.loc 2 693 20 view .LVU30
+ 125 004c 8901     		lsls	r1, r1, #6
+ 126              	.LVL9:
+ 693:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 127              		.loc 2 693 48 view .LVU31
+ 128 004e 0A40     		ands	r2, r1
+ 693:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 129              		.loc 2 693 68 view .LVU32
+ 130 0050 8240     		lsls	r2, r2, r0
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 131              		.loc 2 692 102 view .LVU33
+ 132 0052 2A43     		orrs	r2, r5
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 133              		.loc 2 692 30 view .LVU34
+ 134 0054 5A60     		str	r2, [r3, #4]
+ 135 0056 E7E7     		b	.L1
+ 136              	.L6:
+ 137              		.align	2
+ 138              	.L5:
+ 139 0058 00E100E0 		.word	-536813312
+ 140 005c 00ED00E0 		.word	-536810240
+ 141              	.LBE28:
+ 142              	.LBE29:
+ 143              		.cfi_endproc
+ 144              	.LFE37:
+ 146              		.section	.text.HAL_NVIC_EnableIRQ,"ax",%progbits
+ 147              		.align	1
+ 148              		.global	HAL_NVIC_EnableIRQ
+ 149              		.syntax unified
+ 150              		.code	16
+ 151              		.thumb_func
+ 152              		.fpu softvfp
+ 154              	HAL_NVIC_EnableIRQ:
+ 155              	.LVL10:
+ 156              	.LFB38:
+ 158:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 159:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /**
+ARM GAS  /tmp/ccaHSKts.s 			page 19
+
+
+ 160:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @brief  Enables a device specific interrupt in the NVIC interrupt controller.
+ 161:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @note   To configure interrupts priority correctly, the NVIC_PriorityGroupConfig()
+ 162:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         function should be called before. 
+ 163:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @param  IRQn External interrupt number.
+ 164:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
+ 165:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
+ 166:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @retval None
+ 167:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 168:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** void HAL_NVIC_EnableIRQ(IRQn_Type IRQn)
+ 169:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** {
+ 157              		.loc 1 169 1 is_stmt 1 view -0
+ 158              		.cfi_startproc
+ 159              		@ args = 0, pretend = 0, frame = 0
+ 160              		@ frame_needed = 0, uses_anonymous_args = 0
+ 161              		@ link register save eliminated.
+ 170:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   /* Check the parameters */
+ 171:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
+ 162              		.loc 1 171 3 view .LVU36
+ 172:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   
+ 173:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   /* Enable interrupt */
+ 174:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   NVIC_EnableIRQ(IRQn);
+ 163              		.loc 1 174 3 view .LVU37
+ 164              	.LBB30:
+ 165              	.LBI30:
+ 629:Drivers/CMSIS/Include/core_cm0.h **** {
+ 166              		.loc 2 629 22 view .LVU38
+ 167              	.LBB31:
+ 631:Drivers/CMSIS/Include/core_cm0.h **** }
+ 168              		.loc 2 631 3 view .LVU39
+ 631:Drivers/CMSIS/Include/core_cm0.h **** }
+ 169              		.loc 2 631 65 is_stmt 0 view .LVU40
+ 170 0000 1F23     		movs	r3, #31
+ 171 0002 1840     		ands	r0, r3
+ 172              	.LVL11:
+ 631:Drivers/CMSIS/Include/core_cm0.h **** }
+ 173              		.loc 2 631 20 view .LVU41
+ 174 0004 1E3B     		subs	r3, r3, #30
+ 175 0006 8340     		lsls	r3, r3, r0
+ 631:Drivers/CMSIS/Include/core_cm0.h **** }
+ 176              		.loc 2 631 18 view .LVU42
+ 177 0008 014A     		ldr	r2, .L8
+ 178 000a 1360     		str	r3, [r2]
+ 179              	.LVL12:
+ 631:Drivers/CMSIS/Include/core_cm0.h **** }
+ 180              		.loc 2 631 18 view .LVU43
+ 181              	.LBE31:
+ 182              	.LBE30:
+ 175:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** }
+ 183              		.loc 1 175 1 view .LVU44
+ 184              		@ sp needed
+ 185 000c 7047     		bx	lr
+ 186              	.L9:
+ 187 000e C046     		.align	2
+ 188              	.L8:
+ 189 0010 00E100E0 		.word	-536813312
+ 190              		.cfi_endproc
+ 191              	.LFE38:
+ARM GAS  /tmp/ccaHSKts.s 			page 20
+
+
+ 193              		.section	.text.HAL_NVIC_DisableIRQ,"ax",%progbits
+ 194              		.align	1
+ 195              		.global	HAL_NVIC_DisableIRQ
+ 196              		.syntax unified
+ 197              		.code	16
+ 198              		.thumb_func
+ 199              		.fpu softvfp
+ 201              	HAL_NVIC_DisableIRQ:
+ 202              	.LVL13:
+ 203              	.LFB39:
+ 176:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 177:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /**
+ 178:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @brief  Disables a device specific interrupt in the NVIC interrupt controller.
+ 179:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @param  IRQn External interrupt number.
+ 180:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
+ 181:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
+ 182:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @retval None
+ 183:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 184:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** void HAL_NVIC_DisableIRQ(IRQn_Type IRQn)
+ 185:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** {
+ 204              		.loc 1 185 1 is_stmt 1 view -0
+ 205              		.cfi_startproc
+ 206              		@ args = 0, pretend = 0, frame = 0
+ 207              		@ frame_needed = 0, uses_anonymous_args = 0
+ 208              		@ link register save eliminated.
+ 186:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   /* Check the parameters */
+ 187:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
+ 209              		.loc 1 187 3 view .LVU46
+ 188:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   
+ 189:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   /* Disable interrupt */
+ 190:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   NVIC_DisableIRQ(IRQn);
+ 210              		.loc 1 190 3 view .LVU47
+ 211              	.LBB32:
+ 212              	.LBI32:
+ 640:Drivers/CMSIS/Include/core_cm0.h **** {
+ 213              		.loc 2 640 22 view .LVU48
+ 214              	.LBB33:
+ 642:Drivers/CMSIS/Include/core_cm0.h **** }
+ 215              		.loc 2 642 3 view .LVU49
+ 642:Drivers/CMSIS/Include/core_cm0.h **** }
+ 216              		.loc 2 642 65 is_stmt 0 view .LVU50
+ 217 0000 1F23     		movs	r3, #31
+ 218 0002 1840     		ands	r0, r3
+ 219              	.LVL14:
+ 642:Drivers/CMSIS/Include/core_cm0.h **** }
+ 220              		.loc 2 642 20 view .LVU51
+ 221 0004 1E3B     		subs	r3, r3, #30
+ 222 0006 8340     		lsls	r3, r3, r0
+ 642:Drivers/CMSIS/Include/core_cm0.h **** }
+ 223              		.loc 2 642 18 view .LVU52
+ 224 0008 0149     		ldr	r1, .L11
+ 225 000a 8022     		movs	r2, #128
+ 226 000c 8B50     		str	r3, [r1, r2]
+ 227              	.LVL15:
+ 642:Drivers/CMSIS/Include/core_cm0.h **** }
+ 228              		.loc 2 642 18 view .LVU53
+ 229              	.LBE33:
+ARM GAS  /tmp/ccaHSKts.s 			page 21
+
+
+ 230              	.LBE32:
+ 191:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** }
+ 231              		.loc 1 191 1 view .LVU54
+ 232              		@ sp needed
+ 233 000e 7047     		bx	lr
+ 234              	.L12:
+ 235              		.align	2
+ 236              	.L11:
+ 237 0010 00E100E0 		.word	-536813312
+ 238              		.cfi_endproc
+ 239              	.LFE39:
+ 241              		.section	.text.HAL_NVIC_SystemReset,"ax",%progbits
+ 242              		.align	1
+ 243              		.global	HAL_NVIC_SystemReset
+ 244              		.syntax unified
+ 245              		.code	16
+ 246              		.thumb_func
+ 247              		.fpu softvfp
+ 249              	HAL_NVIC_SystemReset:
+ 250              	.LFB40:
+ 192:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 193:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /**
+ 194:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @brief  Initiates a system reset request to reset the MCU.
+ 195:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @retval None
+ 196:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 197:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** void HAL_NVIC_SystemReset(void)
+ 198:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** {
+ 251              		.loc 1 198 1 is_stmt 1 view -0
+ 252              		.cfi_startproc
+ 253              		@ Volatile: function does not return.
+ 254              		@ args = 0, pretend = 0, frame = 0
+ 255              		@ frame_needed = 0, uses_anonymous_args = 0
+ 256              		@ link register save eliminated.
+ 199:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   /* System Reset */
+ 200:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   NVIC_SystemReset();
+ 257              		.loc 1 200 3 view .LVU56
+ 258              	.LBB42:
+ 259              	.LBI42:
+ 699:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 700:Drivers/CMSIS/Include/core_cm0.h **** }
+ 701:Drivers/CMSIS/Include/core_cm0.h **** 
+ 702:Drivers/CMSIS/Include/core_cm0.h **** 
+ 703:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 704:Drivers/CMSIS/Include/core_cm0.h ****   \brief   Get Interrupt Priority
+ 705:Drivers/CMSIS/Include/core_cm0.h ****   \details Reads the priority of an interrupt.
+ 706:Drivers/CMSIS/Include/core_cm0.h ****            The interrupt number can be positive to specify an external (device specific) interrupt,
+ 707:Drivers/CMSIS/Include/core_cm0.h ****            or negative to specify an internal (core) interrupt.
+ 708:Drivers/CMSIS/Include/core_cm0.h ****   \param [in]   IRQn  Interrupt number.
+ 709:Drivers/CMSIS/Include/core_cm0.h ****   \return             Interrupt Priority.
+ 710:Drivers/CMSIS/Include/core_cm0.h ****                       Value is aligned automatically to the implemented priority bits of the microc
+ 711:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 712:Drivers/CMSIS/Include/core_cm0.h **** __STATIC_INLINE uint32_t NVIC_GetPriority(IRQn_Type IRQn)
+ 713:Drivers/CMSIS/Include/core_cm0.h **** {
+ 714:Drivers/CMSIS/Include/core_cm0.h **** 
+ 715:Drivers/CMSIS/Include/core_cm0.h ****   if ((int32_t)(IRQn) < 0)
+ 716:Drivers/CMSIS/Include/core_cm0.h ****   {
+ 717:Drivers/CMSIS/Include/core_cm0.h ****     return((uint32_t)(((SCB->SHP[_SHP_IDX(IRQn)] >> _BIT_SHIFT(IRQn) ) & (uint32_t)0xFFUL) >> (8U -
+ARM GAS  /tmp/ccaHSKts.s 			page 22
+
+
+ 718:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 719:Drivers/CMSIS/Include/core_cm0.h ****   else
+ 720:Drivers/CMSIS/Include/core_cm0.h ****   {
+ 721:Drivers/CMSIS/Include/core_cm0.h ****     return((uint32_t)(((NVIC->IP[ _IP_IDX(IRQn)] >> _BIT_SHIFT(IRQn) ) & (uint32_t)0xFFUL) >> (8U -
+ 722:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 723:Drivers/CMSIS/Include/core_cm0.h **** }
+ 724:Drivers/CMSIS/Include/core_cm0.h **** 
+ 725:Drivers/CMSIS/Include/core_cm0.h **** 
+ 726:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 727:Drivers/CMSIS/Include/core_cm0.h ****   \brief   System Reset
+ 728:Drivers/CMSIS/Include/core_cm0.h ****   \details Initiates a system reset request to reset the MCU.
+ 729:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 730:Drivers/CMSIS/Include/core_cm0.h **** __STATIC_INLINE void NVIC_SystemReset(void)
+ 260              		.loc 2 730 22 view .LVU57
+ 261              	.LBB43:
+ 731:Drivers/CMSIS/Include/core_cm0.h **** {
+ 732:Drivers/CMSIS/Include/core_cm0.h ****   __DSB();                                                          /* Ensure all outstanding memor
+ 262              		.loc 2 732 3 view .LVU58
+ 263              	.LBB44:
+ 264              	.LBI44:
+ 265              		.file 3 "Drivers/CMSIS/Include/cmsis_gcc.h"
+   1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
+   2:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
+   3:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @brief    CMSIS Cortex-M Core Function/Instruction Header File
+   4:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @version  V4.30
+   5:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @date     20. October 2015
+   6:Drivers/CMSIS/Include/cmsis_gcc.h ****  ******************************************************************************/
+   7:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Copyright (c) 2009 - 2015 ARM LIMITED
+   8:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+   9:Drivers/CMSIS/Include/cmsis_gcc.h ****    All rights reserved.
+  10:Drivers/CMSIS/Include/cmsis_gcc.h ****    Redistribution and use in source and binary forms, with or without
+  11:Drivers/CMSIS/Include/cmsis_gcc.h ****    modification, are permitted provided that the following conditions are met:
+  12:Drivers/CMSIS/Include/cmsis_gcc.h ****    - Redistributions of source code must retain the above copyright
+  13:Drivers/CMSIS/Include/cmsis_gcc.h ****      notice, this list of conditions and the following disclaimer.
+  14:Drivers/CMSIS/Include/cmsis_gcc.h ****    - Redistributions in binary form must reproduce the above copyright
+  15:Drivers/CMSIS/Include/cmsis_gcc.h ****      notice, this list of conditions and the following disclaimer in the
+  16:Drivers/CMSIS/Include/cmsis_gcc.h ****      documentation and/or other materials provided with the distribution.
+  17:Drivers/CMSIS/Include/cmsis_gcc.h ****    - Neither the name of ARM nor the names of its contributors may be used
+  18:Drivers/CMSIS/Include/cmsis_gcc.h ****      to endorse or promote products derived from this software without
+  19:Drivers/CMSIS/Include/cmsis_gcc.h ****      specific prior written permission.
+  20:Drivers/CMSIS/Include/cmsis_gcc.h ****    *
+  21:Drivers/CMSIS/Include/cmsis_gcc.h ****    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  22:Drivers/CMSIS/Include/cmsis_gcc.h ****    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  23:Drivers/CMSIS/Include/cmsis_gcc.h ****    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  24:Drivers/CMSIS/Include/cmsis_gcc.h ****    ARE DISCLAIMED. IN NO EVENT SHALL COPYRIGHT HOLDERS AND CONTRIBUTORS BE
+  25:Drivers/CMSIS/Include/cmsis_gcc.h ****    LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  26:Drivers/CMSIS/Include/cmsis_gcc.h ****    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  27:Drivers/CMSIS/Include/cmsis_gcc.h ****    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  28:Drivers/CMSIS/Include/cmsis_gcc.h ****    INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  29:Drivers/CMSIS/Include/cmsis_gcc.h ****    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  30:Drivers/CMSIS/Include/cmsis_gcc.h ****    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  31:Drivers/CMSIS/Include/cmsis_gcc.h ****    POSSIBILITY OF SUCH DAMAGE.
+  32:Drivers/CMSIS/Include/cmsis_gcc.h ****    ---------------------------------------------------------------------------*/
+  33:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  34:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  35:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
+  36:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_H
+ARM GAS  /tmp/ccaHSKts.s 			page 23
+
+
+  37:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  38:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ignore some GCC warnings */
+  39:Drivers/CMSIS/Include/cmsis_gcc.h **** #if defined ( __GNUC__ )
+  40:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic push
+  41:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
+  42:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
+  43:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
+  44:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  45:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  46:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  47:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
+  48:Drivers/CMSIS/Include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+  49:Drivers/CMSIS/Include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
+  50:Drivers/CMSIS/Include/cmsis_gcc.h ****   @{
+  51:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+  52:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  53:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+  54:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
+  55:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
+  56:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+  57:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+  58:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __enable_irq(void)
+  59:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+  60:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
+  61:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+  62:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  63:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  64:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+  65:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Disable IRQ Interrupts
+  66:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Disables IRQ interrupts by setting the I-bit in the CPSR.
+  67:Drivers/CMSIS/Include/cmsis_gcc.h ****   Can only be executed in Privileged modes.
+  68:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+  69:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __disable_irq(void)
+  70:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+  71:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
+  72:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+  73:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  74:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  75:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+  76:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Control Register
+  77:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the content of the Control Register.
+  78:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Control Register value
+  79:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+  80:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_CONTROL(void)
+  81:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+  82:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+  83:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  84:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, control" : "=r" (result) );
+  85:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+  86:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+  87:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  88:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  89:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+  90:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Control Register
+  91:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Writes the given value to the Control Register.
+  92:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    control  Control Register value to set
+  93:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ARM GAS  /tmp/ccaHSKts.s 			page 24
+
+
+  94:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __set_CONTROL(uint32_t control)
+  95:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+  96:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR control, %0" : : "r" (control) : "memory");
+  97:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+  98:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  99:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 100:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 101:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get IPSR Register
+ 102:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the content of the IPSR Register.
+ 103:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               IPSR Register value
+ 104:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 105:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_IPSR(void)
+ 106:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 107:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 108:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 109:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, ipsr" : "=r" (result) );
+ 110:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 111:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 112:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 113:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 114:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 115:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get APSR Register
+ 116:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the content of the APSR Register.
+ 117:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               APSR Register value
+ 118:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 119:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_APSR(void)
+ 120:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 121:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 122:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 123:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, apsr" : "=r" (result) );
+ 124:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 125:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 126:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 127:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 128:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 129:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get xPSR Register
+ 130:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the content of the xPSR Register.
+ 131:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 132:Drivers/CMSIS/Include/cmsis_gcc.h ****     \return               xPSR Register value
+ 133:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 134:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_xPSR(void)
+ 135:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 136:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 137:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 138:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, xpsr" : "=r" (result) );
+ 139:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 140:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 141:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 142:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 143:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 144:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Process Stack Pointer
+ 145:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the Process Stack Pointer (PSP).
+ 146:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               PSP Register value
+ 147:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 148:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_PSP(void)
+ 149:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 150:Drivers/CMSIS/Include/cmsis_gcc.h ****   register uint32_t result;
+ARM GAS  /tmp/ccaHSKts.s 			page 25
+
+
+ 151:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 152:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, psp\n"  : "=r" (result) );
+ 153:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 154:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 155:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 156:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 157:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 158:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Process Stack Pointer
+ 159:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the Process Stack Pointer (PSP).
+ 160:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    topOfProcStack  Process Stack Pointer value to set
+ 161:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 162:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __set_PSP(uint32_t topOfProcStack)
+ 163:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 164:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR psp, %0\n" : : "r" (topOfProcStack) : "sp");
+ 165:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 166:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 167:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 168:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 169:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Main Stack Pointer
+ 170:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the Main Stack Pointer (MSP).
+ 171:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               MSP Register value
+ 172:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 173:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_MSP(void)
+ 174:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 175:Drivers/CMSIS/Include/cmsis_gcc.h ****   register uint32_t result;
+ 176:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 177:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, msp\n" : "=r" (result) );
+ 178:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 179:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 180:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 181:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 182:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 183:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Main Stack Pointer
+ 184:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the Main Stack Pointer (MSP).
+ 185:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 186:Drivers/CMSIS/Include/cmsis_gcc.h ****     \param [in]    topOfMainStack  Main Stack Pointer value to set
+ 187:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 188:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __set_MSP(uint32_t topOfMainStack)
+ 189:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 190:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR msp, %0\n" : : "r" (topOfMainStack) : "sp");
+ 191:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 192:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 193:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 194:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 195:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Priority Mask
+ 196:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current state of the priority mask bit from the Priority Mask Register.
+ 197:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Priority Mask value
+ 198:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 199:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_PRIMASK(void)
+ 200:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 201:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 202:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 203:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, primask" : "=r" (result) );
+ 204:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 205:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 206:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 207:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  /tmp/ccaHSKts.s 			page 26
+
+
+ 208:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 209:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Priority Mask
+ 210:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the Priority Mask Register.
+ 211:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    priMask  Priority Mask
+ 212:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 213:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __set_PRIMASK(uint32_t priMask)
+ 214:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 215:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR primask, %0" : : "r" (priMask) : "memory");
+ 216:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 217:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 218:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 219:Drivers/CMSIS/Include/cmsis_gcc.h **** #if       (__CORTEX_M >= 0x03U)
+ 220:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 221:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 222:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Enable FIQ
+ 223:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Enables FIQ interrupts by clearing the F-bit in the CPSR.
+ 224:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 225:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 226:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __enable_fault_irq(void)
+ 227:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 228:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie f" : : : "memory");
+ 229:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 230:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 231:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 232:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 233:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Disable FIQ
+ 234:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Disables FIQ interrupts by setting the F-bit in the CPSR.
+ 235:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 236:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 237:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __disable_fault_irq(void)
+ 238:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 239:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid f" : : : "memory");
+ 240:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 241:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 242:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 243:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 244:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Base Priority
+ 245:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the Base Priority register.
+ 246:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Base Priority register value
+ 247:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 248:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_BASEPRI(void)
+ 249:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 250:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 251:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 252:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, basepri" : "=r" (result) );
+ 253:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 254:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 255:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 256:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 257:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 258:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Base Priority
+ 259:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the Base Priority register.
+ 260:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    basePri  Base Priority value to set
+ 261:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 262:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __set_BASEPRI(uint32_t value)
+ 263:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 264:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR basepri, %0" : : "r" (value) : "memory");
+ARM GAS  /tmp/ccaHSKts.s 			page 27
+
+
+ 265:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 266:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 267:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 268:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 269:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Base Priority with condition
+ 270:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the Base Priority register only if BASEPRI masking is disable
+ 271:Drivers/CMSIS/Include/cmsis_gcc.h ****            or the new value increases the BASEPRI priority level.
+ 272:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    basePri  Base Priority value to set
+ 273:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 274:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __set_BASEPRI_MAX(uint32_t value)
+ 275:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 276:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR basepri_max, %0" : : "r" (value) : "memory");
+ 277:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 278:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 279:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 280:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 281:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Fault Mask
+ 282:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the Fault Mask register.
+ 283:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Fault Mask register value
+ 284:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 285:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_FAULTMASK(void)
+ 286:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 287:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 288:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 289:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, faultmask" : "=r" (result) );
+ 290:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 291:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 292:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 293:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 294:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 295:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Fault Mask
+ 296:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the Fault Mask register.
+ 297:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    faultMask  Fault Mask value to set
+ 298:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 299:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __set_FAULTMASK(uint32_t faultMask)
+ 300:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 301:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MSR faultmask, %0" : : "r" (faultMask) : "memory");
+ 302:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 303:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 304:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif /* (__CORTEX_M >= 0x03U) */
+ 305:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 306:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 307:Drivers/CMSIS/Include/cmsis_gcc.h **** #if       (__CORTEX_M == 0x04U) || (__CORTEX_M == 0x07U)
+ 308:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 309:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 310:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get FPSCR
+ 311:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the Floating Point Status/Control register.
+ 312:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Floating Point Status/Control register value
+ 313:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 314:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_FPSCR(void)
+ 315:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 316:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (__FPU_PRESENT == 1U) && (__FPU_USED == 1U)
+ 317:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
+ 318:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 319:Drivers/CMSIS/Include/cmsis_gcc.h ****   /* Empty asm statement works as a scheduling barrier */
+ 320:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("");
+ 321:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("VMRS %0, fpscr" : "=r" (result) );
+ARM GAS  /tmp/ccaHSKts.s 			page 28
+
+
+ 322:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("");
+ 323:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
+ 324:Drivers/CMSIS/Include/cmsis_gcc.h **** #else
+ 325:Drivers/CMSIS/Include/cmsis_gcc.h ****    return(0);
+ 326:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 327:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 328:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 329:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 330:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 331:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set FPSCR
+ 332:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Assigns the given value to the Floating Point Status/Control register.
+ 333:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    fpscr  Floating Point Status/Control value to set
+ 334:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 335:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __set_FPSCR(uint32_t fpscr)
+ 336:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 337:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (__FPU_PRESENT == 1U) && (__FPU_USED == 1U)
+ 338:Drivers/CMSIS/Include/cmsis_gcc.h ****   /* Empty asm statement works as a scheduling barrier */
+ 339:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("");
+ 340:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("VMSR fpscr, %0" : : "r" (fpscr) : "vfpcc");
+ 341:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("");
+ 342:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 343:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 344:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 345:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif /* (__CORTEX_M == 0x04U) || (__CORTEX_M == 0x07U) */
+ 346:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 347:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 348:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 349:Drivers/CMSIS/Include/cmsis_gcc.h **** /*@} end of CMSIS_Core_RegAccFunctions */
+ 350:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 351:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 352:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ##########################  Core Instruction Access  ######################### */
+ 353:Drivers/CMSIS/Include/cmsis_gcc.h **** /** \defgroup CMSIS_Core_InstructionInterface CMSIS Core Instruction Interface
+ 354:Drivers/CMSIS/Include/cmsis_gcc.h ****   Access to dedicated instructions
+ 355:Drivers/CMSIS/Include/cmsis_gcc.h ****   @{
+ 356:Drivers/CMSIS/Include/cmsis_gcc.h **** */
+ 357:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 358:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Define macros for porting to both thumb1 and thumb2.
+ 359:Drivers/CMSIS/Include/cmsis_gcc.h ****  * For thumb1, use low register (r0-r7), specified by constraint "l"
+ 360:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Otherwise, use general registers, specified by constraint "r" */
+ 361:Drivers/CMSIS/Include/cmsis_gcc.h **** #if defined (__thumb__) && !defined (__thumb2__)
+ 362:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_OUT_REG(r) "=l" (r)
+ 363:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_USE_REG(r) "l" (r)
+ 364:Drivers/CMSIS/Include/cmsis_gcc.h **** #else
+ 365:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_OUT_REG(r) "=r" (r)
+ 366:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_USE_REG(r) "r" (r)
+ 367:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 368:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 369:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 370:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   No Operation
+ 371:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details No Operation does nothing. This instruction can be used for code alignment purposes.
+ 372:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 373:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__((always_inline)) __STATIC_INLINE void __NOP(void)
+ 374:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 375:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("nop");
+ 376:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 377:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 378:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  /tmp/ccaHSKts.s 			page 29
+
+
+ 379:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 380:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Wait For Interrupt
+ 381:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Wait For Interrupt is a hint instruction that suspends execution until one of a number o
+ 382:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 383:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__((always_inline)) __STATIC_INLINE void __WFI(void)
+ 384:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 385:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("wfi");
+ 386:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 387:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 388:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 389:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 390:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Wait For Event
+ 391:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Wait For Event is a hint instruction that permits the processor to enter
+ 392:Drivers/CMSIS/Include/cmsis_gcc.h ****     a low-power state until one of a number of events occurs.
+ 393:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 394:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__((always_inline)) __STATIC_INLINE void __WFE(void)
+ 395:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 396:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("wfe");
+ 397:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 398:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 399:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 400:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 401:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Send Event
+ 402:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Send Event is a hint instruction. It causes an event to be signaled to the CPU.
+ 403:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 404:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__((always_inline)) __STATIC_INLINE void __SEV(void)
+ 405:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 406:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("sev");
+ 407:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 408:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 409:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 410:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 411:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Instruction Synchronization Barrier
+ 412:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Instruction Synchronization Barrier flushes the pipeline in the processor,
+ 413:Drivers/CMSIS/Include/cmsis_gcc.h ****            so that all instructions following the ISB are fetched from cache or memory,
+ 414:Drivers/CMSIS/Include/cmsis_gcc.h ****            after the instruction has been completed.
+ 415:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 416:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__((always_inline)) __STATIC_INLINE void __ISB(void)
+ 417:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 418:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("isb 0xF":::"memory");
+ 419:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 420:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 421:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 422:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 423:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Data Synchronization Barrier
+ 424:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Acts as a special kind of Data Memory Barrier.
+ 425:Drivers/CMSIS/Include/cmsis_gcc.h ****            It completes when all explicit memory accesses before this instruction complete.
+ 426:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 427:Drivers/CMSIS/Include/cmsis_gcc.h **** __attribute__((always_inline)) __STATIC_INLINE void __DSB(void)
+ 266              		.loc 3 427 53 view .LVU59
+ 267              	.LBB45:
+ 428:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 429:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("dsb 0xF":::"memory");
+ 268              		.loc 3 429 3 view .LVU60
+ 269              		.syntax divided
+ 270              	@ 429 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 271 0000 BFF34F8F 		dsb 0xF
+ARM GAS  /tmp/ccaHSKts.s 			page 30
+
+
+ 272              	@ 0 "" 2
+ 273              		.thumb
+ 274              		.syntax unified
+ 275              	.LBE45:
+ 276              	.LBE44:
+ 733:Drivers/CMSIS/Include/core_cm0.h ****                                                                        buffered write are completed
+ 734:Drivers/CMSIS/Include/core_cm0.h ****   SCB->AIRCR  = ((0x5FAUL << SCB_AIRCR_VECTKEY_Pos) |
+ 277              		.loc 2 734 3 view .LVU61
+ 278              		.loc 2 734 15 is_stmt 0 view .LVU62
+ 279 0004 034B     		ldr	r3, .L15
+ 280 0006 044A     		ldr	r2, .L15+4
+ 281 0008 DA60     		str	r2, [r3, #12]
+ 735:Drivers/CMSIS/Include/core_cm0.h ****                  SCB_AIRCR_SYSRESETREQ_Msk);
+ 736:Drivers/CMSIS/Include/core_cm0.h ****   __DSB();                                                          /* Ensure completion of memory 
+ 282              		.loc 2 736 3 is_stmt 1 view .LVU63
+ 283              	.LBB46:
+ 284              	.LBI46:
+ 427:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 285              		.loc 3 427 53 view .LVU64
+ 286              	.LBB47:
+ 287              		.loc 3 429 3 view .LVU65
+ 288              		.syntax divided
+ 289              	@ 429 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 290 000a BFF34F8F 		dsb 0xF
+ 291              	@ 0 "" 2
+ 292              		.thumb
+ 293              		.syntax unified
+ 294              	.L14:
+ 295              	.LBE47:
+ 296              	.LBE46:
+ 737:Drivers/CMSIS/Include/core_cm0.h **** 
+ 738:Drivers/CMSIS/Include/core_cm0.h ****   for(;;)                                                           /* wait until reset */
+ 297              		.loc 2 738 3 view .LVU66
+ 739:Drivers/CMSIS/Include/core_cm0.h ****   {
+ 740:Drivers/CMSIS/Include/core_cm0.h ****     __NOP();
+ 298              		.loc 2 740 5 view .LVU67
+ 299              	.LBB48:
+ 300              	.LBI48:
+ 373:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 301              		.loc 3 373 53 view .LVU68
+ 302              	.LBB49:
+ 375:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 303              		.loc 3 375 3 view .LVU69
+ 304              		.syntax divided
+ 305              	@ 375 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 306 000e C046     		nop
+ 307              	@ 0 "" 2
+ 308              		.thumb
+ 309              		.syntax unified
+ 310 0010 FDE7     		b	.L14
+ 311              	.L16:
+ 312 0012 C046     		.align	2
+ 313              	.L15:
+ 314 0014 00ED00E0 		.word	-536810240
+ 315 0018 0400FA05 		.word	100270084
+ 316              	.LBE49:
+ 317              	.LBE48:
+ARM GAS  /tmp/ccaHSKts.s 			page 31
+
+
+ 318              	.LBE43:
+ 319              	.LBE42:
+ 320              		.cfi_endproc
+ 321              	.LFE40:
+ 323              		.section	.text.HAL_SYSTICK_Config,"ax",%progbits
+ 324              		.align	1
+ 325              		.global	HAL_SYSTICK_Config
+ 326              		.syntax unified
+ 327              		.code	16
+ 328              		.thumb_func
+ 329              		.fpu softvfp
+ 331              	HAL_SYSTICK_Config:
+ 332              	.LVL16:
+ 333              	.LFB41:
+ 201:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** }
+ 202:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 203:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /**
+ 204:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @brief  Initializes the System Timer and its interrupt, and starts the System Tick Timer.
+ 205:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         Counter is in free running mode to generate periodic interrupts.
+ 206:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @param  TicksNumb Specifies the ticks Number of ticks between two interrupts.
+ 207:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @retval status:  - 0  Function succeeded.
+ 208:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *                  - 1  Function failed.
+ 209:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 210:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** uint32_t HAL_SYSTICK_Config(uint32_t TicksNumb)
+ 211:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** {
+ 334              		.loc 1 211 1 view -0
+ 335              		.cfi_startproc
+ 336              		@ args = 0, pretend = 0, frame = 0
+ 337              		@ frame_needed = 0, uses_anonymous_args = 0
+ 338              		@ link register save eliminated.
+ 212:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****    return SysTick_Config(TicksNumb);
+ 339              		.loc 1 212 4 view .LVU71
+ 340              	.LBB50:
+ 341              	.LBI50:
+ 741:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 742:Drivers/CMSIS/Include/core_cm0.h **** }
+ 743:Drivers/CMSIS/Include/core_cm0.h **** 
+ 744:Drivers/CMSIS/Include/core_cm0.h **** /*@} end of CMSIS_Core_NVICFunctions */
+ 745:Drivers/CMSIS/Include/core_cm0.h **** 
+ 746:Drivers/CMSIS/Include/core_cm0.h **** 
+ 747:Drivers/CMSIS/Include/core_cm0.h **** 
+ 748:Drivers/CMSIS/Include/core_cm0.h **** /* ##################################    SysTick function  ########################################
+ 749:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 750:Drivers/CMSIS/Include/core_cm0.h ****   \ingroup  CMSIS_Core_FunctionInterface
+ 751:Drivers/CMSIS/Include/core_cm0.h ****   \defgroup CMSIS_Core_SysTickFunctions SysTick Functions
+ 752:Drivers/CMSIS/Include/core_cm0.h ****   \brief    Functions that configure the System.
+ 753:Drivers/CMSIS/Include/core_cm0.h ****   @{
+ 754:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 755:Drivers/CMSIS/Include/core_cm0.h **** 
+ 756:Drivers/CMSIS/Include/core_cm0.h **** #if (__Vendor_SysTickConfig == 0U)
+ 757:Drivers/CMSIS/Include/core_cm0.h **** 
+ 758:Drivers/CMSIS/Include/core_cm0.h **** /**
+ 759:Drivers/CMSIS/Include/core_cm0.h ****   \brief   System Tick Configuration
+ 760:Drivers/CMSIS/Include/core_cm0.h ****   \details Initializes the System Timer and its interrupt, and starts the System Tick Timer.
+ 761:Drivers/CMSIS/Include/core_cm0.h ****            Counter is in free running mode to generate periodic interrupts.
+ 762:Drivers/CMSIS/Include/core_cm0.h ****   \param [in]  ticks  Number of ticks between two interrupts.
+ 763:Drivers/CMSIS/Include/core_cm0.h ****   \return          0  Function succeeded.
+ARM GAS  /tmp/ccaHSKts.s 			page 32
+
+
+ 764:Drivers/CMSIS/Include/core_cm0.h ****   \return          1  Function failed.
+ 765:Drivers/CMSIS/Include/core_cm0.h ****   \note    When the variable <b>__Vendor_SysTickConfig</b> is set to 1, then the
+ 766:Drivers/CMSIS/Include/core_cm0.h ****            function <b>SysTick_Config</b> is not included. In this case, the file <b><i>device</i>.
+ 767:Drivers/CMSIS/Include/core_cm0.h ****            must contain a vendor-specific implementation of this function.
+ 768:Drivers/CMSIS/Include/core_cm0.h ****  */
+ 769:Drivers/CMSIS/Include/core_cm0.h **** __STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
+ 342              		.loc 2 769 26 view .LVU72
+ 343              	.LBB51:
+ 770:Drivers/CMSIS/Include/core_cm0.h **** {
+ 771:Drivers/CMSIS/Include/core_cm0.h ****   if ((ticks - 1UL) > SysTick_LOAD_RELOAD_Msk)
+ 344              		.loc 2 771 3 view .LVU73
+ 345              		.loc 2 771 14 is_stmt 0 view .LVU74
+ 346 0000 0138     		subs	r0, r0, #1
+ 347              	.LVL17:
+ 348              		.loc 2 771 6 view .LVU75
+ 349 0002 8023     		movs	r3, #128
+ 350 0004 5B04     		lsls	r3, r3, #17
+ 351 0006 9842     		cmp	r0, r3
+ 352 0008 0FD2     		bcs	.L19
+ 772:Drivers/CMSIS/Include/core_cm0.h ****   {
+ 773:Drivers/CMSIS/Include/core_cm0.h ****     return (1UL);                                                   /* Reload value impossible */
+ 774:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 775:Drivers/CMSIS/Include/core_cm0.h **** 
+ 776:Drivers/CMSIS/Include/core_cm0.h ****   SysTick->LOAD  = (uint32_t)(ticks - 1UL);                         /* set reload register */
+ 353              		.loc 2 776 3 is_stmt 1 view .LVU76
+ 354              		.loc 2 776 18 is_stmt 0 view .LVU77
+ 355 000a 094A     		ldr	r2, .L20
+ 356 000c 5060     		str	r0, [r2, #4]
+ 777:Drivers/CMSIS/Include/core_cm0.h ****   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Int
+ 357              		.loc 2 777 3 is_stmt 1 view .LVU78
+ 358              	.LVL18:
+ 359              	.LBB52:
+ 360              	.LBI52:
+ 688:Drivers/CMSIS/Include/core_cm0.h **** {
+ 361              		.loc 2 688 22 view .LVU79
+ 362              	.LBB53:
+ 690:Drivers/CMSIS/Include/core_cm0.h ****   {
+ 363              		.loc 2 690 3 view .LVU80
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 364              		.loc 2 692 5 view .LVU81
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 365              		.loc 2 692 52 is_stmt 0 view .LVU82
+ 366 000e 0948     		ldr	r0, .L20+4
+ 367              	.LVL19:
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 368              		.loc 2 692 52 view .LVU83
+ 369 0010 036A     		ldr	r3, [r0, #32]
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 370              		.loc 2 692 33 view .LVU84
+ 371 0012 1B02     		lsls	r3, r3, #8
+ 372 0014 1B0A     		lsrs	r3, r3, #8
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 373              		.loc 2 692 102 view .LVU85
+ 374 0016 C021     		movs	r1, #192
+ 375 0018 0906     		lsls	r1, r1, #24
+ 376 001a 0B43     		orrs	r3, r1
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ARM GAS  /tmp/ccaHSKts.s 			page 33
+
+
+ 377              		.loc 2 692 30 view .LVU86
+ 378 001c 0362     		str	r3, [r0, #32]
+ 379              	.LVL20:
+ 692:Drivers/CMSIS/Include/core_cm0.h ****        (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+ 380              		.loc 2 692 30 view .LVU87
+ 381              	.LBE53:
+ 382              	.LBE52:
+ 778:Drivers/CMSIS/Include/core_cm0.h ****   SysTick->VAL   = 0UL;                                             /* Load the SysTick Counter Val
+ 383              		.loc 2 778 3 is_stmt 1 view .LVU88
+ 384              		.loc 2 778 18 is_stmt 0 view .LVU89
+ 385 001e 0023     		movs	r3, #0
+ 386 0020 9360     		str	r3, [r2, #8]
+ 779:Drivers/CMSIS/Include/core_cm0.h ****   SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk |
+ 387              		.loc 2 779 3 is_stmt 1 view .LVU90
+ 388              		.loc 2 779 18 is_stmt 0 view .LVU91
+ 389 0022 0733     		adds	r3, r3, #7
+ 390 0024 1360     		str	r3, [r2]
+ 780:Drivers/CMSIS/Include/core_cm0.h ****                    SysTick_CTRL_TICKINT_Msk   |
+ 781:Drivers/CMSIS/Include/core_cm0.h ****                    SysTick_CTRL_ENABLE_Msk;                         /* Enable SysTick IRQ and SysTi
+ 782:Drivers/CMSIS/Include/core_cm0.h ****   return (0UL);                                                     /* Function successful */
+ 391              		.loc 2 782 3 is_stmt 1 view .LVU92
+ 392              		.loc 2 782 10 is_stmt 0 view .LVU93
+ 393 0026 0020     		movs	r0, #0
+ 394              	.LVL21:
+ 395              	.L17:
+ 396              		.loc 2 782 10 view .LVU94
+ 397              	.LBE51:
+ 398              	.LBE50:
+ 213:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** }
+ 399              		.loc 1 213 1 view .LVU95
+ 400              		@ sp needed
+ 401 0028 7047     		bx	lr
+ 402              	.LVL22:
+ 403              	.L19:
+ 404              	.LBB55:
+ 405              	.LBB54:
+ 773:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 406              		.loc 2 773 12 view .LVU96
+ 407 002a 0120     		movs	r0, #1
+ 408              	.LVL23:
+ 773:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 409              		.loc 2 773 12 view .LVU97
+ 410              	.LBE54:
+ 411              	.LBE55:
+ 212:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** }
+ 412              		.loc 1 212 11 view .LVU98
+ 413 002c FCE7     		b	.L17
+ 414              	.L21:
+ 415 002e C046     		.align	2
+ 416              	.L20:
+ 417 0030 10E000E0 		.word	-536813552
+ 418 0034 00ED00E0 		.word	-536810240
+ 419              		.cfi_endproc
+ 420              	.LFE41:
+ 422              		.section	.text.HAL_NVIC_GetPriority,"ax",%progbits
+ 423              		.align	1
+ 424              		.global	HAL_NVIC_GetPriority
+ARM GAS  /tmp/ccaHSKts.s 			page 34
+
+
+ 425              		.syntax unified
+ 426              		.code	16
+ 427              		.thumb_func
+ 428              		.fpu softvfp
+ 430              	HAL_NVIC_GetPriority:
+ 431              	.LVL24:
+ 432              	.LFB42:
+ 214:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /**
+ 215:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @}
+ 216:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 217:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 218:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /** @defgroup CORTEX_Exported_Functions_Group2 Peripheral Control functions 
+ 219:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****  *  @brief   Cortex control functions
+ 220:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****  *
+ 221:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** @verbatim
+ 222:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   ==============================================================================
+ 223:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****                       ##### Peripheral Control functions #####
+ 224:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   ==============================================================================
+ 225:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     [..]
+ 226:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****       This subsection provides a set of functions allowing to control the CORTEX
+ 227:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****       (NVIC, SYSTICK) functionalities.
+ 228:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 229:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 230:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** @endverbatim
+ 231:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @{
+ 232:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 233:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 234:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 235:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /**
+ 236:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @brief  Gets the priority of an interrupt.
+ 237:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @param  IRQn External interrupt number.
+ 238:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
+ 239:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
+ 240:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @retval None
+ 241:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 242:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** uint32_t HAL_NVIC_GetPriority(IRQn_Type IRQn)
+ 243:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** {
+ 433              		.loc 1 243 1 is_stmt 1 view -0
+ 434              		.cfi_startproc
+ 435              		@ args = 0, pretend = 0, frame = 0
+ 436              		@ frame_needed = 0, uses_anonymous_args = 0
+ 437              		@ link register save eliminated.
+ 244:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   /* Get priority for Cortex-M system or device specific interrupts */
+ 245:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   return NVIC_GetPriority(IRQn);
+ 438              		.loc 1 245 3 view .LVU100
+ 439              	.LBB58:
+ 440              	.LBI58:
+ 712:Drivers/CMSIS/Include/core_cm0.h **** {
+ 441              		.loc 2 712 26 view .LVU101
+ 442              	.LBB59:
+ 715:Drivers/CMSIS/Include/core_cm0.h ****   {
+ 443              		.loc 2 715 3 view .LVU102
+ 715:Drivers/CMSIS/Include/core_cm0.h ****   {
+ 444              		.loc 2 715 6 is_stmt 0 view .LVU103
+ 445 0000 0028     		cmp	r0, #0
+ 446 0002 0CDB     		blt	.L25
+ 721:Drivers/CMSIS/Include/core_cm0.h ****   }
+ARM GAS  /tmp/ccaHSKts.s 			page 35
+
+
+ 447              		.loc 2 721 5 is_stmt 1 view .LVU104
+ 721:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 448              		.loc 2 721 35 is_stmt 0 view .LVU105
+ 449 0004 8308     		lsrs	r3, r0, #2
+ 721:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 450              		.loc 2 721 33 view .LVU106
+ 451 0006 C033     		adds	r3, r3, #192
+ 452 0008 9B00     		lsls	r3, r3, #2
+ 453 000a 0E4A     		ldr	r2, .L26
+ 454 000c 9B58     		ldr	r3, [r3, r2]
+ 721:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 455              		.loc 2 721 53 view .LVU107
+ 456 000e 0322     		movs	r2, #3
+ 457 0010 1040     		ands	r0, r2
+ 458              	.LVL25:
+ 721:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 459              		.loc 2 721 53 view .LVU108
+ 460 0012 C000     		lsls	r0, r0, #3
+ 721:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 461              		.loc 2 721 50 view .LVU109
+ 462 0014 C340     		lsrs	r3, r3, r0
+ 721:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 463              		.loc 2 721 12 view .LVU110
+ 464 0016 9B09     		lsrs	r3, r3, #6
+ 465 0018 0320     		movs	r0, #3
+ 466 001a 1840     		ands	r0, r3
+ 467              	.LVL26:
+ 468              	.L22:
+ 721:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 469              		.loc 2 721 12 view .LVU111
+ 470              	.LBE59:
+ 471              	.LBE58:
+ 246:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** }
+ 472              		.loc 1 246 1 view .LVU112
+ 473              		@ sp needed
+ 474 001c 7047     		bx	lr
+ 475              	.LVL27:
+ 476              	.L25:
+ 477              	.LBB61:
+ 478              	.LBB60:
+ 717:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 479              		.loc 2 717 5 is_stmt 1 view .LVU113
+ 717:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 480              		.loc 2 717 34 is_stmt 0 view .LVU114
+ 481 001e 0F23     		movs	r3, #15
+ 482 0020 0340     		ands	r3, r0
+ 483 0022 083B     		subs	r3, r3, #8
+ 484 0024 9B08     		lsrs	r3, r3, #2
+ 717:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 485              		.loc 2 717 33 view .LVU115
+ 486 0026 0633     		adds	r3, r3, #6
+ 487 0028 9B00     		lsls	r3, r3, #2
+ 488 002a 074A     		ldr	r2, .L26+4
+ 489 002c 9446     		mov	ip, r2
+ 490 002e 6344     		add	r3, r3, ip
+ 491 0030 5B68     		ldr	r3, [r3, #4]
+ 717:Drivers/CMSIS/Include/core_cm0.h ****   }
+ARM GAS  /tmp/ccaHSKts.s 			page 36
+
+
+ 492              		.loc 2 717 53 view .LVU116
+ 493 0032 0322     		movs	r2, #3
+ 494 0034 1040     		ands	r0, r2
+ 495              	.LVL28:
+ 717:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 496              		.loc 2 717 53 view .LVU117
+ 497 0036 C000     		lsls	r0, r0, #3
+ 717:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 498              		.loc 2 717 50 view .LVU118
+ 499 0038 C340     		lsrs	r3, r3, r0
+ 717:Drivers/CMSIS/Include/core_cm0.h ****   }
+ 500              		.loc 2 717 12 view .LVU119
+ 501 003a 9B09     		lsrs	r3, r3, #6
+ 502 003c 0320     		movs	r0, #3
+ 503 003e 1840     		ands	r0, r3
+ 504 0040 ECE7     		b	.L22
+ 505              	.L27:
+ 506 0042 C046     		.align	2
+ 507              	.L26:
+ 508 0044 00E100E0 		.word	-536813312
+ 509 0048 00ED00E0 		.word	-536810240
+ 510              	.LBE60:
+ 511              	.LBE61:
+ 512              		.cfi_endproc
+ 513              	.LFE42:
+ 515              		.section	.text.HAL_NVIC_SetPendingIRQ,"ax",%progbits
+ 516              		.align	1
+ 517              		.global	HAL_NVIC_SetPendingIRQ
+ 518              		.syntax unified
+ 519              		.code	16
+ 520              		.thumb_func
+ 521              		.fpu softvfp
+ 523              	HAL_NVIC_SetPendingIRQ:
+ 524              	.LVL29:
+ 525              	.LFB43:
+ 247:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 248:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /**
+ 249:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @brief  Sets Pending bit of an external interrupt.
+ 250:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @param  IRQn External interrupt number
+ 251:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
+ 252:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
+ 253:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @retval None
+ 254:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 255:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** void HAL_NVIC_SetPendingIRQ(IRQn_Type IRQn)
+ 256:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** {
+ 526              		.loc 1 256 1 is_stmt 1 view -0
+ 527              		.cfi_startproc
+ 528              		@ args = 0, pretend = 0, frame = 0
+ 529              		@ frame_needed = 0, uses_anonymous_args = 0
+ 530              		@ link register save eliminated.
+ 257:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   /* Check the parameters */
+ 258:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
+ 531              		.loc 1 258 3 view .LVU121
+ 259:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   
+ 260:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   /* Set interrupt pending */
+ 261:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   NVIC_SetPendingIRQ(IRQn);
+ 532              		.loc 1 261 3 view .LVU122
+ARM GAS  /tmp/ccaHSKts.s 			page 37
+
+
+ 533              	.LBB62:
+ 534              	.LBI62:
+ 664:Drivers/CMSIS/Include/core_cm0.h **** {
+ 535              		.loc 2 664 22 view .LVU123
+ 536              	.LBB63:
+ 666:Drivers/CMSIS/Include/core_cm0.h **** }
+ 537              		.loc 2 666 3 view .LVU124
+ 666:Drivers/CMSIS/Include/core_cm0.h **** }
+ 538              		.loc 2 666 65 is_stmt 0 view .LVU125
+ 539 0000 1F23     		movs	r3, #31
+ 540 0002 1840     		ands	r0, r3
+ 541              	.LVL30:
+ 666:Drivers/CMSIS/Include/core_cm0.h **** }
+ 542              		.loc 2 666 20 view .LVU126
+ 543 0004 1E3B     		subs	r3, r3, #30
+ 544 0006 8340     		lsls	r3, r3, r0
+ 666:Drivers/CMSIS/Include/core_cm0.h **** }
+ 545              		.loc 2 666 18 view .LVU127
+ 546 0008 0249     		ldr	r1, .L29
+ 547 000a 8022     		movs	r2, #128
+ 548 000c 5200     		lsls	r2, r2, #1
+ 549 000e 8B50     		str	r3, [r1, r2]
+ 550              	.LVL31:
+ 666:Drivers/CMSIS/Include/core_cm0.h **** }
+ 551              		.loc 2 666 18 view .LVU128
+ 552              	.LBE63:
+ 553              	.LBE62:
+ 262:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** }
+ 554              		.loc 1 262 1 view .LVU129
+ 555              		@ sp needed
+ 556 0010 7047     		bx	lr
+ 557              	.L30:
+ 558 0012 C046     		.align	2
+ 559              	.L29:
+ 560 0014 00E100E0 		.word	-536813312
+ 561              		.cfi_endproc
+ 562              	.LFE43:
+ 564              		.section	.text.HAL_NVIC_GetPendingIRQ,"ax",%progbits
+ 565              		.align	1
+ 566              		.global	HAL_NVIC_GetPendingIRQ
+ 567              		.syntax unified
+ 568              		.code	16
+ 569              		.thumb_func
+ 570              		.fpu softvfp
+ 572              	HAL_NVIC_GetPendingIRQ:
+ 573              	.LVL32:
+ 574              	.LFB44:
+ 263:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 264:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /**
+ 265:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @brief  Gets Pending Interrupt (reads the pending register in the NVIC
+ 266:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         and returns the pending bit for the specified interrupt).
+ 267:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @param  IRQn External interrupt number.
+ 268:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
+ 269:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
+ 270:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @retval status: - 0  Interrupt status is not pending.
+ 271:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *                 - 1  Interrupt status is pending.
+ 272:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ARM GAS  /tmp/ccaHSKts.s 			page 38
+
+
+ 273:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** uint32_t HAL_NVIC_GetPendingIRQ(IRQn_Type IRQn)
+ 274:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** {
+ 575              		.loc 1 274 1 is_stmt 1 view -0
+ 576              		.cfi_startproc
+ 577              		@ args = 0, pretend = 0, frame = 0
+ 578              		@ frame_needed = 0, uses_anonymous_args = 0
+ 579              		@ link register save eliminated.
+ 275:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   /* Check the parameters */
+ 276:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
+ 580              		.loc 1 276 3 view .LVU131
+ 277:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   
+ 278:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   /* Return 1 if pending else 0 */
+ 279:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   return NVIC_GetPendingIRQ(IRQn);
+ 581              		.loc 1 279 3 view .LVU132
+ 582              	.LBB64:
+ 583              	.LBI64:
+ 653:Drivers/CMSIS/Include/core_cm0.h **** {
+ 584              		.loc 2 653 26 view .LVU133
+ 585              	.LBB65:
+ 655:Drivers/CMSIS/Include/core_cm0.h **** }
+ 586              		.loc 2 655 3 view .LVU134
+ 655:Drivers/CMSIS/Include/core_cm0.h **** }
+ 587              		.loc 2 655 33 is_stmt 0 view .LVU135
+ 588 0000 044A     		ldr	r2, .L32
+ 589 0002 8023     		movs	r3, #128
+ 590 0004 5B00     		lsls	r3, r3, #1
+ 591 0006 D358     		ldr	r3, [r2, r3]
+ 655:Drivers/CMSIS/Include/core_cm0.h **** }
+ 592              		.loc 2 655 75 view .LVU136
+ 593 0008 1F22     		movs	r2, #31
+ 594 000a 1040     		ands	r0, r2
+ 595              	.LVL33:
+ 655:Drivers/CMSIS/Include/core_cm0.h **** }
+ 596              		.loc 2 655 87 view .LVU137
+ 597 000c C340     		lsrs	r3, r3, r0
+ 655:Drivers/CMSIS/Include/core_cm0.h **** }
+ 598              		.loc 2 655 10 view .LVU138
+ 599 000e 0120     		movs	r0, #1
+ 600 0010 1840     		ands	r0, r3
+ 601              	.LVL34:
+ 655:Drivers/CMSIS/Include/core_cm0.h **** }
+ 602              		.loc 2 655 10 view .LVU139
+ 603              	.LBE65:
+ 604              	.LBE64:
+ 280:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** }
+ 605              		.loc 1 280 1 view .LVU140
+ 606              		@ sp needed
+ 607 0012 7047     		bx	lr
+ 608              	.L33:
+ 609              		.align	2
+ 610              	.L32:
+ 611 0014 00E100E0 		.word	-536813312
+ 612              		.cfi_endproc
+ 613              	.LFE44:
+ 615              		.section	.text.HAL_NVIC_ClearPendingIRQ,"ax",%progbits
+ 616              		.align	1
+ 617              		.global	HAL_NVIC_ClearPendingIRQ
+ARM GAS  /tmp/ccaHSKts.s 			page 39
+
+
+ 618              		.syntax unified
+ 619              		.code	16
+ 620              		.thumb_func
+ 621              		.fpu softvfp
+ 623              	HAL_NVIC_ClearPendingIRQ:
+ 624              	.LVL35:
+ 625              	.LFB45:
+ 281:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 282:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /**
+ 283:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @brief  Clears the pending bit of an external interrupt.
+ 284:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @param  IRQn External interrupt number.
+ 285:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         This parameter can be an enumerator of IRQn_Type enumeration
+ 286:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         (For the complete STM32 Devices IRQ Channels list, please refer to the appropriate CMSI
+ 287:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @retval None
+ 288:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 289:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** void HAL_NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+ 290:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** {
+ 626              		.loc 1 290 1 is_stmt 1 view -0
+ 627              		.cfi_startproc
+ 628              		@ args = 0, pretend = 0, frame = 0
+ 629              		@ frame_needed = 0, uses_anonymous_args = 0
+ 630              		@ link register save eliminated.
+ 291:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   /* Check the parameters */
+ 292:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   assert_param(IS_NVIC_DEVICE_IRQ(IRQn));
+ 631              		.loc 1 292 3 view .LVU142
+ 293:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   
+ 294:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   /* Clear pending interrupt */
+ 295:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   NVIC_ClearPendingIRQ(IRQn);
+ 632              		.loc 1 295 3 view .LVU143
+ 633              	.LBB66:
+ 634              	.LBI66:
+ 675:Drivers/CMSIS/Include/core_cm0.h **** {
+ 635              		.loc 2 675 22 view .LVU144
+ 636              	.LBB67:
+ 677:Drivers/CMSIS/Include/core_cm0.h **** }
+ 637              		.loc 2 677 3 view .LVU145
+ 677:Drivers/CMSIS/Include/core_cm0.h **** }
+ 638              		.loc 2 677 65 is_stmt 0 view .LVU146
+ 639 0000 1F23     		movs	r3, #31
+ 640 0002 1840     		ands	r0, r3
+ 641              	.LVL36:
+ 677:Drivers/CMSIS/Include/core_cm0.h **** }
+ 642              		.loc 2 677 20 view .LVU147
+ 643 0004 1E3B     		subs	r3, r3, #30
+ 644 0006 8340     		lsls	r3, r3, r0
+ 677:Drivers/CMSIS/Include/core_cm0.h **** }
+ 645              		.loc 2 677 18 view .LVU148
+ 646 0008 0249     		ldr	r1, .L35
+ 647 000a C022     		movs	r2, #192
+ 648 000c 5200     		lsls	r2, r2, #1
+ 649 000e 8B50     		str	r3, [r1, r2]
+ 650              	.LVL37:
+ 677:Drivers/CMSIS/Include/core_cm0.h **** }
+ 651              		.loc 2 677 18 view .LVU149
+ 652              	.LBE67:
+ 653              	.LBE66:
+ 296:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** }
+ARM GAS  /tmp/ccaHSKts.s 			page 40
+
+
+ 654              		.loc 1 296 1 view .LVU150
+ 655              		@ sp needed
+ 656 0010 7047     		bx	lr
+ 657              	.L36:
+ 658 0012 C046     		.align	2
+ 659              	.L35:
+ 660 0014 00E100E0 		.word	-536813312
+ 661              		.cfi_endproc
+ 662              	.LFE45:
+ 664              		.section	.text.HAL_SYSTICK_CLKSourceConfig,"ax",%progbits
+ 665              		.align	1
+ 666              		.global	HAL_SYSTICK_CLKSourceConfig
+ 667              		.syntax unified
+ 668              		.code	16
+ 669              		.thumb_func
+ 670              		.fpu softvfp
+ 672              	HAL_SYSTICK_CLKSourceConfig:
+ 673              	.LVL38:
+ 674              	.LFB46:
+ 297:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 298:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /**
+ 299:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @brief  Configures the SysTick clock source.
+ 300:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @param  CLKSource specifies the SysTick clock source.
+ 301:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *         This parameter can be one of the following values:
+ 302:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *             @arg SYSTICK_CLKSOURCE_HCLK_DIV8: AHB clock divided by 8 selected as SysTick clock 
+ 303:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   *             @arg SYSTICK_CLKSOURCE_HCLK: AHB clock selected as SysTick clock source.
+ 304:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @retval None
+ 305:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 306:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** void HAL_SYSTICK_CLKSourceConfig(uint32_t CLKSource)
+ 307:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** {
+ 675              		.loc 1 307 1 is_stmt 1 view -0
+ 676              		.cfi_startproc
+ 677              		@ args = 0, pretend = 0, frame = 0
+ 678              		@ frame_needed = 0, uses_anonymous_args = 0
+ 679              		@ link register save eliminated.
+ 308:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   /* Check the parameters */
+ 309:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   assert_param(IS_SYSTICK_CLK_SOURCE(CLKSource));
+ 680              		.loc 1 309 3 view .LVU152
+ 310:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   if (CLKSource == SYSTICK_CLKSOURCE_HCLK)
+ 681              		.loc 1 310 3 view .LVU153
+ 682              		.loc 1 310 6 is_stmt 0 view .LVU154
+ 683 0000 0428     		cmp	r0, #4
+ 684 0002 05D0     		beq	.L40
+ 311:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   {
+ 312:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     SysTick->CTRL |= SYSTICK_CLKSOURCE_HCLK;
+ 313:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   }
+ 314:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   else
+ 315:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   {
+ 316:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****     SysTick->CTRL &= ~SYSTICK_CLKSOURCE_HCLK;
+ 685              		.loc 1 316 5 is_stmt 1 view .LVU155
+ 686              		.loc 1 316 19 is_stmt 0 view .LVU156
+ 687 0004 054A     		ldr	r2, .L41
+ 688 0006 1368     		ldr	r3, [r2]
+ 689 0008 0421     		movs	r1, #4
+ 690 000a 8B43     		bics	r3, r1
+ 691 000c 1360     		str	r3, [r2]
+ 692              	.L37:
+ARM GAS  /tmp/ccaHSKts.s 			page 41
+
+
+ 317:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   }
+ 318:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** }
+ 693              		.loc 1 318 1 view .LVU157
+ 694              		@ sp needed
+ 695 000e 7047     		bx	lr
+ 696              	.L40:
+ 312:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   }
+ 697              		.loc 1 312 5 is_stmt 1 view .LVU158
+ 312:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   }
+ 698              		.loc 1 312 19 is_stmt 0 view .LVU159
+ 699 0010 024A     		ldr	r2, .L41
+ 700 0012 1368     		ldr	r3, [r2]
+ 701 0014 0421     		movs	r1, #4
+ 702 0016 0B43     		orrs	r3, r1
+ 703 0018 1360     		str	r3, [r2]
+ 704 001a F8E7     		b	.L37
+ 705              	.L42:
+ 706              		.align	2
+ 707              	.L41:
+ 708 001c 10E000E0 		.word	-536813552
+ 709              		.cfi_endproc
+ 710              	.LFE46:
+ 712              		.section	.text.HAL_SYSTICK_Callback,"ax",%progbits
+ 713              		.align	1
+ 714              		.weak	HAL_SYSTICK_Callback
+ 715              		.syntax unified
+ 716              		.code	16
+ 717              		.thumb_func
+ 718              		.fpu softvfp
+ 720              	HAL_SYSTICK_Callback:
+ 721              	.LFB48:
+ 319:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 320:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /**
+ 321:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @brief  This function handles SYSTICK interrupt request.
+ 322:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @retval None
+ 323:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 324:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** void HAL_SYSTICK_IRQHandler(void)
+ 325:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** {
+ 326:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   HAL_SYSTICK_Callback();
+ 327:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** }
+ 328:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 329:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** /**
+ 330:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @brief  SYSTICK callback.
+ 331:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   * @retval None
+ 332:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   */
+ 333:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** __weak void HAL_SYSTICK_Callback(void)
+ 334:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** {
+ 722              		.loc 1 334 1 is_stmt 1 view -0
+ 723              		.cfi_startproc
+ 724              		@ args = 0, pretend = 0, frame = 0
+ 725              		@ frame_needed = 0, uses_anonymous_args = 0
+ 726              		@ link register save eliminated.
+ 335:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   /* NOTE : This function Should not be modified, when the callback is needed,
+ 336:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****             the HAL_SYSTICK_Callback could be implemented in the user file
+ 337:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****    */
+ 338:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** }
+ 727              		.loc 1 338 1 view .LVU161
+ARM GAS  /tmp/ccaHSKts.s 			page 42
+
+
+ 728              		@ sp needed
+ 729 0000 7047     		bx	lr
+ 730              		.cfi_endproc
+ 731              	.LFE48:
+ 733              		.section	.text.HAL_SYSTICK_IRQHandler,"ax",%progbits
+ 734              		.align	1
+ 735              		.global	HAL_SYSTICK_IRQHandler
+ 736              		.syntax unified
+ 737              		.code	16
+ 738              		.thumb_func
+ 739              		.fpu softvfp
+ 741              	HAL_SYSTICK_IRQHandler:
+ 742              	.LFB47:
+ 325:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c ****   HAL_SYSTICK_Callback();
+ 743              		.loc 1 325 1 view -0
+ 744              		.cfi_startproc
+ 745              		@ args = 0, pretend = 0, frame = 0
+ 746              		@ frame_needed = 0, uses_anonymous_args = 0
+ 747 0000 10B5     		push	{r4, lr}
+ 748              	.LCFI1:
+ 749              		.cfi_def_cfa_offset 8
+ 750              		.cfi_offset 4, -8
+ 751              		.cfi_offset 14, -4
+ 326:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** }
+ 752              		.loc 1 326 3 view .LVU163
+ 753 0002 FFF7FEFF 		bl	HAL_SYSTICK_Callback
+ 754              	.LVL39:
+ 327:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c **** 
+ 755              		.loc 1 327 1 is_stmt 0 view .LVU164
+ 756              		@ sp needed
+ 757 0006 10BD     		pop	{r4, pc}
+ 758              		.cfi_endproc
+ 759              	.LFE47:
+ 761              		.text
+ 762              	.Letext0:
+ 763              		.file 4 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h"
+ 764              		.file 5 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 765              		.file 6 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 766              		.file 7 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h"
+ 767              		.file 8 "/usr/arm-none-eabi/include/sys/lock.h"
+ 768              		.file 9 "/usr/arm-none-eabi/include/sys/_types.h"
+ 769              		.file 10 "/usr/lib/gcc/arm-none-eabi/9.1.0/include/stddef.h"
+ 770              		.file 11 "/usr/arm-none-eabi/include/sys/reent.h"
+ARM GAS  /tmp/ccaHSKts.s 			page 43
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f0xx_hal_cortex.c
+     /tmp/ccaHSKts.s:16     .text.HAL_NVIC_SetPriority:0000000000000000 $t
+     /tmp/ccaHSKts.s:24     .text.HAL_NVIC_SetPriority:0000000000000000 HAL_NVIC_SetPriority
+     /tmp/ccaHSKts.s:139    .text.HAL_NVIC_SetPriority:0000000000000058 $d
+     /tmp/ccaHSKts.s:147    .text.HAL_NVIC_EnableIRQ:0000000000000000 $t
+     /tmp/ccaHSKts.s:154    .text.HAL_NVIC_EnableIRQ:0000000000000000 HAL_NVIC_EnableIRQ
+     /tmp/ccaHSKts.s:189    .text.HAL_NVIC_EnableIRQ:0000000000000010 $d
+     /tmp/ccaHSKts.s:194    .text.HAL_NVIC_DisableIRQ:0000000000000000 $t
+     /tmp/ccaHSKts.s:201    .text.HAL_NVIC_DisableIRQ:0000000000000000 HAL_NVIC_DisableIRQ
+     /tmp/ccaHSKts.s:237    .text.HAL_NVIC_DisableIRQ:0000000000000010 $d
+     /tmp/ccaHSKts.s:242    .text.HAL_NVIC_SystemReset:0000000000000000 $t
+     /tmp/ccaHSKts.s:249    .text.HAL_NVIC_SystemReset:0000000000000000 HAL_NVIC_SystemReset
+     /tmp/ccaHSKts.s:314    .text.HAL_NVIC_SystemReset:0000000000000014 $d
+     /tmp/ccaHSKts.s:324    .text.HAL_SYSTICK_Config:0000000000000000 $t
+     /tmp/ccaHSKts.s:331    .text.HAL_SYSTICK_Config:0000000000000000 HAL_SYSTICK_Config
+     /tmp/ccaHSKts.s:417    .text.HAL_SYSTICK_Config:0000000000000030 $d
+     /tmp/ccaHSKts.s:423    .text.HAL_NVIC_GetPriority:0000000000000000 $t
+     /tmp/ccaHSKts.s:430    .text.HAL_NVIC_GetPriority:0000000000000000 HAL_NVIC_GetPriority
+     /tmp/ccaHSKts.s:508    .text.HAL_NVIC_GetPriority:0000000000000044 $d
+     /tmp/ccaHSKts.s:516    .text.HAL_NVIC_SetPendingIRQ:0000000000000000 $t
+     /tmp/ccaHSKts.s:523    .text.HAL_NVIC_SetPendingIRQ:0000000000000000 HAL_NVIC_SetPendingIRQ
+     /tmp/ccaHSKts.s:560    .text.HAL_NVIC_SetPendingIRQ:0000000000000014 $d
+     /tmp/ccaHSKts.s:565    .text.HAL_NVIC_GetPendingIRQ:0000000000000000 $t
+     /tmp/ccaHSKts.s:572    .text.HAL_NVIC_GetPendingIRQ:0000000000000000 HAL_NVIC_GetPendingIRQ
+     /tmp/ccaHSKts.s:611    .text.HAL_NVIC_GetPendingIRQ:0000000000000014 $d
+     /tmp/ccaHSKts.s:616    .text.HAL_NVIC_ClearPendingIRQ:0000000000000000 $t
+     /tmp/ccaHSKts.s:623    .text.HAL_NVIC_ClearPendingIRQ:0000000000000000 HAL_NVIC_ClearPendingIRQ
+     /tmp/ccaHSKts.s:660    .text.HAL_NVIC_ClearPendingIRQ:0000000000000014 $d
+     /tmp/ccaHSKts.s:665    .text.HAL_SYSTICK_CLKSourceConfig:0000000000000000 $t
+     /tmp/ccaHSKts.s:672    .text.HAL_SYSTICK_CLKSourceConfig:0000000000000000 HAL_SYSTICK_CLKSourceConfig
+     /tmp/ccaHSKts.s:708    .text.HAL_SYSTICK_CLKSourceConfig:000000000000001c $d
+     /tmp/ccaHSKts.s:713    .text.HAL_SYSTICK_Callback:0000000000000000 $t
+     /tmp/ccaHSKts.s:720    .text.HAL_SYSTICK_Callback:0000000000000000 HAL_SYSTICK_Callback
+     /tmp/ccaHSKts.s:734    .text.HAL_SYSTICK_IRQHandler:0000000000000000 $t
+     /tmp/ccaHSKts.s:741    .text.HAL_SYSTICK_IRQHandler:0000000000000000 HAL_SYSTICK_IRQHandler
+
+NO UNDEFINED SYMBOLS
