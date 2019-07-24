@@ -626,8 +626,6 @@ F 3 "" H 2100 2250 50  0001 C CNN
 $EndComp
 Text GLabel 13000 4050 0    60   Input ~ 0
 PWM
-Text GLabel 6700 2800 0    60   Input ~ 0
-PWM
 Text GLabel 5100 3500 0    60   Input ~ 0
 SCL
 Text GLabel 5100 3600 0    60   Input ~ 0
@@ -1087,8 +1085,6 @@ OLED_PULLUP
 Text GLabel 6700 3300 0    60   Input ~ 0
 OLED_PULLUP
 Wire Wire Line
-	6700 2800 6750 2800
-Wire Wire Line
 	6750 3100 6700 3100
 Wire Wire Line
 	6700 3200 6750 3200
@@ -1271,7 +1267,7 @@ L Device:C_Small C16
 U 1 1 5C00E5D4
 P 11500 3950
 F 0 "C16" V 11450 3850 50  0000 C CNN
-F 1 "0.1uF" V 11600 3950 50  0000 C CNN
+F 1 "100p" V 11600 3950 50  0000 C CNN
 F 2 "Capacitor_SMD:C_0402_1005Metric" H 11500 3950 50  0001 C CNN
 F 3 "~" H 11500 3950 50  0001 C CNN
 	1    11500 3950
@@ -1880,10 +1876,10 @@ Wire Wire Line
 Wire Wire Line
 	3500 8250 3500 8350
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0147
 U 1 1 5D391174
 P 3450 8250
-F 0 "#PWR?" H 3450 8000 50  0001 C CNN
+F 0 "#PWR0147" H 3450 8000 50  0001 C CNN
 F 1 "GND" H 3455 8077 50  0000 C CNN
 F 2 "" H 3450 8250 50  0001 C CNN
 F 3 "" H 3450 8250 50  0001 C CNN
@@ -1891,4 +1887,8 @@ F 3 "" H 3450 8250 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Connection ~ 3500 8250
+Text GLabel 8050 3300 2    60   Input ~ 0
+PWM
+Text Notes 9450 3600 0    50   ~ 0
+Todo:\nDesign auf 4/4 mil\nvias kleiner\nTimer umpfoten
 $EndSCHEMATC
