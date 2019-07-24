@@ -44,6 +44,11 @@ struct status_t{
   uint8_t button[2];
 }s;
 
+struct tipcal_t{
+  float offset;
+  float coefficient;
+} tipcal = {.offset = -55, .coefficient = 133};
+
 uint16_t ADC_raw[4];
 uint8_t index;
 
@@ -62,22 +67,30 @@ int main(void)
   MX_USB_PCD_Init();
 
   HAL_ADC_Start_IT(&hadc);
+
+  HAL_TIM_PWM_Start_IT(&htim2, TIM_CHANNEL_2);
+
   while (1)
   {
-    HAL_Delay(100);
+    HAL_Delay(90);
     s.button[0] = HAL_GPIO_ReadPin(GPIOA,B1_Pin);
     s.button[1] = HAL_GPIO_ReadPin(GPIOA,B2_Pin);
     s.tref = ((((float)ADC_raw[0]/4095.0)*3.3)-0.5)/0.01;
-    s.ttip = ((ADC_raw[1])*133)/1000+s.tref;
+    s.ttip = ((ADC_raw[1]-tipcal.offset)*tipcal.coefficient)/1000+s.tref;
     s.uin = ((ADC_raw[2]/4095.0)*3.3)*6.6;
     s.iin = ((ADC_raw[3]/4095.0)*3.3);
   }
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+  HAL_ADC_Start_IT(&hadc);
 }
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
  if (__HAL_ADC_GET_FLAG(hadc, ADC_FLAG_EOC))
   {
+    //HAL_Delay(10);
   __HAL_ADC_CLEAR_FLAG(hadc, ADC_FLAG_EOC);
   ADC_raw[index] = HAL_ADC_GetValue(hadc);
   index++;
@@ -88,6 +101,7 @@ if (__HAL_ADC_GET_FLAG(hadc, ADC_FLAG_EOS))
    index = 0;
  }
 }
+
 
 void SystemClock_Config(void)
 {
@@ -138,7 +152,7 @@ static void MX_ADC_Init(void)
   hadc.Init.LowPowerAutoPowerOff = DISABLE;
   hadc.Init.ContinuousConvMode = ENABLE;
   hadc.Init.DiscontinuousConvMode = DISABLE;
-  hadc.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc.Init.ExternalTrigConv = ADC_SOFTWARE_START;//ADC_EXTERNALTRIGCONV_T2_TRGO;
   hadc.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   hadc.Init.DMAContinuousRequests = DISABLE;
   hadc.Init.Overrun = ADC_OVR_DATA_PRESERVED;
@@ -146,7 +160,7 @@ static void MX_ADC_Init(void)
 
   sConfig.Channel = ADC_CHANNEL_0;
   sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
-  sConfig.SamplingTime = ADC_SAMPLETIME_239CYCLES_5;
+  sConfig.SamplingTime = ADC_SAMPLETIME_13CYCLES_5;
   HAL_ADC_ConfigChannel(&hadc, &sConfig);
 
   sConfig.Channel = ADC_CHANNEL_1;
@@ -199,24 +213,27 @@ static void MX_I2C2_Init(void)
 
 static void MX_TIM2_Init(void)
 {
-
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
   TIM_MasterConfigTypeDef sMasterConfig = {0};
   TIM_OC_InitTypeDef sConfigOC = {0};
 
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 0;
+  htim2.Init.Prescaler = 2096;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 0;
-  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  htim2.Init.Period = 4096;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV4;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   HAL_TIM_PWM_Init(&htim2);
 
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig);
+
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_UPDATE;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig);
 
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
+  sConfigOC.Pulse = 30;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2);

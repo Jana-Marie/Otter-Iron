@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccmZEorh.s 			page 1
+ARM GAS  /tmp/ccY2u68l.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
   30:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       analog watchdog or overrun events.
   31:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   
   32:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   (+) Single and continuous conversion modes.
-ARM GAS  /tmp/ccmZEorh.s 			page 2
+ARM GAS  /tmp/ccY2u68l.s 			page 2
 
 
   33:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
   87:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                    Into HAL_ADC_MspInit() (recommended code location) or with
   88:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                    other device clock parameters configuration:
   89:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                (+++) __HAL_RCC_ADC1_CLK_ENABLE();                         (mandatory)
-ARM GAS  /tmp/ccmZEorh.s 			page 3
+ARM GAS  /tmp/ccY2u68l.s 			page 3
 
 
   90:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  144:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     (#) Optionally, perform an automatic ADC calibration to improve the
  145:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****         conversion accuracy
  146:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****         using function HAL_ADCEx_Calibration_Start().
-ARM GAS  /tmp/ccmZEorh.s 			page 4
+ARM GAS  /tmp/ccY2u68l.s 			page 4
 
 
  147:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  201:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****              (+++) Example:
  202:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                    Into HAL_ADC_MspDeInit() (recommended code location) or with
  203:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                    other device clock parameters configuration:
-ARM GAS  /tmp/ccmZEorh.s 			page 5
+ARM GAS  /tmp/ccY2u68l.s 			page 5
 
 
  204:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                (+++) RCC_OscInitStructure.OscillatorType = RCC_OSCILLATORTYPE_HSI14;
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  258:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** /** @addtogroup STM32F0xx_HAL_Driver
  259:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   * @{
  260:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   */
-ARM GAS  /tmp/ccmZEorh.s 			page 6
+ARM GAS  /tmp/ccY2u68l.s 			page 6
 
 
  261:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  315:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
  316:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** /* Exported functions ---------------------------------------------------------*/
  317:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
-ARM GAS  /tmp/ccmZEorh.s 			page 7
+ARM GAS  /tmp/ccY2u68l.s 			page 7
 
 
  318:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** /** @defgroup ADC_Exported_Functions ADC Exported Functions
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  372:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   assert_param(IS_ADC_CLOCKPRESCALER(hadc->Init.ClockPrescaler));
  373:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   assert_param(IS_ADC_RESOLUTION(hadc->Init.Resolution));
  374:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   assert_param(IS_ADC_DATA_ALIGN(hadc->Init.DataAlign)); 
-ARM GAS  /tmp/ccmZEorh.s 			page 8
+ARM GAS  /tmp/ccY2u68l.s 			page 8
 
 
  375:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   assert_param(IS_ADC_SCAN_MODE(hadc->Init.ScanConvMode));
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  429:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       /* function on the fly (update of a parameter of ADC_InitTypeDef        */
  430:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       /* without needing to reconfigure all other ADC groups/channels         */
  431:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       /* parameters):                                                         */
-ARM GAS  /tmp/ccmZEorh.s 			page 9
+ARM GAS  /tmp/ccY2u68l.s 			page 9
 
 
  432:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       /*   - internal measurement paths: Vbat, temperature sensor, Vref       */
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  486:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       else
  487:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       {
  488:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****         /* ADC regular group discontinuous was intended to be enabled,        */
-ARM GAS  /tmp/ccmZEorh.s 			page 10
+ARM GAS  /tmp/ccY2u68l.s 			page 10
 
 
  489:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****         /* but ADC regular group modes continuous and sequencer discontinuous */
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  543:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                         HAL_ADC_STATE_BUSY_INTERNAL,
  544:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                         HAL_ADC_STATE_READY);
  545:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     }
-ARM GAS  /tmp/ccmZEorh.s 			page 11
+ARM GAS  /tmp/ccY2u68l.s 			page 11
 
 
  546:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     else
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  600:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   
  601:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   /* Stop potential conversion on going, on regular group */
  602:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   tmp_hal_status = ADC_ConversionStop(hadc);
-ARM GAS  /tmp/ccmZEorh.s 			page 12
+ARM GAS  /tmp/ccY2u68l.s 			page 12
 
 
  603:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  657:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     hadc->Instance->CHSELR &= ~(ADC_CHSELR_CHSEL18 | ADC_CHSELR_CHSEL17 | ADC_CHSELR_CHSEL16 |
  658:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                                 ADC_CHSELR_CHSEL15 | ADC_CHSELR_CHSEL14 | ADC_CHSELR_CHSEL13 | ADC_
  659:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                                 ADC_CHSELR_CHSEL11 | ADC_CHSELR_CHSEL10 | ADC_CHSELR_CHSEL9  | ADC_
-ARM GAS  /tmp/ccmZEorh.s 			page 13
+ARM GAS  /tmp/ccY2u68l.s 			page 13
 
 
  660:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                                 ADC_CHSELR_CHSEL7  | ADC_CHSELR_CHSEL6  | ADC_CHSELR_CHSEL5  | ADC_
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  714:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   * @retval None
  715:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   */
  716:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** __weak void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
-ARM GAS  /tmp/ccmZEorh.s 			page 14
+ARM GAS  /tmp/ccY2u68l.s 			page 14
 
 
  717:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** {
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  771:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     /* Enable the ADC peripheral */
  772:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     /* If low power mode AutoPowerOff is enabled, power-on/off phases are     */
  773:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     /* performed automatically by hardware.                                   */
-ARM GAS  /tmp/ccmZEorh.s 			page 15
+ARM GAS  /tmp/ccY2u68l.s 			page 15
 
 
  774:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     if (hadc->Init.LowPowerAutoPowerOff != ENABLE)
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  828:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   assert_param(IS_ADC_ALL_INSTANCE(hadc->Instance));
  829:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   
  830:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   /* Process locked */
-ARM GAS  /tmp/ccmZEorh.s 			page 16
+ARM GAS  /tmp/ccY2u68l.s 			page 16
 
 
  831:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   __HAL_LOCK(hadc);
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  885:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   /* If end of conversion selected to end of sequence */
  886:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   if (hadc->Init.EOCSelection == ADC_EOC_SEQ_CONV)
  887:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   {
-ARM GAS  /tmp/ccmZEorh.s 			page 17
+ARM GAS  /tmp/ccY2u68l.s 			page 17
 
 
  888:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     tmp_Flag_EOC = ADC_FLAG_EOS;
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  942:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   if(ADC_IS_SOFTWARE_START_REGULAR(hadc)        && 
  943:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****      (hadc->Init.ContinuousConvMode == DISABLE)   )
  944:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   {
-ARM GAS  /tmp/ccmZEorh.s 			page 18
+ARM GAS  /tmp/ccY2u68l.s 			page 18
 
 
  945:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     /* If End of Sequence is reached, disable interrupts */
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  999:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   uint32_t tickstart=0; 
 1000:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   
 1001:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   /* Check the parameters */
-ARM GAS  /tmp/ccmZEorh.s 			page 19
+ARM GAS  /tmp/ccY2u68l.s 			page 19
 
 
 1002:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   assert_param(IS_ADC_ALL_INSTANCE(hadc->Instance));
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1056:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   }
 1057:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   
 1058:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   /* Return ADC state */
-ARM GAS  /tmp/ccmZEorh.s 			page 20
+ARM GAS  /tmp/ccY2u68l.s 			page 20
 
 
 1059:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   return HAL_OK;
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1113:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       /* (To ensure of no unknown state from potential previous ADC           */
 1114:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       /* operations)                                                          */
 1115:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       __HAL_ADC_CLEAR_FLAG(hadc, (ADC_FLAG_EOC | ADC_FLAG_EOS | ADC_FLAG_OVR));
-ARM GAS  /tmp/ccmZEorh.s 			page 21
+ARM GAS  /tmp/ccY2u68l.s 			page 21
 
 
 1116:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1170:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     /* Disable ADC end of conversion interrupt for regular group */
 1171:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     /* Disable ADC overrun interrupt */
 1172:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     __HAL_ADC_DISABLE_IT(hadc, (ADC_IT_EOC | ADC_IT_EOS | ADC_IT_OVR));
-ARM GAS  /tmp/ccmZEorh.s 			page 22
+ARM GAS  /tmp/ccY2u68l.s 			page 22
 
 
 1173:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1227:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     
 1228:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     /* Start conversion if ADC is effectively enabled */
 1229:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     if (tmp_hal_status == HAL_OK)
-ARM GAS  /tmp/ccmZEorh.s 			page 23
+ARM GAS  /tmp/ccY2u68l.s 			page 23
 
 
 1230:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     {
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1284:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     
 1285:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   /* Return function status */
 1286:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   return tmp_hal_status;
-ARM GAS  /tmp/ccmZEorh.s 			page 24
+ARM GAS  /tmp/ccY2u68l.s 			page 24
 
 
 1287:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** }
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1341:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     /* Check if ADC is effectively disabled */
 1342:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     if (tmp_hal_status == HAL_OK)
 1343:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     {
-ARM GAS  /tmp/ccmZEorh.s 			page 25
+ARM GAS  /tmp/ccY2u68l.s 			page 25
 
 
 1344:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       /* Set ADC state */
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1398:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   assert_param(IS_ADC_ALL_INSTANCE(hadc->Instance));
 1399:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   assert_param(IS_FUNCTIONAL_STATE(hadc->Init.ContinuousConvMode));
 1400:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   assert_param(IS_ADC_EOC_SELECTION(hadc->Init.EOCSelection));
-ARM GAS  /tmp/ccmZEorh.s 			page 26
+ARM GAS  /tmp/ccY2u68l.s 			page 26
 
 
 1401:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1455:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     /* Note: in case of overrun set to ADC_OVR_DATA_PRESERVED, end of         */
 1456:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     /*       conversion flags clear induces the release of the preserved data.*/
 1457:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     /*       Therefore, if the preserved data value is needed, it must be     */
-ARM GAS  /tmp/ccmZEorh.s 			page 27
+ARM GAS  /tmp/ccY2u68l.s 			page 27
 
 
 1458:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     /*       read preliminarily into HAL_ADC_ConvCpltCallback().              */
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1512:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** {
 1513:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   /* Prevent unused argument(s) compilation warning */
 1514:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   UNUSED(hadc);
-ARM GAS  /tmp/ccmZEorh.s 			page 28
+ARM GAS  /tmp/ccY2u68l.s 			page 28
 
 
 1515:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1569:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   * @}
 1570:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   */
 1571:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
-ARM GAS  /tmp/ccmZEorh.s 			page 29
+ARM GAS  /tmp/ccY2u68l.s 			page 29
 
 
 1572:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** /** @defgroup ADC_Exported_Functions_Group3 Peripheral Control functions
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1626:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   /* Process locked */
 1627:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   __HAL_LOCK(hadc);
 1628:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   
-ARM GAS  /tmp/ccmZEorh.s 			page 30
+ARM GAS  /tmp/ccY2u68l.s 			page 30
 
 
 1629:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   /* Parameters update conditioned to ADC state:                              */
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1683:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****           wait_loop_index = (ADC_TEMPSENSOR_DELAY_US * (SystemCoreClock / 1000000U));
 1684:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****           while(wait_loop_index != 0U)
 1685:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****           {
-ARM GAS  /tmp/ccmZEorh.s 			page 31
+ARM GAS  /tmp/ccY2u68l.s 			page 31
 
 
 1686:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****             wait_loop_index--;
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1740:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   * @param  hadc ADC handle
 1741:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   * @param  AnalogWDGConfig Structure of ADC analog watchdog configuration
 1742:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   * @retval HAL status
-ARM GAS  /tmp/ccmZEorh.s 			page 32
+ARM GAS  /tmp/ccY2u68l.s 			page 32
 
 
 1743:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   */
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1797:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     /* Clear the ADC Analog watchdog flag (in case of left enabled by         */
 1798:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     /* previous ADC operations) to be ready to use for HAL_ADC_IRQHandler()   */
 1799:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     /* or HAL_ADC_PollForEvent().                                             */
-ARM GAS  /tmp/ccmZEorh.s 			page 33
+ARM GAS  /tmp/ccY2u68l.s 			page 33
 
 
 1800:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     __HAL_ADC_CLEAR_FLAG(hadc, ADC_IT_AWD);
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1854:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   */
 1855:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
 1856:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** /**
-ARM GAS  /tmp/ccmZEorh.s 			page 34
+ARM GAS  /tmp/ccY2u68l.s 			page 34
 
 
 1857:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   * @brief  Return the ADC state
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1911:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** {
 1912:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   uint32_t tickstart = 0U;
 1913:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   __IO uint32_t wait_loop_index = 0U;
-ARM GAS  /tmp/ccmZEorh.s 			page 35
+ARM GAS  /tmp/ccY2u68l.s 			page 35
 
 
 1914:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1968:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** /**
 1969:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   * @brief  Disable the selected ADC.
 1970:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   * @note   Prerequisite condition to use this function: ADC conversions must be
-ARM GAS  /tmp/ccmZEorh.s 			page 36
+ARM GAS  /tmp/ccY2u68l.s 			page 36
 
 
 1971:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   *         stopped.
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 2025:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** /**
 2026:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   * @brief  Stop ADC conversion.
 2027:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   * @note   Prerequisite condition to use this function: ADC conversions must be
-ARM GAS  /tmp/ccmZEorh.s 			page 37
+ARM GAS  /tmp/ccY2u68l.s 			page 37
 
 
 2028:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   *         stopped to disable the ADC.
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
   60 0016 03D4     		bmi	.L3
 2048:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     {
 2049:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       /* Stop conversions on regular group */
-ARM GAS  /tmp/ccmZEorh.s 			page 38
+ARM GAS  /tmp/ccY2u68l.s 			page 38
 
 
 2050:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       hadc->Instance->CR |= ADC_CR_ADSTP;
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
   99 0040 A36C     		ldr	r3, [r4, #72]
  100 0042 0F3A     		subs	r2, r2, #15
  101 0044 1343     		orrs	r3, r2
-ARM GAS  /tmp/ccmZEorh.s 			page 39
+ARM GAS  /tmp/ccY2u68l.s 			page 39
 
 
  102 0046 A364     		str	r3, [r4, #72]
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  146              		.cfi_offset 14, -4
  147 0002 0400     		movs	r4, r0
 1977:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   
-ARM GAS  /tmp/ccmZEorh.s 			page 40
+ARM GAS  /tmp/ccY2u68l.s 			page 40
 
 
  148              		.loc 1 1977 3 is_stmt 1 view .LVU35
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1996:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       
  191              		.loc 1 1996 7 view .LVU47
  192 0032 A36C     		ldr	r3, [r4, #72]
-ARM GAS  /tmp/ccmZEorh.s 			page 41
+ARM GAS  /tmp/ccY2u68l.s 			page 41
 
 
  193 0034 0F3A     		subs	r2, r2, #15
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 2007:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       {
  233              		.loc 1 2007 25 view .LVU62
  234 005e 401B     		subs	r0, r0, r5
-ARM GAS  /tmp/ccmZEorh.s 			page 42
+ARM GAS  /tmp/ccY2u68l.s 			page 42
 
 
 2007:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       {
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  281              		.loc 1 1911 1 is_stmt 0 view .LVU72
  282 0000 30B5     		push	{r4, r5, lr}
  283              	.LCFI2:
-ARM GAS  /tmp/ccmZEorh.s 			page 43
+ARM GAS  /tmp/ccY2u68l.s 			page 43
 
 
  284              		.cfi_def_cfa_offset 12
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  326 002c FFF7FEFF 		bl	__aeabi_uidiv
  327              	.LVL23:
 1938:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     while(wait_loop_index != 0U)
-ARM GAS  /tmp/ccmZEorh.s 			page 44
+ARM GAS  /tmp/ccY2u68l.s 			page 44
 
 
  328              		.loc 1 1938 21 view .LVU85
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  370              		.loc 1 1930 7 view .LVU97
 1930:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     }
  371              		.loc 1 1930 14 is_stmt 0 view .LVU98
-ARM GAS  /tmp/ccmZEorh.s 			page 45
+ARM GAS  /tmp/ccY2u68l.s 			page 45
 
 
  372 0060 0120     		movs	r0, #1
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  413 0088 0F3A     		subs	r2, r2, #15
  414 008a 1343     		orrs	r3, r2
  415 008c A364     		str	r3, [r4, #72]
-ARM GAS  /tmp/ccmZEorh.s 			page 46
+ARM GAS  /tmp/ccY2u68l.s 			page 46
 
 
 1958:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       }
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  465              		.global	HAL_ADC_Init
  466              		.syntax unified
  467              		.code	16
-ARM GAS  /tmp/ccmZEorh.s 			page 47
+ARM GAS  /tmp/ccY2u68l.s 			page 47
 
 
  468              		.thumb_func
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  382:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   assert_param(IS_FUNCTIONAL_STATE(hadc->Init.LowPowerAutoWait));
  506              		.loc 1 382 3 view .LVU137
  383:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   assert_param(IS_FUNCTIONAL_STATE(hadc->Init.LowPowerAutoPowerOff));
-ARM GAS  /tmp/ccmZEorh.s 			page 48
+ARM GAS  /tmp/ccY2u68l.s 			page 48
 
 
  507              		.loc 1 383 3 view .LVU138
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  549 003a 012B     		cmp	r3, #1
  550 003c 6DD0     		beq	.L53
  551              	.L40:
-ARM GAS  /tmp/ccmZEorh.s 			page 49
+ARM GAS  /tmp/ccY2u68l.s 			page 49
 
 
  436:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                  ADC_CFGR1_RES        ,
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  594 0078 8022     		movs	r2, #128
  595 007a 5201     		lsls	r2, r2, #5
  596              	.L42:
-ARM GAS  /tmp/ccmZEorh.s 			page 50
+ARM GAS  /tmp/ccY2u68l.s 			page 50
 
 
  472:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                  ADC_CFGR1_OVERRUN(hadc->Init.Overrun)                  |
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  512:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     
  637              		.loc 1 512 5 is_stmt 1 view .LVU177
  512:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     
-ARM GAS  /tmp/ccmZEorh.s 			page 51
+ARM GAS  /tmp/ccY2u68l.s 			page 51
 
 
  638              		.loc 1 512 9 is_stmt 0 view .LVU178
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  678 00d6 4169     		ldr	r1, [r0, #20]
  679 00d8 0722     		movs	r2, #7
  680 00da 9143     		bics	r1, r2
-ARM GAS  /tmp/ccmZEorh.s 			page 52
+ARM GAS  /tmp/ccY2u68l.s 			page 52
 
 
  681 00dc 4161     		str	r1, [r0, #20]
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  556:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     }
  721              		.loc 1 556 22 is_stmt 0 view .LVU207
  722 010a 0120     		movs	r0, #1
-ARM GAS  /tmp/ccmZEorh.s 			page 53
+ARM GAS  /tmp/ccY2u68l.s 			page 53
 
 
  723 010c 2EE0     		b	.L37
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  764 0136 5202     		lsls	r2, r2, #9
  765 0138 1343     		orrs	r3, r2
  766              	.LVL46:
-ARM GAS  /tmp/ccmZEorh.s 			page 54
+ARM GAS  /tmp/ccY2u68l.s 			page 54
 
 
  484:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       }
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  810              		.loc 1 570 1 view .LVU231
  811              		@ sp needed
  812              	.LVL51:
-ARM GAS  /tmp/ccmZEorh.s 			page 55
+ARM GAS  /tmp/ccY2u68l.s 			page 55
 
 
  570:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  586:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   HAL_StatusTypeDef tmp_hal_status = HAL_OK;
  865              		.loc 1 586 1 is_stmt 1 view -0
  866              		.cfi_startproc
-ARM GAS  /tmp/ccmZEorh.s 			page 56
+ARM GAS  /tmp/ccY2u68l.s 			page 56
 
 
  867              		@ args = 0, pretend = 0, frame = 0
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  689:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   
  907              		.loc 1 689 3 view .LVU253
  908 001a 4023     		movs	r3, #64
-ARM GAS  /tmp/ccmZEorh.s 			page 57
+ARM GAS  /tmp/ccY2u68l.s 			page 57
 
 
  909 001c 0022     		movs	r2, #0
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  640:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                                ADC_CFGR1_AUTOFF  | ADC_CFGR1_WAIT   | ADC_CFGR1_CONT   | ADC_CFGR1_
  951              		.loc 1 640 5 view .LVU266
  640:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                                ADC_CFGR1_AUTOFF  | ADC_CFGR1_WAIT   | ADC_CFGR1_CONT   | ADC_CFGR1_
-ARM GAS  /tmp/ccmZEorh.s 			page 58
+ARM GAS  /tmp/ccY2u68l.s 			page 58
 
 
  952              		.loc 1 640 9 is_stmt 0 view .LVU267
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  667:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
  992              		.loc 1 667 14 is_stmt 0 view .LVU282
  993 0076 094A     		ldr	r2, .L67+8
-ARM GAS  /tmp/ccmZEorh.s 			page 59
+ARM GAS  /tmp/ccY2u68l.s 			page 59
 
 
  994 0078 1368     		ldr	r3, [r2]
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1043              		.cfi_offset 4, -8
  1044              		.cfi_offset 14, -4
  1045 0002 0400     		movs	r4, r0
-ARM GAS  /tmp/ccmZEorh.s 			page 60
+ARM GAS  /tmp/ccY2u68l.s 			page 60
 
 
  760:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1086              		.loc 1 795 7 view .LVU303
  795:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       
  1087              		.loc 1 795 7 view .LVU304
-ARM GAS  /tmp/ccmZEorh.s 			page 61
+ARM GAS  /tmp/ccY2u68l.s 			page 61
 
 
  1088 0034 4022     		movs	r2, #64
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1129 0058 0220     		movs	r0, #2
  1130              	.LVL78:
  769:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       
-ARM GAS  /tmp/ccmZEorh.s 			page 62
+ARM GAS  /tmp/ccY2u68l.s 			page 62
 
 
  1131              		.loc 1 769 5 view .LVU318
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1178              	.LVL81:
  837:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   {
  1179              		.loc 1 837 3 is_stmt 1 discriminator 2 view .LVU328
-ARM GAS  /tmp/ccmZEorh.s 			page 63
+ARM GAS  /tmp/ccY2u68l.s 			page 63
 
 
  837:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   {
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  831:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   
  1222              		.loc 1 831 3 is_stmt 0 view .LVU341
  1223 003c 0220     		movs	r0, #2
-ARM GAS  /tmp/ccmZEorh.s 			page 64
+ARM GAS  /tmp/ccY2u68l.s 			page 64
 
 
  1224              	.LVL89:
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1270              		.loc 1 899 5 is_stmt 1 view .LVU351
  899:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     {
  1271              		.loc 1 899 9 is_stmt 0 view .LVU352
-ARM GAS  /tmp/ccmZEorh.s 			page 65
+ARM GAS  /tmp/ccY2u68l.s 			page 65
 
 
  1272 000c 0368     		ldr	r3, [r0]
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1311 0034 F2D9     		bls	.L89
  1312              	.L90:
  927:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****         
-ARM GAS  /tmp/ccmZEorh.s 			page 66
+ARM GAS  /tmp/ccY2u68l.s 			page 66
 
 
  1313              		.loc 1 927 9 is_stmt 1 view .LVU368
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1354              		.loc 1 942 6 is_stmt 0 view .LVU381
  1355 0064 D968     		ldr	r1, [r3, #12]
  1356 0066 C022     		movs	r2, #192
-ARM GAS  /tmp/ccmZEorh.s 			page 67
+ARM GAS  /tmp/ccY2u68l.s 			page 67
 
 
  1357 0068 1201     		lsls	r2, r2, #4
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1398 009e 0C22     		movs	r2, #12
  1399 00a0 1A60     		str	r2, [r3]
  984:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** }
-ARM GAS  /tmp/ccmZEorh.s 			page 68
+ARM GAS  /tmp/ccY2u68l.s 			page 68
 
 
  1400              		.loc 1 984 10 is_stmt 0 view .LVU395
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1449              		.loc 1 998 1 is_stmt 0 view .LVU402
  1450 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
  1451              	.LCFI9:
-ARM GAS  /tmp/ccmZEorh.s 			page 69
+ARM GAS  /tmp/ccY2u68l.s 			page 69
 
 
  1452              		.cfi_def_cfa_offset 24
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1492              	.LVL106:
 1014:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       {
  1493              		.loc 1 1014 44 discriminator 1 view .LVU417
-ARM GAS  /tmp/ccmZEorh.s 			page 70
+ARM GAS  /tmp/ccY2u68l.s 			page 70
 
 
  1494 0024 C01B     		subs	r0, r0, r7
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1535              	.LVL110:
 1060:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
  1536              		.loc 1 1060 1 view .LVU431
-ARM GAS  /tmp/ccmZEorh.s 			page 71
+ARM GAS  /tmp/ccY2u68l.s 			page 71
 
 
  1537 004c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1074:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   HAL_StatusTypeDef tmp_hal_status = HAL_OK;
  1585              		.loc 1 1074 1 is_stmt 0 view .LVU440
  1586 0000 10B5     		push	{r4, lr}
-ARM GAS  /tmp/ccmZEorh.s 			page 72
+ARM GAS  /tmp/ccY2u68l.s 			page 72
 
 
  1587              	.LCFI10:
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1105:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       
  1629              		.loc 1 1105 7 view .LVU453
  1630 0030 0023     		movs	r3, #0
-ARM GAS  /tmp/ccmZEorh.s 			page 73
+ARM GAS  /tmp/ccY2u68l.s 			page 73
 
 
  1631 0032 A364     		str	r3, [r4, #72]
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1095:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     {
  1672              		.loc 1 1095 5 is_stmt 1 view .LVU467
 1095:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     {
-ARM GAS  /tmp/ccmZEorh.s 			page 74
+ARM GAS  /tmp/ccY2u68l.s 			page 74
 
 
  1673              		.loc 1 1095 8 is_stmt 0 view .LVU468
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1722              	HAL_ADC_Stop_IT:
  1723              	.LVL123:
  1724              	.LFB46:
-ARM GAS  /tmp/ccmZEorh.s 			page 75
+ARM GAS  /tmp/ccY2u68l.s 			page 75
 
 
 1155:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   HAL_StatusTypeDef tmp_hal_status = HAL_OK;
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1765              	.LVL127:
  1766              	.L124:
 1192:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
-ARM GAS  /tmp/ccmZEorh.s 			page 76
+ARM GAS  /tmp/ccY2u68l.s 			page 76
 
 
  1767              		.loc 1 1192 1 is_stmt 0 view .LVU490
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1811              		.cfi_endproc
  1812              	.LFE46:
  1814              		.section	.text.HAL_ADC_Start_DMA,"ax",%progbits
-ARM GAS  /tmp/ccmZEorh.s 			page 77
+ARM GAS  /tmp/ccY2u68l.s 			page 77
 
 
  1815              		.align	1
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1860 001a 0122     		movs	r2, #1
  1861              	.LVL136:
 1218:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
-ARM GAS  /tmp/ccmZEorh.s 			page 78
+ARM GAS  /tmp/ccY2u68l.s 			page 78
 
 
  1862              		.loc 1 1218 5 is_stmt 0 discriminator 2 view .LVU511
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1902              		.loc 1 1247 11 is_stmt 0 view .LVU525
  1903 0046 E36B     		ldr	r3, [r4, #60]
 1247:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
-ARM GAS  /tmp/ccmZEorh.s 			page 79
+ARM GAS  /tmp/ccY2u68l.s 			page 79
 
 
  1904              		.loc 1 1247 42 view .LVU526
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1944 007a E06B     		ldr	r0, [r4, #60]
  1945 007c FFF7FEFF 		bl	HAL_DMA_Start_IT
  1946              	.LVL141:
-ARM GAS  /tmp/ccmZEorh.s 			page 80
+ARM GAS  /tmp/ccY2u68l.s 			page 80
 
 
 1277:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     }
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  1995              		.cfi_startproc
  1996              		@ args = 0, pretend = 0, frame = 0
  1997              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccmZEorh.s 			page 81
+ARM GAS  /tmp/ccY2u68l.s 			page 81
 
 
 1297:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   HAL_StatusTypeDef tmp_hal_status = HAL_OK;
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2038              	.LVL151:
  2039              	.L139:
 1357:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** 
-ARM GAS  /tmp/ccmZEorh.s 			page 82
+ARM GAS  /tmp/ccY2u68l.s 			page 82
 
 
  2040              		.loc 1 1357 1 is_stmt 0 view .LVU563
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2081              		.loc 1 1332 8 is_stmt 0 view .LVU576
  2082 004a 002D     		cmp	r5, #0
  2083 004c 0DD1     		bne	.L142
-ARM GAS  /tmp/ccmZEorh.s 			page 83
+ARM GAS  /tmp/ccY2u68l.s 			page 83
 
 
 1334:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     }
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2130              		.global	HAL_ADC_GetValue
  2131              		.syntax unified
  2132              		.code	16
-ARM GAS  /tmp/ccmZEorh.s 			page 84
+ARM GAS  /tmp/ccY2u68l.s 			page 84
 
 
  2133              		.thumb_func
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2182              		.syntax unified
  2183              		.code	16
  2184              		.thumb_func
-ARM GAS  /tmp/ccmZEorh.s 			page 85
+ARM GAS  /tmp/ccY2u68l.s 			page 85
 
 
  2185              		.fpu softvfp
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2219 0016 1A68     		ldr	r2, [r3]
  2220 0018 D068     		ldr	r0, [r2, #12]
  2221              	.LVL169:
-ARM GAS  /tmp/ccmZEorh.s 			page 86
+ARM GAS  /tmp/ccY2u68l.s 			page 86
 
 
  2222              		.loc 1 2096 8 view .LVU605
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 2115:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****                             HAL_ADC_STATE_READY);
 2116:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****         }
 2117:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****         else
-ARM GAS  /tmp/ccmZEorh.s 			page 87
+ARM GAS  /tmp/ccY2u68l.s 			page 87
 
 
 2118:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****         {
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 2134:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   }
  2287              		.loc 1 2134 5 view .LVU623
  2288 0068 9847     		blx	r3
-ARM GAS  /tmp/ccmZEorh.s 			page 88
+ARM GAS  /tmp/ccY2u68l.s 			page 88
 
 
  2289              	.LVL174:
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2336              		.loc 1 2145 1 is_stmt 0 view .LVU629
  2337 0000 10B5     		push	{r4, lr}
  2338              	.LCFI15:
-ARM GAS  /tmp/ccmZEorh.s 			page 89
+ARM GAS  /tmp/ccY2u68l.s 			page 89
 
 
  2339              		.cfi_def_cfa_offset 8
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2388              	.LFB54:
 1558:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   /* Prevent unused argument(s) compilation warning */
  2389              		.loc 1 1558 1 is_stmt 1 view -0
-ARM GAS  /tmp/ccmZEorh.s 			page 90
+ARM GAS  /tmp/ccY2u68l.s 			page 90
 
 
  2390              		.cfi_startproc
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 2166:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   /* Set ADC error code to DMA error */
 2167:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   SET_BIT(hadc->ErrorCode, HAL_ADC_ERROR_DMA);
  2430              		.loc 1 2167 3 view .LVU645
-ARM GAS  /tmp/ccmZEorh.s 			page 91
+ARM GAS  /tmp/ccY2u68l.s 			page 91
 
 
  2431 000c 836C     		ldr	r3, [r0, #72]
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2475 000a 02D5     		bpl	.L163
 1403:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       (__HAL_ADC_GET_FLAG(hadc, ADC_FLAG_EOS) && __HAL_ADC_GET_IT_SOURCE(hadc, ADC_IT_EOS))   )
  2476              		.loc 1 1403 50 discriminator 1 view .LVU656
-ARM GAS  /tmp/ccmZEorh.s 			page 92
+ARM GAS  /tmp/ccY2u68l.s 			page 92
 
 
  2477 000c 5A68     		ldr	r2, [r3, #4]
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1419:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       {
  2518              		.loc 1 1419 7 is_stmt 1 view .LVU670
 1419:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       {
-ARM GAS  /tmp/ccmZEorh.s 			page 93
+ARM GAS  /tmp/ccY2u68l.s 			page 93
 
 
  2519              		.loc 1 1419 11 is_stmt 0 view .LVU671
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2561 0072 02D5     		bpl	.L169
 1463:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   {
  2562              		.loc 1 1463 48 discriminator 1 view .LVU684
-ARM GAS  /tmp/ccmZEorh.s 			page 94
+ARM GAS  /tmp/ccY2u68l.s 			page 94
 
 
  2563 0074 5B68     		ldr	r3, [r3, #4]
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1500:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   }
  2604              		.loc 1 1500 5 view .LVU698
  2605 00a6 2368     		ldr	r3, [r4]
-ARM GAS  /tmp/ccmZEorh.s 			page 95
+ARM GAS  /tmp/ccY2u68l.s 			page 95
 
 
  2606 00a8 1022     		movs	r2, #16
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2654              		.syntax unified
  2655              		.code	16
  2656              		.thumb_func
-ARM GAS  /tmp/ccmZEorh.s 			page 96
+ARM GAS  /tmp/ccY2u68l.s 			page 96
 
 
  2657              		.fpu softvfp
@@ -5758,7 +5758,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2699 0018 C254     		strb	r2, [r0, r3]
 1635:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   {
  2700              		.loc 1 1635 3 discriminator 2 view .LVU719
-ARM GAS  /tmp/ccmZEorh.s 			page 97
+ARM GAS  /tmp/ccY2u68l.s 			page 97
 
 
 1635:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   {
@@ -5818,7 +5818,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2740 0048 032B     		cmp	r3, #3
  2741 004a 18D0     		beq	.L180
 1650:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       {
-ARM GAS  /tmp/ccmZEorh.s 			page 98
+ARM GAS  /tmp/ccY2u68l.s 			page 98
 
 
  2742              		.loc 1 1650 13 discriminator 4 view .LVU735
@@ -5878,7 +5878,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2782              		.loc 1 1671 7 is_stmt 1 view .LVU749
 1671:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       {
  2783              		.loc 1 1671 10 is_stmt 0 view .LVU750
-ARM GAS  /tmp/ccmZEorh.s 			page 99
+ARM GAS  /tmp/ccY2u68l.s 			page 99
 
 
  2784 007e 0B68     		ldr	r3, [r1]
@@ -5938,7 +5938,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2826              	.L195:
 1683:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****           while(wait_loop_index != 0U)
  2827              		.loc 1 1683 11 is_stmt 1 view .LVU763
-ARM GAS  /tmp/ccmZEorh.s 			page 100
+ARM GAS  /tmp/ccY2u68l.s 			page 100
 
 
 1683:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****           while(wait_loop_index != 0U)
@@ -5998,7 +5998,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2868 00de 0D68     		ldr	r5, [r1]
  2869 00e0 A840     		lsls	r0, r0, r5
 1695:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****       
-ARM GAS  /tmp/ccmZEorh.s 			page 101
+ARM GAS  /tmp/ccY2u68l.s 			page 101
 
 
  2870              		.loc 1 1695 30 view .LVU778
@@ -6058,7 +6058,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2912 0112 2022     		movs	r2, #32
  2913 0114 1343     		orrs	r3, r2
  2914 0116 4364     		str	r3, [r0, #68]
-ARM GAS  /tmp/ccmZEorh.s 			page 102
+ARM GAS  /tmp/ccY2u68l.s 			page 102
 
 
 1719:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   }
@@ -6118,7 +6118,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  2958 0140 FFFFFFFE 		.word	-16777217
  2959 0144 FFFFBFFF 		.word	-4194305
  2960 0148 FFFF7FFF 		.word	-8388609
-ARM GAS  /tmp/ccmZEorh.s 			page 103
+ARM GAS  /tmp/ccY2u68l.s 			page 103
 
 
  2961              		.cfi_endproc
@@ -6178,7 +6178,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  3003 0008 012A     		cmp	r2, #1
  3004 000a 47D0     		beq	.L204
 1766:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****   
-ARM GAS  /tmp/ccmZEorh.s 			page 104
+ARM GAS  /tmp/ccY2u68l.s 			page 104
 
 
  3005              		.loc 1 1766 3 discriminator 2 view .LVU816
@@ -6238,7 +6238,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  3045 003c 5200     		lsls	r2, r2, #1
 1789:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     tmpAWDLowThresholdShifted  = ADC_AWD1THRESHOLD_SHIFT_RESOLUTION(hadc, AnalogWDGConfig->LowThres
  3046              		.loc 1 1789 32 view .LVU831
-ARM GAS  /tmp/ccmZEorh.s 			page 105
+ARM GAS  /tmp/ccY2u68l.s 			page 105
 
 
  3047 003e CD68     		ldr	r5, [r1, #12]
@@ -6298,7 +6298,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
 1803:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c ****     {
  3087              		.loc 1 1803 7 view .LVU846
  3088 006c 012A     		cmp	r2, #1
-ARM GAS  /tmp/ccmZEorh.s 			page 106
+ARM GAS  /tmp/ccY2u68l.s 			page 106
 
 
  3089 006e 06D0     		beq	.L205
@@ -6358,7 +6358,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  3131 0096 0021     		movs	r1, #0
  3132 0098 9954     		strb	r1, [r3, r2]
 1830:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c **** }
-ARM GAS  /tmp/ccmZEorh.s 			page 107
+ARM GAS  /tmp/ccY2u68l.s 			page 107
 
 
  3133              		.loc 1 1830 3 view .LVU859
@@ -6418,7 +6418,7 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  3182              		.align	1
  3183              		.global	HAL_ADC_GetError
  3184              		.syntax unified
-ARM GAS  /tmp/ccmZEorh.s 			page 108
+ARM GAS  /tmp/ccY2u68l.s 			page 108
 
 
  3185              		.code	16
@@ -6460,84 +6460,84 @@ ARM GAS  /tmp/ccmZEorh.s 			page 1
  3219              		.file 12 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h"
  3220              		.file 13 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc.h"
  3221              		.file 14 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
-ARM GAS  /tmp/ccmZEorh.s 			page 109
+ARM GAS  /tmp/ccY2u68l.s 			page 109
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f0xx_hal_adc.c
-     /tmp/ccmZEorh.s:16     .text.ADC_ConversionStop:0000000000000000 $t
-     /tmp/ccmZEorh.s:23     .text.ADC_ConversionStop:0000000000000000 ADC_ConversionStop
-     /tmp/ccmZEorh.s:126    .text.ADC_Disable:0000000000000000 $t
-     /tmp/ccmZEorh.s:132    .text.ADC_Disable:0000000000000000 ADC_Disable
-     /tmp/ccmZEorh.s:268    .text.ADC_Enable:0000000000000000 $t
-     /tmp/ccmZEorh.s:274    .text.ADC_Enable:0000000000000000 ADC_Enable
-     /tmp/ccmZEorh.s:434    .text.ADC_Enable:000000000000009c $d
-     /tmp/ccmZEorh.s:441    .text.HAL_ADC_MspInit:0000000000000000 $t
-     /tmp/ccmZEorh.s:448    .text.HAL_ADC_MspInit:0000000000000000 HAL_ADC_MspInit
-     /tmp/ccmZEorh.s:464    .text.HAL_ADC_Init:0000000000000000 $t
-     /tmp/ccmZEorh.s:471    .text.HAL_ADC_Init:0000000000000000 HAL_ADC_Init
-     /tmp/ccmZEorh.s:825    .text.HAL_ADC_Init:0000000000000174 $d
-     /tmp/ccmZEorh.s:832    .text.HAL_ADC_MspDeInit:0000000000000000 $t
-     /tmp/ccmZEorh.s:839    .text.HAL_ADC_MspDeInit:0000000000000000 HAL_ADC_MspDeInit
-     /tmp/ccmZEorh.s:855    .text.HAL_ADC_DeInit:0000000000000000 $t
-     /tmp/ccmZEorh.s:862    .text.HAL_ADC_DeInit:0000000000000000 HAL_ADC_DeInit
-     /tmp/ccmZEorh.s:1017   .text.HAL_ADC_DeInit:0000000000000094 $d
-     /tmp/ccmZEorh.s:1025   .text.HAL_ADC_Start:0000000000000000 $t
-     /tmp/ccmZEorh.s:1032   .text.HAL_ADC_Start:0000000000000000 HAL_ADC_Start
-     /tmp/ccmZEorh.s:1136   .text.HAL_ADC_Start:000000000000005c $d
-     /tmp/ccmZEorh.s:1141   .text.HAL_ADC_Stop:0000000000000000 $t
-     /tmp/ccmZEorh.s:1148   .text.HAL_ADC_Stop:0000000000000000 HAL_ADC_Stop
-     /tmp/ccmZEorh.s:1230   .text.HAL_ADC_Stop:0000000000000040 $d
-     /tmp/ccmZEorh.s:1235   .text.HAL_ADC_PollForConversion:0000000000000000 $t
-     /tmp/ccmZEorh.s:1242   .text.HAL_ADC_PollForConversion:0000000000000000 HAL_ADC_PollForConversion
-     /tmp/ccmZEorh.s:1430   .text.HAL_ADC_PollForConversion:00000000000000bc $d
-     /tmp/ccmZEorh.s:1435   .text.HAL_ADC_PollForEvent:0000000000000000 $t
-     /tmp/ccmZEorh.s:1442   .text.HAL_ADC_PollForEvent:0000000000000000 HAL_ADC_PollForEvent
-     /tmp/ccmZEorh.s:1571   .text.HAL_ADC_Start_IT:0000000000000000 $t
-     /tmp/ccmZEorh.s:1578   .text.HAL_ADC_Start_IT:0000000000000000 HAL_ADC_Start_IT
-     /tmp/ccmZEorh.s:1710   .text.HAL_ADC_Start_IT:0000000000000084 $d
-     /tmp/ccmZEorh.s:1715   .text.HAL_ADC_Stop_IT:0000000000000000 $t
-     /tmp/ccmZEorh.s:1722   .text.HAL_ADC_Stop_IT:0000000000000000 HAL_ADC_Stop_IT
-     /tmp/ccmZEorh.s:1810   .text.HAL_ADC_Stop_IT:000000000000004c $d
-     /tmp/ccmZEorh.s:1815   .text.HAL_ADC_Start_DMA:0000000000000000 $t
-     /tmp/ccmZEorh.s:1822   .text.HAL_ADC_Start_DMA:0000000000000000 HAL_ADC_Start_DMA
-     /tmp/ccmZEorh.s:1976   .text.HAL_ADC_Start_DMA:0000000000000098 $d
-     /tmp/ccmZEorh.s:2187   .text.ADC_DMAConvCplt:0000000000000000 ADC_DMAConvCplt
-     /tmp/ccmZEorh.s:2329   .text.ADC_DMAHalfConvCplt:0000000000000000 ADC_DMAHalfConvCplt
-     /tmp/ccmZEorh.s:2408   .text.ADC_DMAError:0000000000000000 ADC_DMAError
-     /tmp/ccmZEorh.s:1984   .text.HAL_ADC_Stop_DMA:0000000000000000 $t
-     /tmp/ccmZEorh.s:1991   .text.HAL_ADC_Stop_DMA:0000000000000000 HAL_ADC_Stop_DMA
-     /tmp/ccmZEorh.s:2124   .text.HAL_ADC_Stop_DMA:0000000000000078 $d
-     /tmp/ccmZEorh.s:2129   .text.HAL_ADC_GetValue:0000000000000000 $t
-     /tmp/ccmZEorh.s:2136   .text.HAL_ADC_GetValue:0000000000000000 HAL_ADC_GetValue
-     /tmp/ccmZEorh.s:2158   .text.HAL_ADC_ConvCpltCallback:0000000000000000 $t
-     /tmp/ccmZEorh.s:2165   .text.HAL_ADC_ConvCpltCallback:0000000000000000 HAL_ADC_ConvCpltCallback
-     /tmp/ccmZEorh.s:2181   .text.ADC_DMAConvCplt:0000000000000000 $t
-     /tmp/ccmZEorh.s:2295   .text.ADC_DMAConvCplt:000000000000006c $d
-     /tmp/ccmZEorh.s:2300   .text.HAL_ADC_ConvHalfCpltCallback:0000000000000000 $t
-     /tmp/ccmZEorh.s:2307   .text.HAL_ADC_ConvHalfCpltCallback:0000000000000000 HAL_ADC_ConvHalfCpltCallback
-     /tmp/ccmZEorh.s:2323   .text.ADC_DMAHalfConvCplt:0000000000000000 $t
-     /tmp/ccmZEorh.s:2356   .text.HAL_ADC_LevelOutOfWindowCallback:0000000000000000 $t
-     /tmp/ccmZEorh.s:2363   .text.HAL_ADC_LevelOutOfWindowCallback:0000000000000000 HAL_ADC_LevelOutOfWindowCallback
-     /tmp/ccmZEorh.s:2379   .text.HAL_ADC_ErrorCallback:0000000000000000 $t
-ARM GAS  /tmp/ccmZEorh.s 			page 110
+     /tmp/ccY2u68l.s:16     .text.ADC_ConversionStop:0000000000000000 $t
+     /tmp/ccY2u68l.s:23     .text.ADC_ConversionStop:0000000000000000 ADC_ConversionStop
+     /tmp/ccY2u68l.s:126    .text.ADC_Disable:0000000000000000 $t
+     /tmp/ccY2u68l.s:132    .text.ADC_Disable:0000000000000000 ADC_Disable
+     /tmp/ccY2u68l.s:268    .text.ADC_Enable:0000000000000000 $t
+     /tmp/ccY2u68l.s:274    .text.ADC_Enable:0000000000000000 ADC_Enable
+     /tmp/ccY2u68l.s:434    .text.ADC_Enable:000000000000009c $d
+     /tmp/ccY2u68l.s:441    .text.HAL_ADC_MspInit:0000000000000000 $t
+     /tmp/ccY2u68l.s:448    .text.HAL_ADC_MspInit:0000000000000000 HAL_ADC_MspInit
+     /tmp/ccY2u68l.s:464    .text.HAL_ADC_Init:0000000000000000 $t
+     /tmp/ccY2u68l.s:471    .text.HAL_ADC_Init:0000000000000000 HAL_ADC_Init
+     /tmp/ccY2u68l.s:825    .text.HAL_ADC_Init:0000000000000174 $d
+     /tmp/ccY2u68l.s:832    .text.HAL_ADC_MspDeInit:0000000000000000 $t
+     /tmp/ccY2u68l.s:839    .text.HAL_ADC_MspDeInit:0000000000000000 HAL_ADC_MspDeInit
+     /tmp/ccY2u68l.s:855    .text.HAL_ADC_DeInit:0000000000000000 $t
+     /tmp/ccY2u68l.s:862    .text.HAL_ADC_DeInit:0000000000000000 HAL_ADC_DeInit
+     /tmp/ccY2u68l.s:1017   .text.HAL_ADC_DeInit:0000000000000094 $d
+     /tmp/ccY2u68l.s:1025   .text.HAL_ADC_Start:0000000000000000 $t
+     /tmp/ccY2u68l.s:1032   .text.HAL_ADC_Start:0000000000000000 HAL_ADC_Start
+     /tmp/ccY2u68l.s:1136   .text.HAL_ADC_Start:000000000000005c $d
+     /tmp/ccY2u68l.s:1141   .text.HAL_ADC_Stop:0000000000000000 $t
+     /tmp/ccY2u68l.s:1148   .text.HAL_ADC_Stop:0000000000000000 HAL_ADC_Stop
+     /tmp/ccY2u68l.s:1230   .text.HAL_ADC_Stop:0000000000000040 $d
+     /tmp/ccY2u68l.s:1235   .text.HAL_ADC_PollForConversion:0000000000000000 $t
+     /tmp/ccY2u68l.s:1242   .text.HAL_ADC_PollForConversion:0000000000000000 HAL_ADC_PollForConversion
+     /tmp/ccY2u68l.s:1430   .text.HAL_ADC_PollForConversion:00000000000000bc $d
+     /tmp/ccY2u68l.s:1435   .text.HAL_ADC_PollForEvent:0000000000000000 $t
+     /tmp/ccY2u68l.s:1442   .text.HAL_ADC_PollForEvent:0000000000000000 HAL_ADC_PollForEvent
+     /tmp/ccY2u68l.s:1571   .text.HAL_ADC_Start_IT:0000000000000000 $t
+     /tmp/ccY2u68l.s:1578   .text.HAL_ADC_Start_IT:0000000000000000 HAL_ADC_Start_IT
+     /tmp/ccY2u68l.s:1710   .text.HAL_ADC_Start_IT:0000000000000084 $d
+     /tmp/ccY2u68l.s:1715   .text.HAL_ADC_Stop_IT:0000000000000000 $t
+     /tmp/ccY2u68l.s:1722   .text.HAL_ADC_Stop_IT:0000000000000000 HAL_ADC_Stop_IT
+     /tmp/ccY2u68l.s:1810   .text.HAL_ADC_Stop_IT:000000000000004c $d
+     /tmp/ccY2u68l.s:1815   .text.HAL_ADC_Start_DMA:0000000000000000 $t
+     /tmp/ccY2u68l.s:1822   .text.HAL_ADC_Start_DMA:0000000000000000 HAL_ADC_Start_DMA
+     /tmp/ccY2u68l.s:1976   .text.HAL_ADC_Start_DMA:0000000000000098 $d
+     /tmp/ccY2u68l.s:2187   .text.ADC_DMAConvCplt:0000000000000000 ADC_DMAConvCplt
+     /tmp/ccY2u68l.s:2329   .text.ADC_DMAHalfConvCplt:0000000000000000 ADC_DMAHalfConvCplt
+     /tmp/ccY2u68l.s:2408   .text.ADC_DMAError:0000000000000000 ADC_DMAError
+     /tmp/ccY2u68l.s:1984   .text.HAL_ADC_Stop_DMA:0000000000000000 $t
+     /tmp/ccY2u68l.s:1991   .text.HAL_ADC_Stop_DMA:0000000000000000 HAL_ADC_Stop_DMA
+     /tmp/ccY2u68l.s:2124   .text.HAL_ADC_Stop_DMA:0000000000000078 $d
+     /tmp/ccY2u68l.s:2129   .text.HAL_ADC_GetValue:0000000000000000 $t
+     /tmp/ccY2u68l.s:2136   .text.HAL_ADC_GetValue:0000000000000000 HAL_ADC_GetValue
+     /tmp/ccY2u68l.s:2158   .text.HAL_ADC_ConvCpltCallback:0000000000000000 $t
+     /tmp/ccY2u68l.s:2165   .text.HAL_ADC_ConvCpltCallback:0000000000000000 HAL_ADC_ConvCpltCallback
+     /tmp/ccY2u68l.s:2181   .text.ADC_DMAConvCplt:0000000000000000 $t
+     /tmp/ccY2u68l.s:2295   .text.ADC_DMAConvCplt:000000000000006c $d
+     /tmp/ccY2u68l.s:2300   .text.HAL_ADC_ConvHalfCpltCallback:0000000000000000 $t
+     /tmp/ccY2u68l.s:2307   .text.HAL_ADC_ConvHalfCpltCallback:0000000000000000 HAL_ADC_ConvHalfCpltCallback
+     /tmp/ccY2u68l.s:2323   .text.ADC_DMAHalfConvCplt:0000000000000000 $t
+     /tmp/ccY2u68l.s:2356   .text.HAL_ADC_LevelOutOfWindowCallback:0000000000000000 $t
+     /tmp/ccY2u68l.s:2363   .text.HAL_ADC_LevelOutOfWindowCallback:0000000000000000 HAL_ADC_LevelOutOfWindowCallback
+     /tmp/ccY2u68l.s:2379   .text.HAL_ADC_ErrorCallback:0000000000000000 $t
+ARM GAS  /tmp/ccY2u68l.s 			page 110
 
 
-     /tmp/ccmZEorh.s:2386   .text.HAL_ADC_ErrorCallback:0000000000000000 HAL_ADC_ErrorCallback
-     /tmp/ccmZEorh.s:2402   .text.ADC_DMAError:0000000000000000 $t
-     /tmp/ccmZEorh.s:2445   .text.HAL_ADC_IRQHandler:0000000000000000 $t
-     /tmp/ccmZEorh.s:2452   .text.HAL_ADC_IRQHandler:0000000000000000 HAL_ADC_IRQHandler
-     /tmp/ccmZEorh.s:2647   .text.HAL_ADC_IRQHandler:00000000000000d8 $d
-     /tmp/ccmZEorh.s:2652   .text.HAL_ADC_ConfigChannel:0000000000000000 $t
-     /tmp/ccmZEorh.s:2659   .text.HAL_ADC_ConfigChannel:0000000000000000 HAL_ADC_ConfigChannel
-     /tmp/ccmZEorh.s:2954   .text.HAL_ADC_ConfigChannel:0000000000000130 $d
-     /tmp/ccmZEorh.s:2965   .text.HAL_ADC_AnalogWDGConfig:0000000000000000 $t
-     /tmp/ccmZEorh.s:2972   .text.HAL_ADC_AnalogWDGConfig:0000000000000000 HAL_ADC_AnalogWDGConfig
-     /tmp/ccmZEorh.s:3149   .text.HAL_ADC_AnalogWDGConfig:00000000000000a0 $d
-     /tmp/ccmZEorh.s:3155   .text.HAL_ADC_GetState:0000000000000000 $t
-     /tmp/ccmZEorh.s:3162   .text.HAL_ADC_GetState:0000000000000000 HAL_ADC_GetState
-     /tmp/ccmZEorh.s:3182   .text.HAL_ADC_GetError:0000000000000000 $t
-     /tmp/ccmZEorh.s:3189   .text.HAL_ADC_GetError:0000000000000000 HAL_ADC_GetError
+     /tmp/ccY2u68l.s:2386   .text.HAL_ADC_ErrorCallback:0000000000000000 HAL_ADC_ErrorCallback
+     /tmp/ccY2u68l.s:2402   .text.ADC_DMAError:0000000000000000 $t
+     /tmp/ccY2u68l.s:2445   .text.HAL_ADC_IRQHandler:0000000000000000 $t
+     /tmp/ccY2u68l.s:2452   .text.HAL_ADC_IRQHandler:0000000000000000 HAL_ADC_IRQHandler
+     /tmp/ccY2u68l.s:2647   .text.HAL_ADC_IRQHandler:00000000000000d8 $d
+     /tmp/ccY2u68l.s:2652   .text.HAL_ADC_ConfigChannel:0000000000000000 $t
+     /tmp/ccY2u68l.s:2659   .text.HAL_ADC_ConfigChannel:0000000000000000 HAL_ADC_ConfigChannel
+     /tmp/ccY2u68l.s:2954   .text.HAL_ADC_ConfigChannel:0000000000000130 $d
+     /tmp/ccY2u68l.s:2965   .text.HAL_ADC_AnalogWDGConfig:0000000000000000 $t
+     /tmp/ccY2u68l.s:2972   .text.HAL_ADC_AnalogWDGConfig:0000000000000000 HAL_ADC_AnalogWDGConfig
+     /tmp/ccY2u68l.s:3149   .text.HAL_ADC_AnalogWDGConfig:00000000000000a0 $d
+     /tmp/ccY2u68l.s:3155   .text.HAL_ADC_GetState:0000000000000000 $t
+     /tmp/ccY2u68l.s:3162   .text.HAL_ADC_GetState:0000000000000000 HAL_ADC_GetState
+     /tmp/ccY2u68l.s:3182   .text.HAL_ADC_GetError:0000000000000000 $t
+     /tmp/ccY2u68l.s:3189   .text.HAL_ADC_GetError:0000000000000000 HAL_ADC_GetError
 
 UNDEFINED SYMBOLS
 HAL_GetTick

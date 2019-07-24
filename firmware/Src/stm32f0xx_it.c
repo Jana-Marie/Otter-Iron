@@ -21,6 +21,8 @@
 #include "stm32f0xx_it.h"
 
 extern ADC_HandleTypeDef hadc;
+extern TIM_HandleTypeDef htim2;
+
 
 void NMI_Handler(void)
 {
@@ -50,4 +52,9 @@ void SysTick_Handler(void)
 void ADC1_COMP_IRQHandler(void)
 {
   HAL_ADC_IRQHandler(&hadc);
+}
+
+void TIM2_IRQHandler(void)
+{
+  HAL_TIM_IRQHandler(&htim2);
 }
