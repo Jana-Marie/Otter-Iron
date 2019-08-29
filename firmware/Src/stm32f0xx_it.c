@@ -21,8 +21,9 @@
 #include "stm32f0xx_it.h"
 
 extern ADC_HandleTypeDef hadc;
-extern TIM_HandleTypeDef htim2;
+extern DMA_HandleTypeDef hdma_adc;
 
+extern TIM_HandleTypeDef htim1;
 
 void NMI_Handler(void)
 {
@@ -54,7 +55,17 @@ void ADC1_COMP_IRQHandler(void)
   HAL_ADC_IRQHandler(&hadc);
 }
 
-void TIM2_IRQHandler(void)
+void DMA1_Channel1_IRQHandler(void)
 {
-  HAL_TIM_IRQHandler(&htim2);
+  HAL_DMA_IRQHandler(&hdma_adc);
+}
+
+void TIM1_BRK_UP_TRG_COM_IRQHandler(void)
+{
+  HAL_TIM_IRQHandler(&htim1);
+}
+
+void TIM1_CC_IRQHandler(void)
+{
+  HAL_TIM_IRQHandler(&htim1);
 }

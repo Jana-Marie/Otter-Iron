@@ -78,8 +78,8 @@ void Error_Handler(void);
 #define STUSB_SDA_GPIO_Port GPIOB
 #define INT_N_Pin GPIO_PIN_12
 #define INT_N_GPIO_Port GPIOB
-#define PWMOUT_Pin GPIO_PIN_3
-#define PWMOUT_GPIO_Port GPIOB
+#define PWMOUT_Pin GPIO_PIN_8
+#define PWMOUT_GPIO_Port GPIOA
 #define OLED_SCL_Pin GPIO_PIN_6
 #define OLED_SCL_GPIO_Port GPIOB
 #define OLED_SDA_Pin GPIO_PIN_7
