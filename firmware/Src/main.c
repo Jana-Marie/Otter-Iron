@@ -19,6 +19,13 @@
 
 #include "main.h"
 
+#define FILT(a, b, c) ((a) * (c) + (b) * ((1.0f) - (c)))
+#define CLAMP(x, low, high) (((x) > (high)) ? (high) : (((x) < (low)) ? (low) : (x)))
+
+#define TTIP_AVG_FILTER 0.8f
+#define MIN_DUTY 0
+#define MAX_DUTY 4050
+
 ADC_HandleTypeDef hadc;
 DMA_HandleTypeDef hdma_adc;
 
@@ -38,13 +45,29 @@ static void MX_I2C2_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_USB_PCD_Init(void);
 
+void reg();
+
 struct status_t{
   float ttip;
+  flaot ttipavg;
   float uin;
   float iin;
   float tref;
   uint8_t button[2];
 }s;
+
+struct reg_t{
+  float target;
+  flaot error;
+  float errorprior;
+  float ierror;
+  float derror;
+  uint16_t duty;
+  float cycletime;
+  float Kp;
+  float Ki;
+  float Kd;
+}r = {.Kp = 1.0f,.Ki = 0.0f,.Kd = 0.0f,.cycletime = 0.1f};
 
 struct tipcal_t{
   float offset;
@@ -78,14 +101,34 @@ int main(void)
 
   while (1)
   {
-    HAL_Delay(90);
+    HAL_Delay(10);
+
     s.button[0] = HAL_GPIO_ReadPin(GPIOA,B1_Pin);
     s.button[1] = HAL_GPIO_ReadPin(GPIOA,B2_Pin);
-    s.tref = ((((float)ADC_raw[0]/4095.0)*3.3)-0.5)/0.01;
-    s.ttip = ((ADC_raw[1]-tipcal.offset)*tipcal.coefficient)/1000+s.tref;
-    s.uin = ((ADC_raw[2]/4095.0)*3.3)*6.6;
-    s.iin = ((ADC_raw[3]/4095.0)*3.3);
+
+    s.ttarget = 100.0f * s.button[0];
+
   }
+}
+
+void reg(void) {
+
+  s.tref = ((((float)ADC_raw[3]/4095.0)*3.3)-0.5)/0.01;
+  s.ttip = ((ADC_raw[1]-tipcal.offset)*tipcal.coefficient)/1000+s.tref;
+  s.uin = ((ADC_raw[2]/4095.0)*3.3)*6.6;
+  s.iin = ((ADC_raw[0]/4095.0)*3.3);
+
+  s.ttipavg = FILT(s.ttipavg, s.ttip, TTIP_AVG_FILTER);
+
+  r.error = r.target - s.ttipavg;
+  r.ierror = r.ierror + (r.error*r.cycletime);
+  r.derror = (r.error - r.errorprior)/r.cycletime;
+  r.duty = r.Kp*r.error + r.Ki*r.ierror + r.Kd*r.derror;
+  r.errorprior = r.error
+
+  r.duty = CLAMP(r.duty, MIN_DUTY, MAX_DUTY); // Clamp to duty cycle
+
+  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, r.duty);
 }
 
 /*
@@ -261,8 +304,8 @@ static void MX_TIM1_Init(void)
   sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
   HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_1);
 
-  sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 2000;
+  sConfigOC.OCMode = TIM_OCMODE_PWM2;
+  sConfigOC.Pulse = 4090;
   HAL_TIM_OC_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_4);
 
   sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;

@@ -25,6 +25,8 @@ extern DMA_HandleTypeDef hdma_adc;
 
 extern TIM_HandleTypeDef htim1;
 
+extern void reg(void);
+
 void NMI_Handler(void)
 {
 
@@ -58,6 +60,7 @@ void ADC1_COMP_IRQHandler(void)
 void DMA1_Channel1_IRQHandler(void)
 {
   HAL_DMA_IRQHandler(&hdma_adc);
+  reg();
 }
 
 void TIM1_BRK_UP_TRG_COM_IRQHandler(void)
