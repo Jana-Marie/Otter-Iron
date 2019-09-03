@@ -1873,8 +1873,6 @@ $EndComp
 Connection ~ 3500 8250
 Text GLabel 8050 3300 2    60   Input ~ 0
 PWM
-Text Notes 9450 3600 0    50   ~ 0
-Todo:\nDesign auf 4/4 mil\nvias kleiner\nTimer umpfoten
 $Comp
 L power:+3V3 #PWR0148
 U 1 1 5D3A56D4
