@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:TS100C-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
@@ -831,7 +831,7 @@ L MCU_ST_STM32F0:STM32F072C8Ux U4
 U 1 1 5ADE4A0A
 P 7450 2700
 F 0 "U4" H 6900 4150 50  0000 C CNN
-F 1 "STM32F072C8Ux" H 8000 4150 50  0000 C CNN
+F 1 "STM32F072CBUx" H 8000 4150 50  0000 C CNN
 F 2 "Package_DFN_QFN:QFN-48-1EP_7x7mm_P0.5mm_EP5.6x5.6mm" H 6850 1300 50  0001 R CNN
 F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00090510.pdf" H 7450 2700 50  0001 C CNN
 	1    7450 2700
