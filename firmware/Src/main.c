@@ -49,7 +49,7 @@ void reg();
 
 struct status_t{
   float ttip;
-  flaot ttipavg;
+  float ttipavg;
   float uin;
   float iin;
   float tref;
@@ -58,21 +58,22 @@ struct status_t{
 
 struct reg_t{
   float target;
-  flaot error;
+  float error;
   float errorprior;
   float ierror;
+  float imax;
   float derror;
-  uint16_t duty;
+  int16_t duty;
   float cycletime;
   float Kp;
   float Ki;
   float Kd;
-}r = {.Kp = 1.0f,.Ki = 0.0f,.Kd = 0.0f,.cycletime = 0.1f};
+}r = {.Kp = 38.6f,.Ki = 4.9f,.Kd = 0.4f,.cycletime = 0.1f,.imax=400.0f};
 
 struct tipcal_t{
   float offset;
   float coefficient;
-} tipcal = {.offset = -55, .coefficient = 133};
+} tipcal = {.offset = 120, .coefficient = 92};
 
 static uint16_t ADC_raw[4];
 uint8_t index;
@@ -106,7 +107,7 @@ int main(void)
     s.button[0] = HAL_GPIO_ReadPin(GPIOA,B1_Pin);
     s.button[1] = HAL_GPIO_ReadPin(GPIOA,B2_Pin);
 
-    s.ttarget = 100.0f * s.button[0];
+    r.target = 290.0f * s.button[0] + 10.0f;;
 
   }
 }
@@ -122,9 +123,10 @@ void reg(void) {
 
   r.error = r.target - s.ttipavg;
   r.ierror = r.ierror + (r.error*r.cycletime);
+  r.ierror = CLAMP(r.ierror,-r.imax,r.imax);
   r.derror = (r.error - r.errorprior)/r.cycletime;
   r.duty = r.Kp*r.error + r.Ki*r.ierror + r.Kd*r.derror;
-  r.errorprior = r.error
+  r.errorprior = r.error;
 
   r.duty = CLAMP(r.duty, MIN_DUTY, MAX_DUTY); // Clamp to duty cycle
 
