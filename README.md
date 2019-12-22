@@ -12,5 +12,8 @@ Todo Software:
  - [ ] PD-Profile cycling
  
 
-![Front](front.png)
-![Back](back.png)
+![3](images/3.jpg)
+![4](images/4.jpg)
+
+![Front](images/front.png)
+![Back](images/back.png)
