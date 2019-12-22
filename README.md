@@ -1,6 +1,6 @@
 # Otter-Iron
 
-Replacement PCB for TS100, adds USB-C PD.
+Replacement PCB for TS100, adds USB-C PD to every hackers favorite tool!
 
 Hardware is finished and working, software V0.1!
 
