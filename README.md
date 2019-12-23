@@ -4,7 +4,7 @@ Replacement PCB for TS100, adds USB-C PD to every hackers favorite tool!
 
 Hardware is finished and working, software V0.1!
 
-Todo Software:
+Todo software:
  - [ ] Write a better regulation
  - [ ] Current measurement
  - [ ] Store last setpoint
@@ -17,3 +17,6 @@ Todo Software:
 
 ![Front](images/front.png)
 ![Back](images/back.png)
+
+Todo next hardware revision:
+ - [ ] Add barrel jack
