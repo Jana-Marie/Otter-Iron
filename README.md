@@ -8,7 +8,7 @@ Hardware is finished and working, software V0.1!
 
 To flash the Otter-Iron short the DFU-jumper shown in the image below while plugging it into your computer. This will put the iron into DFU mode allowing you to flash it via DFU/USB. Run this command to flash the downloaded binary.
 
-    $ dfu-util -a 0 -s 0x08000000:leave -D build/firmware.bin
+    $ dfu-util -a 0 -s 0x08000000:leave -D firmware.bin
 
 ![dfu](images/dfu.png)
 
