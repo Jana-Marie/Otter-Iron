@@ -49,19 +49,12 @@ static void MX_USB_PCD_Init(void);
 void reg(void);
 void disp_init(void);
 void refresh(void);
-void clearScreen(void);
-void setScreen(void);
-void drawChar(int16_t x, int16_t y, unsigned char c, uint16_t color, uint16_t bg, uint8_t size_x, uint8_t size_y);
-void writePixel(int16_t x, int16_t y, uint8_t color);
-void writeLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1,uint16_t color);
-void DrawChar(unsigned char  c, uint8_t x, uint8_t y, uint8_t brightness);
-void DrawString(const unsigned char * str, uint8_t x, uint8_t y, uint8_t brightness);
-/*
-void drawArea(int16_t x, int8_t y, uint8_t wide, uint8_t height,const uint8_t* ptr);
-void drawChar(char c);
-void print(const char* str);
-void printNumber(uint16_t number, uint8_t places);
-*/
+void clear_screen(void);
+void set_screen(void);
+void write_pixel(int16_t x, int16_t y, uint8_t color);
+void draw_char(unsigned char  c, uint8_t x, uint8_t y, uint8_t brightness);
+void draw_string(const unsigned char * str, uint8_t x, uint8_t y, uint8_t brightness);
+
 
 struct status_t{
   float ttip;
@@ -92,8 +85,7 @@ struct tipcal_t{
 } tipcal = {.offset = 120, .coefficient = 92};
 
 static uint16_t ADC_raw[4];
-uint8_t index;
-uint8_t j = 0;
+
 int main(void)
 {
 
@@ -109,8 +101,6 @@ int main(void)
   MX_TIM1_Init();
   MX_USB_PCD_Init();
 
-  //HAL_ADC_Start_DMA(&hadc);
-
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   HAL_TIM_OC_Start(&htim1, TIM_CHANNEL_4);
 
@@ -118,17 +108,18 @@ int main(void)
 
   HAL_Delay(20);
   disp_init();
-
   HAL_Delay(60);
-  clearScreen();
-  DrawString("Otter-Iron", 15, 1 ,1);
-  DrawString("by Jan Henrik", 10, 9 ,1);
+  clear_screen();
+  draw_string("Otter-Iron", 15, 1 ,1);
+  draw_string("by Jan Henrik", 10, 9 ,1);
   refresh();
   HAL_Delay(1000);
 
   while (1)
   {
     HAL_Delay(50);
+
+    //UI
     s.button[0] = HAL_GPIO_ReadPin(GPIOA,B1_Pin);
     s.button[1] = HAL_GPIO_ReadPin(GPIOA,B2_Pin);
 
@@ -136,10 +127,12 @@ int main(void)
       r.target -= 5;
       HAL_Delay(50);
     }
+
     if(s.button[1] == 1){
       r.target += 5;
       HAL_Delay(50);
     }
+
     r.target = CLAMP(r.target, 20, 400);
 
     //super shitty display code
@@ -150,19 +143,20 @@ int main(void)
     sprintf(str2, "%d.%d C", (uint16_t)s.ttipavg,(uint16_t)((s.ttipavg-(uint16_t)s.ttipavg)*10.0f));
     sprintf(str3, "%d.%d V", (uint16_t)s.uin,(uint16_t)((s.uin-(uint16_t)s.uin)*10.0f));
 
-    clearScreen();
-    DrawString(str1, 10, 1 ,1);
-    DrawString(str2, 10, 9 ,1);
-    DrawString(str3, 60, 1 ,1);
+    clear_screen();
+    draw_string(str1, 10, 1 ,1);
+    draw_string(str2, 10, 9 ,1);
+    draw_string(str3, 60, 1 ,1);
     if(r.error > 3){
-      DrawString("*", 60, 9 ,1);
+      draw_string("*", 60, 9 ,1);
     } else {
-      DrawString(" ", 60, 9 ,1);
+      draw_string(" ", 60, 9 ,1);
     }
     refresh();
   }
 }
 
+// Main PID controller and ADC readout
 void reg(void) {
 
   s.tref = ((((float)ADC_raw[3]/4095.0)*3.3)-0.5)/0.01;
@@ -231,14 +225,14 @@ void refresh(void) {
   HAL_I2C_Master_Transmit(&hi2c1,DEVICEADDR_OLED, screenBuffer,FRAMEBUFFER_START + (OLED_WIDTH * 2),1000);
 }
 
-void clearScreen(void) {
+void clear_screen(void) {
   memset(&screenBuffer[FRAMEBUFFER_START], 0, OLED_WIDTH * 2);
 }
-void setScreen(void) {
+void set_screen(void) {
   memset(&screenBuffer[FRAMEBUFFER_START], 255, OLED_WIDTH * 2);
 }
 
-void writePixel(int16_t x, int16_t y, uint8_t color){
+void write_pixel(int16_t x, int16_t y, uint8_t color){
   if(color == 1){
     screenBuffer[FRAMEBUFFER_START + (x + ((y/8)*96))] |=  (1 << y % 8);
   } else if (color == 0){
@@ -248,7 +242,7 @@ void writePixel(int16_t x, int16_t y, uint8_t color){
 
 #define CHAR_WIDTH 6
 #define CHAR_HEIGHT 8
-void DrawChar(unsigned char c, uint8_t x, uint8_t y, uint8_t brightness) {
+void draw_char(unsigned char c, uint8_t x, uint8_t y, uint8_t brightness) {
     c = c & 0x7F;
     if (c < ' ') {
         c = 0;
@@ -259,17 +253,17 @@ void DrawChar(unsigned char c, uint8_t x, uint8_t y, uint8_t brightness) {
     for (uint8_t j=0; j<CHAR_WIDTH; j++) {
         for (uint8_t i=0; i<CHAR_HEIGHT; i++) {
             if (chr[j] & (1<<i)) {
-                writePixel(x+j, y+i, 1);
+                write_pixel(x+j, y+i, 1);
             } else {
-                writePixel(x+j, y+i, 0);
+                write_pixel(x+j, y+i, 0);
             }
         }
     }
 }
 
-void DrawString(const unsigned char* str, uint8_t x, uint8_t y, uint8_t brightness) {
+void draw_string(const unsigned char* str, uint8_t x, uint8_t y, uint8_t brightness) {
     while (*str) {
-        DrawChar(*str++, x, y, brightness);
+        draw_char(*str++, x, y, brightness);
         x += CHAR_WIDTH;
     }
 }
