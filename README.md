@@ -11,6 +11,8 @@ Todo software:
  - [ ] Better Fonts/UI
  - [ ] PD-Profile cycling
  
+ [Video (clickme)](https://twitter.com/JanHenrikH/status/1208867279540232192)
+ 
 
 ![3](images/3.jpg)
 ![4](images/4.jpg)
