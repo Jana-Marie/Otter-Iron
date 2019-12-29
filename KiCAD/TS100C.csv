@@ -6,7 +6,7 @@ Comment,Designator,Footprint,LCSC
 "1μF 25V","C9,C1,C4,C11","Capacitor_SMD:C_0603_1608Metric",""
 "B140-E3","D3","Diode_SMD:D_SOD-123F",""
 "USB_C_Receptacle_USB2.0","J1","otter:USB-C 16Pin",""
-"OLED_64x32","J2","otter:0.69OLED",""
+"OLED_96x16","J2","otter:0.69OLED",""
 "A","J3","otter:Keystone_3621",""
 "B","J4","otter:3622TR",""
 "DNP","J5","Resistor_SMD:R_0402_1005Metric",""
