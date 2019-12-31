@@ -27,7 +27,7 @@ You can also buy the littlefuse fuseholders mentioned in the BOM. Those however 
 
 ### Display
 
-The display can be bought from LCSC or Aliexpress, I haven't found it at Mouser yet. It is the last part to be assembled, it is soldered on the back of the pcb facing the PCB and the tip-end. 
+The display can be bought from [LCSC](https://lcsc.com/product-detail/OLED-Displays-Modules_UG-Univision-Semicon-UG-9616TSWCG02_C88335.html) or [Aliexpress](https://de.aliexpress.com/item/32808645444.html), I haven't found it at Mouser yet ([Maybe its this display?](https://www.mouser.de/ProductDetail/ELECTRONIC-ASSEMBLY/EA-W096016-XALW?qs=f9yNj16SXrJLTMk24BHqcA%3D%3D)). It is the last part to be assembled, it is soldered on the back of the pcb facing the PCB and the tip-end. 
 
 ## Flashing
 
