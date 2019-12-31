@@ -36,7 +36,7 @@
   )
 
   (setup
-    (last_trace_width 0.2)
+    (last_trace_width 0.154)
     (user_trace_width 0.106)
     (user_trace_width 0.154)
     (user_trace_width 0.2)
@@ -622,11 +622,6 @@
       (net 9 +3V3))
     (pad 1 smd roundrect (at -0.485 0) (size 0.59 0.64) (layers F.Cu F.Paste F.Mask) (roundrect_rratio 0.25)
       (net 78 "Net-(J5-Pad1)"))
-    (model ${KISYS3DMOD}/Resistor_SMD.3dshapes/R_0402_1005Metric.wrl
-      (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
   )
 
   (module Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm (layer F.Cu) (tedit 5C1FD453) (tstamp 5CE5DFF2)
