@@ -110,9 +110,17 @@ int main(void)
   disp_init();
   HAL_Delay(60);
   clear_screen();
-  draw_string("Otter-Iron", 15, 1 ,1);
-  draw_string("by Jan Henrik", 10, 9 ,1);
-  refresh();
+  if(HAL_GPIO_ReadPin(GPIOA,B1_Pin) && HAL_GPIO_ReadPin(GPIOA,B2_Pin)){
+    draw_string("dfu", 15, 1 ,1);
+    refresh();
+    HAL_Delay(40);
+    *((unsigned long *)0x20003FF0) = 0xDEADBEEF;
+    NVIC_SystemReset();
+  } else {
+    draw_string("Otter-Iron", 15, 1 ,1);
+    draw_string("by Jan Henrik", 10, 9 ,1);
+    refresh();
+  }
   HAL_Delay(1000);
 
   while (1)

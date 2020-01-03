@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccnCi6Fd.s 			page 1
+ARM GAS  /tmp/ccTfrgUB.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -18,14 +18,13 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
   15              		.section	.text.HAL_MspInit,"ax",%progbits
   16              		.align	1
   17              		.weak	HAL_MspInit
-  18              		.arch armv6s-m
-  19              		.syntax unified
-  20              		.code	16
-  21              		.thumb_func
-  22              		.fpu softvfp
-  24              	HAL_MspInit:
-  25              	.LFB39:
-  26              		.file 1 "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c"
+  18              		.syntax unified
+  19              		.code	16
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	HAL_MspInit:
+  24              	.LFB39:
+  25              		.file 1 "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c"
    1:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
    2:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   ******************************************************************************
    3:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @file    stm32f0xx_hal.c
@@ -58,10 +57,10 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
   30:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *   2. Redistributions in binary form must reproduce the above copyright notice,
   31:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *      this list of conditions and the following disclaimer in the documentation
   32:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *      and/or other materials provided with the distribution.
-ARM GAS  /tmp/ccnCi6Fd.s 			page 2
-
-
   33:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *   3. Neither the name of STMicroelectronics nor the names of its contributors
+ARM GAS  /tmp/ccTfrgUB.s 			page 2
+
+
   34:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *      may be used to endorse or promote products derived from this software
   35:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *      without specific prior written permission.
   36:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *
@@ -118,10 +117,10 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
   87:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /* Private macro -------------------------------------------------------------*/
   88:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /** @defgroup HAL_Private_Macros HAL Private Macros
   89:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @{
-ARM GAS  /tmp/ccnCi6Fd.s 			page 3
-
-
   90:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
+ARM GAS  /tmp/ccTfrgUB.s 			page 3
+
+
   91:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
   92:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @}
   93:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
@@ -178,10 +177,10 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  144:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  145:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief  This function configures the Flash prefetch,
  146:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *        Configures time base source, NVIC and Low level hardware
-ARM GAS  /tmp/ccnCi6Fd.s 			page 4
-
-
  147:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @note This function is called at the beginning of program after reset and before 
+ARM GAS  /tmp/ccTfrgUB.s 			page 4
+
+
  148:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *       the clock configuration
  149:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @note The time base configuration is based on HSI clock when exiting from Reset.
  150:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *       Once done, time base tick start incrementing.
@@ -238,32 +237,32 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  201:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  202:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** __weak void HAL_MspInit(void)
  203:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
-ARM GAS  /tmp/ccnCi6Fd.s 			page 5
+  26              		.loc 1 203 0
+ARM GAS  /tmp/ccTfrgUB.s 			page 5
 
 
-  27              		.loc 1 203 1 view -0
-  28              		.cfi_startproc
-  29              		@ args = 0, pretend = 0, frame = 0
-  30              		@ frame_needed = 0, uses_anonymous_args = 0
-  31              		@ link register save eliminated.
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 0
+  29              		@ frame_needed = 0, uses_anonymous_args = 0
+  30              		@ link register save eliminated.
  204:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   /* NOTE : This function Should not be modified, when the callback is needed,
  205:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****             the HAL_MspInit could be implemented in the user file
  206:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****    */
  207:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
-  32              		.loc 1 207 1 view .LVU1
-  33              		@ sp needed
-  34 0000 7047     		bx	lr
-  35              		.cfi_endproc
-  36              	.LFE39:
-  38              		.section	.text.HAL_MspDeInit,"ax",%progbits
-  39              		.align	1
-  40              		.weak	HAL_MspDeInit
-  41              		.syntax unified
-  42              		.code	16
-  43              		.thumb_func
-  44              		.fpu softvfp
-  46              	HAL_MspDeInit:
-  47              	.LFB40:
+  31              		.loc 1 207 0
+  32              		@ sp needed
+  33 0000 7047     		bx	lr
+  34              		.cfi_endproc
+  35              	.LFE39:
+  37              		.section	.text.HAL_MspDeInit,"ax",%progbits
+  38              		.align	1
+  39              		.weak	HAL_MspDeInit
+  40              		.syntax unified
+  41              		.code	16
+  42              		.thumb_func
+  43              		.fpu softvfp
+  45              	HAL_MspDeInit:
+  46              	.LFB40:
  208:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  209:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  210:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief  DeInitializes the MSP.
@@ -271,100 +270,97 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  212:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  213:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** __weak void HAL_MspDeInit(void)
  214:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
-  48              		.loc 1 214 1 view -0
-  49              		.cfi_startproc
-  50              		@ args = 0, pretend = 0, frame = 0
-  51              		@ frame_needed = 0, uses_anonymous_args = 0
-  52              		@ link register save eliminated.
+  47              		.loc 1 214 0
+  48              		.cfi_startproc
+  49              		@ args = 0, pretend = 0, frame = 0
+  50              		@ frame_needed = 0, uses_anonymous_args = 0
+  51              		@ link register save eliminated.
  215:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   /* NOTE : This function Should not be modified, when the callback is needed,
  216:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****             the HAL_MspDeInit could be implemented in the user file
  217:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****    */
  218:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
-  53              		.loc 1 218 1 view .LVU3
-  54              		@ sp needed
-  55 0000 7047     		bx	lr
-  56              		.cfi_endproc
-  57              	.LFE40:
-  59              		.section	.text.HAL_DeInit,"ax",%progbits
-  60              		.align	1
-  61              		.global	HAL_DeInit
-  62              		.syntax unified
-  63              		.code	16
-  64              		.thumb_func
-  65              		.fpu softvfp
-  67              	HAL_DeInit:
-  68              	.LFB38:
+  52              		.loc 1 218 0
+  53              		@ sp needed
+  54 0000 7047     		bx	lr
+  55              		.cfi_endproc
+  56              	.LFE40:
+  58              		.section	.text.HAL_DeInit,"ax",%progbits
+  59              		.align	1
+  60              		.global	HAL_DeInit
+  61              		.syntax unified
+  62              		.code	16
+  63              		.thumb_func
+  64              		.fpu softvfp
+  66              	HAL_DeInit:
+  67              	.LFB38:
  180:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   /* Reset of all peripherals */
-  69              		.loc 1 180 1 view -0
-  70              		.cfi_startproc
-  71              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccnCi6Fd.s 			page 6
+  68              		.loc 1 180 0
+  69              		.cfi_startproc
+  70              		@ args = 0, pretend = 0, frame = 0
+  71              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccTfrgUB.s 			page 6
 
 
-  72              		@ frame_needed = 0, uses_anonymous_args = 0
-  73 0000 10B5     		push	{r4, lr}
-  74              	.LCFI0:
-  75              		.cfi_def_cfa_offset 8
-  76              		.cfi_offset 4, -8
-  77              		.cfi_offset 14, -4
+  72 0000 10B5     		push	{r4, lr}
+  73              	.LCFI0:
+  74              		.cfi_def_cfa_offset 8
+  75              		.cfi_offset 4, -8
+  76              		.cfi_offset 14, -4
  182:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   __HAL_RCC_APB1_RELEASE_RESET();
-  78              		.loc 1 182 3 view .LVU5
-  79 0002 074B     		ldr	r3, .L4
-  80 0004 0121     		movs	r1, #1
-  81 0006 4942     		rsbs	r1, r1, #0
-  82 0008 1961     		str	r1, [r3, #16]
+  77              		.loc 1 182 0
+  78 0002 074B     		ldr	r3, .L4
+  79 0004 0121     		movs	r1, #1
+  80 0006 4942     		rsbs	r1, r1, #0
+  81 0008 1961     		str	r1, [r3, #16]
  183:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
-  83              		.loc 1 183 3 view .LVU6
-  84 000a 0022     		movs	r2, #0
-  85 000c 1A61     		str	r2, [r3, #16]
+  82              		.loc 1 183 0
+  83 000a 0022     		movs	r2, #0
+  84 000c 1A61     		str	r2, [r3, #16]
  185:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   __HAL_RCC_APB2_RELEASE_RESET();
-  86              		.loc 1 185 3 view .LVU7
-  87 000e D960     		str	r1, [r3, #12]
+  85              		.loc 1 185 0
+  86 000e D960     		str	r1, [r3, #12]
  186:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
-  88              		.loc 1 186 3 view .LVU8
-  89 0010 DA60     		str	r2, [r3, #12]
+  87              		.loc 1 186 0
+  88 0010 DA60     		str	r2, [r3, #12]
  188:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   __HAL_RCC_AHB_RELEASE_RESET();
-  90              		.loc 1 188 3 view .LVU9
-  91 0012 9962     		str	r1, [r3, #40]
+  89              		.loc 1 188 0
+  90 0012 9962     		str	r1, [r3, #40]
  189:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
-  92              		.loc 1 189 3 view .LVU10
-  93 0014 9A62     		str	r2, [r3, #40]
+  91              		.loc 1 189 0
+  92 0014 9A62     		str	r2, [r3, #40]
  192:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****     
-  94              		.loc 1 192 3 view .LVU11
-  95 0016 FFF7FEFF 		bl	HAL_MspDeInit
-  96              	.LVL0:
- 195:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
-  97              		.loc 1 195 3 view .LVU12
+  93              		.loc 1 192 0
+  94 0016 FFF7FEFF 		bl	HAL_MspDeInit
+  95              	.LVL0:
  196:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
-  98              		.loc 1 196 1 is_stmt 0 view .LVU13
-  99 001a 0020     		movs	r0, #0
- 100              		@ sp needed
- 101 001c 10BD     		pop	{r4, pc}
- 102              	.L5:
- 103 001e C046     		.align	2
- 104              	.L4:
- 105 0020 00100240 		.word	1073876992
- 106              		.cfi_endproc
- 107              	.LFE38:
- 109              		.global	__aeabi_uidiv
- 110              		.section	.text.HAL_InitTick,"ax",%progbits
- 111              		.align	1
- 112              		.weak	HAL_InitTick
- 113              		.syntax unified
- 114              		.code	16
- 115              		.thumb_func
- 116              		.fpu softvfp
- 118              	HAL_InitTick:
- 119              	.LVL1:
- 120              	.LFB41:
+  96              		.loc 1 196 0
+  97 001a 0020     		movs	r0, #0
+  98              		@ sp needed
+  99 001c 10BD     		pop	{r4, pc}
+ 100              	.L5:
+ 101 001e C046     		.align	2
+ 102              	.L4:
+ 103 0020 00100240 		.word	1073876992
+ 104              		.cfi_endproc
+ 105              	.LFE38:
+ 107              		.global	__aeabi_uidiv
+ 108              		.section	.text.HAL_InitTick,"ax",%progbits
+ 109              		.align	1
+ 110              		.weak	HAL_InitTick
+ 111              		.syntax unified
+ 112              		.code	16
+ 113              		.thumb_func
+ 114              		.fpu softvfp
+ 116              	HAL_InitTick:
+ 117              	.LFB41:
  219:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
-ARM GAS  /tmp/ccnCi6Fd.s 			page 7
-
-
  220:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  221:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief This function configures the source of the time base. 
  222:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *        The time source is configured  to have 1ms time base with a dedicated 
  223:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *        Tick interrupt priority.
+ARM GAS  /tmp/ccTfrgUB.s 			page 7
+
+
  224:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @note This function is called  automatically at the beginning of program after
  225:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *       reset by HAL_Init() or at any time when clock is reconfigured  by HAL_RCC_ClockConfig(). 
  226:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @note In the default implementation, SysTick timer is the source of time base. 
@@ -379,118 +375,112 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  235:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  236:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** __weak HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
  237:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 121              		.loc 1 237 1 is_stmt 1 view -0
- 122              		.cfi_startproc
- 123              		@ args = 0, pretend = 0, frame = 0
- 124              		@ frame_needed = 0, uses_anonymous_args = 0
- 125              		.loc 1 237 1 is_stmt 0 view .LVU15
- 126 0000 10B5     		push	{r4, lr}
- 127              	.LCFI1:
- 128              		.cfi_def_cfa_offset 8
- 129              		.cfi_offset 4, -8
- 130              		.cfi_offset 14, -4
- 131 0002 0400     		movs	r4, r0
+ 118              		.loc 1 237 0
+ 119              		.cfi_startproc
+ 120              		@ args = 0, pretend = 0, frame = 0
+ 121              		@ frame_needed = 0, uses_anonymous_args = 0
+ 122              	.LVL1:
+ 123 0000 10B5     		push	{r4, lr}
+ 124              	.LCFI1:
+ 125              		.cfi_def_cfa_offset 8
+ 126              		.cfi_offset 4, -8
+ 127              		.cfi_offset 14, -4
+ 128 0002 0400     		movs	r4, r0
  238:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   /*Configure the SysTick to have interrupt in 1ms time basis*/
  239:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000U);
- 132              		.loc 1 239 3 is_stmt 1 view .LVU16
- 133              		.loc 1 239 22 is_stmt 0 view .LVU17
- 134 0004 FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
- 135              	.LVL2:
- 136              		.loc 1 239 3 view .LVU18
- 137 0008 FA21     		movs	r1, #250
- 138 000a 8900     		lsls	r1, r1, #2
- 139 000c FFF7FEFF 		bl	__aeabi_uidiv
- 140              	.LVL3:
- 141 0010 FFF7FEFF 		bl	HAL_SYSTICK_Config
- 142              	.LVL4:
+ 129              		.loc 1 239 0
+ 130 0004 FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
+ 131              	.LVL2:
+ 132 0008 FA21     		movs	r1, #250
+ 133 000a 8900     		lsls	r1, r1, #2
+ 134 000c FFF7FEFF 		bl	__aeabi_uidiv
+ 135              	.LVL3:
+ 136 0010 FFF7FEFF 		bl	HAL_SYSTICK_Config
+ 137              	.LVL4:
  240:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  241:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   /*Configure the SysTick IRQ priority */
  242:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   HAL_NVIC_SetPriority(SysTick_IRQn, TickPriority ,0U);
- 143              		.loc 1 242 3 is_stmt 1 view .LVU19
- 144 0014 0120     		movs	r0, #1
- 145 0016 0022     		movs	r2, #0
- 146 0018 2100     		movs	r1, r4
- 147 001a 4042     		rsbs	r0, r0, #0
- 148 001c FFF7FEFF 		bl	HAL_NVIC_SetPriority
- 149              	.LVL5:
+ 138              		.loc 1 242 0
+ 139 0014 0120     		movs	r0, #1
+ 140 0016 0022     		movs	r2, #0
+ 141 0018 2100     		movs	r1, r4
+ 142 001a 4042     		rsbs	r0, r0, #0
+ 143 001c FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 144              	.LVL5:
  243:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  244:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****    /* Return function status */
  245:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   return HAL_OK;
- 150              		.loc 1 245 3 view .LVU20
  246:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
-ARM GAS  /tmp/ccnCi6Fd.s 			page 8
+ 145              		.loc 1 246 0
+ 146 0020 0020     		movs	r0, #0
+ 147              		@ sp needed
+ 148              	.LVL6:
+ 149 0022 10BD     		pop	{r4, pc}
+ 150              		.cfi_endproc
+ 151              	.LFE41:
+ARM GAS  /tmp/ccTfrgUB.s 			page 8
 
 
- 151              		.loc 1 246 1 is_stmt 0 view .LVU21
- 152 0020 0020     		movs	r0, #0
- 153              		@ sp needed
- 154              	.LVL6:
- 155              		.loc 1 246 1 view .LVU22
- 156 0022 10BD     		pop	{r4, pc}
- 157              		.cfi_endproc
- 158              	.LFE41:
- 160              		.section	.text.HAL_Init,"ax",%progbits
- 161              		.align	1
- 162              		.global	HAL_Init
- 163              		.syntax unified
- 164              		.code	16
- 165              		.thumb_func
- 166              		.fpu softvfp
- 168              	HAL_Init:
- 169              	.LFB37:
+ 153              		.section	.text.HAL_Init,"ax",%progbits
+ 154              		.align	1
+ 155              		.global	HAL_Init
+ 156              		.syntax unified
+ 157              		.code	16
+ 158              		.thumb_func
+ 159              		.fpu softvfp
+ 161              	HAL_Init:
+ 162              	.LFB37:
  156:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   /* Configure Flash prefetch */ 
- 170              		.loc 1 156 1 is_stmt 1 view -0
- 171              		.cfi_startproc
- 172              		@ args = 0, pretend = 0, frame = 0
- 173              		@ frame_needed = 0, uses_anonymous_args = 0
- 174 0000 10B5     		push	{r4, lr}
- 175              	.LCFI2:
- 176              		.cfi_def_cfa_offset 8
- 177              		.cfi_offset 4, -8
- 178              		.cfi_offset 14, -4
+ 163              		.loc 1 156 0
+ 164              		.cfi_startproc
+ 165              		@ args = 0, pretend = 0, frame = 0
+ 166              		@ frame_needed = 0, uses_anonymous_args = 0
+ 167 0000 10B5     		push	{r4, lr}
+ 168              	.LCFI2:
+ 169              		.cfi_def_cfa_offset 8
+ 170              		.cfi_offset 4, -8
+ 171              		.cfi_offset 14, -4
  159:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** #endif /* PREFETCH_ENABLE */
- 179              		.loc 1 159 3 view .LVU24
- 180 0002 064A     		ldr	r2, .L8
- 181 0004 1368     		ldr	r3, [r2]
- 182 0006 1021     		movs	r1, #16
- 183 0008 0B43     		orrs	r3, r1
- 184 000a 1360     		str	r3, [r2]
+ 172              		.loc 1 159 0
+ 173 0002 064A     		ldr	r2, .L8
+ 174 0004 1368     		ldr	r3, [r2]
+ 175 0006 1021     		movs	r1, #16
+ 176 0008 0B43     		orrs	r3, r1
+ 177 000a 1360     		str	r3, [r2]
  164:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
- 185              		.loc 1 164 3 view .LVU25
- 186 000c 0020     		movs	r0, #0
- 187 000e FFF7FEFF 		bl	HAL_InitTick
- 188              	.LVL7:
+ 178              		.loc 1 164 0
+ 179 000c 0020     		movs	r0, #0
+ 180 000e FFF7FEFF 		bl	HAL_InitTick
+ 181              	.LVL7:
  167:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
- 189              		.loc 1 167 3 view .LVU26
- 190 0012 FFF7FEFF 		bl	HAL_MspInit
- 191              	.LVL8:
- 170:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 192              		.loc 1 170 3 view .LVU27
+ 182              		.loc 1 167 0
+ 183 0012 FFF7FEFF 		bl	HAL_MspInit
+ 184              	.LVL8:
  171:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
- 193              		.loc 1 171 1 is_stmt 0 view .LVU28
- 194 0016 0020     		movs	r0, #0
- 195              		@ sp needed
- 196 0018 10BD     		pop	{r4, pc}
- 197              	.L9:
- 198 001a C046     		.align	2
- 199              	.L8:
- 200 001c 00200240 		.word	1073881088
- 201              		.cfi_endproc
- 202              	.LFE37:
- 204              		.section	.text.HAL_IncTick,"ax",%progbits
-ARM GAS  /tmp/ccnCi6Fd.s 			page 9
-
-
- 205              		.align	1
- 206              		.weak	HAL_IncTick
- 207              		.syntax unified
- 208              		.code	16
- 209              		.thumb_func
- 210              		.fpu softvfp
- 212              	HAL_IncTick:
- 213              	.LFB42:
+ 185              		.loc 1 171 0
+ 186 0016 0020     		movs	r0, #0
+ 187              		@ sp needed
+ 188 0018 10BD     		pop	{r4, pc}
+ 189              	.L9:
+ 190 001a C046     		.align	2
+ 191              	.L8:
+ 192 001c 00200240 		.word	1073881088
+ 193              		.cfi_endproc
+ 194              	.LFE37:
+ 196              		.section	.text.HAL_IncTick,"ax",%progbits
+ 197              		.align	1
+ 198              		.weak	HAL_IncTick
+ 199              		.syntax unified
+ 200              		.code	16
+ 201              		.thumb_func
+ 202              		.fpu softvfp
+ 204              	HAL_IncTick:
+ 205              	.LFB42:
  247:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  248:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
+ARM GAS  /tmp/ccTfrgUB.s 			page 9
+
+
  249:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @}
  250:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  251:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
@@ -528,40 +518,39 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  283:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  284:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** __weak void HAL_IncTick(void)
  285:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 214              		.loc 1 285 1 is_stmt 1 view -0
- 215              		.cfi_startproc
- 216              		@ args = 0, pretend = 0, frame = 0
- 217              		@ frame_needed = 0, uses_anonymous_args = 0
- 218              		@ link register save eliminated.
+ 206              		.loc 1 285 0
+ 207              		.cfi_startproc
+ 208              		@ args = 0, pretend = 0, frame = 0
+ 209              		@ frame_needed = 0, uses_anonymous_args = 0
+ 210              		@ link register save eliminated.
  286:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   uwTick++;
- 219              		.loc 1 286 3 view .LVU30
- 220              		.loc 1 286 9 is_stmt 0 view .LVU31
- 221 0000 024A     		ldr	r2, .L11
- 222 0002 1368     		ldr	r3, [r2]
-ARM GAS  /tmp/ccnCi6Fd.s 			page 10
-
-
- 223 0004 0133     		adds	r3, r3, #1
- 224 0006 1360     		str	r3, [r2]
+ 211              		.loc 1 286 0
+ 212 0000 024A     		ldr	r2, .L11
+ 213 0002 1368     		ldr	r3, [r2]
+ 214 0004 0133     		adds	r3, r3, #1
+ 215 0006 1360     		str	r3, [r2]
  287:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 225              		.loc 1 287 1 view .LVU32
- 226              		@ sp needed
- 227 0008 7047     		bx	lr
- 228              	.L12:
- 229 000a C046     		.align	2
- 230              	.L11:
- 231 000c 00000000 		.word	uwTick
- 232              		.cfi_endproc
- 233              	.LFE42:
- 235              		.section	.text.HAL_GetTick,"ax",%progbits
- 236              		.align	1
- 237              		.weak	HAL_GetTick
- 238              		.syntax unified
- 239              		.code	16
- 240              		.thumb_func
- 241              		.fpu softvfp
- 243              	HAL_GetTick:
- 244              	.LFB43:
+ 216              		.loc 1 287 0
+ 217              		@ sp needed
+ 218 0008 7047     		bx	lr
+ 219              	.L12:
+ 220 000a C046     		.align	2
+ 221              	.L11:
+ 222 000c 00000000 		.word	uwTick
+ 223              		.cfi_endproc
+ARM GAS  /tmp/ccTfrgUB.s 			page 10
+
+
+ 224              	.LFE42:
+ 226              		.section	.text.HAL_GetTick,"ax",%progbits
+ 227              		.align	1
+ 228              		.weak	HAL_GetTick
+ 229              		.syntax unified
+ 230              		.code	16
+ 231              		.thumb_func
+ 232              		.fpu softvfp
+ 234              	HAL_GetTick:
+ 235              	.LFB43:
  288:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  289:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  290:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief  Provides a tick value in millisecond.
@@ -571,39 +560,34 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  294:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  295:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** __weak uint32_t HAL_GetTick(void)
  296:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 245              		.loc 1 296 1 is_stmt 1 view -0
- 246              		.cfi_startproc
- 247              		@ args = 0, pretend = 0, frame = 0
- 248              		@ frame_needed = 0, uses_anonymous_args = 0
- 249              		@ link register save eliminated.
+ 236              		.loc 1 296 0
+ 237              		.cfi_startproc
+ 238              		@ args = 0, pretend = 0, frame = 0
+ 239              		@ frame_needed = 0, uses_anonymous_args = 0
+ 240              		@ link register save eliminated.
  297:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   return uwTick;
- 250              		.loc 1 297 3 view .LVU34
- 251              		.loc 1 297 10 is_stmt 0 view .LVU35
- 252 0000 014B     		ldr	r3, .L14
- 253 0002 1868     		ldr	r0, [r3]
+ 241              		.loc 1 297 0
+ 242 0000 014B     		ldr	r3, .L14
+ 243 0002 1868     		ldr	r0, [r3]
  298:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 254              		.loc 1 298 1 view .LVU36
- 255              		@ sp needed
- 256 0004 7047     		bx	lr
- 257              	.L15:
- 258 0006 C046     		.align	2
- 259              	.L14:
- 260 0008 00000000 		.word	uwTick
- 261              		.cfi_endproc
- 262              	.LFE43:
- 264              		.section	.text.HAL_Delay,"ax",%progbits
- 265              		.align	1
- 266              		.weak	HAL_Delay
- 267              		.syntax unified
- 268              		.code	16
- 269              		.thumb_func
- 270              		.fpu softvfp
-ARM GAS  /tmp/ccnCi6Fd.s 			page 11
-
-
- 272              	HAL_Delay:
- 273              	.LVL9:
- 274              	.LFB44:
+ 244              		.loc 1 298 0
+ 245              		@ sp needed
+ 246 0004 7047     		bx	lr
+ 247              	.L15:
+ 248 0006 C046     		.align	2
+ 249              	.L14:
+ 250 0008 00000000 		.word	uwTick
+ 251              		.cfi_endproc
+ 252              	.LFE43:
+ 254              		.section	.text.HAL_Delay,"ax",%progbits
+ 255              		.align	1
+ 256              		.weak	HAL_Delay
+ 257              		.syntax unified
+ 258              		.code	16
+ 259              		.thumb_func
+ 260              		.fpu softvfp
+ 262              	HAL_Delay:
+ 263              	.LFB44:
  299:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  300:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  301:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief This function provides accurate delay (in milliseconds) based 
@@ -614,91 +598,82 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  306:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @note ThiS function is declared as __weak to be overwritten in case of other
  307:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *       implementations in user file.
  308:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @param Delay specifies the delay time length, in milliseconds.
+ARM GAS  /tmp/ccTfrgUB.s 			page 11
+
+
  309:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @retval None
  310:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  311:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** __weak void HAL_Delay(__IO uint32_t Delay)
  312:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 275              		.loc 1 312 1 is_stmt 1 view -0
- 276              		.cfi_startproc
- 277              		@ args = 0, pretend = 0, frame = 8
- 278              		@ frame_needed = 0, uses_anonymous_args = 0
- 279              		.loc 1 312 1 is_stmt 0 view .LVU38
- 280 0000 30B5     		push	{r4, r5, lr}
- 281              	.LCFI3:
- 282              		.cfi_def_cfa_offset 12
- 283              		.cfi_offset 4, -12
- 284              		.cfi_offset 5, -8
- 285              		.cfi_offset 14, -4
- 286 0002 83B0     		sub	sp, sp, #12
- 287              	.LCFI4:
- 288              		.cfi_def_cfa_offset 24
- 289 0004 0190     		str	r0, [sp, #4]
+ 264              		.loc 1 312 0
+ 265              		.cfi_startproc
+ 266              		@ args = 0, pretend = 0, frame = 8
+ 267              		@ frame_needed = 0, uses_anonymous_args = 0
+ 268              	.LVL9:
+ 269 0000 30B5     		push	{r4, r5, lr}
+ 270              	.LCFI3:
+ 271              		.cfi_def_cfa_offset 12
+ 272              		.cfi_offset 4, -12
+ 273              		.cfi_offset 5, -8
+ 274              		.cfi_offset 14, -4
+ 275 0002 83B0     		sub	sp, sp, #12
+ 276              	.LCFI4:
+ 277              		.cfi_def_cfa_offset 24
+ 278 0004 0190     		str	r0, [sp, #4]
  313:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   uint32_t tickstart = HAL_GetTick();
- 290              		.loc 1 313 3 is_stmt 1 view .LVU39
- 291              		.loc 1 313 24 is_stmt 0 view .LVU40
- 292 0006 FFF7FEFF 		bl	HAL_GetTick
- 293              	.LVL10:
- 294              		.loc 1 313 24 view .LVU41
- 295 000a 0500     		movs	r5, r0
- 296              	.LVL11:
+ 279              		.loc 1 313 0
+ 280 0006 FFF7FEFF 		bl	HAL_GetTick
+ 281              	.LVL10:
+ 282 000a 0500     		movs	r5, r0
+ 283              	.LVL11:
  314:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   uint32_t wait = Delay;
- 297              		.loc 1 314 3 is_stmt 1 view .LVU42
- 298              		.loc 1 314 12 is_stmt 0 view .LVU43
- 299 000c 019C     		ldr	r4, [sp, #4]
- 300              	.LVL12:
+ 284              		.loc 1 314 0
+ 285 000c 019C     		ldr	r4, [sp, #4]
+ 286              	.LVL12:
  315:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   
  316:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   /* Add a period to guarantee minimum wait */
  317:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   if (wait < HAL_MAX_DELAY)
- 301              		.loc 1 317 3 is_stmt 1 view .LVU44
- 302              		.loc 1 317 6 is_stmt 0 view .LVU45
- 303 000e 631C     		adds	r3, r4, #1
- 304 0010 00D0     		beq	.L18
+ 287              		.loc 1 317 0
+ 288 000e 631C     		adds	r3, r4, #1
+ 289 0010 00D0     		beq	.L18
  318:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   {
  319:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****      wait++;
- 305              		.loc 1 319 6 is_stmt 1 view .LVU46
- 306              		.loc 1 319 10 is_stmt 0 view .LVU47
- 307 0012 0134     		adds	r4, r4, #1
-ARM GAS  /tmp/ccnCi6Fd.s 			page 12
-
-
- 308              	.LVL13:
- 309              	.L18:
+ 290              		.loc 1 319 0
+ 291 0012 0134     		adds	r4, r4, #1
+ 292              	.LVL13:
+ 293              	.L18:
  320:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   }
  321:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   
  322:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   while((HAL_GetTick() - tickstart) < wait)
+ 294              		.loc 1 322 0 discriminator 1
+ 295 0014 FFF7FEFF 		bl	HAL_GetTick
+ 296              	.LVL14:
+ 297 0018 401B     		subs	r0, r0, r5
+ 298 001a A042     		cmp	r0, r4
+ 299 001c FAD3     		bcc	.L18
  323:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   {
  324:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   }
- 310              		.loc 1 324 3 is_stmt 1 discriminator 1 view .LVU48
- 322:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   {
- 311              		.loc 1 322 10 is_stmt 0 discriminator 1 view .LVU49
- 312 0014 FFF7FEFF 		bl	HAL_GetTick
- 313              	.LVL14:
- 322:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   {
- 314              		.loc 1 322 24 discriminator 1 view .LVU50
- 315 0018 401B     		subs	r0, r0, r5
- 322:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   {
- 316              		.loc 1 322 8 discriminator 1 view .LVU51
- 317 001a A042     		cmp	r0, r4
- 318 001c FAD3     		bcc	.L18
  325:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 319              		.loc 1 325 1 view .LVU52
- 320 001e 03B0     		add	sp, sp, #12
- 321              		@ sp needed
- 322              	.LVL15:
- 323              	.LVL16:
- 324              		.loc 1 325 1 view .LVU53
- 325 0020 30BD     		pop	{r4, r5, pc}
- 326              		.cfi_endproc
- 327              	.LFE44:
- 329              		.section	.text.HAL_SuspendTick,"ax",%progbits
- 330              		.align	1
- 331              		.weak	HAL_SuspendTick
- 332              		.syntax unified
- 333              		.code	16
- 334              		.thumb_func
- 335              		.fpu softvfp
- 337              	HAL_SuspendTick:
- 338              	.LFB45:
+ 300              		.loc 1 325 0
+ 301 001e 03B0     		add	sp, sp, #12
+ 302              		@ sp needed
+ 303              	.LVL15:
+ARM GAS  /tmp/ccTfrgUB.s 			page 12
+
+
+ 304              	.LVL16:
+ 305 0020 30BD     		pop	{r4, r5, pc}
+ 306              		.cfi_endproc
+ 307              	.LFE44:
+ 309              		.section	.text.HAL_SuspendTick,"ax",%progbits
+ 310              		.align	1
+ 311              		.weak	HAL_SuspendTick
+ 312              		.syntax unified
+ 313              		.code	16
+ 314              		.thumb_func
+ 315              		.fpu softvfp
+ 317              	HAL_SuspendTick:
+ 318              	.LFB45:
  326:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  327:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  328:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief Suspend Tick increment.
@@ -713,41 +688,41 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  337:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** __weak void HAL_SuspendTick(void)
  338:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  339:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 339              		.loc 1 339 1 is_stmt 1 view -0
- 340              		.cfi_startproc
- 341              		@ args = 0, pretend = 0, frame = 0
- 342              		@ frame_needed = 0, uses_anonymous_args = 0
- 343              		@ link register save eliminated.
-ARM GAS  /tmp/ccnCi6Fd.s 			page 13
-
-
+ 319              		.loc 1 339 0
+ 320              		.cfi_startproc
+ 321              		@ args = 0, pretend = 0, frame = 0
+ 322              		@ frame_needed = 0, uses_anonymous_args = 0
+ 323              		@ link register save eliminated.
  340:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   /* Disable SysTick Interrupt */
  341:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   CLEAR_BIT(SysTick->CTRL,SysTick_CTRL_TICKINT_Msk);
- 344              		.loc 1 341 3 view .LVU55
- 345 0000 024A     		ldr	r2, .L20
- 346 0002 1368     		ldr	r3, [r2]
- 347 0004 0221     		movs	r1, #2
- 348 0006 8B43     		bics	r3, r1
- 349 0008 1360     		str	r3, [r2]
+ 324              		.loc 1 341 0
+ 325 0000 024A     		ldr	r2, .L20
+ 326 0002 1368     		ldr	r3, [r2]
+ 327 0004 0221     		movs	r1, #2
+ 328 0006 8B43     		bics	r3, r1
+ 329 0008 1360     		str	r3, [r2]
  342:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 350              		.loc 1 342 1 is_stmt 0 view .LVU56
- 351              		@ sp needed
- 352 000a 7047     		bx	lr
- 353              	.L21:
- 354              		.align	2
- 355              	.L20:
- 356 000c 10E000E0 		.word	-536813552
- 357              		.cfi_endproc
- 358              	.LFE45:
- 360              		.section	.text.HAL_ResumeTick,"ax",%progbits
- 361              		.align	1
- 362              		.weak	HAL_ResumeTick
- 363              		.syntax unified
- 364              		.code	16
- 365              		.thumb_func
- 366              		.fpu softvfp
- 368              	HAL_ResumeTick:
- 369              	.LFB46:
+ 330              		.loc 1 342 0
+ 331              		@ sp needed
+ 332 000a 7047     		bx	lr
+ 333              	.L21:
+ 334              		.align	2
+ 335              	.L20:
+ 336 000c 10E000E0 		.word	-536813552
+ 337              		.cfi_endproc
+ 338              	.LFE45:
+ 340              		.section	.text.HAL_ResumeTick,"ax",%progbits
+ 341              		.align	1
+ 342              		.weak	HAL_ResumeTick
+ 343              		.syntax unified
+ 344              		.code	16
+ 345              		.thumb_func
+ 346              		.fpu softvfp
+ARM GAS  /tmp/ccTfrgUB.s 			page 13
+
+
+ 348              	HAL_ResumeTick:
+ 349              	.LFB46:
  343:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  344:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  345:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief Resume Tick increment.
@@ -761,41 +736,38 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  353:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  354:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** __weak void HAL_ResumeTick(void)
  355:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 370              		.loc 1 355 1 is_stmt 1 view -0
- 371              		.cfi_startproc
- 372              		@ args = 0, pretend = 0, frame = 0
- 373              		@ frame_needed = 0, uses_anonymous_args = 0
- 374              		@ link register save eliminated.
+ 350              		.loc 1 355 0
+ 351              		.cfi_startproc
+ 352              		@ args = 0, pretend = 0, frame = 0
+ 353              		@ frame_needed = 0, uses_anonymous_args = 0
+ 354              		@ link register save eliminated.
  356:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   /* Enable SysTick Interrupt */
  357:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   SET_BIT(SysTick->CTRL,SysTick_CTRL_TICKINT_Msk);
- 375              		.loc 1 357 3 view .LVU58
- 376 0000 024A     		ldr	r2, .L23
- 377 0002 1368     		ldr	r3, [r2]
- 378 0004 0221     		movs	r1, #2
- 379 0006 0B43     		orrs	r3, r1
- 380 0008 1360     		str	r3, [r2]
+ 355              		.loc 1 357 0
+ 356 0000 024A     		ldr	r2, .L23
+ 357 0002 1368     		ldr	r3, [r2]
+ 358 0004 0221     		movs	r1, #2
+ 359 0006 0B43     		orrs	r3, r1
+ 360 0008 1360     		str	r3, [r2]
  358:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 381              		.loc 1 358 1 is_stmt 0 view .LVU59
- 382              		@ sp needed
- 383 000a 7047     		bx	lr
-ARM GAS  /tmp/ccnCi6Fd.s 			page 14
-
-
- 384              	.L24:
- 385              		.align	2
- 386              	.L23:
- 387 000c 10E000E0 		.word	-536813552
- 388              		.cfi_endproc
- 389              	.LFE46:
- 391              		.section	.text.HAL_GetHalVersion,"ax",%progbits
- 392              		.align	1
- 393              		.global	HAL_GetHalVersion
- 394              		.syntax unified
- 395              		.code	16
- 396              		.thumb_func
- 397              		.fpu softvfp
- 399              	HAL_GetHalVersion:
- 400              	.LFB47:
+ 361              		.loc 1 358 0
+ 362              		@ sp needed
+ 363 000a 7047     		bx	lr
+ 364              	.L24:
+ 365              		.align	2
+ 366              	.L23:
+ 367 000c 10E000E0 		.word	-536813552
+ 368              		.cfi_endproc
+ 369              	.LFE46:
+ 371              		.section	.text.HAL_GetHalVersion,"ax",%progbits
+ 372              		.align	1
+ 373              		.global	HAL_GetHalVersion
+ 374              		.syntax unified
+ 375              		.code	16
+ 376              		.thumb_func
+ 377              		.fpu softvfp
+ 379              	HAL_GetHalVersion:
+ 380              	.LFB47:
  359:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  360:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  361:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief  This method returns the HAL revision
@@ -803,33 +775,35 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  363:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  364:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** uint32_t HAL_GetHalVersion(void)
  365:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 401              		.loc 1 365 1 is_stmt 1 view -0
- 402              		.cfi_startproc
- 403              		@ args = 0, pretend = 0, frame = 0
- 404              		@ frame_needed = 0, uses_anonymous_args = 0
- 405              		@ link register save eliminated.
+ 381              		.loc 1 365 0
+ 382              		.cfi_startproc
+ 383              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/ccTfrgUB.s 			page 14
+
+
+ 384              		@ frame_needed = 0, uses_anonymous_args = 0
+ 385              		@ link register save eliminated.
  366:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****  return __STM32F0xx_HAL_VERSION;
- 406              		.loc 1 366 2 view .LVU61
  367:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 407              		.loc 1 367 1 is_stmt 0 view .LVU62
- 408 0000 0048     		ldr	r0, .L26
- 409              		@ sp needed
- 410 0002 7047     		bx	lr
- 411              	.L27:
- 412              		.align	2
- 413              	.L26:
- 414 0004 00020701 		.word	17236480
- 415              		.cfi_endproc
- 416              	.LFE47:
- 418              		.section	.text.HAL_GetREVID,"ax",%progbits
- 419              		.align	1
- 420              		.global	HAL_GetREVID
- 421              		.syntax unified
- 422              		.code	16
- 423              		.thumb_func
- 424              		.fpu softvfp
- 426              	HAL_GetREVID:
- 427              	.LFB48:
+ 386              		.loc 1 367 0
+ 387 0000 0048     		ldr	r0, .L26
+ 388              		@ sp needed
+ 389 0002 7047     		bx	lr
+ 390              	.L27:
+ 391              		.align	2
+ 392              	.L26:
+ 393 0004 00020701 		.word	17236480
+ 394              		.cfi_endproc
+ 395              	.LFE47:
+ 397              		.section	.text.HAL_GetREVID,"ax",%progbits
+ 398              		.align	1
+ 399              		.global	HAL_GetREVID
+ 400              		.syntax unified
+ 401              		.code	16
+ 402              		.thumb_func
+ 403              		.fpu softvfp
+ 405              	HAL_GetREVID:
+ 406              	.LFB48:
  368:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  369:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  370:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief  Returns the device revision identifier.
@@ -837,40 +811,38 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  372:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  373:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** uint32_t HAL_GetREVID(void)
  374:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 428              		.loc 1 374 1 is_stmt 1 view -0
-ARM GAS  /tmp/ccnCi6Fd.s 			page 15
-
-
- 429              		.cfi_startproc
- 430              		@ args = 0, pretend = 0, frame = 0
- 431              		@ frame_needed = 0, uses_anonymous_args = 0
- 432              		@ link register save eliminated.
+ 407              		.loc 1 374 0
+ 408              		.cfi_startproc
+ 409              		@ args = 0, pretend = 0, frame = 0
+ 410              		@ frame_needed = 0, uses_anonymous_args = 0
+ 411              		@ link register save eliminated.
  375:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****    return((DBGMCU->IDCODE) >> 16U);
- 433              		.loc 1 375 4 view .LVU64
- 434              		.loc 1 375 18 is_stmt 0 view .LVU65
- 435 0000 014B     		ldr	r3, .L29
- 436 0002 1868     		ldr	r0, [r3]
- 437              		.loc 1 375 28 view .LVU66
- 438 0004 000C     		lsrs	r0, r0, #16
+ 412              		.loc 1 375 0
+ 413 0000 014B     		ldr	r3, .L29
+ 414 0002 1868     		ldr	r0, [r3]
+ 415 0004 000C     		lsrs	r0, r0, #16
  376:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 439              		.loc 1 376 1 view .LVU67
- 440              		@ sp needed
- 441 0006 7047     		bx	lr
- 442              	.L30:
- 443              		.align	2
- 444              	.L29:
- 445 0008 00580140 		.word	1073829888
- 446              		.cfi_endproc
- 447              	.LFE48:
- 449              		.section	.text.HAL_GetDEVID,"ax",%progbits
- 450              		.align	1
- 451              		.global	HAL_GetDEVID
- 452              		.syntax unified
- 453              		.code	16
- 454              		.thumb_func
- 455              		.fpu softvfp
- 457              	HAL_GetDEVID:
- 458              	.LFB49:
+ 416              		.loc 1 376 0
+ 417              		@ sp needed
+ 418 0006 7047     		bx	lr
+ 419              	.L30:
+ 420              		.align	2
+ 421              	.L29:
+ 422 0008 00580140 		.word	1073829888
+ 423              		.cfi_endproc
+ 424              	.LFE48:
+ 426              		.section	.text.HAL_GetDEVID,"ax",%progbits
+ 427              		.align	1
+ 428              		.global	HAL_GetDEVID
+ 429              		.syntax unified
+ 430              		.code	16
+ 431              		.thumb_func
+ 432              		.fpu softvfp
+ARM GAS  /tmp/ccTfrgUB.s 			page 15
+
+
+ 434              	HAL_GetDEVID:
+ 435              	.LFB49:
  377:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  378:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  379:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief  Returns the device identifier.
@@ -878,41 +850,36 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  381:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  382:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** uint32_t HAL_GetDEVID(void)
  383:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 459              		.loc 1 383 1 is_stmt 1 view -0
- 460              		.cfi_startproc
- 461              		@ args = 0, pretend = 0, frame = 0
- 462              		@ frame_needed = 0, uses_anonymous_args = 0
- 463              		@ link register save eliminated.
+ 436              		.loc 1 383 0
+ 437              		.cfi_startproc
+ 438              		@ args = 0, pretend = 0, frame = 0
+ 439              		@ frame_needed = 0, uses_anonymous_args = 0
+ 440              		@ link register save eliminated.
  384:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****    return((DBGMCU->IDCODE) & IDCODE_DEVID_MASK);
- 464              		.loc 1 384 4 view .LVU69
- 465              		.loc 1 384 18 is_stmt 0 view .LVU70
- 466 0000 024B     		ldr	r3, .L32
- 467 0002 1868     		ldr	r0, [r3]
- 468              		.loc 1 384 28 view .LVU71
- 469 0004 0005     		lsls	r0, r0, #20
- 470 0006 000D     		lsrs	r0, r0, #20
+ 441              		.loc 1 384 0
+ 442 0000 024B     		ldr	r3, .L32
+ 443 0002 1868     		ldr	r0, [r3]
+ 444 0004 0005     		lsls	r0, r0, #20
+ 445 0006 000D     		lsrs	r0, r0, #20
  385:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 471              		.loc 1 385 1 view .LVU72
- 472              		@ sp needed
- 473 0008 7047     		bx	lr
- 474              	.L33:
- 475 000a C046     		.align	2
- 476              	.L32:
-ARM GAS  /tmp/ccnCi6Fd.s 			page 16
-
-
- 477 000c 00580140 		.word	1073829888
- 478              		.cfi_endproc
- 479              	.LFE49:
- 481              		.section	.text.HAL_GetUIDw0,"ax",%progbits
- 482              		.align	1
- 483              		.global	HAL_GetUIDw0
- 484              		.syntax unified
- 485              		.code	16
- 486              		.thumb_func
- 487              		.fpu softvfp
- 489              	HAL_GetUIDw0:
- 490              	.LFB50:
+ 446              		.loc 1 385 0
+ 447              		@ sp needed
+ 448 0008 7047     		bx	lr
+ 449              	.L33:
+ 450 000a C046     		.align	2
+ 451              	.L32:
+ 452 000c 00580140 		.word	1073829888
+ 453              		.cfi_endproc
+ 454              	.LFE49:
+ 456              		.section	.text.HAL_GetUIDw0,"ax",%progbits
+ 457              		.align	1
+ 458              		.global	HAL_GetUIDw0
+ 459              		.syntax unified
+ 460              		.code	16
+ 461              		.thumb_func
+ 462              		.fpu softvfp
+ 464              	HAL_GetUIDw0:
+ 465              	.LFB50:
  386:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  387:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  388:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief  Returns first word of the unique device identifier (UID based on 96 bits)
@@ -920,35 +887,37 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  390:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  391:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** uint32_t HAL_GetUIDw0(void)
  392:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 491              		.loc 1 392 1 is_stmt 1 view -0
- 492              		.cfi_startproc
- 493              		@ args = 0, pretend = 0, frame = 0
- 494              		@ frame_needed = 0, uses_anonymous_args = 0
- 495              		@ link register save eliminated.
+ 466              		.loc 1 392 0
+ 467              		.cfi_startproc
+ 468              		@ args = 0, pretend = 0, frame = 0
+ 469              		@ frame_needed = 0, uses_anonymous_args = 0
+ 470              		@ link register save eliminated.
  393:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****    return(READ_REG(*((uint32_t *)UID_BASE)));
- 496              		.loc 1 393 4 view .LVU74
- 497              		.loc 1 393 11 is_stmt 0 view .LVU75
- 498 0000 014B     		ldr	r3, .L35
- 499 0002 1868     		ldr	r0, [r3]
+ 471              		.loc 1 393 0
+ 472 0000 014B     		ldr	r3, .L35
+ 473 0002 1868     		ldr	r0, [r3]
  394:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 500              		.loc 1 394 1 view .LVU76
- 501              		@ sp needed
- 502 0004 7047     		bx	lr
- 503              	.L36:
- 504 0006 C046     		.align	2
- 505              	.L35:
- 506 0008 ACF7FF1F 		.word	536868780
- 507              		.cfi_endproc
- 508              	.LFE50:
- 510              		.section	.text.HAL_GetUIDw1,"ax",%progbits
- 511              		.align	1
- 512              		.global	HAL_GetUIDw1
- 513              		.syntax unified
- 514              		.code	16
- 515              		.thumb_func
- 516              		.fpu softvfp
- 518              	HAL_GetUIDw1:
- 519              	.LFB51:
+ 474              		.loc 1 394 0
+ARM GAS  /tmp/ccTfrgUB.s 			page 16
+
+
+ 475              		@ sp needed
+ 476 0004 7047     		bx	lr
+ 477              	.L36:
+ 478 0006 C046     		.align	2
+ 479              	.L35:
+ 480 0008 ACF7FF1F 		.word	536868780
+ 481              		.cfi_endproc
+ 482              	.LFE50:
+ 484              		.section	.text.HAL_GetUIDw1,"ax",%progbits
+ 485              		.align	1
+ 486              		.global	HAL_GetUIDw1
+ 487              		.syntax unified
+ 488              		.code	16
+ 489              		.thumb_func
+ 490              		.fpu softvfp
+ 492              	HAL_GetUIDw1:
+ 493              	.LFB51:
  395:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  396:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  397:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief  Returns second word of the unique device identifier (UID based on 96 bits)
@@ -956,77 +925,72 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  399:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  400:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** uint32_t HAL_GetUIDw1(void)
  401:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 520              		.loc 1 401 1 is_stmt 1 view -0
- 521              		.cfi_startproc
-ARM GAS  /tmp/ccnCi6Fd.s 			page 17
-
-
- 522              		@ args = 0, pretend = 0, frame = 0
- 523              		@ frame_needed = 0, uses_anonymous_args = 0
- 524              		@ link register save eliminated.
+ 494              		.loc 1 401 0
+ 495              		.cfi_startproc
+ 496              		@ args = 0, pretend = 0, frame = 0
+ 497              		@ frame_needed = 0, uses_anonymous_args = 0
+ 498              		@ link register save eliminated.
  402:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****    return(READ_REG(*((uint32_t *)(UID_BASE + 4U))));
- 525              		.loc 1 402 4 view .LVU78
- 526              		.loc 1 402 11 is_stmt 0 view .LVU79
- 527 0000 014B     		ldr	r3, .L38
- 528 0002 1868     		ldr	r0, [r3]
+ 499              		.loc 1 402 0
+ 500 0000 014B     		ldr	r3, .L38
+ 501 0002 1868     		ldr	r0, [r3]
  403:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 529              		.loc 1 403 1 view .LVU80
- 530              		@ sp needed
- 531 0004 7047     		bx	lr
- 532              	.L39:
- 533 0006 C046     		.align	2
- 534              	.L38:
- 535 0008 B0F7FF1F 		.word	536868784
- 536              		.cfi_endproc
- 537              	.LFE51:
- 539              		.section	.text.HAL_GetUIDw2,"ax",%progbits
- 540              		.align	1
- 541              		.global	HAL_GetUIDw2
- 542              		.syntax unified
- 543              		.code	16
- 544              		.thumb_func
- 545              		.fpu softvfp
- 547              	HAL_GetUIDw2:
- 548              	.LFB52:
+ 502              		.loc 1 403 0
+ 503              		@ sp needed
+ 504 0004 7047     		bx	lr
+ 505              	.L39:
+ 506 0006 C046     		.align	2
+ 507              	.L38:
+ 508 0008 B0F7FF1F 		.word	536868784
+ 509              		.cfi_endproc
+ 510              	.LFE51:
+ 512              		.section	.text.HAL_GetUIDw2,"ax",%progbits
+ 513              		.align	1
+ 514              		.global	HAL_GetUIDw2
+ 515              		.syntax unified
+ 516              		.code	16
+ 517              		.thumb_func
+ 518              		.fpu softvfp
+ 520              	HAL_GetUIDw2:
+ 521              	.LFB52:
  404:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  405:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  406:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief  Returns third word of the unique device identifier (UID based on 96 bits)
  407:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @retval Device identifier
  408:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
+ARM GAS  /tmp/ccTfrgUB.s 			page 17
+
+
  409:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** uint32_t HAL_GetUIDw2(void)
  410:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 549              		.loc 1 410 1 is_stmt 1 view -0
- 550              		.cfi_startproc
- 551              		@ args = 0, pretend = 0, frame = 0
- 552              		@ frame_needed = 0, uses_anonymous_args = 0
- 553              		@ link register save eliminated.
+ 522              		.loc 1 410 0
+ 523              		.cfi_startproc
+ 524              		@ args = 0, pretend = 0, frame = 0
+ 525              		@ frame_needed = 0, uses_anonymous_args = 0
+ 526              		@ link register save eliminated.
  411:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****    return(READ_REG(*((uint32_t *)(UID_BASE + 8U))));
- 554              		.loc 1 411 4 view .LVU82
- 555              		.loc 1 411 11 is_stmt 0 view .LVU83
- 556 0000 014B     		ldr	r3, .L41
- 557 0002 1868     		ldr	r0, [r3]
+ 527              		.loc 1 411 0
+ 528 0000 014B     		ldr	r3, .L41
+ 529 0002 1868     		ldr	r0, [r3]
  412:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 558              		.loc 1 412 1 view .LVU84
- 559              		@ sp needed
- 560 0004 7047     		bx	lr
- 561              	.L42:
- 562 0006 C046     		.align	2
- 563              	.L41:
- 564 0008 B4F7FF1F 		.word	536868788
- 565              		.cfi_endproc
- 566              	.LFE52:
- 568              		.section	.text.HAL_DBGMCU_EnableDBGStopMode,"ax",%progbits
- 569              		.align	1
- 570              		.global	HAL_DBGMCU_EnableDBGStopMode
-ARM GAS  /tmp/ccnCi6Fd.s 			page 18
-
-
- 571              		.syntax unified
- 572              		.code	16
- 573              		.thumb_func
- 574              		.fpu softvfp
- 576              	HAL_DBGMCU_EnableDBGStopMode:
- 577              	.LFB53:
+ 530              		.loc 1 412 0
+ 531              		@ sp needed
+ 532 0004 7047     		bx	lr
+ 533              	.L42:
+ 534 0006 C046     		.align	2
+ 535              	.L41:
+ 536 0008 B4F7FF1F 		.word	536868788
+ 537              		.cfi_endproc
+ 538              	.LFE52:
+ 540              		.section	.text.HAL_DBGMCU_EnableDBGStopMode,"ax",%progbits
+ 541              		.align	1
+ 542              		.global	HAL_DBGMCU_EnableDBGStopMode
+ 543              		.syntax unified
+ 544              		.code	16
+ 545              		.thumb_func
+ 546              		.fpu softvfp
+ 548              	HAL_DBGMCU_EnableDBGStopMode:
+ 549              	.LFB53:
  413:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  414:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  415:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief  Enable the Debug Module during STOP mode       
@@ -1034,37 +998,40 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  417:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  418:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** void HAL_DBGMCU_EnableDBGStopMode(void)
  419:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 578              		.loc 1 419 1 is_stmt 1 view -0
- 579              		.cfi_startproc
- 580              		@ args = 0, pretend = 0, frame = 0
- 581              		@ frame_needed = 0, uses_anonymous_args = 0
- 582              		@ link register save eliminated.
+ 550              		.loc 1 419 0
+ 551              		.cfi_startproc
+ 552              		@ args = 0, pretend = 0, frame = 0
+ 553              		@ frame_needed = 0, uses_anonymous_args = 0
+ 554              		@ link register save eliminated.
  420:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STOP);
- 583              		.loc 1 420 3 view .LVU86
- 584 0000 024A     		ldr	r2, .L44
- 585 0002 5368     		ldr	r3, [r2, #4]
- 586 0004 0221     		movs	r1, #2
- 587 0006 0B43     		orrs	r3, r1
- 588 0008 5360     		str	r3, [r2, #4]
+ 555              		.loc 1 420 0
+ 556 0000 024A     		ldr	r2, .L44
+ 557 0002 5368     		ldr	r3, [r2, #4]
+ 558 0004 0221     		movs	r1, #2
+ 559 0006 0B43     		orrs	r3, r1
+ 560 0008 5360     		str	r3, [r2, #4]
  421:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 589              		.loc 1 421 1 is_stmt 0 view .LVU87
- 590              		@ sp needed
- 591 000a 7047     		bx	lr
- 592              	.L45:
- 593              		.align	2
- 594              	.L44:
- 595 000c 00580140 		.word	1073829888
- 596              		.cfi_endproc
- 597              	.LFE53:
- 599              		.section	.text.HAL_DBGMCU_DisableDBGStopMode,"ax",%progbits
- 600              		.align	1
- 601              		.global	HAL_DBGMCU_DisableDBGStopMode
- 602              		.syntax unified
- 603              		.code	16
- 604              		.thumb_func
- 605              		.fpu softvfp
- 607              	HAL_DBGMCU_DisableDBGStopMode:
- 608              	.LFB54:
+ 561              		.loc 1 421 0
+ 562              		@ sp needed
+ 563 000a 7047     		bx	lr
+ 564              	.L45:
+ 565              		.align	2
+ 566              	.L44:
+ 567 000c 00580140 		.word	1073829888
+ARM GAS  /tmp/ccTfrgUB.s 			page 18
+
+
+ 568              		.cfi_endproc
+ 569              	.LFE53:
+ 571              		.section	.text.HAL_DBGMCU_DisableDBGStopMode,"ax",%progbits
+ 572              		.align	1
+ 573              		.global	HAL_DBGMCU_DisableDBGStopMode
+ 574              		.syntax unified
+ 575              		.code	16
+ 576              		.thumb_func
+ 577              		.fpu softvfp
+ 579              	HAL_DBGMCU_DisableDBGStopMode:
+ 580              	.LFB54:
  422:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  423:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  424:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief  Disable the Debug Module during STOP mode       
@@ -1072,40 +1039,37 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  426:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  427:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** void HAL_DBGMCU_DisableDBGStopMode(void)
  428:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 609              		.loc 1 428 1 is_stmt 1 view -0
- 610              		.cfi_startproc
- 611              		@ args = 0, pretend = 0, frame = 0
- 612              		@ frame_needed = 0, uses_anonymous_args = 0
- 613              		@ link register save eliminated.
+ 581              		.loc 1 428 0
+ 582              		.cfi_startproc
+ 583              		@ args = 0, pretend = 0, frame = 0
+ 584              		@ frame_needed = 0, uses_anonymous_args = 0
+ 585              		@ link register save eliminated.
  429:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STOP);
-ARM GAS  /tmp/ccnCi6Fd.s 			page 19
-
-
- 614              		.loc 1 429 3 view .LVU89
- 615 0000 024A     		ldr	r2, .L47
- 616 0002 5368     		ldr	r3, [r2, #4]
- 617 0004 0221     		movs	r1, #2
- 618 0006 8B43     		bics	r3, r1
- 619 0008 5360     		str	r3, [r2, #4]
+ 586              		.loc 1 429 0
+ 587 0000 024A     		ldr	r2, .L47
+ 588 0002 5368     		ldr	r3, [r2, #4]
+ 589 0004 0221     		movs	r1, #2
+ 590 0006 8B43     		bics	r3, r1
+ 591 0008 5360     		str	r3, [r2, #4]
  430:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 620              		.loc 1 430 1 is_stmt 0 view .LVU90
- 621              		@ sp needed
- 622 000a 7047     		bx	lr
- 623              	.L48:
- 624              		.align	2
- 625              	.L47:
- 626 000c 00580140 		.word	1073829888
- 627              		.cfi_endproc
- 628              	.LFE54:
- 630              		.section	.text.HAL_DBGMCU_EnableDBGStandbyMode,"ax",%progbits
- 631              		.align	1
- 632              		.global	HAL_DBGMCU_EnableDBGStandbyMode
- 633              		.syntax unified
- 634              		.code	16
- 635              		.thumb_func
- 636              		.fpu softvfp
- 638              	HAL_DBGMCU_EnableDBGStandbyMode:
- 639              	.LFB55:
+ 592              		.loc 1 430 0
+ 593              		@ sp needed
+ 594 000a 7047     		bx	lr
+ 595              	.L48:
+ 596              		.align	2
+ 597              	.L47:
+ 598 000c 00580140 		.word	1073829888
+ 599              		.cfi_endproc
+ 600              	.LFE54:
+ 602              		.section	.text.HAL_DBGMCU_EnableDBGStandbyMode,"ax",%progbits
+ 603              		.align	1
+ 604              		.global	HAL_DBGMCU_EnableDBGStandbyMode
+ 605              		.syntax unified
+ 606              		.code	16
+ 607              		.thumb_func
+ 608              		.fpu softvfp
+ 610              	HAL_DBGMCU_EnableDBGStandbyMode:
+ 611              	.LFB55:
  431:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  432:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  433:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief  Enable the Debug Module during STANDBY mode       
@@ -1113,40 +1077,40 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  435:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  436:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** void HAL_DBGMCU_EnableDBGStandbyMode(void)
  437:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 640              		.loc 1 437 1 is_stmt 1 view -0
- 641              		.cfi_startproc
- 642              		@ args = 0, pretend = 0, frame = 0
- 643              		@ frame_needed = 0, uses_anonymous_args = 0
- 644              		@ link register save eliminated.
+ 612              		.loc 1 437 0
+ARM GAS  /tmp/ccTfrgUB.s 			page 19
+
+
+ 613              		.cfi_startproc
+ 614              		@ args = 0, pretend = 0, frame = 0
+ 615              		@ frame_needed = 0, uses_anonymous_args = 0
+ 616              		@ link register save eliminated.
  438:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STANDBY);
- 645              		.loc 1 438 3 view .LVU92
- 646 0000 024A     		ldr	r2, .L50
- 647 0002 5368     		ldr	r3, [r2, #4]
- 648 0004 0421     		movs	r1, #4
- 649 0006 0B43     		orrs	r3, r1
- 650 0008 5360     		str	r3, [r2, #4]
+ 617              		.loc 1 438 0
+ 618 0000 024A     		ldr	r2, .L50
+ 619 0002 5368     		ldr	r3, [r2, #4]
+ 620 0004 0421     		movs	r1, #4
+ 621 0006 0B43     		orrs	r3, r1
+ 622 0008 5360     		str	r3, [r2, #4]
  439:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 651              		.loc 1 439 1 is_stmt 0 view .LVU93
- 652              		@ sp needed
- 653 000a 7047     		bx	lr
- 654              	.L51:
- 655              		.align	2
- 656              	.L50:
- 657 000c 00580140 		.word	1073829888
- 658              		.cfi_endproc
- 659              	.LFE55:
- 661              		.section	.text.HAL_DBGMCU_DisableDBGStandbyMode,"ax",%progbits
- 662              		.align	1
- 663              		.global	HAL_DBGMCU_DisableDBGStandbyMode
-ARM GAS  /tmp/ccnCi6Fd.s 			page 20
-
-
- 664              		.syntax unified
- 665              		.code	16
- 666              		.thumb_func
- 667              		.fpu softvfp
- 669              	HAL_DBGMCU_DisableDBGStandbyMode:
- 670              	.LFB56:
+ 623              		.loc 1 439 0
+ 624              		@ sp needed
+ 625 000a 7047     		bx	lr
+ 626              	.L51:
+ 627              		.align	2
+ 628              	.L50:
+ 629 000c 00580140 		.word	1073829888
+ 630              		.cfi_endproc
+ 631              	.LFE55:
+ 633              		.section	.text.HAL_DBGMCU_DisableDBGStandbyMode,"ax",%progbits
+ 634              		.align	1
+ 635              		.global	HAL_DBGMCU_DisableDBGStandbyMode
+ 636              		.syntax unified
+ 637              		.code	16
+ 638              		.thumb_func
+ 639              		.fpu softvfp
+ 641              	HAL_DBGMCU_DisableDBGStandbyMode:
+ 642              	.LFB56:
  440:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  441:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
  442:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief  Disable the Debug Module during STANDBY mode       
@@ -1154,108 +1118,111 @@ ARM GAS  /tmp/ccnCi6Fd.s 			page 1
  444:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
  445:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** void HAL_DBGMCU_DisableDBGStandbyMode(void)
  446:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
- 671              		.loc 1 446 1 is_stmt 1 view -0
- 672              		.cfi_startproc
- 673              		@ args = 0, pretend = 0, frame = 0
- 674              		@ frame_needed = 0, uses_anonymous_args = 0
- 675              		@ link register save eliminated.
+ 643              		.loc 1 446 0
+ 644              		.cfi_startproc
+ 645              		@ args = 0, pretend = 0, frame = 0
+ 646              		@ frame_needed = 0, uses_anonymous_args = 0
+ 647              		@ link register save eliminated.
  447:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STANDBY);
- 676              		.loc 1 447 3 view .LVU95
- 677 0000 024A     		ldr	r2, .L53
- 678 0002 5368     		ldr	r3, [r2, #4]
- 679 0004 0421     		movs	r1, #4
- 680 0006 8B43     		bics	r3, r1
- 681 0008 5360     		str	r3, [r2, #4]
+ 648              		.loc 1 447 0
+ 649 0000 024A     		ldr	r2, .L53
+ 650 0002 5368     		ldr	r3, [r2, #4]
+ 651 0004 0421     		movs	r1, #4
+ 652 0006 8B43     		bics	r3, r1
+ 653 0008 5360     		str	r3, [r2, #4]
  448:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
- 682              		.loc 1 448 1 is_stmt 0 view .LVU96
- 683              		@ sp needed
- 684 000a 7047     		bx	lr
- 685              	.L54:
- 686              		.align	2
- 687              	.L53:
- 688 000c 00580140 		.word	1073829888
- 689              		.cfi_endproc
- 690              	.LFE56:
- 692              		.comm	uwTick,4,4
- 693              		.text
- 694              	.Letext0:
- 695              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
- 696              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
- 697              		.file 4 "Drivers/CMSIS/Include/core_cm0.h"
- 698              		.file 5 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h"
- 699              		.file 6 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h"
- 700              		.file 7 "/usr/arm-none-eabi/include/sys/lock.h"
- 701              		.file 8 "/usr/arm-none-eabi/include/sys/_types.h"
- 702              		.file 9 "/usr/lib/gcc/arm-none-eabi/9.1.0/include/stddef.h"
- 703              		.file 10 "/usr/arm-none-eabi/include/sys/reent.h"
- 704              		.file 11 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h"
- 705              		.file 12 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h"
- 706              		.file 13 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h"
-ARM GAS  /tmp/ccnCi6Fd.s 			page 21
+ 654              		.loc 1 448 0
+ 655              		@ sp needed
+ 656 000a 7047     		bx	lr
+ 657              	.L54:
+ 658              		.align	2
+ 659              	.L53:
+ 660 000c 00580140 		.word	1073829888
+ARM GAS  /tmp/ccTfrgUB.s 			page 20
+
+
+ 661              		.cfi_endproc
+ 662              	.LFE56:
+ 664              		.comm	uwTick,4,4
+ 665              		.text
+ 666              	.Letext0:
+ 667              		.file 2 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/machin
+ 668              		.file 3 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_s
+ 669              		.file 4 "Drivers/CMSIS/Include/core_cm0.h"
+ 670              		.file 5 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h"
+ 671              		.file 6 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f072xb.h"
+ 672              		.file 7 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/lo
+ 673              		.file 8 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_t
+ 674              		.file 9 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/
+ 675              		.file 10 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/r
+ 676              		.file 11 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h"
+ 677              		.file 12 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h"
+ 678              		.file 13 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h"
+ARM GAS  /tmp/ccTfrgUB.s 			page 21
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f0xx_hal.c
-     /tmp/ccnCi6Fd.s:16     .text.HAL_MspInit:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:24     .text.HAL_MspInit:0000000000000000 HAL_MspInit
-     /tmp/ccnCi6Fd.s:39     .text.HAL_MspDeInit:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:46     .text.HAL_MspDeInit:0000000000000000 HAL_MspDeInit
-     /tmp/ccnCi6Fd.s:60     .text.HAL_DeInit:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:67     .text.HAL_DeInit:0000000000000000 HAL_DeInit
-     /tmp/ccnCi6Fd.s:105    .text.HAL_DeInit:0000000000000020 $d
-     /tmp/ccnCi6Fd.s:111    .text.HAL_InitTick:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:118    .text.HAL_InitTick:0000000000000000 HAL_InitTick
-     /tmp/ccnCi6Fd.s:161    .text.HAL_Init:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:168    .text.HAL_Init:0000000000000000 HAL_Init
-     /tmp/ccnCi6Fd.s:200    .text.HAL_Init:000000000000001c $d
-     /tmp/ccnCi6Fd.s:205    .text.HAL_IncTick:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:212    .text.HAL_IncTick:0000000000000000 HAL_IncTick
-     /tmp/ccnCi6Fd.s:231    .text.HAL_IncTick:000000000000000c $d
+     /tmp/ccTfrgUB.s:16     .text.HAL_MspInit:0000000000000000 $t
+     /tmp/ccTfrgUB.s:23     .text.HAL_MspInit:0000000000000000 HAL_MspInit
+     /tmp/ccTfrgUB.s:38     .text.HAL_MspDeInit:0000000000000000 $t
+     /tmp/ccTfrgUB.s:45     .text.HAL_MspDeInit:0000000000000000 HAL_MspDeInit
+     /tmp/ccTfrgUB.s:59     .text.HAL_DeInit:0000000000000000 $t
+     /tmp/ccTfrgUB.s:66     .text.HAL_DeInit:0000000000000000 HAL_DeInit
+     /tmp/ccTfrgUB.s:103    .text.HAL_DeInit:0000000000000020 $d
+     /tmp/ccTfrgUB.s:109    .text.HAL_InitTick:0000000000000000 $t
+     /tmp/ccTfrgUB.s:116    .text.HAL_InitTick:0000000000000000 HAL_InitTick
+     /tmp/ccTfrgUB.s:154    .text.HAL_Init:0000000000000000 $t
+     /tmp/ccTfrgUB.s:161    .text.HAL_Init:0000000000000000 HAL_Init
+     /tmp/ccTfrgUB.s:192    .text.HAL_Init:000000000000001c $d
+     /tmp/ccTfrgUB.s:197    .text.HAL_IncTick:0000000000000000 $t
+     /tmp/ccTfrgUB.s:204    .text.HAL_IncTick:0000000000000000 HAL_IncTick
+     /tmp/ccTfrgUB.s:222    .text.HAL_IncTick:000000000000000c $d
                             *COM*:0000000000000004 uwTick
-     /tmp/ccnCi6Fd.s:236    .text.HAL_GetTick:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:243    .text.HAL_GetTick:0000000000000000 HAL_GetTick
-     /tmp/ccnCi6Fd.s:260    .text.HAL_GetTick:0000000000000008 $d
-     /tmp/ccnCi6Fd.s:265    .text.HAL_Delay:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:272    .text.HAL_Delay:0000000000000000 HAL_Delay
-     /tmp/ccnCi6Fd.s:330    .text.HAL_SuspendTick:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:337    .text.HAL_SuspendTick:0000000000000000 HAL_SuspendTick
-     /tmp/ccnCi6Fd.s:356    .text.HAL_SuspendTick:000000000000000c $d
-     /tmp/ccnCi6Fd.s:361    .text.HAL_ResumeTick:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:368    .text.HAL_ResumeTick:0000000000000000 HAL_ResumeTick
-     /tmp/ccnCi6Fd.s:387    .text.HAL_ResumeTick:000000000000000c $d
-     /tmp/ccnCi6Fd.s:392    .text.HAL_GetHalVersion:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:399    .text.HAL_GetHalVersion:0000000000000000 HAL_GetHalVersion
-     /tmp/ccnCi6Fd.s:414    .text.HAL_GetHalVersion:0000000000000004 $d
-     /tmp/ccnCi6Fd.s:419    .text.HAL_GetREVID:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:426    .text.HAL_GetREVID:0000000000000000 HAL_GetREVID
-     /tmp/ccnCi6Fd.s:445    .text.HAL_GetREVID:0000000000000008 $d
-     /tmp/ccnCi6Fd.s:450    .text.HAL_GetDEVID:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:457    .text.HAL_GetDEVID:0000000000000000 HAL_GetDEVID
-     /tmp/ccnCi6Fd.s:477    .text.HAL_GetDEVID:000000000000000c $d
-     /tmp/ccnCi6Fd.s:482    .text.HAL_GetUIDw0:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:489    .text.HAL_GetUIDw0:0000000000000000 HAL_GetUIDw0
-     /tmp/ccnCi6Fd.s:506    .text.HAL_GetUIDw0:0000000000000008 $d
-     /tmp/ccnCi6Fd.s:511    .text.HAL_GetUIDw1:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:518    .text.HAL_GetUIDw1:0000000000000000 HAL_GetUIDw1
-     /tmp/ccnCi6Fd.s:535    .text.HAL_GetUIDw1:0000000000000008 $d
-     /tmp/ccnCi6Fd.s:540    .text.HAL_GetUIDw2:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:547    .text.HAL_GetUIDw2:0000000000000000 HAL_GetUIDw2
-     /tmp/ccnCi6Fd.s:564    .text.HAL_GetUIDw2:0000000000000008 $d
-     /tmp/ccnCi6Fd.s:569    .text.HAL_DBGMCU_EnableDBGStopMode:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:576    .text.HAL_DBGMCU_EnableDBGStopMode:0000000000000000 HAL_DBGMCU_EnableDBGStopMode
-     /tmp/ccnCi6Fd.s:595    .text.HAL_DBGMCU_EnableDBGStopMode:000000000000000c $d
-     /tmp/ccnCi6Fd.s:600    .text.HAL_DBGMCU_DisableDBGStopMode:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:607    .text.HAL_DBGMCU_DisableDBGStopMode:0000000000000000 HAL_DBGMCU_DisableDBGStopMode
-     /tmp/ccnCi6Fd.s:626    .text.HAL_DBGMCU_DisableDBGStopMode:000000000000000c $d
-     /tmp/ccnCi6Fd.s:631    .text.HAL_DBGMCU_EnableDBGStandbyMode:0000000000000000 $t
-     /tmp/ccnCi6Fd.s:638    .text.HAL_DBGMCU_EnableDBGStandbyMode:0000000000000000 HAL_DBGMCU_EnableDBGStandbyMode
-     /tmp/ccnCi6Fd.s:657    .text.HAL_DBGMCU_EnableDBGStandbyMode:000000000000000c $d
-     /tmp/ccnCi6Fd.s:662    .text.HAL_DBGMCU_DisableDBGStandbyMode:0000000000000000 $t
-ARM GAS  /tmp/ccnCi6Fd.s 			page 22
+     /tmp/ccTfrgUB.s:227    .text.HAL_GetTick:0000000000000000 $t
+     /tmp/ccTfrgUB.s:234    .text.HAL_GetTick:0000000000000000 HAL_GetTick
+     /tmp/ccTfrgUB.s:250    .text.HAL_GetTick:0000000000000008 $d
+     /tmp/ccTfrgUB.s:255    .text.HAL_Delay:0000000000000000 $t
+     /tmp/ccTfrgUB.s:262    .text.HAL_Delay:0000000000000000 HAL_Delay
+     /tmp/ccTfrgUB.s:310    .text.HAL_SuspendTick:0000000000000000 $t
+     /tmp/ccTfrgUB.s:317    .text.HAL_SuspendTick:0000000000000000 HAL_SuspendTick
+     /tmp/ccTfrgUB.s:336    .text.HAL_SuspendTick:000000000000000c $d
+     /tmp/ccTfrgUB.s:341    .text.HAL_ResumeTick:0000000000000000 $t
+     /tmp/ccTfrgUB.s:348    .text.HAL_ResumeTick:0000000000000000 HAL_ResumeTick
+     /tmp/ccTfrgUB.s:367    .text.HAL_ResumeTick:000000000000000c $d
+     /tmp/ccTfrgUB.s:372    .text.HAL_GetHalVersion:0000000000000000 $t
+     /tmp/ccTfrgUB.s:379    .text.HAL_GetHalVersion:0000000000000000 HAL_GetHalVersion
+     /tmp/ccTfrgUB.s:393    .text.HAL_GetHalVersion:0000000000000004 $d
+     /tmp/ccTfrgUB.s:398    .text.HAL_GetREVID:0000000000000000 $t
+     /tmp/ccTfrgUB.s:405    .text.HAL_GetREVID:0000000000000000 HAL_GetREVID
+     /tmp/ccTfrgUB.s:422    .text.HAL_GetREVID:0000000000000008 $d
+     /tmp/ccTfrgUB.s:427    .text.HAL_GetDEVID:0000000000000000 $t
+     /tmp/ccTfrgUB.s:434    .text.HAL_GetDEVID:0000000000000000 HAL_GetDEVID
+     /tmp/ccTfrgUB.s:452    .text.HAL_GetDEVID:000000000000000c $d
+     /tmp/ccTfrgUB.s:457    .text.HAL_GetUIDw0:0000000000000000 $t
+     /tmp/ccTfrgUB.s:464    .text.HAL_GetUIDw0:0000000000000000 HAL_GetUIDw0
+     /tmp/ccTfrgUB.s:480    .text.HAL_GetUIDw0:0000000000000008 $d
+     /tmp/ccTfrgUB.s:485    .text.HAL_GetUIDw1:0000000000000000 $t
+     /tmp/ccTfrgUB.s:492    .text.HAL_GetUIDw1:0000000000000000 HAL_GetUIDw1
+     /tmp/ccTfrgUB.s:508    .text.HAL_GetUIDw1:0000000000000008 $d
+     /tmp/ccTfrgUB.s:513    .text.HAL_GetUIDw2:0000000000000000 $t
+     /tmp/ccTfrgUB.s:520    .text.HAL_GetUIDw2:0000000000000000 HAL_GetUIDw2
+     /tmp/ccTfrgUB.s:536    .text.HAL_GetUIDw2:0000000000000008 $d
+     /tmp/ccTfrgUB.s:541    .text.HAL_DBGMCU_EnableDBGStopMode:0000000000000000 $t
+     /tmp/ccTfrgUB.s:548    .text.HAL_DBGMCU_EnableDBGStopMode:0000000000000000 HAL_DBGMCU_EnableDBGStopMode
+     /tmp/ccTfrgUB.s:567    .text.HAL_DBGMCU_EnableDBGStopMode:000000000000000c $d
+     /tmp/ccTfrgUB.s:572    .text.HAL_DBGMCU_DisableDBGStopMode:0000000000000000 $t
+     /tmp/ccTfrgUB.s:579    .text.HAL_DBGMCU_DisableDBGStopMode:0000000000000000 HAL_DBGMCU_DisableDBGStopMode
+     /tmp/ccTfrgUB.s:598    .text.HAL_DBGMCU_DisableDBGStopMode:000000000000000c $d
+     /tmp/ccTfrgUB.s:603    .text.HAL_DBGMCU_EnableDBGStandbyMode:0000000000000000 $t
+     /tmp/ccTfrgUB.s:610    .text.HAL_DBGMCU_EnableDBGStandbyMode:0000000000000000 HAL_DBGMCU_EnableDBGStandbyMode
+     /tmp/ccTfrgUB.s:629    .text.HAL_DBGMCU_EnableDBGStandbyMode:000000000000000c $d
+     /tmp/ccTfrgUB.s:634    .text.HAL_DBGMCU_DisableDBGStandbyMode:0000000000000000 $t
+ARM GAS  /tmp/ccTfrgUB.s 			page 22
 
 
-     /tmp/ccnCi6Fd.s:669    .text.HAL_DBGMCU_DisableDBGStandbyMode:0000000000000000 HAL_DBGMCU_DisableDBGStandbyMode
-     /tmp/ccnCi6Fd.s:688    .text.HAL_DBGMCU_DisableDBGStandbyMode:000000000000000c $d
+     /tmp/ccTfrgUB.s:641    .text.HAL_DBGMCU_DisableDBGStandbyMode:0000000000000000 HAL_DBGMCU_DisableDBGStandbyMode
+     /tmp/ccTfrgUB.s:660    .text.HAL_DBGMCU_DisableDBGStandbyMode:000000000000000c $d
 
 UNDEFINED SYMBOLS
 __aeabi_uidiv
