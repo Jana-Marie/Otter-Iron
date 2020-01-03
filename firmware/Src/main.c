@@ -111,6 +111,7 @@ int main(void)
   disp_init();
   HAL_Delay(60);
   clear_screen();
+  // DFU bootloader
   if(HAL_GPIO_ReadPin(GPIOA,B1_Pin) && HAL_GPIO_ReadPin(GPIOA,B2_Pin)){
     draw_string("dfu", 15, 1 ,1);
     refresh();
@@ -165,7 +166,7 @@ int main(void)
   }
 }
 
-// Main PID controller and ADC readout
+// Main PID+two-way controller and ADC readout
 void reg(void) {
 
   s.tref = ((((float)ADC_raw[3]/4095.0)*3.3)-0.5)/0.01;
@@ -175,6 +176,7 @@ void reg(void) {
 
   s.ttipavg = FILT(s.ttipavg, s.ttip, TTIP_AVG_FILTER);
 
+  // Check if within deadband, decide on two-way or PID control
   if(s.ttipavg >= r.target-r.deadband && s.ttipavg <= r.target+r.deadband){
     r.error = r.target - s.ttipavg;
     r.ierror = r.ierror + (r.error*r.cycletime);
