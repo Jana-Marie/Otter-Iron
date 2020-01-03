@@ -31,7 +31,11 @@ The display can be bought from [LCSC](https://lcsc.com/product-detail/OLED-Displ
 
 ## Flashing
 
-To flash the Otter-Iron short the DFU-jumper shown in the image below while plugging it into your computer. This will put the iron into DFU mode allowing you to flash it via DFU/USB. Run this command to flash the downloaded binary.
+To flash the Otter-Iron short the DFU-jumper shown in the image below while plugging it into your computer. This will put the iron into DFU mode allowing you to flash it via DFU/USB. 
+
+If you already have ad firmware >= v0.2 flashed you can press both buttons while plugging in to enter DFU mode.
+
+Run this command to flash the downloaded binary.
 
     $ dfu-util -a 0 -s 0x08000000:leave -D firmware.bin
 
@@ -52,7 +56,7 @@ To flash the Otter-Iron short the DFU-jumper shown in the image below while plug
 
 ## Todo software
 
- - [ ] Write a better regulation
+ - [x] Write a better regulation
  - [ ] Current measurement
  - [ ] Store last setpoint
  - [ ] Better Fonts/UI
