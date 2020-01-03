@@ -1,8 +1,8 @@
 Comment,Designator,Quantity,Footprint,LCSC,LCSC Part type,Mouser
-1μF 25V,"C15,C13,C14,C12",4,Capacitor_SMD:C_0402_1005Metric,C52923,smt,
+1μF 25V,"C15,C13,C14,C12,C20,C19",6,Capacitor_SMD:C_0402_1005Metric,C52923,smt,
 18p,C16,1,Capacitor_SMD:C_0402_1005Metric,C1549,smt,
 DNP,C17,1,Capacitor_SMD:C_0402_1005Metric,DNP,dnp,
-0.1μF,"C3,C5,C7,C8,C10,C2,C18,C6,C20,C19,C21,C22",12,Capacitor_SMD:C_0402_1005Metric,C1525,smt,
+0.1μF,"C3,C5,C7,C8,C10,C2,C18,C6,C21,C22",10,Capacitor_SMD:C_0402_1005Metric,C1525,smt,
 1μF 25V,"C9,C1,C4,C11",4,Capacitor_SMD:C_0603_1608Metric,C15849,smt,
 B140-E3,D3,1,Diode_SMD:D_SOD-123F,C64891,ext,
 USB_C_Receptacle_USB2.0,J1,1,otter:USB-C 16Pin,C319148,lcsc,
