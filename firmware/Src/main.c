@@ -77,7 +77,8 @@ struct reg_t{
   float Kp;
   float Ki;
   float Kd;
-}r = {.Kp = 40.0f,.Ki = 6.0f,.Kd = 12.0f,.cycletime = 0.1f,.imax=200.0f,.target=220.0f};
+  float deadband;
+}r = {.Kp = 40.0f,.Ki = 15.0f,.Kd = 12.0f,.cycletime = 0.1f,.imax=200.0f,.target=220.0f,.deadband=12.0f};
 
 struct tipcal_t{
   float offset;
@@ -174,12 +175,21 @@ void reg(void) {
 
   s.ttipavg = FILT(s.ttipavg, s.ttip, TTIP_AVG_FILTER);
 
-  r.error = r.target - s.ttipavg;
-  r.ierror = r.ierror + (r.error*r.cycletime);
-  r.ierror = CLAMP(r.ierror,-r.imax,r.imax);
-  r.derror = (r.error - r.errorprior)/r.cycletime;
-  r.duty = r.Kp*r.error + r.Ki*r.ierror + r.Kd*r.derror;
-  r.errorprior = r.error;
+  if(s.ttipavg >= r.target-r.deadband && s.ttipavg <= r.target+r.deadband){
+    r.error = r.target - s.ttipavg;
+    r.ierror = r.ierror + (r.error*r.cycletime);
+    r.ierror = CLAMP(r.ierror,-r.imax,r.imax);
+    r.derror = (r.error - r.errorprior)/r.cycletime;
+    r.duty = r.Kp*r.error + r.Ki*r.ierror + r.Kd*r.derror;
+    r.errorprior = r.error;
+  } else {
+    if(s.ttipavg <= r.target){
+      r.duty = MAX_DUTY;
+    } else {
+      r.duty = MIN_DUTY;
+    }
+    r.error = 4.0;
+  }
 
   r.duty = CLAMP(r.duty, MIN_DUTY, MAX_DUTY); // Clamp to duty cycle
 
