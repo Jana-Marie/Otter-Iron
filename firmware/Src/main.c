@@ -207,10 +207,11 @@ void reg(void) {
   } else {
     if(s.ttipavg <= r.target){
       r.duty = MAX_DUTY;
+      r.error = 12.0;
     } else {
       r.duty = MIN_DUTY;
+      r.error = 0.0;
     }
-    r.error = 12.0;
   }
 
   r.duty = CLAMP(r.duty, MIN_DUTY, MAX_DUTY); // Clamp to duty cycle
