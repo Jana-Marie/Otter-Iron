@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccpEgWmS.s 			page 1
+ARM GAS  /tmp/ccpZPcfy.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
   31:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****           derived from the System clock (RTC, ADC, I2C, USART, TIM, USB FS, etc..)
   32:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** 
   33:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****                       ##### RCC Limitations #####
-ARM GAS  /tmp/ccpEgWmS.s 			page 2
+ARM GAS  /tmp/ccpZPcfy.s 			page 2
 
 
   34:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   ==============================================================================
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
   88:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   */
   89:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** 
   90:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** #ifdef HAL_RCC_MODULE_ENABLED
-ARM GAS  /tmp/ccpEgWmS.s 			page 3
+ARM GAS  /tmp/ccpZPcfy.s 			page 3
 
 
   91:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  145:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****       (#) HSI14 (high-speed internal), 14 MHz factory-trimmed RC used directly to clock 
  146:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****           the ADC peripheral.
  147:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** 
-ARM GAS  /tmp/ccpEgWmS.s 			page 4
+ARM GAS  /tmp/ccpZPcfy.s 			page 4
 
 
  148:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****       (#) LSI (low-speed internal), ~40 KHz low consumption RC used as IWDG and/or RTC
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  202:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   Additional consideration on the SYSCLK based on Latency settings:
  203:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****           +-----------------------------------------------+
  204:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****           | Latency       | SYSCLK clock frequency (MHz)  |
-ARM GAS  /tmp/ccpEgWmS.s 			page 5
+ARM GAS  /tmp/ccpZPcfy.s 			page 5
 
 
  205:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****           |---------------|-------------------------------|
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
   47              		.loc 1 237 0
   48 001a 1A68     		ldr	r2, [r3]
   49 001c 0849     		ldr	r1, .L2+12
-ARM GAS  /tmp/ccpEgWmS.s 			page 6
+ARM GAS  /tmp/ccpZPcfy.s 			page 6
 
 
   50 001e 0A40     		ands	r2, r1
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  254:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** 
  255:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** /**
  256:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   * @brief  Initializes the RCC Oscillators according to the specified parameters in the
-ARM GAS  /tmp/ccpEgWmS.s 			page 7
+ARM GAS  /tmp/ccpZPcfy.s 			page 7
 
 
  257:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   *         RCC_OscInitTypeDef.
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  116 0014 042B     		cmp	r3, #4
  117 0016 1DD0     		beq	.L6
  285:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****        || ((__HAL_RCC_GET_SYSCLK_SOURCE() == RCC_SYSCLKSOURCE_STATUS_PLLCLK) && (__HAL_RCC_GET_PLL_
-ARM GAS  /tmp/ccpEgWmS.s 			page 8
+ARM GAS  /tmp/ccpZPcfy.s 			page 8
 
 
  118              		.loc 1 285 0
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  160 005a 03D5     		bpl	.L5
  287:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****       {
  161              		.loc 1 287 0 is_stmt 0 discriminator 1
-ARM GAS  /tmp/ccpEgWmS.s 			page 9
+ARM GAS  /tmp/ccpZPcfy.s 			page 9
 
 
  162 005c 6368     		ldr	r3, [r4, #4]
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  174 006a 9C4B     		ldr	r3, .L109
  175 006c 5B68     		ldr	r3, [r3, #4]
  176 006e 0C22     		movs	r2, #12
-ARM GAS  /tmp/ccpEgWmS.s 			page 10
+ARM GAS  /tmp/ccpZPcfy.s 			page 10
 
 
  177 0070 1A42     		tst	r2, r3
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  364:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****         while(__HAL_RCC_GET_FLAG(RCC_FLAG_HSIRDY) == RESET)
  205              		.loc 1 364 0
  206 0098 904B     		ldr	r3, .L109
-ARM GAS  /tmp/ccpEgWmS.s 			page 11
+ARM GAS  /tmp/ccpZPcfy.s 			page 11
 
 
  207 009a 1B68     		ldr	r3, [r3]
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  251 00d8 0320     		movs	r0, #3
  252 00da 00E2     		b	.L8
  253              	.LVL10:
-ARM GAS  /tmp/ccpEgWmS.s 			page 12
+ARM GAS  /tmp/ccpZPcfy.s 			page 12
 
 
  254              	.L11:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  301              		.loc 1 323 0
  302 0124 0320     		movs	r0, #3
  303 0126 DAE1     		b	.L8
-ARM GAS  /tmp/ccpEgWmS.s 			page 13
+ARM GAS  /tmp/ccpZPcfy.s 			page 13
 
 
  304              	.LVL14:
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  382:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****         
  383:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****         /* Wait till HSI is disabled */
  384:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****         while(__HAL_RCC_GET_FLAG(RCC_FLAG_HSIRDY) != RESET)
-ARM GAS  /tmp/ccpEgWmS.s 			page 14
+ARM GAS  /tmp/ccpZPcfy.s 			page 14
 
 
  385:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****         {
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  366 0180 FFF7FEFF 		bl	HAL_GetTick
  367              	.LVL17:
  368 0184 401B     		subs	r0, r0, r5
-ARM GAS  /tmp/ccpEgWmS.s 			page 15
+ARM GAS  /tmp/ccpZPcfy.s 			page 15
 
 
  369 0186 0228     		cmp	r0, #2
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  415:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****         }
  416:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****       }
  417:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     }
-ARM GAS  /tmp/ccpEgWmS.s 			page 16
+ARM GAS  /tmp/ccpZPcfy.s 			page 16
 
 
  418:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     else
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  449              	.LVL27:
  450              	.LBB2:
  438:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   {
-ARM GAS  /tmp/ccpEgWmS.s 			page 17
+ARM GAS  /tmp/ccpZPcfy.s 			page 17
 
 
  439:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     FlagStatus       pwrclkchanged = RESET;
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  464:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****           return HAL_TIMEOUT;
  465:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****         }
  466:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****       }
-ARM GAS  /tmp/ccpEgWmS.s 			page 18
+ARM GAS  /tmp/ccpZPcfy.s 			page 18
 
 
  467:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     }
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  525              	.LVL34:
  526 025a 801B     		subs	r0, r0, r6
  527 025c 6428     		cmp	r0, #100
-ARM GAS  /tmp/ccpEgWmS.s 			page 19
+ARM GAS  /tmp/ccpZPcfy.s 			page 19
 
 
  528 025e F6D9     		bls	.L36
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  568              		.loc 1 470 0 discriminator 4
  569 0292 052B     		cmp	r3, #5
  570 0294 09D0     		beq	.L100
-ARM GAS  /tmp/ccpEgWmS.s 			page 20
+ARM GAS  /tmp/ccpZPcfy.s 			page 20
 
 
  470:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     /* Check the LSE State */
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  611 02d4 9842     		cmp	r0, r3
  612 02d6 F5D9     		bls	.L46
  495:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****         {
-ARM GAS  /tmp/ccpEgWmS.s 			page 21
+ARM GAS  /tmp/ccpZPcfy.s 			page 21
 
 
  496:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****           return HAL_TIMEOUT;
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  524:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****       /* Get Start Tick */
  525:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****       tickstart = HAL_GetTick();
  526:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****       
-ARM GAS  /tmp/ccpEgWmS.s 			page 22
+ARM GAS  /tmp/ccpZPcfy.s 			page 22
 
 
  527:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****       /* Wait till HSI is ready */  
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  563:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****           return HAL_TIMEOUT;
  564:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****         }
  565:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****       }
-ARM GAS  /tmp/ccpEgWmS.s 			page 23
+ARM GAS  /tmp/ccpZPcfy.s 			page 23
 
 
  566:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     }
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  684 0342 694A     		ldr	r2, .L111
  685 0344 516B     		ldr	r1, [r2, #52]
  686 0346 8023     		movs	r3, #128
-ARM GAS  /tmp/ccpEgWmS.s 			page 24
+ARM GAS  /tmp/ccpZPcfy.s 			page 24
 
 
  687 0348 5B02     		lsls	r3, r3, #9
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  522:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** 
  729              		.loc 1 522 0
  730 0380 5A6B     		ldr	r2, [r3, #52]
-ARM GAS  /tmp/ccpEgWmS.s 			page 25
+ARM GAS  /tmp/ccpZPcfy.s 			page 25
 
 
  731 0382 0339     		subs	r1, r1, #3
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  556:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****       
  778              		.loc 1 556 0
  779 03c8 FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  /tmp/ccpEgWmS.s 			page 26
+ARM GAS  /tmp/ccpZPcfy.s 			page 26
 
 
  780              	.LVL53:
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  607:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****         /* Disable the Internal High Speed oscillator (HSI48). */
  608:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****         __HAL_RCC_HSI48_DISABLE();
  822              		.loc 1 608 0
-ARM GAS  /tmp/ccpEgWmS.s 			page 27
+ARM GAS  /tmp/ccpZPcfy.s 			page 27
 
 
  823 0404 384A     		ldr	r2, .L111
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  632:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     if(__HAL_RCC_GET_SYSCLK_SOURCE() != RCC_SYSCLKSOURCE_STATUS_PLLCLK)
  854              		.loc 1 632 0
  855 0430 2D4A     		ldr	r2, .L111
-ARM GAS  /tmp/ccpEgWmS.s 			page 28
+ARM GAS  /tmp/ccpZPcfy.s 			page 28
 
 
  856 0432 5168     		ldr	r1, [r2, #4]
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  864              		.loc 1 678 0
  865 0440 294A     		ldr	r2, .L111
  866 0442 1368     		ldr	r3, [r2]
-ARM GAS  /tmp/ccpEgWmS.s 			page 29
+ARM GAS  /tmp/ccpZPcfy.s 			page 29
 
 
  867 0444 2B49     		ldr	r1, .L111+12
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  908 047c 06D5     		bpl	.L107
  650:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****           {
  909              		.loc 1 650 0
-ARM GAS  /tmp/ccpEgWmS.s 			page 30
+ARM GAS  /tmp/ccpZPcfy.s 			page 30
 
 
  910 047e FFF7FEFF 		bl	HAL_GetTick
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  671:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****           }
  958              		.loc 1 671 0
  959 04cc 0320     		movs	r0, #3
-ARM GAS  /tmp/ccpEgWmS.s 			page 31
+ARM GAS  /tmp/ccpZPcfy.s 			page 31
 
 
  960 04ce 06E0     		b	.L8
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1001              		.align	1
  1002              		.global	HAL_RCC_MCOConfig
  1003              		.syntax unified
-ARM GAS  /tmp/ccpEgWmS.s 			page 32
+ARM GAS  /tmp/ccpZPcfy.s 			page 32
 
 
  1004              		.code	16
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  750:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   }
  751:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** 
  752:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   /*-------------------------- HCLK Configuration --------------------------*/
-ARM GAS  /tmp/ccpEgWmS.s 			page 33
+ARM GAS  /tmp/ccpZPcfy.s 			page 33
 
 
  753:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   if(((RCC_ClkInitStruct->ClockType) & RCC_CLOCKTYPE_HCLK) == RCC_CLOCKTYPE_HCLK)
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  807:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     if(RCC_ClkInitStruct->SYSCLKSource == RCC_SYSCLKSOURCE_HSE)
  808:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     {
  809:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****       while (__HAL_RCC_GET_SYSCLK_SOURCE() != RCC_SYSCLKSOURCE_STATUS_HSE)
-ARM GAS  /tmp/ccpEgWmS.s 			page 34
+ARM GAS  /tmp/ccpZPcfy.s 			page 34
 
 
  810:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****       {
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  864:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   /*-------------------------- PCLK1 Configuration ---------------------------*/ 
  865:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   if(((RCC_ClkInitStruct->ClockType) & RCC_CLOCKTYPE_PCLK1) == RCC_CLOCKTYPE_PCLK1)
  866:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   {
-ARM GAS  /tmp/ccpEgWmS.s 			page 35
+ARM GAS  /tmp/ccpZPcfy.s 			page 35
 
 
  867:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     assert_param(IS_RCC_PCLK(RCC_ClkInitStruct->APB1CLKDivider));
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  921:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   @elseif STM32F071xB
  922:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   *            @arg @ref RCC_MCO1SOURCE_HSI48       HSI48 selected as MCO clock
  923:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   *            @arg @ref RCC_MCO1SOURCE_PLLCLK      PLLCLK selected as MCO clock
-ARM GAS  /tmp/ccpEgWmS.s 			page 36
+ARM GAS  /tmp/ccpZPcfy.s 			page 36
 
 
  924:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   @elseif STM32F072xB
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  978:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   *            @arg @ref RCC_MCO1SOURCE_PLLCLK_DIV2 PLLCLK Divided by 2 selected as MCO clock
  979:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   * @param  RCC_MCODiv specifies the MCO DIV.
  980:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   *          This parameter can be one of the following values:
-ARM GAS  /tmp/ccpEgWmS.s 			page 37
+ARM GAS  /tmp/ccpZPcfy.s 			page 37
 
 
  981:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   *            @arg @ref RCC_MCODIV_1 no division applied to MCO clock
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
 1001:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   /* MCO1 Clock Enable */
 1002:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   MCO1_CLK_ENABLE();
  1044              		.loc 1 1002 0
-ARM GAS  /tmp/ccpEgWmS.s 			page 38
+ARM GAS  /tmp/ccpZPcfy.s 			page 38
 
 
  1045 001c 0B4C     		ldr	r4, .L114
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
 1009:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** 
 1010:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** /**
 1011:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   * @brief  Enables the Clock Security System.
-ARM GAS  /tmp/ccpEgWmS.s 			page 39
+ARM GAS  /tmp/ccpZPcfy.s 			page 39
 
 
 1012:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   * @note   If a failure is detected on the HSE oscillator clock, this oscillator
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1132              		.loc 1 1030 0
  1133 0000 024A     		ldr	r2, .L120
  1134 0002 1368     		ldr	r3, [r2]
-ARM GAS  /tmp/ccpEgWmS.s 			page 40
+ARM GAS  /tmp/ccpZPcfy.s 			page 40
 
 
  1135 0004 0249     		ldr	r1, .L120+4
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
 1062:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   * @retval SYSCLK frequency
 1063:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   */
 1064:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** uint32_t HAL_RCC_GetSysClockFreq(void)
-ARM GAS  /tmp/ccpEgWmS.s 			page 41
+ARM GAS  /tmp/ccpZPcfy.s 			page 41
 
 
 1065:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** {
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
 1078:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   {
 1079:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     case RCC_SYSCLKSOURCE_STATUS_HSE:  /* HSE used as system clock */
 1080:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     {
-ARM GAS  /tmp/ccpEgWmS.s 			page 42
+ARM GAS  /tmp/ccpZPcfy.s 			page 42
 
 
 1081:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****       sysclockfreq = HSE_VALUE;
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1207              		@ sp needed
  1208 0034 30BD     		pop	{r4, r5, pc}
  1209              	.LVL86:
-ARM GAS  /tmp/ccpEgWmS.s 			page 43
+ARM GAS  /tmp/ccpZPcfy.s 			page 43
 
 
  1210              	.L124:
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1257              		.loc 1 1097 0
  1258 0074 0648     		ldr	r0, .L131+12
  1259 0076 FFF7FEFF 		bl	__aeabi_uidiv
-ARM GAS  /tmp/ccpEgWmS.s 			page 44
+ARM GAS  /tmp/ccpZPcfy.s 			page 44
 
 
  1260              	.LVL96:
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1312 0010 0BD2     		bcs	.L134
  742:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     
  1313              		.loc 1 742 0
-ARM GAS  /tmp/ccpEgWmS.s 			page 45
+ARM GAS  /tmp/ccpZPcfy.s 			page 45
 
 
  1314 0012 5649     		ldr	r1, .L170
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1360 004c 28D0     		beq	.L167
  784:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     {
  1361              		.loc 1 784 0
-ARM GAS  /tmp/ccpEgWmS.s 			page 46
+ARM GAS  /tmp/ccpZPcfy.s 			page 46
 
 
  1362 004e 032B     		cmp	r3, #3
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1407 0086 3A4B     		ldr	r3, .L170+4
  1408 0088 5B68     		ldr	r3, [r3, #4]
  1409 008a 0C22     		movs	r2, #12
-ARM GAS  /tmp/ccpEgWmS.s 			page 47
+ARM GAS  /tmp/ccpZPcfy.s 			page 47
 
 
  1410 008c 1A42     		tst	r2, r3
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1456 00c8 801B     		subs	r0, r0, r6
  1457 00ca 2A4B     		ldr	r3, .L170+8
  1458 00cc 9842     		cmp	r0, r3
-ARM GAS  /tmp/ccpEgWmS.s 			page 48
+ARM GAS  /tmp/ccpZPcfy.s 			page 48
 
 
  1459 00ce F3D9     		bls	.L142
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1505 0112 1340     		ands	r3, r2
  1506 0114 A342     		cmp	r3, r4
  1507 0116 0BD9     		bls	.L152
-ARM GAS  /tmp/ccpEgWmS.s 			page 49
+ARM GAS  /tmp/ccpZPcfy.s 			page 49
 
 
  854:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1554              		.loc 1 877 0
  1555 0162 0020     		movs	r0, #0
  1556 0164 60E7     		b	.L135
-ARM GAS  /tmp/ccpEgWmS.s 			page 50
+ARM GAS  /tmp/ccpZPcfy.s 			page 50
 
 
  1557              	.LVL125:
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1598              	.L173:
  1599 0008 00000000 		.word	SystemCoreClock
  1600              		.cfi_endproc
-ARM GAS  /tmp/ccpEgWmS.s 			page 51
+ARM GAS  /tmp/ccpZPcfy.s 			page 51
 
 
  1601              	.LFE44:
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1646              		.global	HAL_RCC_GetOscConfig
  1647              		.syntax unified
  1648              		.code	16
-ARM GAS  /tmp/ccpEgWmS.s 			page 52
+ARM GAS  /tmp/ccpZPcfy.s 			page 52
 
 
  1649              		.thumb_func
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
 1187:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     RCC_OscInitStruct->HSEState = RCC_HSE_OFF;
 1188:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   }
 1189:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** 
-ARM GAS  /tmp/ccpEgWmS.s 			page 53
+ARM GAS  /tmp/ccpZPcfy.s 			page 53
 
 
 1190:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   /* Get the HSI configuration -----------------------------------------------*/
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1698 0034 5B6A     		ldr	r3, [r3, #36]
  1699 0036 DB07     		lsls	r3, r3, #31
  1700 0038 40D5     		bpl	.L187
-ARM GAS  /tmp/ccpEgWmS.s 			page 54
+ARM GAS  /tmp/ccpZPcfy.s 			page 54
 
 
 1218:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   {
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
 1244:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   if((RCC->CR &RCC_CR_PLLON) == RCC_CR_PLLON)
  1729              		.loc 1 1244 0
  1730 0064 1368     		ldr	r3, [r2]
-ARM GAS  /tmp/ccpEgWmS.s 			page 55
+ARM GAS  /tmp/ccpZPcfy.s 			page 55
 
 
  1731 0066 DB01     		lsls	r3, r3, #7
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1771 009e 4360     		str	r3, [r0, #4]
  1772 00a0 B6E7     		b	.L180
  1773              	.L182:
-ARM GAS  /tmp/ccpEgWmS.s 			page 56
+ARM GAS  /tmp/ccpZPcfy.s 			page 56
 
 
 1197:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   }
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1823              	HAL_RCC_GetClockConfig:
  1824              	.LFB47:
 1256:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** 
-ARM GAS  /tmp/ccpEgWmS.s 			page 57
+ARM GAS  /tmp/ccpZPcfy.s 			page 57
 
 
 1257:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c **** /**
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1854 0020 C360     		str	r3, [r0, #12]
 1282:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   /* Get the Flash Wait State (Latency) configuration ------------------------*/   
 1283:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   *pFLatency = (uint32_t)(FLASH->ACR & FLASH_ACR_LATENCY); 
-ARM GAS  /tmp/ccpEgWmS.s 			page 58
+ARM GAS  /tmp/ccpZPcfy.s 			page 58
 
 
  1855              		.loc 1 1283 0
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1885              		@ frame_needed = 0, uses_anonymous_args = 0
  1886              		@ link register save eliminated.
 1310:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****   /* NOTE : This function Should not be modified, when the callback is needed,
-ARM GAS  /tmp/ccpEgWmS.s 			page 59
+ARM GAS  /tmp/ccpZPcfy.s 			page 59
 
 
 1311:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c ****     the HAL_RCC_CSSCallback could be implemented in the user file
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1934 0018 00100240 		.word	1073876992
  1935 001c 0A100240 		.word	1073877002
  1936              		.cfi_endproc
-ARM GAS  /tmp/ccpEgWmS.s 			page 60
+ARM GAS  /tmp/ccpZPcfy.s 			page 60
 
 
  1937              	.LFE48:
@@ -3594,52 +3594,52 @@ ARM GAS  /tmp/ccpEgWmS.s 			page 1
  1988              		.file 12 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h"
  1989              		.file 13 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h"
  1990              		.file 14 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
-ARM GAS  /tmp/ccpEgWmS.s 			page 61
+ARM GAS  /tmp/ccpZPcfy.s 			page 61
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f0xx_hal_rcc.c
-     /tmp/ccpEgWmS.s:16     .text.HAL_RCC_DeInit:0000000000000000 $t
-     /tmp/ccpEgWmS.s:23     .text.HAL_RCC_DeInit:0000000000000000 HAL_RCC_DeInit
-     /tmp/ccpEgWmS.s:71     .text.HAL_RCC_DeInit:0000000000000034 $d
-     /tmp/ccpEgWmS.s:81     .text.HAL_RCC_OscConfig:0000000000000000 $t
-     /tmp/ccpEgWmS.s:88     .text.HAL_RCC_OscConfig:0000000000000000 HAL_RCC_OscConfig
-     /tmp/ccpEgWmS.s:619    .text.HAL_RCC_OscConfig:00000000000002dc $d
-     /tmp/ccpEgWmS.s:626    .text.HAL_RCC_OscConfig:00000000000002f0 $t
-     /tmp/ccpEgWmS.s:992    .text.HAL_RCC_OscConfig:00000000000004e8 $d
-     /tmp/ccpEgWmS.s:1001   .text.HAL_RCC_MCOConfig:0000000000000000 $t
-     /tmp/ccpEgWmS.s:1008   .text.HAL_RCC_MCOConfig:0000000000000000 HAL_RCC_MCOConfig
-     /tmp/ccpEgWmS.s:1080   .text.HAL_RCC_MCOConfig:000000000000004c $d
-     /tmp/ccpEgWmS.s:1086   .text.HAL_RCC_EnableCSS:0000000000000000 $t
-     /tmp/ccpEgWmS.s:1093   .text.HAL_RCC_EnableCSS:0000000000000000 HAL_RCC_EnableCSS
-     /tmp/ccpEgWmS.s:1113   .text.HAL_RCC_EnableCSS:0000000000000010 $d
-     /tmp/ccpEgWmS.s:1118   .text.HAL_RCC_DisableCSS:0000000000000000 $t
-     /tmp/ccpEgWmS.s:1125   .text.HAL_RCC_DisableCSS:0000000000000000 HAL_RCC_DisableCSS
-     /tmp/ccpEgWmS.s:1144   .text.HAL_RCC_DisableCSS:000000000000000c $d
-     /tmp/ccpEgWmS.s:1151   .text.HAL_RCC_GetSysClockFreq:0000000000000000 $t
-     /tmp/ccpEgWmS.s:1158   .text.HAL_RCC_GetSysClockFreq:0000000000000000 HAL_RCC_GetSysClockFreq
-     /tmp/ccpEgWmS.s:1274   .text.HAL_RCC_GetSysClockFreq:0000000000000084 $d
-     /tmp/ccpEgWmS.s:1282   .text.HAL_RCC_ClockConfig:0000000000000000 $t
-     /tmp/ccpEgWmS.s:1289   .text.HAL_RCC_ClockConfig:0000000000000000 HAL_RCC_ClockConfig
-     /tmp/ccpEgWmS.s:1566   .text.HAL_RCC_ClockConfig:000000000000016c $d
-     /tmp/ccpEgWmS.s:1576   .text.HAL_RCC_GetHCLKFreq:0000000000000000 $t
-     /tmp/ccpEgWmS.s:1583   .text.HAL_RCC_GetHCLKFreq:0000000000000000 HAL_RCC_GetHCLKFreq
-     /tmp/ccpEgWmS.s:1599   .text.HAL_RCC_GetHCLKFreq:0000000000000008 $d
-     /tmp/ccpEgWmS.s:1604   .text.HAL_RCC_GetPCLK1Freq:0000000000000000 $t
-     /tmp/ccpEgWmS.s:1611   .text.HAL_RCC_GetPCLK1Freq:0000000000000000 HAL_RCC_GetPCLK1Freq
-     /tmp/ccpEgWmS.s:1639   .text.HAL_RCC_GetPCLK1Freq:0000000000000018 $d
-     /tmp/ccpEgWmS.s:1645   .text.HAL_RCC_GetOscConfig:0000000000000000 $t
-     /tmp/ccpEgWmS.s:1652   .text.HAL_RCC_GetOscConfig:0000000000000000 HAL_RCC_GetOscConfig
-     /tmp/ccpEgWmS.s:1811   .text.HAL_RCC_GetOscConfig:00000000000000d0 $d
-     /tmp/ccpEgWmS.s:1816   .text.HAL_RCC_GetClockConfig:0000000000000000 $t
-     /tmp/ccpEgWmS.s:1823   .text.HAL_RCC_GetClockConfig:0000000000000000 HAL_RCC_GetClockConfig
-     /tmp/ccpEgWmS.s:1867   .text.HAL_RCC_GetClockConfig:0000000000000030 $d
-     /tmp/ccpEgWmS.s:1873   .text.HAL_RCC_CSSCallback:0000000000000000 $t
-     /tmp/ccpEgWmS.s:1880   .text.HAL_RCC_CSSCallback:0000000000000000 HAL_RCC_CSSCallback
-     /tmp/ccpEgWmS.s:1894   .text.HAL_RCC_NMI_IRQHandler:0000000000000000 $t
-     /tmp/ccpEgWmS.s:1901   .text.HAL_RCC_NMI_IRQHandler:0000000000000000 HAL_RCC_NMI_IRQHandler
-     /tmp/ccpEgWmS.s:1934   .text.HAL_RCC_NMI_IRQHandler:0000000000000018 $d
-     /tmp/ccpEgWmS.s:1940   .rodata:0000000000000000 $d
+     /tmp/ccpZPcfy.s:16     .text.HAL_RCC_DeInit:0000000000000000 $t
+     /tmp/ccpZPcfy.s:23     .text.HAL_RCC_DeInit:0000000000000000 HAL_RCC_DeInit
+     /tmp/ccpZPcfy.s:71     .text.HAL_RCC_DeInit:0000000000000034 $d
+     /tmp/ccpZPcfy.s:81     .text.HAL_RCC_OscConfig:0000000000000000 $t
+     /tmp/ccpZPcfy.s:88     .text.HAL_RCC_OscConfig:0000000000000000 HAL_RCC_OscConfig
+     /tmp/ccpZPcfy.s:619    .text.HAL_RCC_OscConfig:00000000000002dc $d
+     /tmp/ccpZPcfy.s:626    .text.HAL_RCC_OscConfig:00000000000002f0 $t
+     /tmp/ccpZPcfy.s:992    .text.HAL_RCC_OscConfig:00000000000004e8 $d
+     /tmp/ccpZPcfy.s:1001   .text.HAL_RCC_MCOConfig:0000000000000000 $t
+     /tmp/ccpZPcfy.s:1008   .text.HAL_RCC_MCOConfig:0000000000000000 HAL_RCC_MCOConfig
+     /tmp/ccpZPcfy.s:1080   .text.HAL_RCC_MCOConfig:000000000000004c $d
+     /tmp/ccpZPcfy.s:1086   .text.HAL_RCC_EnableCSS:0000000000000000 $t
+     /tmp/ccpZPcfy.s:1093   .text.HAL_RCC_EnableCSS:0000000000000000 HAL_RCC_EnableCSS
+     /tmp/ccpZPcfy.s:1113   .text.HAL_RCC_EnableCSS:0000000000000010 $d
+     /tmp/ccpZPcfy.s:1118   .text.HAL_RCC_DisableCSS:0000000000000000 $t
+     /tmp/ccpZPcfy.s:1125   .text.HAL_RCC_DisableCSS:0000000000000000 HAL_RCC_DisableCSS
+     /tmp/ccpZPcfy.s:1144   .text.HAL_RCC_DisableCSS:000000000000000c $d
+     /tmp/ccpZPcfy.s:1151   .text.HAL_RCC_GetSysClockFreq:0000000000000000 $t
+     /tmp/ccpZPcfy.s:1158   .text.HAL_RCC_GetSysClockFreq:0000000000000000 HAL_RCC_GetSysClockFreq
+     /tmp/ccpZPcfy.s:1274   .text.HAL_RCC_GetSysClockFreq:0000000000000084 $d
+     /tmp/ccpZPcfy.s:1282   .text.HAL_RCC_ClockConfig:0000000000000000 $t
+     /tmp/ccpZPcfy.s:1289   .text.HAL_RCC_ClockConfig:0000000000000000 HAL_RCC_ClockConfig
+     /tmp/ccpZPcfy.s:1566   .text.HAL_RCC_ClockConfig:000000000000016c $d
+     /tmp/ccpZPcfy.s:1576   .text.HAL_RCC_GetHCLKFreq:0000000000000000 $t
+     /tmp/ccpZPcfy.s:1583   .text.HAL_RCC_GetHCLKFreq:0000000000000000 HAL_RCC_GetHCLKFreq
+     /tmp/ccpZPcfy.s:1599   .text.HAL_RCC_GetHCLKFreq:0000000000000008 $d
+     /tmp/ccpZPcfy.s:1604   .text.HAL_RCC_GetPCLK1Freq:0000000000000000 $t
+     /tmp/ccpZPcfy.s:1611   .text.HAL_RCC_GetPCLK1Freq:0000000000000000 HAL_RCC_GetPCLK1Freq
+     /tmp/ccpZPcfy.s:1639   .text.HAL_RCC_GetPCLK1Freq:0000000000000018 $d
+     /tmp/ccpZPcfy.s:1645   .text.HAL_RCC_GetOscConfig:0000000000000000 $t
+     /tmp/ccpZPcfy.s:1652   .text.HAL_RCC_GetOscConfig:0000000000000000 HAL_RCC_GetOscConfig
+     /tmp/ccpZPcfy.s:1811   .text.HAL_RCC_GetOscConfig:00000000000000d0 $d
+     /tmp/ccpZPcfy.s:1816   .text.HAL_RCC_GetClockConfig:0000000000000000 $t
+     /tmp/ccpZPcfy.s:1823   .text.HAL_RCC_GetClockConfig:0000000000000000 HAL_RCC_GetClockConfig
+     /tmp/ccpZPcfy.s:1867   .text.HAL_RCC_GetClockConfig:0000000000000030 $d
+     /tmp/ccpZPcfy.s:1873   .text.HAL_RCC_CSSCallback:0000000000000000 $t
+     /tmp/ccpZPcfy.s:1880   .text.HAL_RCC_CSSCallback:0000000000000000 HAL_RCC_CSSCallback
+     /tmp/ccpZPcfy.s:1894   .text.HAL_RCC_NMI_IRQHandler:0000000000000000 $t
+     /tmp/ccpZPcfy.s:1901   .text.HAL_RCC_NMI_IRQHandler:0000000000000000 HAL_RCC_NMI_IRQHandler
+     /tmp/ccpZPcfy.s:1934   .text.HAL_RCC_NMI_IRQHandler:0000000000000018 $d
+     /tmp/ccpZPcfy.s:1940   .rodata:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 SystemCoreClock

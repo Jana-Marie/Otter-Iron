@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccTfrgUB.s 			page 1
+ARM GAS  /tmp/ccItNBni.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
   31:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *      this list of conditions and the following disclaimer in the documentation
   32:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *      and/or other materials provided with the distribution.
   33:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *   3. Neither the name of STMicroelectronics nor the names of its contributors
-ARM GAS  /tmp/ccTfrgUB.s 			page 2
+ARM GAS  /tmp/ccItNBni.s 			page 2
 
 
   34:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *      may be used to endorse or promote products derived from this software
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
   88:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /** @defgroup HAL_Private_Macros HAL Private Macros
   89:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @{
   90:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
-ARM GAS  /tmp/ccTfrgUB.s 			page 3
+ARM GAS  /tmp/ccItNBni.s 			page 3
 
 
   91:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  145:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief  This function configures the Flash prefetch,
  146:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *        Configures time base source, NVIC and Low level hardware
  147:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @note This function is called at the beginning of program after reset and before 
-ARM GAS  /tmp/ccTfrgUB.s 			page 4
+ARM GAS  /tmp/ccItNBni.s 			page 4
 
 
  148:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *       the clock configuration
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  202:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** __weak void HAL_MspInit(void)
  203:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
   26              		.loc 1 203 0
-ARM GAS  /tmp/ccTfrgUB.s 			page 5
+ARM GAS  /tmp/ccItNBni.s 			page 5
 
 
   27              		.cfi_startproc
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
   69              		.cfi_startproc
   70              		@ args = 0, pretend = 0, frame = 0
   71              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccTfrgUB.s 			page 6
+ARM GAS  /tmp/ccItNBni.s 			page 6
 
 
   72 0000 10B5     		push	{r4, lr}
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  221:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief This function configures the source of the time base. 
  222:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *        The time source is configured  to have 1ms time base with a dedicated 
  223:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *        Tick interrupt priority.
-ARM GAS  /tmp/ccTfrgUB.s 			page 7
+ARM GAS  /tmp/ccItNBni.s 			page 7
 
 
  224:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @note This function is called  automatically at the beginning of program after
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  149 0022 10BD     		pop	{r4, pc}
  150              		.cfi_endproc
  151              	.LFE41:
-ARM GAS  /tmp/ccTfrgUB.s 			page 8
+ARM GAS  /tmp/ccItNBni.s 			page 8
 
 
  153              		.section	.text.HAL_Init,"ax",%progbits
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  205              	.LFB42:
  247:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** 
  248:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** /**
-ARM GAS  /tmp/ccTfrgUB.s 			page 9
+ARM GAS  /tmp/ccItNBni.s 			page 9
 
 
  249:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @}
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  221              	.L11:
  222 000c 00000000 		.word	uwTick
  223              		.cfi_endproc
-ARM GAS  /tmp/ccTfrgUB.s 			page 10
+ARM GAS  /tmp/ccItNBni.s 			page 10
 
 
  224              	.LFE42:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  306:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @note ThiS function is declared as __weak to be overwritten in case of other
  307:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   *       implementations in user file.
  308:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @param Delay specifies the delay time length, in milliseconds.
-ARM GAS  /tmp/ccTfrgUB.s 			page 11
+ARM GAS  /tmp/ccItNBni.s 			page 11
 
 
  309:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @retval None
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  301 001e 03B0     		add	sp, sp, #12
  302              		@ sp needed
  303              	.LVL15:
-ARM GAS  /tmp/ccTfrgUB.s 			page 12
+ARM GAS  /tmp/ccItNBni.s 			page 12
 
 
  304              	.LVL16:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  344              		.code	16
  345              		.thumb_func
  346              		.fpu softvfp
-ARM GAS  /tmp/ccTfrgUB.s 			page 13
+ARM GAS  /tmp/ccItNBni.s 			page 13
 
 
  348              	HAL_ResumeTick:
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  381              		.loc 1 365 0
  382              		.cfi_startproc
  383              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccTfrgUB.s 			page 14
+ARM GAS  /tmp/ccItNBni.s 			page 14
 
 
  384              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  430              		.code	16
  431              		.thumb_func
  432              		.fpu softvfp
-ARM GAS  /tmp/ccTfrgUB.s 			page 15
+ARM GAS  /tmp/ccItNBni.s 			page 15
 
 
  434              	HAL_GetDEVID:
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  473 0002 1868     		ldr	r0, [r3]
  394:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** }
  474              		.loc 1 394 0
-ARM GAS  /tmp/ccTfrgUB.s 			page 16
+ARM GAS  /tmp/ccItNBni.s 			page 16
 
 
  475              		@ sp needed
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  406:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @brief  Returns third word of the unique device identifier (UID based on 96 bits)
  407:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   * @retval Device identifier
  408:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c ****   */
-ARM GAS  /tmp/ccTfrgUB.s 			page 17
+ARM GAS  /tmp/ccItNBni.s 			page 17
 
 
  409:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** uint32_t HAL_GetUIDw2(void)
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  565              		.align	2
  566              	.L44:
  567 000c 00580140 		.word	1073829888
-ARM GAS  /tmp/ccTfrgUB.s 			page 18
+ARM GAS  /tmp/ccItNBni.s 			page 18
 
 
  568              		.cfi_endproc
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  436:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** void HAL_DBGMCU_EnableDBGStandbyMode(void)
  437:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c **** {
  612              		.loc 1 437 0
-ARM GAS  /tmp/ccTfrgUB.s 			page 19
+ARM GAS  /tmp/ccItNBni.s 			page 19
 
 
  613              		.cfi_startproc
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  658              		.align	2
  659              	.L53:
  660 000c 00580140 		.word	1073829888
-ARM GAS  /tmp/ccTfrgUB.s 			page 20
+ARM GAS  /tmp/ccItNBni.s 			page 20
 
 
  661              		.cfi_endproc
@@ -1158,71 +1158,71 @@ ARM GAS  /tmp/ccTfrgUB.s 			page 1
  676              		.file 11 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h"
  677              		.file 12 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h"
  678              		.file 13 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h"
-ARM GAS  /tmp/ccTfrgUB.s 			page 21
+ARM GAS  /tmp/ccItNBni.s 			page 21
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f0xx_hal.c
-     /tmp/ccTfrgUB.s:16     .text.HAL_MspInit:0000000000000000 $t
-     /tmp/ccTfrgUB.s:23     .text.HAL_MspInit:0000000000000000 HAL_MspInit
-     /tmp/ccTfrgUB.s:38     .text.HAL_MspDeInit:0000000000000000 $t
-     /tmp/ccTfrgUB.s:45     .text.HAL_MspDeInit:0000000000000000 HAL_MspDeInit
-     /tmp/ccTfrgUB.s:59     .text.HAL_DeInit:0000000000000000 $t
-     /tmp/ccTfrgUB.s:66     .text.HAL_DeInit:0000000000000000 HAL_DeInit
-     /tmp/ccTfrgUB.s:103    .text.HAL_DeInit:0000000000000020 $d
-     /tmp/ccTfrgUB.s:109    .text.HAL_InitTick:0000000000000000 $t
-     /tmp/ccTfrgUB.s:116    .text.HAL_InitTick:0000000000000000 HAL_InitTick
-     /tmp/ccTfrgUB.s:154    .text.HAL_Init:0000000000000000 $t
-     /tmp/ccTfrgUB.s:161    .text.HAL_Init:0000000000000000 HAL_Init
-     /tmp/ccTfrgUB.s:192    .text.HAL_Init:000000000000001c $d
-     /tmp/ccTfrgUB.s:197    .text.HAL_IncTick:0000000000000000 $t
-     /tmp/ccTfrgUB.s:204    .text.HAL_IncTick:0000000000000000 HAL_IncTick
-     /tmp/ccTfrgUB.s:222    .text.HAL_IncTick:000000000000000c $d
+     /tmp/ccItNBni.s:16     .text.HAL_MspInit:0000000000000000 $t
+     /tmp/ccItNBni.s:23     .text.HAL_MspInit:0000000000000000 HAL_MspInit
+     /tmp/ccItNBni.s:38     .text.HAL_MspDeInit:0000000000000000 $t
+     /tmp/ccItNBni.s:45     .text.HAL_MspDeInit:0000000000000000 HAL_MspDeInit
+     /tmp/ccItNBni.s:59     .text.HAL_DeInit:0000000000000000 $t
+     /tmp/ccItNBni.s:66     .text.HAL_DeInit:0000000000000000 HAL_DeInit
+     /tmp/ccItNBni.s:103    .text.HAL_DeInit:0000000000000020 $d
+     /tmp/ccItNBni.s:109    .text.HAL_InitTick:0000000000000000 $t
+     /tmp/ccItNBni.s:116    .text.HAL_InitTick:0000000000000000 HAL_InitTick
+     /tmp/ccItNBni.s:154    .text.HAL_Init:0000000000000000 $t
+     /tmp/ccItNBni.s:161    .text.HAL_Init:0000000000000000 HAL_Init
+     /tmp/ccItNBni.s:192    .text.HAL_Init:000000000000001c $d
+     /tmp/ccItNBni.s:197    .text.HAL_IncTick:0000000000000000 $t
+     /tmp/ccItNBni.s:204    .text.HAL_IncTick:0000000000000000 HAL_IncTick
+     /tmp/ccItNBni.s:222    .text.HAL_IncTick:000000000000000c $d
                             *COM*:0000000000000004 uwTick
-     /tmp/ccTfrgUB.s:227    .text.HAL_GetTick:0000000000000000 $t
-     /tmp/ccTfrgUB.s:234    .text.HAL_GetTick:0000000000000000 HAL_GetTick
-     /tmp/ccTfrgUB.s:250    .text.HAL_GetTick:0000000000000008 $d
-     /tmp/ccTfrgUB.s:255    .text.HAL_Delay:0000000000000000 $t
-     /tmp/ccTfrgUB.s:262    .text.HAL_Delay:0000000000000000 HAL_Delay
-     /tmp/ccTfrgUB.s:310    .text.HAL_SuspendTick:0000000000000000 $t
-     /tmp/ccTfrgUB.s:317    .text.HAL_SuspendTick:0000000000000000 HAL_SuspendTick
-     /tmp/ccTfrgUB.s:336    .text.HAL_SuspendTick:000000000000000c $d
-     /tmp/ccTfrgUB.s:341    .text.HAL_ResumeTick:0000000000000000 $t
-     /tmp/ccTfrgUB.s:348    .text.HAL_ResumeTick:0000000000000000 HAL_ResumeTick
-     /tmp/ccTfrgUB.s:367    .text.HAL_ResumeTick:000000000000000c $d
-     /tmp/ccTfrgUB.s:372    .text.HAL_GetHalVersion:0000000000000000 $t
-     /tmp/ccTfrgUB.s:379    .text.HAL_GetHalVersion:0000000000000000 HAL_GetHalVersion
-     /tmp/ccTfrgUB.s:393    .text.HAL_GetHalVersion:0000000000000004 $d
-     /tmp/ccTfrgUB.s:398    .text.HAL_GetREVID:0000000000000000 $t
-     /tmp/ccTfrgUB.s:405    .text.HAL_GetREVID:0000000000000000 HAL_GetREVID
-     /tmp/ccTfrgUB.s:422    .text.HAL_GetREVID:0000000000000008 $d
-     /tmp/ccTfrgUB.s:427    .text.HAL_GetDEVID:0000000000000000 $t
-     /tmp/ccTfrgUB.s:434    .text.HAL_GetDEVID:0000000000000000 HAL_GetDEVID
-     /tmp/ccTfrgUB.s:452    .text.HAL_GetDEVID:000000000000000c $d
-     /tmp/ccTfrgUB.s:457    .text.HAL_GetUIDw0:0000000000000000 $t
-     /tmp/ccTfrgUB.s:464    .text.HAL_GetUIDw0:0000000000000000 HAL_GetUIDw0
-     /tmp/ccTfrgUB.s:480    .text.HAL_GetUIDw0:0000000000000008 $d
-     /tmp/ccTfrgUB.s:485    .text.HAL_GetUIDw1:0000000000000000 $t
-     /tmp/ccTfrgUB.s:492    .text.HAL_GetUIDw1:0000000000000000 HAL_GetUIDw1
-     /tmp/ccTfrgUB.s:508    .text.HAL_GetUIDw1:0000000000000008 $d
-     /tmp/ccTfrgUB.s:513    .text.HAL_GetUIDw2:0000000000000000 $t
-     /tmp/ccTfrgUB.s:520    .text.HAL_GetUIDw2:0000000000000000 HAL_GetUIDw2
-     /tmp/ccTfrgUB.s:536    .text.HAL_GetUIDw2:0000000000000008 $d
-     /tmp/ccTfrgUB.s:541    .text.HAL_DBGMCU_EnableDBGStopMode:0000000000000000 $t
-     /tmp/ccTfrgUB.s:548    .text.HAL_DBGMCU_EnableDBGStopMode:0000000000000000 HAL_DBGMCU_EnableDBGStopMode
-     /tmp/ccTfrgUB.s:567    .text.HAL_DBGMCU_EnableDBGStopMode:000000000000000c $d
-     /tmp/ccTfrgUB.s:572    .text.HAL_DBGMCU_DisableDBGStopMode:0000000000000000 $t
-     /tmp/ccTfrgUB.s:579    .text.HAL_DBGMCU_DisableDBGStopMode:0000000000000000 HAL_DBGMCU_DisableDBGStopMode
-     /tmp/ccTfrgUB.s:598    .text.HAL_DBGMCU_DisableDBGStopMode:000000000000000c $d
-     /tmp/ccTfrgUB.s:603    .text.HAL_DBGMCU_EnableDBGStandbyMode:0000000000000000 $t
-     /tmp/ccTfrgUB.s:610    .text.HAL_DBGMCU_EnableDBGStandbyMode:0000000000000000 HAL_DBGMCU_EnableDBGStandbyMode
-     /tmp/ccTfrgUB.s:629    .text.HAL_DBGMCU_EnableDBGStandbyMode:000000000000000c $d
-     /tmp/ccTfrgUB.s:634    .text.HAL_DBGMCU_DisableDBGStandbyMode:0000000000000000 $t
-ARM GAS  /tmp/ccTfrgUB.s 			page 22
+     /tmp/ccItNBni.s:227    .text.HAL_GetTick:0000000000000000 $t
+     /tmp/ccItNBni.s:234    .text.HAL_GetTick:0000000000000000 HAL_GetTick
+     /tmp/ccItNBni.s:250    .text.HAL_GetTick:0000000000000008 $d
+     /tmp/ccItNBni.s:255    .text.HAL_Delay:0000000000000000 $t
+     /tmp/ccItNBni.s:262    .text.HAL_Delay:0000000000000000 HAL_Delay
+     /tmp/ccItNBni.s:310    .text.HAL_SuspendTick:0000000000000000 $t
+     /tmp/ccItNBni.s:317    .text.HAL_SuspendTick:0000000000000000 HAL_SuspendTick
+     /tmp/ccItNBni.s:336    .text.HAL_SuspendTick:000000000000000c $d
+     /tmp/ccItNBni.s:341    .text.HAL_ResumeTick:0000000000000000 $t
+     /tmp/ccItNBni.s:348    .text.HAL_ResumeTick:0000000000000000 HAL_ResumeTick
+     /tmp/ccItNBni.s:367    .text.HAL_ResumeTick:000000000000000c $d
+     /tmp/ccItNBni.s:372    .text.HAL_GetHalVersion:0000000000000000 $t
+     /tmp/ccItNBni.s:379    .text.HAL_GetHalVersion:0000000000000000 HAL_GetHalVersion
+     /tmp/ccItNBni.s:393    .text.HAL_GetHalVersion:0000000000000004 $d
+     /tmp/ccItNBni.s:398    .text.HAL_GetREVID:0000000000000000 $t
+     /tmp/ccItNBni.s:405    .text.HAL_GetREVID:0000000000000000 HAL_GetREVID
+     /tmp/ccItNBni.s:422    .text.HAL_GetREVID:0000000000000008 $d
+     /tmp/ccItNBni.s:427    .text.HAL_GetDEVID:0000000000000000 $t
+     /tmp/ccItNBni.s:434    .text.HAL_GetDEVID:0000000000000000 HAL_GetDEVID
+     /tmp/ccItNBni.s:452    .text.HAL_GetDEVID:000000000000000c $d
+     /tmp/ccItNBni.s:457    .text.HAL_GetUIDw0:0000000000000000 $t
+     /tmp/ccItNBni.s:464    .text.HAL_GetUIDw0:0000000000000000 HAL_GetUIDw0
+     /tmp/ccItNBni.s:480    .text.HAL_GetUIDw0:0000000000000008 $d
+     /tmp/ccItNBni.s:485    .text.HAL_GetUIDw1:0000000000000000 $t
+     /tmp/ccItNBni.s:492    .text.HAL_GetUIDw1:0000000000000000 HAL_GetUIDw1
+     /tmp/ccItNBni.s:508    .text.HAL_GetUIDw1:0000000000000008 $d
+     /tmp/ccItNBni.s:513    .text.HAL_GetUIDw2:0000000000000000 $t
+     /tmp/ccItNBni.s:520    .text.HAL_GetUIDw2:0000000000000000 HAL_GetUIDw2
+     /tmp/ccItNBni.s:536    .text.HAL_GetUIDw2:0000000000000008 $d
+     /tmp/ccItNBni.s:541    .text.HAL_DBGMCU_EnableDBGStopMode:0000000000000000 $t
+     /tmp/ccItNBni.s:548    .text.HAL_DBGMCU_EnableDBGStopMode:0000000000000000 HAL_DBGMCU_EnableDBGStopMode
+     /tmp/ccItNBni.s:567    .text.HAL_DBGMCU_EnableDBGStopMode:000000000000000c $d
+     /tmp/ccItNBni.s:572    .text.HAL_DBGMCU_DisableDBGStopMode:0000000000000000 $t
+     /tmp/ccItNBni.s:579    .text.HAL_DBGMCU_DisableDBGStopMode:0000000000000000 HAL_DBGMCU_DisableDBGStopMode
+     /tmp/ccItNBni.s:598    .text.HAL_DBGMCU_DisableDBGStopMode:000000000000000c $d
+     /tmp/ccItNBni.s:603    .text.HAL_DBGMCU_EnableDBGStandbyMode:0000000000000000 $t
+     /tmp/ccItNBni.s:610    .text.HAL_DBGMCU_EnableDBGStandbyMode:0000000000000000 HAL_DBGMCU_EnableDBGStandbyMode
+     /tmp/ccItNBni.s:629    .text.HAL_DBGMCU_EnableDBGStandbyMode:000000000000000c $d
+     /tmp/ccItNBni.s:634    .text.HAL_DBGMCU_DisableDBGStandbyMode:0000000000000000 $t
+ARM GAS  /tmp/ccItNBni.s 			page 22
 
 
-     /tmp/ccTfrgUB.s:641    .text.HAL_DBGMCU_DisableDBGStandbyMode:0000000000000000 HAL_DBGMCU_DisableDBGStandbyMode
-     /tmp/ccTfrgUB.s:660    .text.HAL_DBGMCU_DisableDBGStandbyMode:000000000000000c $d
+     /tmp/ccItNBni.s:641    .text.HAL_DBGMCU_DisableDBGStandbyMode:0000000000000000 HAL_DBGMCU_DisableDBGStandbyMode
+     /tmp/ccItNBni.s:660    .text.HAL_DBGMCU_DisableDBGStandbyMode:000000000000000c $d
 
 UNDEFINED SYMBOLS
 __aeabi_uidiv

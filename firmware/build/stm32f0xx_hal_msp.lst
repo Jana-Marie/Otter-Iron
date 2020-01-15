@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc9hJx5N.s 			page 1
+ARM GAS  /tmp/cclHamwV.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
   31:Src/stm32f0xx_hal_msp.c **** 
   32:Src/stm32f0xx_hal_msp.c **** /* USER CODE END TD */
   33:Src/stm32f0xx_hal_msp.c **** 
-ARM GAS  /tmp/cc9hJx5N.s 			page 2
+ARM GAS  /tmp/cclHamwV.s 			page 2
 
 
   34:Src/stm32f0xx_hal_msp.c **** /* Private define ------------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
   40 000a 9961     		str	r1, [r3, #24]
   41 000c 9969     		ldr	r1, [r3, #24]
   42 000e 0A40     		ands	r2, r1
-ARM GAS  /tmp/cc9hJx5N.s 			page 3
+ARM GAS  /tmp/cclHamwV.s 			page 3
 
 
   43 0010 0092     		str	r2, [sp]
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
   82              		@ frame_needed = 0, uses_anonymous_args = 0
   83              	.LVL0:
   84 0000 30B5     		push	{r4, r5, lr}
-ARM GAS  /tmp/cc9hJx5N.s 			page 4
+ARM GAS  /tmp/cclHamwV.s 			page 4
 
 
   85              	.LCFI1:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  123:Src/stm32f0xx_hal_msp.c ****   /* USER CODE BEGIN ADC1_MspInit 1 */
  124:Src/stm32f0xx_hal_msp.c **** 
  125:Src/stm32f0xx_hal_msp.c ****   /* USER CODE END ADC1_MspInit 1 */
-ARM GAS  /tmp/cc9hJx5N.s 			page 5
+ARM GAS  /tmp/cclHamwV.s 			page 5
 
 
  126:Src/stm32f0xx_hal_msp.c ****   }
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  152              		.loc 1 112 0
  153 0056 0E4D     		ldr	r5, .L7+8
  154 0058 0E4B     		ldr	r3, .L7+12
-ARM GAS  /tmp/cc9hJx5N.s 			page 6
+ARM GAS  /tmp/cclHamwV.s 			page 6
 
 
  155 005a 2B60     		str	r3, [r5]
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  201              		.code	16
  202              		.thumb_func
  203              		.fpu softvfp
-ARM GAS  /tmp/cc9hJx5N.s 			page 7
+ARM GAS  /tmp/cclHamwV.s 			page 7
 
 
  205              	HAL_ADC_MspDeInit:
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  227              	.LVL9:
  228 000c 10BD     		pop	{r4, pc}
  229              	.LVL10:
-ARM GAS  /tmp/cc9hJx5N.s 			page 8
+ARM GAS  /tmp/cclHamwV.s 			page 8
 
 
  230              	.L11:
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  274 0000 10B5     		push	{r4, lr}
  275              	.LCFI4:
  276              		.cfi_def_cfa_offset 8
-ARM GAS  /tmp/cc9hJx5N.s 			page 9
+ARM GAS  /tmp/cclHamwV.s 			page 9
 
 
  277              		.cfi_offset 4, -8
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  200:Src/stm32f0xx_hal_msp.c ****   /* USER CODE END I2C2_MspInit 0 */
  201:Src/stm32f0xx_hal_msp.c **** 
  202:Src/stm32f0xx_hal_msp.c ****     __HAL_RCC_GPIOB_CLK_ENABLE();
-ARM GAS  /tmp/cc9hJx5N.s 			page 10
+ARM GAS  /tmp/cclHamwV.s 			page 10
 
 
  203:Src/stm32f0xx_hal_msp.c ****     /**I2C2 GPIO Configuration
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  331 0042 0322     		movs	r2, #3
  332 0044 0892     		str	r2, [sp, #32]
  187:Src/stm32f0xx_hal_msp.c ****     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-ARM GAS  /tmp/cc9hJx5N.s 			page 11
+ARM GAS  /tmp/cclHamwV.s 			page 11
 
 
  333              		.loc 1 187 0
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  380 0086 0322     		movs	r2, #3
  381 0088 0892     		str	r2, [sp, #32]
  211:Src/stm32f0xx_hal_msp.c ****     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-ARM GAS  /tmp/cc9hJx5N.s 			page 12
+ARM GAS  /tmp/cclHamwV.s 			page 12
 
 
  382              		.loc 1 211 0
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  427              	.LVL24:
  428 0000 10B5     		push	{r4, lr}
  429              	.LCFI6:
-ARM GAS  /tmp/cc9hJx5N.s 			page 13
+ARM GAS  /tmp/cclHamwV.s 			page 13
 
 
  430              		.cfi_def_cfa_offset 8
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  446 0010 10BD     		pop	{r4, pc}
  447              	.LVL26:
  448              	.L24:
-ARM GAS  /tmp/cc9hJx5N.s 			page 14
+ARM GAS  /tmp/cclHamwV.s 			page 14
 
 
  237:Src/stm32f0xx_hal_msp.c **** 
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  269:Src/stm32f0xx_hal_msp.c **** 
  270:Src/stm32f0xx_hal_msp.c **** /**
  271:Src/stm32f0xx_hal_msp.c **** * @brief TIM_PWM MSP Initialization
-ARM GAS  /tmp/cc9hJx5N.s 			page 15
+ARM GAS  /tmp/cclHamwV.s 			page 15
 
 
  272:Src/stm32f0xx_hal_msp.c **** * This function configures the hardware resources used in this example
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  531              	.LVL35:
  532 0016 0001     		lsls	r0, r0, #4
  533 0018 0143     		orrs	r1, r0
-ARM GAS  /tmp/cc9hJx5N.s 			page 16
+ARM GAS  /tmp/cclHamwV.s 			page 16
 
 
  534 001a 9161     		str	r1, [r2, #24]
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  583              		@ frame_needed = 0, uses_anonymous_args = 0
  584              	.LVL40:
  585 0000 10B5     		push	{r4, lr}
-ARM GAS  /tmp/cc9hJx5N.s 			page 17
+ARM GAS  /tmp/cclHamwV.s 			page 17
 
 
  586              	.LCFI9:
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  304:Src/stm32f0xx_hal_msp.c **** 
  615              		.loc 1 304 0
  616 001c 104B     		ldr	r3, .L36+4
-ARM GAS  /tmp/cc9hJx5N.s 			page 18
+ARM GAS  /tmp/cclHamwV.s 			page 18
 
 
  617 001e 9969     		ldr	r1, [r3, #24]
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  667              		.syntax unified
  668              		.code	16
  669              		.thumb_func
-ARM GAS  /tmp/cc9hJx5N.s 			page 19
+ARM GAS  /tmp/cclHamwV.s 			page 19
 
 
  670              		.fpu softvfp
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  699 0010 0649     		ldr	r1, .L41+8
  700 0012 0B40     		ands	r3, r1
  701 0014 9361     		str	r3, [r2, #24]
-ARM GAS  /tmp/cc9hJx5N.s 			page 20
+ARM GAS  /tmp/cclHamwV.s 			page 20
 
 
  340:Src/stm32f0xx_hal_msp.c ****     HAL_NVIC_DisableIRQ(TIM1_CC_IRQn);
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  746              	.LVL53:
  747              	.L43:
  358:Src/stm32f0xx_hal_msp.c ****   {
-ARM GAS  /tmp/cc9hJx5N.s 			page 21
+ARM GAS  /tmp/cclHamwV.s 			page 21
 
 
  359:Src/stm32f0xx_hal_msp.c ****   /* USER CODE BEGIN USB_MspInit 0 */
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  374:Src/stm32f0xx_hal_msp.c **** * @param hpcd: PCD handle pointer
  375:Src/stm32f0xx_hal_msp.c **** * @retval None
  376:Src/stm32f0xx_hal_msp.c **** */
-ARM GAS  /tmp/cc9hJx5N.s 			page 22
+ARM GAS  /tmp/cclHamwV.s 			page 22
 
 
  377:Src/stm32f0xx_hal_msp.c **** void HAL_PCD_MspDeInit(PCD_HandleTypeDef* hpcd)
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  827              		.file 6 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/lo
  828              		.file 7 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_t
  829              		.file 8 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/
-ARM GAS  /tmp/cc9hJx5N.s 			page 23
+ARM GAS  /tmp/cclHamwV.s 			page 23
 
 
  830              		.file 9 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/re
@@ -1331,41 +1331,41 @@ ARM GAS  /tmp/cc9hJx5N.s 			page 1
  837              		.file 16 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h"
  838              		.file 17 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h"
  839              		.file 18 "<built-in>"
-ARM GAS  /tmp/cc9hJx5N.s 			page 24
+ARM GAS  /tmp/cclHamwV.s 			page 24
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f0xx_hal_msp.c
-     /tmp/cc9hJx5N.s:16     .text.HAL_MspInit:0000000000000000 $t
-     /tmp/cc9hJx5N.s:23     .text.HAL_MspInit:0000000000000000 HAL_MspInit
-     /tmp/cc9hJx5N.s:65     .text.HAL_MspInit:000000000000002c $d
-     /tmp/cc9hJx5N.s:70     .text.HAL_ADC_MspInit:0000000000000000 $t
-     /tmp/cc9hJx5N.s:77     .text.HAL_ADC_MspInit:0000000000000000 HAL_ADC_MspInit
-     /tmp/cc9hJx5N.s:190    .text.HAL_ADC_MspInit:0000000000000088 $d
-     /tmp/cc9hJx5N.s:198    .text.HAL_ADC_MspDeInit:0000000000000000 $t
-     /tmp/cc9hJx5N.s:205    .text.HAL_ADC_MspDeInit:0000000000000000 HAL_ADC_MspDeInit
-     /tmp/cc9hJx5N.s:253    .text.HAL_ADC_MspDeInit:000000000000002c $d
-     /tmp/cc9hJx5N.s:260    .text.HAL_I2C_MspInit:0000000000000000 $t
-     /tmp/cc9hJx5N.s:267    .text.HAL_I2C_MspInit:0000000000000000 HAL_I2C_MspInit
-     /tmp/cc9hJx5N.s:406    .text.HAL_I2C_MspInit:00000000000000a8 $d
-     /tmp/cc9hJx5N.s:414    .text.HAL_I2C_MspDeInit:0000000000000000 $t
-     /tmp/cc9hJx5N.s:421    .text.HAL_I2C_MspDeInit:0000000000000000 HAL_I2C_MspDeInit
-     /tmp/cc9hJx5N.s:482    .text.HAL_I2C_MspDeInit:000000000000003c $d
-     /tmp/cc9hJx5N.s:492    .text.HAL_TIM_PWM_MspInit:0000000000000000 $t
-     /tmp/cc9hJx5N.s:499    .text.HAL_TIM_PWM_MspInit:0000000000000000 HAL_TIM_PWM_MspInit
-     /tmp/cc9hJx5N.s:565    .text.HAL_TIM_PWM_MspInit:0000000000000048 $d
-     /tmp/cc9hJx5N.s:571    .text.HAL_TIM_MspPostInit:0000000000000000 $t
-     /tmp/cc9hJx5N.s:578    .text.HAL_TIM_MspPostInit:0000000000000000 HAL_TIM_MspPostInit
-     /tmp/cc9hJx5N.s:659    .text.HAL_TIM_MspPostInit:000000000000005c $d
-     /tmp/cc9hJx5N.s:665    .text.HAL_TIM_PWM_MspDeInit:0000000000000000 $t
-     /tmp/cc9hJx5N.s:672    .text.HAL_TIM_PWM_MspDeInit:0000000000000000 HAL_TIM_PWM_MspDeInit
-     /tmp/cc9hJx5N.s:716    .text.HAL_TIM_PWM_MspDeInit:0000000000000024 $d
-     /tmp/cc9hJx5N.s:723    .text.HAL_PCD_MspInit:0000000000000000 $t
-     /tmp/cc9hJx5N.s:730    .text.HAL_PCD_MspInit:0000000000000000 HAL_PCD_MspInit
-     /tmp/cc9hJx5N.s:773    .text.HAL_PCD_MspInit:0000000000000024 $d
-     /tmp/cc9hJx5N.s:779    .text.HAL_PCD_MspDeInit:0000000000000000 $t
-     /tmp/cc9hJx5N.s:786    .text.HAL_PCD_MspDeInit:0000000000000000 HAL_PCD_MspDeInit
-     /tmp/cc9hJx5N.s:815    .text.HAL_PCD_MspDeInit:0000000000000018 $d
+     /tmp/cclHamwV.s:16     .text.HAL_MspInit:0000000000000000 $t
+     /tmp/cclHamwV.s:23     .text.HAL_MspInit:0000000000000000 HAL_MspInit
+     /tmp/cclHamwV.s:65     .text.HAL_MspInit:000000000000002c $d
+     /tmp/cclHamwV.s:70     .text.HAL_ADC_MspInit:0000000000000000 $t
+     /tmp/cclHamwV.s:77     .text.HAL_ADC_MspInit:0000000000000000 HAL_ADC_MspInit
+     /tmp/cclHamwV.s:190    .text.HAL_ADC_MspInit:0000000000000088 $d
+     /tmp/cclHamwV.s:198    .text.HAL_ADC_MspDeInit:0000000000000000 $t
+     /tmp/cclHamwV.s:205    .text.HAL_ADC_MspDeInit:0000000000000000 HAL_ADC_MspDeInit
+     /tmp/cclHamwV.s:253    .text.HAL_ADC_MspDeInit:000000000000002c $d
+     /tmp/cclHamwV.s:260    .text.HAL_I2C_MspInit:0000000000000000 $t
+     /tmp/cclHamwV.s:267    .text.HAL_I2C_MspInit:0000000000000000 HAL_I2C_MspInit
+     /tmp/cclHamwV.s:406    .text.HAL_I2C_MspInit:00000000000000a8 $d
+     /tmp/cclHamwV.s:414    .text.HAL_I2C_MspDeInit:0000000000000000 $t
+     /tmp/cclHamwV.s:421    .text.HAL_I2C_MspDeInit:0000000000000000 HAL_I2C_MspDeInit
+     /tmp/cclHamwV.s:482    .text.HAL_I2C_MspDeInit:000000000000003c $d
+     /tmp/cclHamwV.s:492    .text.HAL_TIM_PWM_MspInit:0000000000000000 $t
+     /tmp/cclHamwV.s:499    .text.HAL_TIM_PWM_MspInit:0000000000000000 HAL_TIM_PWM_MspInit
+     /tmp/cclHamwV.s:565    .text.HAL_TIM_PWM_MspInit:0000000000000048 $d
+     /tmp/cclHamwV.s:571    .text.HAL_TIM_MspPostInit:0000000000000000 $t
+     /tmp/cclHamwV.s:578    .text.HAL_TIM_MspPostInit:0000000000000000 HAL_TIM_MspPostInit
+     /tmp/cclHamwV.s:659    .text.HAL_TIM_MspPostInit:000000000000005c $d
+     /tmp/cclHamwV.s:665    .text.HAL_TIM_PWM_MspDeInit:0000000000000000 $t
+     /tmp/cclHamwV.s:672    .text.HAL_TIM_PWM_MspDeInit:0000000000000000 HAL_TIM_PWM_MspDeInit
+     /tmp/cclHamwV.s:716    .text.HAL_TIM_PWM_MspDeInit:0000000000000024 $d
+     /tmp/cclHamwV.s:723    .text.HAL_PCD_MspInit:0000000000000000 $t
+     /tmp/cclHamwV.s:730    .text.HAL_PCD_MspInit:0000000000000000 HAL_PCD_MspInit
+     /tmp/cclHamwV.s:773    .text.HAL_PCD_MspInit:0000000000000024 $d
+     /tmp/cclHamwV.s:779    .text.HAL_PCD_MspDeInit:0000000000000000 $t
+     /tmp/cclHamwV.s:786    .text.HAL_PCD_MspDeInit:0000000000000000 HAL_PCD_MspDeInit
+     /tmp/cclHamwV.s:815    .text.HAL_PCD_MspDeInit:0000000000000018 $d
 
 UNDEFINED SYMBOLS
 memset

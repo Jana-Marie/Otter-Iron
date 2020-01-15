@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccGvLyNw.s 			page 1
+ARM GAS  /tmp/cc0sbyBo.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
   31:Src/system_stm32f0xx.c ****   *        SYSCLK(Hz)                             | 8000000
   32:Src/system_stm32f0xx.c ****   *-----------------------------------------------------------------------------
   33:Src/system_stm32f0xx.c ****   *        HCLK(Hz)                               | 8000000
-ARM GAS  /tmp/ccGvLyNw.s 			page 2
+ARM GAS  /tmp/cc0sbyBo.s 			page 2
 
 
   34:Src/system_stm32f0xx.c ****   *-----------------------------------------------------------------------------
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
   88:Src/system_stm32f0xx.c **** /** @addtogroup STM32F0xx_System_Private_TypesDefinitions
   89:Src/system_stm32f0xx.c ****   * @{
   90:Src/system_stm32f0xx.c ****   */
-ARM GAS  /tmp/ccGvLyNw.s 			page 3
+ARM GAS  /tmp/cc0sbyBo.s 			page 3
 
 
   91:Src/system_stm32f0xx.c **** 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
  145:Src/system_stm32f0xx.c **** /** @addtogroup STM32F0xx_System_Private_FunctionPrototypes
  146:Src/system_stm32f0xx.c ****   * @{
  147:Src/system_stm32f0xx.c ****   */
-ARM GAS  /tmp/ccGvLyNw.s 			page 4
+ARM GAS  /tmp/cc0sbyBo.s 			page 4
 
 
  148:Src/system_stm32f0xx.c **** 
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
    8:Drivers/CMSIS/Include/cmsis_gcc.h **** 
    9:Drivers/CMSIS/Include/cmsis_gcc.h ****    All rights reserved.
   10:Drivers/CMSIS/Include/cmsis_gcc.h ****    Redistribution and use in source and binary forms, with or without
-ARM GAS  /tmp/ccGvLyNw.s 			page 5
+ARM GAS  /tmp/cc0sbyBo.s 			page 5
 
 
   11:Drivers/CMSIS/Include/cmsis_gcc.h ****    modification, are permitted provided that the following conditions are met:
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
   65:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Disable IRQ Interrupts
   66:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Disables IRQ interrupts by setting the I-bit in the CPSR.
   67:Drivers/CMSIS/Include/cmsis_gcc.h ****   Can only be executed in Privileged modes.
-ARM GAS  /tmp/ccGvLyNw.s 			page 6
+ARM GAS  /tmp/cc0sbyBo.s 			page 6
 
 
   68:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
  122:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  123:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, apsr" : "=r" (result) );
  124:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
-ARM GAS  /tmp/ccGvLyNw.s 			page 7
+ARM GAS  /tmp/cc0sbyBo.s 			page 7
 
 
  125:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
  179:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  180:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  181:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  /tmp/ccGvLyNw.s 			page 8
+ARM GAS  /tmp/cc0sbyBo.s 			page 8
 
 
  182:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
  185:Src/system_stm32f0xx.c ****   RCC->CFGR &= (uint32_t)0x08FFB80CU;
   81              		.loc 1 185 0
   82 0030 5A68     		ldr	r2, [r3, #4]
-ARM GAS  /tmp/ccGvLyNw.s 			page 9
+ARM GAS  /tmp/cc0sbyBo.s 			page 9
 
 
   83 0032 1648     		ldr	r0, .L4+28
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
  212:Src/system_stm32f0xx.c **** #elif defined (STM32F051x8) || defined (STM32F058xx)
  213:Src/system_stm32f0xx.c ****   /* Reset USART1SW[1:0], I2C1SW, CECSW and ADCSW bits */
  214:Src/system_stm32f0xx.c ****   RCC->CFGR3 &= (uint32_t)0xFFFFFEACU;
-ARM GAS  /tmp/ccGvLyNw.s 			page 10
+ARM GAS  /tmp/cc0sbyBo.s 			page 10
 
 
  215:Src/system_stm32f0xx.c **** #elif defined (STM32F042x6) || defined (STM32F048xx)
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
  147              		.fpu softvfp
  149              	SystemCoreClockUpdate:
  150              	.LFB38:
-ARM GAS  /tmp/ccGvLyNw.s 			page 11
+ARM GAS  /tmp/cc0sbyBo.s 			page 11
 
 
  234:Src/system_stm32f0xx.c **** 
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
  162 0002 254B     		ldr	r3, .L18
  163 0004 5A68     		ldr	r2, [r3, #4]
  164 0006 0C23     		movs	r3, #12
-ARM GAS  /tmp/ccGvLyNw.s 			page 12
+ARM GAS  /tmp/cc0sbyBo.s 			page 12
 
 
  165 0008 1340     		ands	r3, r2
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
  174              		.loc 1 321 0
  175 0016 214B     		ldr	r3, .L18+4
  176              	.LVL5:
-ARM GAS  /tmp/ccGvLyNw.s 			page 13
+ARM GAS  /tmp/cc0sbyBo.s 			page 13
 
 
  177 0018 214A     		ldr	r2, .L18+8
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
  220              	.L9:
  288:Src/system_stm32f0xx.c ****       pllsource = RCC->CFGR & RCC_CFGR_PLLSRC;
  221              		.loc 1 288 0
-ARM GAS  /tmp/ccGvLyNw.s 			page 14
+ARM GAS  /tmp/cc0sbyBo.s 			page 14
 
 
  222 0044 144A     		ldr	r2, .L18
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
  269 0084 054B     		ldr	r3, .L18+4
  270 0086 1860     		str	r0, [r3]
  271 0088 CCE7     		b	.L11
-ARM GAS  /tmp/ccGvLyNw.s 			page 15
+ARM GAS  /tmp/cc0sbyBo.s 			page 15
 
 
  272              	.LVL25:
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
  332 0001 00       		.byte	0
  333 0002 00       		.byte	0
  334 0003 00       		.byte	0
-ARM GAS  /tmp/ccGvLyNw.s 			page 16
+ARM GAS  /tmp/cc0sbyBo.s 			page 16
 
 
  335 0004 01       		.byte	1
@@ -915,24 +915,24 @@ ARM GAS  /tmp/ccGvLyNw.s 			page 1
  346              		.file 8 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/_t
  347              		.file 9 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/lib/gcc/arm-none-eabi/7.3.1/
  348              		.file 10 "/home/janhenrik/programme/gcc-arm-none-eabi-7-2018-q2-update/arm-none-eabi/include/sys/r
-ARM GAS  /tmp/ccGvLyNw.s 			page 17
+ARM GAS  /tmp/cc0sbyBo.s 			page 17
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 system_stm32f0xx.c
-     /tmp/ccGvLyNw.s:16     .text.SystemInit:0000000000000000 $t
-     /tmp/ccGvLyNw.s:23     .text.SystemInit:0000000000000000 SystemInit
-     /tmp/ccGvLyNw.s:125    .text.SystemInit:0000000000000070 $d
+     /tmp/cc0sbyBo.s:16     .text.SystemInit:0000000000000000 $t
+     /tmp/cc0sbyBo.s:23     .text.SystemInit:0000000000000000 SystemInit
+     /tmp/cc0sbyBo.s:125    .text.SystemInit:0000000000000070 $d
                             *COM*:0000000000000004 SysMemBootJump
-     /tmp/ccGvLyNw.s:142    .text.SystemCoreClockUpdate:0000000000000000 $t
-     /tmp/ccGvLyNw.s:149    .text.SystemCoreClockUpdate:0000000000000000 SystemCoreClockUpdate
-     /tmp/ccGvLyNw.s:285    .text.SystemCoreClockUpdate:0000000000000098 $d
-     /tmp/ccGvLyNw.s:330    .rodata.APBPrescTable:0000000000000000 APBPrescTable
-     /tmp/ccGvLyNw.s:309    .rodata.AHBPrescTable:0000000000000000 AHBPrescTable
-     /tmp/ccGvLyNw.s:302    .data.SystemCoreClock:0000000000000000 SystemCoreClock
-     /tmp/ccGvLyNw.s:298    .data.SystemCoreClock:0000000000000000 $d
-     /tmp/ccGvLyNw.s:305    .rodata.AHBPrescTable:0000000000000000 $d
-     /tmp/ccGvLyNw.s:327    .rodata.APBPrescTable:0000000000000000 $d
+     /tmp/cc0sbyBo.s:142    .text.SystemCoreClockUpdate:0000000000000000 $t
+     /tmp/cc0sbyBo.s:149    .text.SystemCoreClockUpdate:0000000000000000 SystemCoreClockUpdate
+     /tmp/cc0sbyBo.s:285    .text.SystemCoreClockUpdate:0000000000000098 $d
+     /tmp/cc0sbyBo.s:330    .rodata.APBPrescTable:0000000000000000 APBPrescTable
+     /tmp/cc0sbyBo.s:309    .rodata.AHBPrescTable:0000000000000000 AHBPrescTable
+     /tmp/cc0sbyBo.s:302    .data.SystemCoreClock:0000000000000000 SystemCoreClock
+     /tmp/cc0sbyBo.s:298    .data.SystemCoreClock:0000000000000000 $d
+     /tmp/cc0sbyBo.s:305    .rodata.AHBPrescTable:0000000000000000 $d
+     /tmp/cc0sbyBo.s:327    .rodata.APBPrescTable:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 __aeabi_uidiv

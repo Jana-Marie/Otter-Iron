@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccr510Wk.s 			page 1
+ARM GAS  /tmp/cc365F3j.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
   32:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****      (#) Initialize the TIM low level resources by implementing the following functions 
   33:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****          depending from feature used :
   34:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****            (++) Complementary Output Compare : HAL_TIM_OC_MspInit()
-ARM GAS  /tmp/ccr510Wk.s 			page 2
+ARM GAS  /tmp/cc365F3j.s 			page 2
 
 
   35:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****            (++) Complementary PWM generation : HAL_TIM_PWM_MspInit()
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
   89:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
   90:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
   91:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-ARM GAS  /tmp/ccr510Wk.s 			page 3
+ARM GAS  /tmp/cc365F3j.s 			page 3
 
 
   92:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  146:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     (+) Start the Hall Sensor Interface and enable DMA transfers.
  147:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     (+) Stop the Hall Sensor Interface and disable DMA transfers.
  148:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
-ARM GAS  /tmp/ccr510Wk.s 			page 4
+ARM GAS  /tmp/cc365F3j.s 			page 4
 
 
  149:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** @endverbatim
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  203:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   htim->Instance->SMCR &= ~TIM_SMCR_TS;
  204:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   htim->Instance->SMCR |= TIM_TS_TI1F_ED;
  205:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
-ARM GAS  /tmp/ccr510Wk.s 			page 5
+ARM GAS  /tmp/cc365F3j.s 			page 5
 
 
  206:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* Use the TIM_TS_TI1F_ED signal to reset the TIM counter each edge detection */
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  260:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   * @brief  Initializes the TIM Hall Sensor MSP.
  261:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   * @param  htim TIM handle
  262:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   * @retval None
-ARM GAS  /tmp/ccr510Wk.s 			page 6
+ARM GAS  /tmp/cc365F3j.s 			page 6
 
 
  263:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   */
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  317:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* Check the parameters */
  318:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   assert_param(IS_TIM_HALL_INTERFACE_INSTANCE(htim->Instance));
  319:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
-ARM GAS  /tmp/ccr510Wk.s 			page 7
+ARM GAS  /tmp/cc365F3j.s 			page 7
 
 
  320:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* Disable the Input Capture channels 1, 2 and 3
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  374:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  375:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* Return function status */
  376:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   return HAL_OK;
-ARM GAS  /tmp/ccr510Wk.s 			page 8
+ARM GAS  /tmp/cc365F3j.s 			page 8
 
 
  377:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** }
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  431:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   * @retval HAL status
  432:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   */
  433:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** HAL_StatusTypeDef HAL_TIMEx_HallSensor_Stop_DMA(TIM_HandleTypeDef *htim)
-ARM GAS  /tmp/ccr510Wk.s 			page 9
+ARM GAS  /tmp/cc365F3j.s 			page 9
 
 
  434:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** {
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  488:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   */
  489:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** HAL_StatusTypeDef HAL_TIMEx_OCN_Start(TIM_HandleTypeDef *htim, uint32_t Channel)
  490:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** {
-ARM GAS  /tmp/ccr510Wk.s 			page 10
+ARM GAS  /tmp/cc365F3j.s 			page 10
 
 
  491:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* Check the parameters */
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  545:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   *            @arg TIM_CHANNEL_3: TIM Channel 3 selected
  546:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   *            @arg TIM_CHANNEL_4: TIM Channel 4 selected
  547:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   * @retval HAL status
-ARM GAS  /tmp/ccr510Wk.s 			page 11
+ARM GAS  /tmp/cc365F3j.s 			page 11
 
 
  548:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   */
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  602:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** }
  603:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  604:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** /**
-ARM GAS  /tmp/ccr510Wk.s 			page 12
+ARM GAS  /tmp/cc365F3j.s 			page 12
 
 
  605:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   * @brief  Stops the TIM Output Compare signal generation in interrupt mode 
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  659:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  660:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* Disable the TIM Break interrupt (only if no more channel is active) */
  661:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   tmpccer = htim->Instance->CCER;
-ARM GAS  /tmp/ccr510Wk.s 			page 13
+ARM GAS  /tmp/cc365F3j.s 			page 13
 
 
  662:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   if ((tmpccer & (TIM_CCER_CC1NE | TIM_CCER_CC2NE | TIM_CCER_CC3NE)) == RESET)
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  716:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****       htim->hdma[TIM_DMA_ID_CC1]->XferCpltCallback = TIM_DMADelayPulseCplt;
  717:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  718:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****       /* Set the DMA error callback */
-ARM GAS  /tmp/ccr510Wk.s 			page 14
+ARM GAS  /tmp/cc365F3j.s 			page 14
 
 
  719:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****       htim->hdma[TIM_DMA_ID_CC1]->XferErrorCallback = TIM_DMAError ;
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  773:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****       __HAL_TIM_ENABLE_DMA(htim, TIM_DMA_CC4);
  774:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     }
  775:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     break;
-ARM GAS  /tmp/ccr510Wk.s 			page 15
+ARM GAS  /tmp/cc365F3j.s 			page 15
 
 
  776:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  830:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****       __HAL_TIM_DISABLE_DMA(htim, TIM_DMA_CC3);
  831:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     }
  832:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     break;
-ARM GAS  /tmp/ccr510Wk.s 			page 16
+ARM GAS  /tmp/cc365F3j.s 			page 16
 
 
  833:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  887:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     (+) Stop the Complementary One Pulse.
  888:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     (+) Start the Complementary One Pulse and enable interrupts.
  889:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     (+) Stop the Complementary One Pulse and disable interrupts.
-ARM GAS  /tmp/ccr510Wk.s 			page 17
+ARM GAS  /tmp/cc365F3j.s 			page 17
 
 
  890:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  944:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   __HAL_TIM_MOE_DISABLE(htim);
  945:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  946:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* Disable the Peripheral */
-ARM GAS  /tmp/ccr510Wk.s 			page 18
+ARM GAS  /tmp/cc365F3j.s 			page 18
 
 
  947:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   __HAL_TIM_DISABLE(htim);
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1001:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     break;
 1002:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   }
 1003:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
-ARM GAS  /tmp/ccr510Wk.s 			page 19
+ARM GAS  /tmp/cc365F3j.s 			page 19
 
 
 1004:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* Enable the TIM Break interrupt */
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1058:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****       __HAL_TIM_DISABLE_IT(htim, TIM_IT_CC3);
 1059:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     }
 1060:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     break;
-ARM GAS  /tmp/ccr510Wk.s 			page 20
+ARM GAS  /tmp/cc365F3j.s 			page 20
 
 
 1061:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1115:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   }
 1116:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   else if((htim->State == HAL_TIM_STATE_READY))
 1117:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   {
-ARM GAS  /tmp/ccr510Wk.s 			page 21
+ARM GAS  /tmp/cc365F3j.s 			page 21
 
 
 1118:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     if(((uint32_t)pData == 0U ) && (Length > 0U))
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1172:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****       /* Enable the TIM Capture/Compare 3 DMA request */
 1173:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****       __HAL_TIM_ENABLE_DMA(htim, TIM_DMA_CC3);
 1174:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     }
-ARM GAS  /tmp/ccr510Wk.s 			page 22
+ARM GAS  /tmp/cc365F3j.s 			page 22
 
 
 1175:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     break;
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1229:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     case TIM_CHANNEL_1:
 1230:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     {
 1231:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****       /* Disable the TIM Capture/Compare 1 DMA request */
-ARM GAS  /tmp/ccr510Wk.s 			page 23
+ARM GAS  /tmp/cc365F3j.s 			page 23
 
 
 1232:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****       __HAL_TIM_DISABLE_DMA(htim, TIM_DMA_CC1);
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1286:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****                 ##### Timer Complementary One Pulse functions #####
 1287:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   ==============================================================================
 1288:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   [..]
-ARM GAS  /tmp/ccr510Wk.s 			page 24
+ARM GAS  /tmp/cc365F3j.s 			page 24
 
 
 1289:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     This section provides functions allowing to:
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1343:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* Disable the Main Ouput */
 1344:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     __HAL_TIM_MOE_DISABLE(htim);
 1345:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
-ARM GAS  /tmp/ccr510Wk.s 			page 25
+ARM GAS  /tmp/cc365F3j.s 			page 25
 
 
 1346:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* Disable the Peripheral */
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1400:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   __HAL_TIM_DISABLE_IT(htim, TIM_IT_CC1);
 1401:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
 1402:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* Disable the TIM Capture/Compare 2 interrupt */
-ARM GAS  /tmp/ccr510Wk.s 			page 26
+ARM GAS  /tmp/cc365F3j.s 			page 26
 
 
 1403:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   __HAL_TIM_DISABLE_IT(htim, TIM_IT_CC2);
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1457:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   *            @arg TIM_COMMUTATION_SOFTWARE:  Commutation source is set by software using the COMG
 1458:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   * @retval HAL status
 1459:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   */
-ARM GAS  /tmp/ccr510Wk.s 			page 27
+ARM GAS  /tmp/cc365F3j.s 			page 27
 
 
 1460:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** HAL_StatusTypeDef HAL_TIMEx_ConfigCommutationEvent(TIM_HandleTypeDef *htim, uint32_t  InputTrigger,
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1514:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
 1515:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   __HAL_LOCK(htim);
 1516:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
-ARM GAS  /tmp/ccr510Wk.s 			page 28
+ARM GAS  /tmp/cc365F3j.s 			page 28
 
 
 1517:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   if ((InputTrigger == TIM_TS_ITR0) || (InputTrigger == TIM_TS_ITR1) ||
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1571:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****       (InputTrigger == TIM_TS_ITR2) || (InputTrigger == TIM_TS_ITR3))
 1572:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   {
 1573:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     /* Select the Input trigger */
-ARM GAS  /tmp/ccr510Wk.s 			page 29
+ARM GAS  /tmp/cc365F3j.s 			page 29
 
 
 1574:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     htim->Instance->SMCR &= ~TIM_SMCR_TS;
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1628:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
 1629:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   __HAL_UNLOCK(htim);
 1630:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
-ARM GAS  /tmp/ccr510Wk.s 			page 30
+ARM GAS  /tmp/cc365F3j.s 			page 30
 
 
 1631:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   return HAL_OK;
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1685:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** /**
 1686:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   * @brief  Configures the TIM14 Remapping input capabilities.
 1687:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   * @param  htim TIM handle.
-ARM GAS  /tmp/ccr510Wk.s 			page 31
+ARM GAS  /tmp/cc365F3j.s 			page 31
 
 
 1688:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   * @param  Remap specifies the TIM remapping source.
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1742:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   uint32_t tmpsmcr = 0U;
 1743:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
 1744:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* Check the parameters */ 
-ARM GAS  /tmp/ccr510Wk.s 			page 32
+ARM GAS  /tmp/cc365F3j.s 			page 32
 
 
 1745:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   assert_param(IS_TIM_OCXREF_CLEAR_INSTANCE(htim->Instance));
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1799:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   { 
 1800:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     case TIM_CHANNEL_1:
 1801:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****       {
-ARM GAS  /tmp/ccr510Wk.s 			page 33
+ARM GAS  /tmp/cc365F3j.s 			page 33
 
 
 1802:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****         if(sClearInputConfig->ClearInputState != RESET)
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1856:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     default:  
 1857:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     break;
 1858:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   } 
-ARM GAS  /tmp/ccr510Wk.s 			page 34
+ARM GAS  /tmp/cc365F3j.s 			page 34
 
 
 1859:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1913:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
 1914:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* NOTE : This function Should not be modified, when the callback is needed,
 1915:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****             the HAL_TIMEx_BreakCallback could be implemented in the user file
-ARM GAS  /tmp/ccr510Wk.s 			page 35
+ARM GAS  /tmp/cc365F3j.s 			page 35
 
 
 1916:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****    */
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1970:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** /** @addtogroup TIMEx_Private_Functions
 1971:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   * @{
 1972:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   */
-ARM GAS  /tmp/ccr510Wk.s 			page 36
+ARM GAS  /tmp/cc365F3j.s 			page 36
 
 
 1973:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
   54              		.cfi_endproc
   55              	.LFE74:
   57              		.section	.text.HAL_TIMEx_HallSensor_MspInit,"ax",%progbits
-ARM GAS  /tmp/ccr510Wk.s 			page 37
+ARM GAS  /tmp/cc365F3j.s 			page 37
 
 
   58              		.align	1
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  110              		.loc 1 176 0
  111 000c 3D23     		movs	r3, #61
  112 000e C35C     		ldrb	r3, [r0, r3]
-ARM GAS  /tmp/ccr510Wk.s 			page 38
+ARM GAS  /tmp/cc365F3j.s 			page 38
 
 
  113 0010 002B     		cmp	r3, #0
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  159 0058 9368     		ldr	r3, [r2, #8]
  160 005a 4039     		subs	r1, r1, #64
  161 005c 0B43     		orrs	r3, r1
-ARM GAS  /tmp/ccr510Wk.s 			page 39
+ARM GAS  /tmp/cc365F3j.s 			page 39
 
 
  162 005e 9360     		str	r3, [r2, #8]
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  204 009a 5368     		ldr	r3, [r2, #4]
  205 009c 5021     		movs	r1, #80
  206 009e 0B43     		orrs	r3, r1
-ARM GAS  /tmp/ccr510Wk.s 			page 40
+ARM GAS  /tmp/cc365F3j.s 			page 40
 
 
  207 00a0 5360     		str	r3, [r2, #4]
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  255              		.loc 1 287 0
  256              		@ sp needed
  257 0000 7047     		bx	lr
-ARM GAS  /tmp/ccr510Wk.s 			page 41
+ARM GAS  /tmp/cc365F3j.s 			page 41
 
 
  258              		.cfi_endproc
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  251:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  308              		.loc 1 251 0
  309 002a 0023     		movs	r3, #0
-ARM GAS  /tmp/ccr510Wk.s 			page 42
+ARM GAS  /tmp/cc365F3j.s 			page 42
 
 
  310 002c 3D22     		movs	r2, #61
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  361 0016 1360     		str	r3, [r2]
  308:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  362              		.loc 1 308 0
-ARM GAS  /tmp/ccr510Wk.s 			page 43
+ARM GAS  /tmp/cc365F3j.s 			page 43
 
 
  363 0018 0020     		movs	r0, #0
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  414              	.L15:
  329:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  415              		.loc 1 329 0 is_stmt 1
-ARM GAS  /tmp/ccr510Wk.s 			page 44
+ARM GAS  /tmp/cc365F3j.s 			page 44
 
 
  416 0028 0020     		movs	r0, #0
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  353:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  468              		.loc 1 353 0
  469 0022 0020     		movs	r0, #0
-ARM GAS  /tmp/ccr510Wk.s 			page 45
+ARM GAS  /tmp/cc365F3j.s 			page 45
 
 
  470              		@ sp needed
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  373:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  521              		.loc 1 373 0 discriminator 2
  522 002a 1A68     		ldr	r2, [r3]
-ARM GAS  /tmp/ccr510Wk.s 			page 46
+ARM GAS  /tmp/cc365F3j.s 			page 46
 
 
  523 002c 0121     		movs	r1, #1
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  397:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     {
  575              		.loc 1 397 0
  576 0018 0029     		cmp	r1, #0
-ARM GAS  /tmp/ccr510Wk.s 			page 47
+ARM GAS  /tmp/cc365F3j.s 			page 47
 
 
  577 001a 21D0     		beq	.L29
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  623 005c 0020     		movs	r0, #0
  624              	.L24:
  426:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
-ARM GAS  /tmp/ccr510Wk.s 			page 48
+ARM GAS  /tmp/cc365F3j.s 			page 48
 
 
  625              		.loc 1 426 0
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  676 0006 0021     		movs	r1, #0
  677 0008 0068     		ldr	r0, [r0]
  678              	.LVL51:
-ARM GAS  /tmp/ccr510Wk.s 			page 49
+ARM GAS  /tmp/cc365F3j.s 			page 49
 
 
  679 000a FFF7FEFF 		bl	TIM_CCxChannelCmd
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  729              		.cfi_startproc
  730              		@ args = 0, pretend = 0, frame = 0
  731              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccr510Wk.s 			page 50
+ARM GAS  /tmp/cc365F3j.s 			page 50
 
 
  732              	.LVL54:
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  783              		.cfi_def_cfa_offset 8
  784              		.cfi_offset 4, -8
  785              		.cfi_offset 14, -4
-ARM GAS  /tmp/ccr510Wk.s 			page 51
+ARM GAS  /tmp/cc365F3j.s 			page 51
 
 
  786 0002 0400     		movs	r4, r0
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  832              	.L41:
  833              		.align	2
  834              	.L40:
-ARM GAS  /tmp/ccr510Wk.s 			page 52
+ARM GAS  /tmp/cc365F3j.s 			page 52
 
 
  835 0044 11110000 		.word	4369
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  885 0022 0268     		ldr	r2, [r0]
  886 0024 D368     		ldr	r3, [r2, #12]
  887 0026 0220     		movs	r0, #2
-ARM GAS  /tmp/ccr510Wk.s 			page 53
+ARM GAS  /tmp/cc365F3j.s 			page 53
 
 
  888              	.LVL65:
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  934              		.loc 1 573 0
  935 0064 0268     		ldr	r2, [r0]
  936 0066 D368     		ldr	r3, [r2, #12]
-ARM GAS  /tmp/ccr510Wk.s 			page 54
+ARM GAS  /tmp/cc365F3j.s 			page 54
 
 
  937 0068 0820     		movs	r0, #8
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  987              		.loc 1 623 0
  988 001e 0029     		cmp	r1, #0
  989 0020 04D1     		bne	.L51
-ARM GAS  /tmp/ccr510Wk.s 			page 55
+ARM GAS  /tmp/cc365F3j.s 			page 55
 
 
  628:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     }
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1035              		.loc 1 671 0 is_stmt 1
  1036 0060 2368     		ldr	r3, [r4]
  1037 0062 196A     		ldr	r1, [r3, #32]
-ARM GAS  /tmp/ccr510Wk.s 			page 56
+ARM GAS  /tmp/cc365F3j.s 			page 56
 
 
  1038 0064 0D4A     		ldr	r2, .L61+4
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1085              		.cfi_endproc
  1086              	.LFE50:
  1088              		.section	.text.HAL_TIMEx_OCN_Start_DMA,"ax",%progbits
-ARM GAS  /tmp/ccr510Wk.s 			page 57
+ARM GAS  /tmp/cc365F3j.s 			page 57
 
 
  1089              		.align	1
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1139 002a 3348     		ldr	r0, .L78
  1140 002c 9062     		str	r0, [r2, #40]
  767:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
-ARM GAS  /tmp/ccr510Wk.s 			page 58
+ARM GAS  /tmp/cc365F3j.s 			page 58
 
 
  1141              		.loc 1 767 0
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1186 0064 626A     		ldr	r2, [r4, #36]
  1187 0066 2448     		ldr	r0, .L78
  1188 0068 9062     		str	r0, [r2, #40]
-ARM GAS  /tmp/ccr510Wk.s 			page 59
+ARM GAS  /tmp/cc365F3j.s 			page 59
 
 
  719:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1235              	.L68:
  732:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  1236              		.loc 1 732 0
-ARM GAS  /tmp/ccr510Wk.s 			page 60
+ARM GAS  /tmp/cc365F3j.s 			page 60
 
 
  1237 00aa A26A     		ldr	r2, [r4, #40]
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1282              		.loc 1 759 0
  1283 00f0 C9E7     		b	.L67
  1284              	.LVL102:
-ARM GAS  /tmp/ccr510Wk.s 			page 61
+ARM GAS  /tmp/cc365F3j.s 			page 61
 
 
  1285              	.L73:
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1336              	.LVL106:
  1337              	.L89:
  811:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   {
-ARM GAS  /tmp/ccr510Wk.s 			page 62
+ARM GAS  /tmp/cc365F3j.s 			page 62
 
 
  1338              		.loc 1 811 0
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1384 0062 0121     		movs	r1, #1
  1385 0064 8A43     		bics	r2, r1
  1386 0066 1A60     		str	r2, [r3]
-ARM GAS  /tmp/ccr510Wk.s 			page 63
+ARM GAS  /tmp/cc365F3j.s 			page 63
 
 
  1387              	.L88:
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1436              		.code	16
  1437              		.thumb_func
  1438              		.fpu softvfp
-ARM GAS  /tmp/ccr510Wk.s 			page 64
+ARM GAS  /tmp/cc365F3j.s 			page 64
 
 
  1440              	HAL_TIMEx_PWMN_Start:
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1490              		.loc 1 936 0
  1491              		.cfi_startproc
  1492              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccr510Wk.s 			page 65
+ARM GAS  /tmp/cc365F3j.s 			page 65
 
 
  1493              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1540              	.L95:
  951:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  1541              		.loc 1 951 0 is_stmt 1
-ARM GAS  /tmp/ccr510Wk.s 			page 66
+ARM GAS  /tmp/cc365F3j.s 			page 66
 
 
  1542 0040 0020     		movs	r0, #0
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1594              	.L105:
  970:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   {
  1595              		.loc 1 970 0
-ARM GAS  /tmp/ccr510Wk.s 			page 67
+ARM GAS  /tmp/cc365F3j.s 			page 67
 
 
  1596 001e 0029     		cmp	r1, #0
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1643 0060 D360     		str	r3, [r2, #12]
  984:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  1644              		.loc 1 984 0
-ARM GAS  /tmp/ccr510Wk.s 			page 68
+ARM GAS  /tmp/cc365F3j.s 			page 68
 
 
  1645 0062 E3E7     		b	.L99
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1696 001a D360     		str	r3, [r2, #12]
 1067:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  1697              		.loc 1 1067 0
-ARM GAS  /tmp/ccr510Wk.s 			page 69
+ARM GAS  /tmp/cc365F3j.s 			page 69
 
 
  1698 001c 06E0     		b	.L107
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1743              		.loc 1 1084 0 discriminator 2
  1744 0058 5A6C     		ldr	r2, [r3, #68]
  1745 005a 1149     		ldr	r1, .L117+8
-ARM GAS  /tmp/ccr510Wk.s 			page 70
+ARM GAS  /tmp/cc365F3j.s 			page 70
 
 
  1746 005c 0A40     		ands	r2, r1
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1792 0094 CAE7     		b	.L107
  1793              	.L118:
  1794 0096 C046     		.align	2
-ARM GAS  /tmp/ccr510Wk.s 			page 71
+ARM GAS  /tmp/cc365F3j.s 			page 71
 
 
  1795              	.L117:
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1847 0020 082D     		cmp	r5, #8
  1848 0022 54D0     		beq	.L127
  1849 0024 0C2D     		cmp	r5, #12
-ARM GAS  /tmp/ccr510Wk.s 			page 72
+ARM GAS  /tmp/cc365F3j.s 			page 72
 
 
  1850 0026 2ED1     		bne	.L123
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1895              	.L132:
 1127:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   {
  1896              		.loc 1 1127 0
-ARM GAS  /tmp/ccr510Wk.s 			page 73
+ARM GAS  /tmp/cc365F3j.s 			page 73
 
 
  1897 0060 002D     		cmp	r5, #0
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1208:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  1943              		.loc 1 1208 0
  1944              		@ sp needed
-ARM GAS  /tmp/ccr510Wk.s 			page 74
+ARM GAS  /tmp/cc365F3j.s 			page 74
 
 
  1945              	.LVL156:
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  1990 00e4 2268     		ldr	r2, [r4]
  1991 00e6 D168     		ldr	r1, [r2, #12]
  1992 00e8 8023     		movs	r3, #128
-ARM GAS  /tmp/ccr510Wk.s 			page 75
+ARM GAS  /tmp/cc365F3j.s 			page 75
 
 
  1993 00ea 1B01     		lsls	r3, r3, #4
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2044 0016 1D48     		ldr	r0, .L146
  2045              	.LVL165:
  2046 0018 0340     		ands	r3, r0
-ARM GAS  /tmp/ccr510Wk.s 			page 76
+ARM GAS  /tmp/cc365F3j.s 			page 76
 
 
  2047 001a D360     		str	r3, [r2, #12]
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2092 0058 196A     		ldr	r1, [r3, #32]
  2093 005a 0F4A     		ldr	r2, .L146+12
  2094 005c 1142     		tst	r1, r2
-ARM GAS  /tmp/ccr510Wk.s 			page 77
+ARM GAS  /tmp/cc365F3j.s 			page 77
 
 
  2095 005e 03D1     		bne	.L144
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2142 00a4 FFF7FFFF 		.word	-2049
  2143              		.cfi_endproc
  2144              	.LFE58:
-ARM GAS  /tmp/ccr510Wk.s 			page 78
+ARM GAS  /tmp/cc365F3j.s 			page 78
 
 
  2146              		.section	.text.HAL_TIMEx_OnePulseN_Start,"ax",%progbits
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2198              		.loc 1 1335 0
  2199              		.cfi_startproc
  2200              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccr510Wk.s 			page 79
+ARM GAS  /tmp/cc365F3j.s 			page 79
 
 
  2201              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2248              	.L151:
 1351:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  2249              		.loc 1 1351 0 is_stmt 1
-ARM GAS  /tmp/ccr510Wk.s 			page 80
+ARM GAS  /tmp/cc365F3j.s 			page 80
 
 
  2250 0040 0020     		movs	r0, #0
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1378:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  2302              		.loc 1 1378 0
  2303 0020 2268     		ldr	r2, [r4]
-ARM GAS  /tmp/ccr510Wk.s 			page 81
+ARM GAS  /tmp/cc365F3j.s 			page 81
 
 
  2304 0022 516C     		ldr	r1, [r2, #68]
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2355              	.LVL188:
 1409:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  2356              		.loc 1 1409 0
-ARM GAS  /tmp/ccr510Wk.s 			page 82
+ARM GAS  /tmp/cc365F3j.s 			page 82
 
 
  2357 0020 2368     		ldr	r3, [r4]
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2406              		.global	HAL_TIMEx_ConfigCommutationEvent
  2407              		.syntax unified
  2408              		.code	16
-ARM GAS  /tmp/ccr510Wk.s 			page 83
+ARM GAS  /tmp/cc365F3j.s 			page 83
 
 
  2409              		.thumb_func
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2455 002c A368     		ldr	r3, [r4, #8]
  2456 002e 1943     		orrs	r1, r3
  2457              	.LVL191:
-ARM GAS  /tmp/ccr510Wk.s 			page 84
+ARM GAS  /tmp/cc365F3j.s 			page 84
 
 
  2458 0030 A160     		str	r1, [r4, #8]
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2507              	.LFB64:
 1510:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* Check the parameters */
  2508              		.loc 1 1510 0
-ARM GAS  /tmp/ccr510Wk.s 			page 85
+ARM GAS  /tmp/cc365F3j.s 			page 85
 
 
  2509              		.cfi_startproc
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2554              		.loc 1 1526 0
  2555 0032 0168     		ldr	r1, [r0]
  2556 0034 4B68     		ldr	r3, [r1, #4]
-ARM GAS  /tmp/ccr510Wk.s 			page 86
+ARM GAS  /tmp/cc365F3j.s 			page 86
 
 
  2557 0036 0124     		movs	r4, #1
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2606              	HAL_TIMEx_ConfigCommutationEvent_DMA:
  2607              	.LFB65:
 1563:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* Check the parameters */
-ARM GAS  /tmp/ccr510Wk.s 			page 87
+ARM GAS  /tmp/cc365F3j.s 			page 87
 
 
  2608              		.loc 1 1563 0
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
 1579:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****   /* Select the Commutation event source */
  2654              		.loc 1 1579 0
  2655 0032 0168     		ldr	r1, [r0]
-ARM GAS  /tmp/ccr510Wk.s 			page 88
+ARM GAS  /tmp/cc365F3j.s 			page 88
 
 
  2656 0034 4B68     		ldr	r3, [r1, #4]
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2701 0070 0220     		movs	r0, #2
  2702              	.LVL207:
  2703 0072 FCE7     		b	.L171
-ARM GAS  /tmp/ccr510Wk.s 			page 89
+ARM GAS  /tmp/cc365F3j.s 			page 89
 
 
  2704              	.L176:
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2754              		.loc 1 1620 0 discriminator 2
  2755 0020 0668     		ldr	r6, [r0]
  2756 0022 7368     		ldr	r3, [r6, #4]
-ARM GAS  /tmp/ccr510Wk.s 			page 90
+ARM GAS  /tmp/cc365F3j.s 			page 90
 
 
  2757 0024 0F68     		ldr	r7, [r1]
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2805              		.cfi_startproc
  2806              		@ args = 0, pretend = 0, frame = 0
  2807              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccr510Wk.s 			page 91
+ARM GAS  /tmp/cc365F3j.s 			page 91
 
 
  2808              	.LVL213:
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2855              	.LVL221:
  2856 0034 0E69     		ldr	r6, [r1, #16]
  2857 0036 3343     		orrs	r3, r6
-ARM GAS  /tmp/ccr510Wk.s 			page 92
+ARM GAS  /tmp/cc365F3j.s 			page 92
 
 
  2858              	.LVL222:
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2903              		.align	2
  2904              	.L183:
  2905 0060 FFFCFFFF 		.word	-769
-ARM GAS  /tmp/ccr510Wk.s 			page 93
+ARM GAS  /tmp/cc365F3j.s 			page 93
 
 
  2906 0064 FFFBFFFF 		.word	-1025
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  2955              	.L187:
 1698:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** 
  2956              		.loc 1 1698 0
-ARM GAS  /tmp/ccr510Wk.s 			page 94
+ARM GAS  /tmp/cc365F3j.s 			page 94
 
 
  2957 001c 0220     		movs	r0, #2
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  3008 0022 20D0     		beq	.L191
  3009 0024 002B     		cmp	r3, #0
  3010 0026 12D0     		beq	.L192
-ARM GAS  /tmp/ccr510Wk.s 			page 95
+ARM GAS  /tmp/cc365F3j.s 			page 95
 
 
  3011 0028 022B     		cmp	r3, #2
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  3057 0060 8B43     		bics	r3, r1
  3058 0062 9360     		str	r3, [r2, #8]
 1776:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****     
-ARM GAS  /tmp/ccr510Wk.s 			page 96
+ARM GAS  /tmp/cc365F3j.s 			page 96
 
 
  3059              		.loc 1 1776 0
@@ -5758,7 +5758,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  3104              		.loc 1 1864 0
  3105 009e 0020     		movs	r0, #0
  3106              	.L189:
-ARM GAS  /tmp/ccr510Wk.s 			page 97
+ARM GAS  /tmp/cc365F3j.s 			page 97
 
 
 1865:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c **** #endif /* STM32F051x8 || STM32F058xx ||                */
@@ -5818,7 +5818,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  3154 00de D8E7     		b	.L194
  3155              	.L202:
 1838:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c ****         }
-ARM GAS  /tmp/ccr510Wk.s 			page 98
+ARM GAS  /tmp/cc365F3j.s 			page 98
 
 
  3156              		.loc 1 1838 0
@@ -5878,7 +5878,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  3209              		.global	TIMEx_DMACommutationCplt
  3210              		.syntax unified
  3211              		.code	16
-ARM GAS  /tmp/ccr510Wk.s 			page 99
+ARM GAS  /tmp/cc365F3j.s 			page 99
 
 
  3212              		.thumb_func
@@ -5938,7 +5938,7 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  3262              		.cfi_endproc
  3263              	.LFE71:
  3265              		.section	.text.HAL_TIMEx_HallSensor_GetState,"ax",%progbits
-ARM GAS  /tmp/ccr510Wk.s 			page 100
+ARM GAS  /tmp/cc365F3j.s 			page 100
 
 
  3266              		.align	1
@@ -5983,108 +5983,108 @@ ARM GAS  /tmp/ccr510Wk.s 			page 1
  3304              		.file 12 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h"
  3305              		.file 13 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h"
  3306              		.file 14 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h"
-ARM GAS  /tmp/ccr510Wk.s 			page 101
+ARM GAS  /tmp/cc365F3j.s 			page 101
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f0xx_hal_tim_ex.c
-     /tmp/ccr510Wk.s:16     .text.TIM_CCxNChannelCmd:0000000000000000 $t
-     /tmp/ccr510Wk.s:22     .text.TIM_CCxNChannelCmd:0000000000000000 TIM_CCxNChannelCmd
-     /tmp/ccr510Wk.s:58     .text.HAL_TIMEx_HallSensor_MspInit:0000000000000000 $t
-     /tmp/ccr510Wk.s:65     .text.HAL_TIMEx_HallSensor_MspInit:0000000000000000 HAL_TIMEx_HallSensor_MspInit
-     /tmp/ccr510Wk.s:80     .text.HAL_TIMEx_HallSensor_Init:0000000000000000 $t
-     /tmp/ccr510Wk.s:87     .text.HAL_TIMEx_HallSensor_Init:0000000000000000 HAL_TIMEx_HallSensor_Init
-     /tmp/ccr510Wk.s:240    .text.HAL_TIMEx_HallSensor_MspDeInit:0000000000000000 $t
-     /tmp/ccr510Wk.s:247    .text.HAL_TIMEx_HallSensor_MspDeInit:0000000000000000 HAL_TIMEx_HallSensor_MspDeInit
-     /tmp/ccr510Wk.s:262    .text.HAL_TIMEx_HallSensor_DeInit:0000000000000000 $t
-     /tmp/ccr510Wk.s:269    .text.HAL_TIMEx_HallSensor_DeInit:0000000000000000 HAL_TIMEx_HallSensor_DeInit
-     /tmp/ccr510Wk.s:323    .text.HAL_TIMEx_HallSensor_DeInit:0000000000000038 $d
-     /tmp/ccr510Wk.s:329    .text.HAL_TIMEx_HallSensor_Start:0000000000000000 $t
-     /tmp/ccr510Wk.s:336    .text.HAL_TIMEx_HallSensor_Start:0000000000000000 HAL_TIMEx_HallSensor_Start
-     /tmp/ccr510Wk.s:371    .text.HAL_TIMEx_HallSensor_Stop:0000000000000000 $t
-     /tmp/ccr510Wk.s:378    .text.HAL_TIMEx_HallSensor_Stop:0000000000000000 HAL_TIMEx_HallSensor_Stop
-     /tmp/ccr510Wk.s:423    .text.HAL_TIMEx_HallSensor_Stop:000000000000002c $d
-     /tmp/ccr510Wk.s:429    .text.HAL_TIMEx_HallSensor_Start_IT:0000000000000000 $t
-     /tmp/ccr510Wk.s:436    .text.HAL_TIMEx_HallSensor_Start_IT:0000000000000000 HAL_TIMEx_HallSensor_Start_IT
-     /tmp/ccr510Wk.s:477    .text.HAL_TIMEx_HallSensor_Stop_IT:0000000000000000 $t
-     /tmp/ccr510Wk.s:484    .text.HAL_TIMEx_HallSensor_Stop_IT:0000000000000000 HAL_TIMEx_HallSensor_Stop_IT
-     /tmp/ccr510Wk.s:535    .text.HAL_TIMEx_HallSensor_Stop_IT:0000000000000038 $d
-     /tmp/ccr510Wk.s:541    .text.HAL_TIMEx_HallSensor_Start_DMA:0000000000000000 $t
-     /tmp/ccr510Wk.s:548    .text.HAL_TIMEx_HallSensor_Start_DMA:0000000000000000 HAL_TIMEx_HallSensor_Start_DMA
-     /tmp/ccr510Wk.s:648    .text.HAL_TIMEx_HallSensor_Start_DMA:000000000000006c $d
-     /tmp/ccr510Wk.s:654    .text.HAL_TIMEx_HallSensor_Stop_DMA:0000000000000000 $t
-     /tmp/ccr510Wk.s:661    .text.HAL_TIMEx_HallSensor_Stop_DMA:0000000000000000 HAL_TIMEx_HallSensor_Stop_DMA
-     /tmp/ccr510Wk.s:712    .text.HAL_TIMEx_HallSensor_Stop_DMA:0000000000000038 $d
-     /tmp/ccr510Wk.s:719    .text.HAL_TIMEx_OCN_Start:0000000000000000 $t
-     /tmp/ccr510Wk.s:726    .text.HAL_TIMEx_OCN_Start:0000000000000000 HAL_TIMEx_OCN_Start
-     /tmp/ccr510Wk.s:767    .text.HAL_TIMEx_OCN_Stop:0000000000000000 $t
-     /tmp/ccr510Wk.s:774    .text.HAL_TIMEx_OCN_Stop:0000000000000000 HAL_TIMEx_OCN_Stop
-     /tmp/ccr510Wk.s:835    .text.HAL_TIMEx_OCN_Stop:0000000000000044 $d
-     /tmp/ccr510Wk.s:842    .text.HAL_TIMEx_OCN_Start_IT:0000000000000000 $t
-     /tmp/ccr510Wk.s:849    .text.HAL_TIMEx_OCN_Start_IT:0000000000000000 HAL_TIMEx_OCN_Start_IT
-     /tmp/ccr510Wk.s:947    .text.HAL_TIMEx_OCN_Stop_IT:0000000000000000 $t
-     /tmp/ccr510Wk.s:954    .text.HAL_TIMEx_OCN_Stop_IT:0000000000000000 HAL_TIMEx_OCN_Stop_IT
-     /tmp/ccr510Wk.s:1082   .text.HAL_TIMEx_OCN_Stop_IT:0000000000000098 $d
-     /tmp/ccr510Wk.s:1089   .text.HAL_TIMEx_OCN_Start_DMA:0000000000000000 $t
-     /tmp/ccr510Wk.s:1096   .text.HAL_TIMEx_OCN_Start_DMA:0000000000000000 HAL_TIMEx_OCN_Start_DMA
-     /tmp/ccr510Wk.s:1293   .text.HAL_TIMEx_OCN_Start_DMA:00000000000000f8 $d
-     /tmp/ccr510Wk.s:1299   .text.HAL_TIMEx_OCN_Stop_DMA:0000000000000000 $t
-     /tmp/ccr510Wk.s:1306   .text.HAL_TIMEx_OCN_Stop_DMA:0000000000000000 HAL_TIMEx_OCN_Stop_DMA
-     /tmp/ccr510Wk.s:1422   .text.HAL_TIMEx_OCN_Stop_DMA:000000000000008c $d
-     /tmp/ccr510Wk.s:1433   .text.HAL_TIMEx_PWMN_Start:0000000000000000 $t
-     /tmp/ccr510Wk.s:1440   .text.HAL_TIMEx_PWMN_Start:0000000000000000 HAL_TIMEx_PWMN_Start
-     /tmp/ccr510Wk.s:1481   .text.HAL_TIMEx_PWMN_Stop:0000000000000000 $t
-     /tmp/ccr510Wk.s:1488   .text.HAL_TIMEx_PWMN_Stop:0000000000000000 HAL_TIMEx_PWMN_Stop
-     /tmp/ccr510Wk.s:1549   .text.HAL_TIMEx_PWMN_Stop:0000000000000044 $d
-     /tmp/ccr510Wk.s:1556   .text.HAL_TIMEx_PWMN_Start_IT:0000000000000000 $t
-     /tmp/ccr510Wk.s:1563   .text.HAL_TIMEx_PWMN_Start_IT:0000000000000000 HAL_TIMEx_PWMN_Start_IT
-     /tmp/ccr510Wk.s:1661   .text.HAL_TIMEx_PWMN_Stop_IT:0000000000000000 $t
-     /tmp/ccr510Wk.s:1668   .text.HAL_TIMEx_PWMN_Stop_IT:0000000000000000 HAL_TIMEx_PWMN_Stop_IT
-     /tmp/ccr510Wk.s:1796   .text.HAL_TIMEx_PWMN_Stop_IT:0000000000000098 $d
-     /tmp/ccr510Wk.s:1803   .text.HAL_TIMEx_PWMN_Start_DMA:0000000000000000 $t
-     /tmp/ccr510Wk.s:1810   .text.HAL_TIMEx_PWMN_Start_DMA:0000000000000000 HAL_TIMEx_PWMN_Start_DMA
-ARM GAS  /tmp/ccr510Wk.s 			page 102
+     /tmp/cc365F3j.s:16     .text.TIM_CCxNChannelCmd:0000000000000000 $t
+     /tmp/cc365F3j.s:22     .text.TIM_CCxNChannelCmd:0000000000000000 TIM_CCxNChannelCmd
+     /tmp/cc365F3j.s:58     .text.HAL_TIMEx_HallSensor_MspInit:0000000000000000 $t
+     /tmp/cc365F3j.s:65     .text.HAL_TIMEx_HallSensor_MspInit:0000000000000000 HAL_TIMEx_HallSensor_MspInit
+     /tmp/cc365F3j.s:80     .text.HAL_TIMEx_HallSensor_Init:0000000000000000 $t
+     /tmp/cc365F3j.s:87     .text.HAL_TIMEx_HallSensor_Init:0000000000000000 HAL_TIMEx_HallSensor_Init
+     /tmp/cc365F3j.s:240    .text.HAL_TIMEx_HallSensor_MspDeInit:0000000000000000 $t
+     /tmp/cc365F3j.s:247    .text.HAL_TIMEx_HallSensor_MspDeInit:0000000000000000 HAL_TIMEx_HallSensor_MspDeInit
+     /tmp/cc365F3j.s:262    .text.HAL_TIMEx_HallSensor_DeInit:0000000000000000 $t
+     /tmp/cc365F3j.s:269    .text.HAL_TIMEx_HallSensor_DeInit:0000000000000000 HAL_TIMEx_HallSensor_DeInit
+     /tmp/cc365F3j.s:323    .text.HAL_TIMEx_HallSensor_DeInit:0000000000000038 $d
+     /tmp/cc365F3j.s:329    .text.HAL_TIMEx_HallSensor_Start:0000000000000000 $t
+     /tmp/cc365F3j.s:336    .text.HAL_TIMEx_HallSensor_Start:0000000000000000 HAL_TIMEx_HallSensor_Start
+     /tmp/cc365F3j.s:371    .text.HAL_TIMEx_HallSensor_Stop:0000000000000000 $t
+     /tmp/cc365F3j.s:378    .text.HAL_TIMEx_HallSensor_Stop:0000000000000000 HAL_TIMEx_HallSensor_Stop
+     /tmp/cc365F3j.s:423    .text.HAL_TIMEx_HallSensor_Stop:000000000000002c $d
+     /tmp/cc365F3j.s:429    .text.HAL_TIMEx_HallSensor_Start_IT:0000000000000000 $t
+     /tmp/cc365F3j.s:436    .text.HAL_TIMEx_HallSensor_Start_IT:0000000000000000 HAL_TIMEx_HallSensor_Start_IT
+     /tmp/cc365F3j.s:477    .text.HAL_TIMEx_HallSensor_Stop_IT:0000000000000000 $t
+     /tmp/cc365F3j.s:484    .text.HAL_TIMEx_HallSensor_Stop_IT:0000000000000000 HAL_TIMEx_HallSensor_Stop_IT
+     /tmp/cc365F3j.s:535    .text.HAL_TIMEx_HallSensor_Stop_IT:0000000000000038 $d
+     /tmp/cc365F3j.s:541    .text.HAL_TIMEx_HallSensor_Start_DMA:0000000000000000 $t
+     /tmp/cc365F3j.s:548    .text.HAL_TIMEx_HallSensor_Start_DMA:0000000000000000 HAL_TIMEx_HallSensor_Start_DMA
+     /tmp/cc365F3j.s:648    .text.HAL_TIMEx_HallSensor_Start_DMA:000000000000006c $d
+     /tmp/cc365F3j.s:654    .text.HAL_TIMEx_HallSensor_Stop_DMA:0000000000000000 $t
+     /tmp/cc365F3j.s:661    .text.HAL_TIMEx_HallSensor_Stop_DMA:0000000000000000 HAL_TIMEx_HallSensor_Stop_DMA
+     /tmp/cc365F3j.s:712    .text.HAL_TIMEx_HallSensor_Stop_DMA:0000000000000038 $d
+     /tmp/cc365F3j.s:719    .text.HAL_TIMEx_OCN_Start:0000000000000000 $t
+     /tmp/cc365F3j.s:726    .text.HAL_TIMEx_OCN_Start:0000000000000000 HAL_TIMEx_OCN_Start
+     /tmp/cc365F3j.s:767    .text.HAL_TIMEx_OCN_Stop:0000000000000000 $t
+     /tmp/cc365F3j.s:774    .text.HAL_TIMEx_OCN_Stop:0000000000000000 HAL_TIMEx_OCN_Stop
+     /tmp/cc365F3j.s:835    .text.HAL_TIMEx_OCN_Stop:0000000000000044 $d
+     /tmp/cc365F3j.s:842    .text.HAL_TIMEx_OCN_Start_IT:0000000000000000 $t
+     /tmp/cc365F3j.s:849    .text.HAL_TIMEx_OCN_Start_IT:0000000000000000 HAL_TIMEx_OCN_Start_IT
+     /tmp/cc365F3j.s:947    .text.HAL_TIMEx_OCN_Stop_IT:0000000000000000 $t
+     /tmp/cc365F3j.s:954    .text.HAL_TIMEx_OCN_Stop_IT:0000000000000000 HAL_TIMEx_OCN_Stop_IT
+     /tmp/cc365F3j.s:1082   .text.HAL_TIMEx_OCN_Stop_IT:0000000000000098 $d
+     /tmp/cc365F3j.s:1089   .text.HAL_TIMEx_OCN_Start_DMA:0000000000000000 $t
+     /tmp/cc365F3j.s:1096   .text.HAL_TIMEx_OCN_Start_DMA:0000000000000000 HAL_TIMEx_OCN_Start_DMA
+     /tmp/cc365F3j.s:1293   .text.HAL_TIMEx_OCN_Start_DMA:00000000000000f8 $d
+     /tmp/cc365F3j.s:1299   .text.HAL_TIMEx_OCN_Stop_DMA:0000000000000000 $t
+     /tmp/cc365F3j.s:1306   .text.HAL_TIMEx_OCN_Stop_DMA:0000000000000000 HAL_TIMEx_OCN_Stop_DMA
+     /tmp/cc365F3j.s:1422   .text.HAL_TIMEx_OCN_Stop_DMA:000000000000008c $d
+     /tmp/cc365F3j.s:1433   .text.HAL_TIMEx_PWMN_Start:0000000000000000 $t
+     /tmp/cc365F3j.s:1440   .text.HAL_TIMEx_PWMN_Start:0000000000000000 HAL_TIMEx_PWMN_Start
+     /tmp/cc365F3j.s:1481   .text.HAL_TIMEx_PWMN_Stop:0000000000000000 $t
+     /tmp/cc365F3j.s:1488   .text.HAL_TIMEx_PWMN_Stop:0000000000000000 HAL_TIMEx_PWMN_Stop
+     /tmp/cc365F3j.s:1549   .text.HAL_TIMEx_PWMN_Stop:0000000000000044 $d
+     /tmp/cc365F3j.s:1556   .text.HAL_TIMEx_PWMN_Start_IT:0000000000000000 $t
+     /tmp/cc365F3j.s:1563   .text.HAL_TIMEx_PWMN_Start_IT:0000000000000000 HAL_TIMEx_PWMN_Start_IT
+     /tmp/cc365F3j.s:1661   .text.HAL_TIMEx_PWMN_Stop_IT:0000000000000000 $t
+     /tmp/cc365F3j.s:1668   .text.HAL_TIMEx_PWMN_Stop_IT:0000000000000000 HAL_TIMEx_PWMN_Stop_IT
+     /tmp/cc365F3j.s:1796   .text.HAL_TIMEx_PWMN_Stop_IT:0000000000000098 $d
+     /tmp/cc365F3j.s:1803   .text.HAL_TIMEx_PWMN_Start_DMA:0000000000000000 $t
+     /tmp/cc365F3j.s:1810   .text.HAL_TIMEx_PWMN_Start_DMA:0000000000000000 HAL_TIMEx_PWMN_Start_DMA
+ARM GAS  /tmp/cc365F3j.s 			page 102
 
 
-     /tmp/ccr510Wk.s:2007   .text.HAL_TIMEx_PWMN_Start_DMA:00000000000000f8 $d
-     /tmp/ccr510Wk.s:2013   .text.HAL_TIMEx_PWMN_Stop_DMA:0000000000000000 $t
-     /tmp/ccr510Wk.s:2020   .text.HAL_TIMEx_PWMN_Stop_DMA:0000000000000000 HAL_TIMEx_PWMN_Stop_DMA
-     /tmp/ccr510Wk.s:2136   .text.HAL_TIMEx_PWMN_Stop_DMA:000000000000008c $d
-     /tmp/ccr510Wk.s:2147   .text.HAL_TIMEx_OnePulseN_Start:0000000000000000 $t
-     /tmp/ccr510Wk.s:2154   .text.HAL_TIMEx_OnePulseN_Start:0000000000000000 HAL_TIMEx_OnePulseN_Start
-     /tmp/ccr510Wk.s:2189   .text.HAL_TIMEx_OnePulseN_Stop:0000000000000000 $t
-     /tmp/ccr510Wk.s:2196   .text.HAL_TIMEx_OnePulseN_Stop:0000000000000000 HAL_TIMEx_OnePulseN_Stop
-     /tmp/ccr510Wk.s:2257   .text.HAL_TIMEx_OnePulseN_Stop:0000000000000044 $d
-     /tmp/ccr510Wk.s:2264   .text.HAL_TIMEx_OnePulseN_Start_IT:0000000000000000 $t
-     /tmp/ccr510Wk.s:2271   .text.HAL_TIMEx_OnePulseN_Start_IT:0000000000000000 HAL_TIMEx_OnePulseN_Start_IT
-     /tmp/ccr510Wk.s:2318   .text.HAL_TIMEx_OnePulseN_Stop_IT:0000000000000000 $t
-     /tmp/ccr510Wk.s:2325   .text.HAL_TIMEx_OnePulseN_Stop_IT:0000000000000000 HAL_TIMEx_OnePulseN_Stop_IT
-     /tmp/ccr510Wk.s:2398   .text.HAL_TIMEx_OnePulseN_Stop_IT:0000000000000058 $d
-     /tmp/ccr510Wk.s:2405   .text.HAL_TIMEx_ConfigCommutationEvent:0000000000000000 $t
-     /tmp/ccr510Wk.s:2412   .text.HAL_TIMEx_ConfigCommutationEvent:0000000000000000 HAL_TIMEx_ConfigCommutationEvent
-     /tmp/ccr510Wk.s:2499   .text.HAL_TIMEx_ConfigCommutationEvent_IT:0000000000000000 $t
-     /tmp/ccr510Wk.s:2506   .text.HAL_TIMEx_ConfigCommutationEvent_IT:0000000000000000 HAL_TIMEx_ConfigCommutationEvent_IT
-     /tmp/ccr510Wk.s:2599   .text.HAL_TIMEx_ConfigCommutationEvent_DMA:0000000000000000 $t
-     /tmp/ccr510Wk.s:2606   .text.HAL_TIMEx_ConfigCommutationEvent_DMA:0000000000000000 HAL_TIMEx_ConfigCommutationEvent_DMA
-     /tmp/ccr510Wk.s:2707   .text.HAL_TIMEx_ConfigCommutationEvent_DMA:0000000000000074 $d
-     /tmp/ccr510Wk.s:3215   .text.TIMEx_DMACommutationCplt:0000000000000000 TIMEx_DMACommutationCplt
-     /tmp/ccr510Wk.s:2713   .text.HAL_TIMEx_MasterConfigSynchronization:0000000000000000 $t
-     /tmp/ccr510Wk.s:2720   .text.HAL_TIMEx_MasterConfigSynchronization:0000000000000000 HAL_TIMEx_MasterConfigSynchronization
-     /tmp/ccr510Wk.s:2795   .text.HAL_TIMEx_ConfigBreakDeadTime:0000000000000000 $t
-     /tmp/ccr510Wk.s:2802   .text.HAL_TIMEx_ConfigBreakDeadTime:0000000000000000 HAL_TIMEx_ConfigBreakDeadTime
-     /tmp/ccr510Wk.s:2905   .text.HAL_TIMEx_ConfigBreakDeadTime:0000000000000060 $d
-     /tmp/ccr510Wk.s:2916   .text.HAL_TIMEx_RemapConfig:0000000000000000 $t
-     /tmp/ccr510Wk.s:2923   .text.HAL_TIMEx_RemapConfig:0000000000000000 HAL_TIMEx_RemapConfig
-     /tmp/ccr510Wk.s:2964   .text.HAL_TIM_ConfigOCrefClear:0000000000000000 $t
-     /tmp/ccr510Wk.s:2971   .text.HAL_TIM_ConfigOCrefClear:0000000000000000 HAL_TIM_ConfigOCrefClear
-     /tmp/ccr510Wk.s:3180   .text.HAL_TIM_ConfigOCrefClear:00000000000000fc $d
-     /tmp/ccr510Wk.s:3186   .text.HAL_TIMEx_CommutationCallback:0000000000000000 $t
-     /tmp/ccr510Wk.s:3193   .text.HAL_TIMEx_CommutationCallback:0000000000000000 HAL_TIMEx_CommutationCallback
-     /tmp/ccr510Wk.s:3208   .text.TIMEx_DMACommutationCplt:0000000000000000 $t
-     /tmp/ccr510Wk.s:3244   .text.HAL_TIMEx_BreakCallback:0000000000000000 $t
-     /tmp/ccr510Wk.s:3251   .text.HAL_TIMEx_BreakCallback:0000000000000000 HAL_TIMEx_BreakCallback
-     /tmp/ccr510Wk.s:3266   .text.HAL_TIMEx_HallSensor_GetState:0000000000000000 $t
-     /tmp/ccr510Wk.s:3273   .text.HAL_TIMEx_HallSensor_GetState:0000000000000000 HAL_TIMEx_HallSensor_GetState
+     /tmp/cc365F3j.s:2007   .text.HAL_TIMEx_PWMN_Start_DMA:00000000000000f8 $d
+     /tmp/cc365F3j.s:2013   .text.HAL_TIMEx_PWMN_Stop_DMA:0000000000000000 $t
+     /tmp/cc365F3j.s:2020   .text.HAL_TIMEx_PWMN_Stop_DMA:0000000000000000 HAL_TIMEx_PWMN_Stop_DMA
+     /tmp/cc365F3j.s:2136   .text.HAL_TIMEx_PWMN_Stop_DMA:000000000000008c $d
+     /tmp/cc365F3j.s:2147   .text.HAL_TIMEx_OnePulseN_Start:0000000000000000 $t
+     /tmp/cc365F3j.s:2154   .text.HAL_TIMEx_OnePulseN_Start:0000000000000000 HAL_TIMEx_OnePulseN_Start
+     /tmp/cc365F3j.s:2189   .text.HAL_TIMEx_OnePulseN_Stop:0000000000000000 $t
+     /tmp/cc365F3j.s:2196   .text.HAL_TIMEx_OnePulseN_Stop:0000000000000000 HAL_TIMEx_OnePulseN_Stop
+     /tmp/cc365F3j.s:2257   .text.HAL_TIMEx_OnePulseN_Stop:0000000000000044 $d
+     /tmp/cc365F3j.s:2264   .text.HAL_TIMEx_OnePulseN_Start_IT:0000000000000000 $t
+     /tmp/cc365F3j.s:2271   .text.HAL_TIMEx_OnePulseN_Start_IT:0000000000000000 HAL_TIMEx_OnePulseN_Start_IT
+     /tmp/cc365F3j.s:2318   .text.HAL_TIMEx_OnePulseN_Stop_IT:0000000000000000 $t
+     /tmp/cc365F3j.s:2325   .text.HAL_TIMEx_OnePulseN_Stop_IT:0000000000000000 HAL_TIMEx_OnePulseN_Stop_IT
+     /tmp/cc365F3j.s:2398   .text.HAL_TIMEx_OnePulseN_Stop_IT:0000000000000058 $d
+     /tmp/cc365F3j.s:2405   .text.HAL_TIMEx_ConfigCommutationEvent:0000000000000000 $t
+     /tmp/cc365F3j.s:2412   .text.HAL_TIMEx_ConfigCommutationEvent:0000000000000000 HAL_TIMEx_ConfigCommutationEvent
+     /tmp/cc365F3j.s:2499   .text.HAL_TIMEx_ConfigCommutationEvent_IT:0000000000000000 $t
+     /tmp/cc365F3j.s:2506   .text.HAL_TIMEx_ConfigCommutationEvent_IT:0000000000000000 HAL_TIMEx_ConfigCommutationEvent_IT
+     /tmp/cc365F3j.s:2599   .text.HAL_TIMEx_ConfigCommutationEvent_DMA:0000000000000000 $t
+     /tmp/cc365F3j.s:2606   .text.HAL_TIMEx_ConfigCommutationEvent_DMA:0000000000000000 HAL_TIMEx_ConfigCommutationEvent_DMA
+     /tmp/cc365F3j.s:2707   .text.HAL_TIMEx_ConfigCommutationEvent_DMA:0000000000000074 $d
+     /tmp/cc365F3j.s:3215   .text.TIMEx_DMACommutationCplt:0000000000000000 TIMEx_DMACommutationCplt
+     /tmp/cc365F3j.s:2713   .text.HAL_TIMEx_MasterConfigSynchronization:0000000000000000 $t
+     /tmp/cc365F3j.s:2720   .text.HAL_TIMEx_MasterConfigSynchronization:0000000000000000 HAL_TIMEx_MasterConfigSynchronization
+     /tmp/cc365F3j.s:2795   .text.HAL_TIMEx_ConfigBreakDeadTime:0000000000000000 $t
+     /tmp/cc365F3j.s:2802   .text.HAL_TIMEx_ConfigBreakDeadTime:0000000000000000 HAL_TIMEx_ConfigBreakDeadTime
+     /tmp/cc365F3j.s:2905   .text.HAL_TIMEx_ConfigBreakDeadTime:0000000000000060 $d
+     /tmp/cc365F3j.s:2916   .text.HAL_TIMEx_RemapConfig:0000000000000000 $t
+     /tmp/cc365F3j.s:2923   .text.HAL_TIMEx_RemapConfig:0000000000000000 HAL_TIMEx_RemapConfig
+     /tmp/cc365F3j.s:2964   .text.HAL_TIM_ConfigOCrefClear:0000000000000000 $t
+     /tmp/cc365F3j.s:2971   .text.HAL_TIM_ConfigOCrefClear:0000000000000000 HAL_TIM_ConfigOCrefClear
+     /tmp/cc365F3j.s:3180   .text.HAL_TIM_ConfigOCrefClear:00000000000000fc $d
+     /tmp/cc365F3j.s:3186   .text.HAL_TIMEx_CommutationCallback:0000000000000000 $t
+     /tmp/cc365F3j.s:3193   .text.HAL_TIMEx_CommutationCallback:0000000000000000 HAL_TIMEx_CommutationCallback
+     /tmp/cc365F3j.s:3208   .text.TIMEx_DMACommutationCplt:0000000000000000 $t
+     /tmp/cc365F3j.s:3244   .text.HAL_TIMEx_BreakCallback:0000000000000000 $t
+     /tmp/cc365F3j.s:3251   .text.HAL_TIMEx_BreakCallback:0000000000000000 HAL_TIMEx_BreakCallback
+     /tmp/cc365F3j.s:3266   .text.HAL_TIMEx_HallSensor_GetState:0000000000000000 $t
+     /tmp/cc365F3j.s:3273   .text.HAL_TIMEx_HallSensor_GetState:0000000000000000 HAL_TIMEx_HallSensor_GetState
 
 UNDEFINED SYMBOLS
 TIM_Base_SetConfig
