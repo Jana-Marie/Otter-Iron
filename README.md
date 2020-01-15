@@ -4,13 +4,14 @@ Replacement PCB for TS100, adds USB-C PD to every hackers favourite tool!
 
 ![4](images/4.jpg)
 
-Hardware is finished and working, software V0.1 is released!
+Hardware is finished and working, software V0.3 is released!
 
 Features:
  - You can solder!
  - Tmperature can be adjusted via buttons
  - USB-PD requests highest voltage
- - Display shows set-temperature, temperature and input-voltage
+ - Display shows set-temperature, temperature, input-voltage and power applied
+ - Saves last set-temperature
  - Designed by an Otter *chirps* :3
 
 ## Ordering and assmebly instructions
@@ -58,7 +59,7 @@ Run this command to flash the downloaded binary.
 
  - [x] Write a better regulation
  - [ ] Current measurement
- - [ ] Store last setpoint
+ - [x] Store last setpoint
  - [ ] Better Fonts/UI
  - [ ] PD-Profile cycling
  
@@ -67,3 +68,4 @@ Run this command to flash the downloaded binary.
 Todo next hardware revision:
  - [ ] Add barrel jack
  - [ ] Add grounding solution
+ - [ ] Fix Tag-Connect [see #4](https://github.com/Jan--Henrik/Otter-Iron/issues/4)
