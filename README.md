@@ -44,7 +44,7 @@ Run this command to flash the downloaded binary.
 
 ## Video
 
-[Video (clickme)](https://twitter.com/JanHenrikH/status/1208867279540232192)
+[![Video](images/thumb.jpg)](https://twitter.com/JanHenrikH/status/1208867279540232192)
 
 ## Images
 
