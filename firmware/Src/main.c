@@ -23,7 +23,7 @@
 #define FILT(a, b, c) ((a) * (c) + (b) * ((1.0f) - (c)))
 #define CLAMP(x, low, high) (((x) > (high)) ? (high) : (((x) < (low)) ? (low) : (x)))
 
-#define TTIP_AVG_FILTER 0.8f
+#define TTIP_AVG_FILTER 0.9f
 #define MIN_DUTY 0
 #define MAX_DUTY 4050
 
@@ -54,7 +54,7 @@ void set_screen(void);
 void write_pixel(int16_t x, int16_t y, uint8_t color);
 void draw_char(unsigned char  c, uint8_t x, uint8_t y, uint8_t brightness);
 void draw_string(const unsigned char * str, uint8_t x, uint8_t y, uint8_t brightness);
-
+void draw_v_line(int16_t x, int16_t y, uint16_t h, uint8_t color);
 
 struct status_t{
   float ttip;
@@ -62,8 +62,9 @@ struct status_t{
   float uin;
   float iin;
   float tref;
+  uint8_t writeFlash;
   uint8_t button[2];
-}s;
+}s = {.writeFlash = 0};
 
 struct reg_t{
   float target;
@@ -78,7 +79,7 @@ struct reg_t{
   float Ki;
   float Kd;
   float deadband;
-}r = {.Kp = 40.0f,.Ki = 15.0f,.Kd = 12.0f,.cycletime = 0.1f,.imax=200.0f,.target=220.0f,.deadband=12.0f};
+}r = {.Kp = 0.4f,.Ki = 0.05f,.Kd = 0.2f,.cycletime = 0.1f,.imax=200.0f,.target=220.0f,.deadband=12.0f};
 
 struct tipcal_t{
   float offset;
@@ -113,7 +114,8 @@ int main(void)
   clear_screen();
   // DFU bootloader
   if(HAL_GPIO_ReadPin(GPIOA,B1_Pin) && HAL_GPIO_ReadPin(GPIOA,B2_Pin)){
-    draw_string("dfu", 15, 1 ,1);
+    draw_string("dfudfudfudfudfu", 1, 1 ,1);
+    draw_string("dfudfudfudfudfu", 1, 8 ,1);
     refresh();
     HAL_Delay(40);
     *((unsigned long *)0x20003FF0) = 0xDEADBEEF;
@@ -125,6 +127,8 @@ int main(void)
   }
   HAL_Delay(1000);
 
+  r.target = *((uint16_t *) 0x0800e400);
+
   while (1)
   {
     HAL_Delay(50);
@@ -135,15 +139,32 @@ int main(void)
 
     if(s.button[0] == 1){
       r.target -= 5;
+      s.writeFlash = 1;
       HAL_Delay(50);
     }
 
     if(s.button[1] == 1){
       r.target += 5;
+      s.writeFlash = 1;
       HAL_Delay(50);
     }
 
     r.target = CLAMP(r.target, 20, 400);
+
+    if(s.writeFlash = 1){
+      HAL_FLASH_Unlock();
+      FLASH->CR |= FLASH_CR_PER;
+      FLASH->AR = 0x0800e400;
+      FLASH->CR |= FLASH_CR_STRT;
+      while ((FLASH->SR & FLASH_SR_BSY) != 0){}
+      if ((FLASH->SR & FLASH_SR_EOP) != 0){
+        FLASH->SR |= FLASH_SR_EOP;
+        FLASH->CR &= ~FLASH_CR_PER;
+        HAL_FLASH_Program(FLASH_TYPEPROGRAM_HALFWORD, 0x0800e400, (uint16_t)r.target);
+        HAL_FLASH_Lock();
+        s.writeFlash = 0;
+      }
+    }
 
     //super shitty display code
     char str1[10] = "          ";
@@ -157,18 +178,17 @@ int main(void)
     draw_string(str1, 10, 1 ,1);
     draw_string(str2, 10, 9 ,1);
     draw_string(str3, 60, 1 ,1);
-    if(r.error > 3){
-      draw_string("*", 60, 9 ,1);
-    } else {
-      draw_string(" ", 60, 9 ,1);
+
+    for(uint16_t i = 0; i <=  CLAMP(r.error*3.0f,0,30); i++){
+      draw_v_line(60+i, 8, 8, 1);
     }
+
     refresh();
   }
 }
 
 // Main PID+two-way controller and ADC readout
 void reg(void) {
-
   s.tref = ((((float)ADC_raw[3]/4095.0)*3.3)-0.5)/0.01;
   s.ttip = ((ADC_raw[1]-tipcal.offset)*tipcal.coefficient)/1000+s.tref;
   s.uin = ((ADC_raw[2]/4095.0)*3.3)*6.6;
@@ -182,7 +202,7 @@ void reg(void) {
     r.ierror = r.ierror + (r.error*r.cycletime);
     r.ierror = CLAMP(r.ierror,-r.imax,r.imax);
     r.derror = (r.error - r.errorprior)/r.cycletime;
-    r.duty = r.Kp*r.error + r.Ki*r.ierror + r.Kd*r.derror;
+    r.duty = (r.Kp*r.error + r.Ki*r.ierror + r.Kd*r.derror)*MAX_DUTY;
     r.errorprior = r.error;
   } else {
     if(s.ttipavg <= r.target){
@@ -190,7 +210,7 @@ void reg(void) {
     } else {
       r.duty = MIN_DUTY;
     }
-    r.error = 4.0;
+    r.error = 12.0;
   }
 
   r.duty = CLAMP(r.duty, MIN_DUTY, MAX_DUTY); // Clamp to duty cycle
@@ -252,7 +272,16 @@ void set_screen(void) {
   memset(&screenBuffer[FRAMEBUFFER_START], 255, OLED_WIDTH * 2);
 }
 
+void draw_v_line(int16_t x, int16_t y, uint16_t h, uint8_t color){
+  for(int i = 0; i <= h; i++){
+    write_pixel(x, y+i, color);
+  }
+}
+
 void write_pixel(int16_t x, int16_t y, uint8_t color){
+  if(x>95 || y >15){
+    return;
+  }
   if(color == 1){
     screenBuffer[FRAMEBUFFER_START + (x + ((y/8)*96))] |=  (1 << y % 8);
   } else if (color == 0){
