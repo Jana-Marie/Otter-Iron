@@ -18,6 +18,8 @@ Features:
 
 The BOM can be found at [KiCAD/production/kitspace_bom.csv](KiCAD/production/kitspace_bom.csv). Most parts are generic parts, which can be ordered and assembled regulary. However the display and tip-holders need special attention. The PCB has to be ordered with a thickness of 1mm (1.6mm works too, but 1mm has a better fit).
 
+**Note: C19 and C20 changed from 100nF to 1µF in the last revision, please make sure to populate 1µF!**
+
 ### Tip-Holders / mechanical parts
 
 The original tip-holders are custom made thus it is not possible to buy them, if you already have a TS100 it is highly recommended to recycle those. They can be unscrewed, cut to size and soldered/screwed onto the Otter-Iron. This is the preferred option!
