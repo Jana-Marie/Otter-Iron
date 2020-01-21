@@ -76,3 +76,5 @@ Todo next hardware revision:
  - [ ] Add barrel jack
  - [ ] Add grounding solution
  - [ ] Fix Tag-Connect [see #4](https://github.com/Jan--Henrik/Otter-Iron/issues/4)
+ - [ ] Optimize display-connector
+ - [ ] Add display reset pullup
