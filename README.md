@@ -18,7 +18,12 @@ Features:
 
 The BOM can be found at [KiCAD/production/kitspace_bom.csv](KiCAD/production/kitspace_bom.csv). Most parts are generic parts, which can be ordered and assembled regulary. However the display and tip-holders need special attention. The PCB has to be ordered with a thickness of 1mm (1.6mm works too, but 1mm has a better fit).
 
-**Note: C19 and C20 changed from 100nF to 1µF in the last revision, please make sure to populate 1µF!**
+### Known hardware issues/notes
+
+ * **Note: C19 and C20 changed from 100nF to 1µF in the last revision, please make sure to populate 1µF!**
+ * Please add a pullup to the displays reset if the display does not work. See image below:
+ 
+ ![](images/pullup.png)
 
 ### Tip-Holders / mechanical parts
 
