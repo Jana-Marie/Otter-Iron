@@ -128,6 +128,7 @@ int main(void)
   HAL_Delay(1000);
 
   r.target = *((uint16_t *) 0x0800e400);
+  if(r.target > 400) r.target = 220;  //initial temp set
 
   while (1)
   {
