@@ -53,7 +53,7 @@
 #define USBD_VID                      0x0483
 #define USBD_PID                      0x5740
 #define USBD_LANGID_STRING            0x409
-#define USBD_MANUFACTURER_STRING      "OtterIron"
+#define USBD_MANUFACTURER_STRING      "Otter-Iron"
 #define USBD_PRODUCT_FS_STRING        "chirp :3"
 #define USBD_CONFIGURATION_FS_STRING  "mau"
 #define USBD_INTERFACE_FS_STRING      ":o"
