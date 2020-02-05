@@ -20,10 +20,14 @@
 #include "main.h"
 #include "stm32f0xx_it.h"
 
+extern PCD_HandleTypeDef hpcd;
+extern USBD_HandleTypeDef USBD_Device;
+
 extern ADC_HandleTypeDef hadc;
 extern DMA_HandleTypeDef hdma_adc;
 
 extern TIM_HandleTypeDef htim1;
+extern TIM_HandleTypeDef htim3;
 
 extern void reg(void);
 
@@ -52,6 +56,11 @@ void SysTick_Handler(void)
   HAL_IncTick();
 }
 
+void USB_IRQHandler(void)
+{
+  HAL_PCD_IRQHandler(&hpcd);
+}
+
 void ADC1_COMP_IRQHandler(void)
 {
   HAL_ADC_IRQHandler(&hadc);
@@ -71,4 +80,9 @@ void TIM1_BRK_UP_TRG_COM_IRQHandler(void)
 void TIM1_CC_IRQHandler(void)
 {
   HAL_TIM_IRQHandler(&htim1);
+}
+
+void TIM3_IRQHandler(void)
+{
+  HAL_TIM_IRQHandler(&htim3);
 }

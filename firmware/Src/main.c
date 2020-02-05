@@ -1,7 +1,7 @@
 
 /*
  * Otter-Iron  -  Stm32f072 based soldering iron.
- * Copyright (C) 2019 Jan Henrik Hemsing
+ * Copyright (C) 2020 Jan Henrik Hemsing
  *
  * This program is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the Free
@@ -34,8 +34,9 @@ I2C_HandleTypeDef hi2c1;
 I2C_HandleTypeDef hi2c2;
 
 TIM_HandleTypeDef htim1;
+TIM_HandleTypeDef htim3;
 
-PCD_HandleTypeDef hpcd_USB_FS;
+USBD_HandleTypeDef USBD_Device;
 
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
@@ -44,7 +45,7 @@ static void MX_DMA_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_I2C2_Init(void);
 static void MX_TIM1_Init(void);
-static void MX_USB_PCD_Init(void);
+static void TIM3_Init(void);
 
 void reg(void);
 void disp_init(void);
@@ -88,9 +89,11 @@ struct tipcal_t{
 
 static uint16_t ADC_raw[4];
 
+extern uint8_t UserTxBuffer[APP_TX_DATA_SIZE];/* Received Data over UART (CDC interface) are stored in this buffer */
+uint32_t sendDataUSB;
+
 int main(void)
 {
-
   HAL_Init();
 
   SystemClock_Config();
@@ -101,7 +104,7 @@ int main(void)
   MX_I2C1_Init();
   MX_I2C2_Init();
   MX_TIM1_Init();
-  MX_USB_PCD_Init();
+  TIM3_Init();
 
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   HAL_TIM_OC_Start(&htim1, TIM_CHANNEL_4);
@@ -124,7 +127,14 @@ int main(void)
     draw_string("Otter-Iron", 15, 1 ,1);
     draw_string("by Jan Henrik", 10, 9 ,1);
     refresh();
+    //start USB CDC
+    USBD_Init(&USBD_Device, &VCP_Desc, 0);
+    USBD_RegisterClass(&USBD_Device, &USBD_CDC);
+    USBD_CDC_RegisterInterface(&USBD_Device, &USBD_CDC_fops);
+    HAL_TIM_Base_Start_IT(&htim3);
+    USBD_Start(&USBD_Device);
   }
+
   HAL_Delay(1000);
 
   r.target = *((uint16_t *) 0x0800e400);
@@ -166,6 +176,10 @@ int main(void)
         s.writeFlash = 0;
       }
     }
+
+    // send temperature via USB CDC
+    sprintf(UserTxBuffer, "%d.%d \r\n", (uint16_t)s.ttipavg,(uint16_t)((s.ttipavg-(uint16_t)s.ttipavg)*10.0f));
+    sendDataUSB = 1;
 
     //super shitty display code
     char str1[10] = "          ";
@@ -219,6 +233,18 @@ void reg(void) {
 
   __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, r.duty);
 }
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) //send USB cdc data
+{
+  if(sendDataUSB) // WIP need to fix this, should me timer based only
+  {
+    sendDataUSB = 0;
+
+    USBD_CDC_SetTxBuffer(&USBD_Device, (uint8_t*)&UserTxBuffer[0], APP_TX_DATA_SIZE);
+    USBD_CDC_TransmitPacket(&USBD_Device);
+  }
+}
+
 
 // init code sequence by Ralim, thanks alot!
 #define DEVICEADDR_OLED   (0x3c<<1)
@@ -431,6 +457,31 @@ static void MX_I2C2_Init(void)
   HAL_I2CEx_ConfigDigitalFilter(&hi2c2, 0);
 }
 
+static void TIM3_Init(void)
+{
+  __HAL_RCC_TIM3_CLK_ENABLE();
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+
+  /*
+       + Period = 10000 - 1
+       + Prescaler = ((8000000/2)/10000) - 1
+
+  */
+  htim3.Instance = TIM3;
+  htim3.Init.Period = (CDC_POLLING_INTERVAL*1000) - 1;
+  htim3.Init.Prescaler = 399;
+  htim3.Init.ClockDivision = 0;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if(HAL_TIM_Base_Init(&htim3) != HAL_OK)
+  {
+    /* Initialization Error */
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig);
+}
+
 static void MX_TIM1_Init(void)
 {
 
@@ -516,18 +567,6 @@ static void MX_TIM2_Init(void)
 
 }
 */
-static void MX_USB_PCD_Init(void)
-{
-
-  hpcd_USB_FS.Instance = USB;
-  hpcd_USB_FS.Init.dev_endpoints = 8;
-  hpcd_USB_FS.Init.speed = PCD_SPEED_FULL;
-  hpcd_USB_FS.Init.phy_itface = PCD_PHY_EMBEDDED;
-  hpcd_USB_FS.Init.low_power_enable = DISABLE;
-  hpcd_USB_FS.Init.lpm_enable = DISABLE;
-  hpcd_USB_FS.Init.battery_charging_enable = DISABLE;
-  HAL_PCD_Init(&hpcd_USB_FS);
-}
 
 static void MX_DMA_Init(void)
 {
@@ -535,6 +574,9 @@ static void MX_DMA_Init(void)
 
   HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+
+  HAL_NVIC_SetPriority(TIM3_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(TIM3_IRQn);
   /*
   HAL_NVIC_SetPriority(DMA1_Channel2_3_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel2_3_IRQn);
