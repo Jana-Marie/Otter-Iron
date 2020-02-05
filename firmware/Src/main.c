@@ -23,7 +23,7 @@
 #define FILT(a, b, c) ((a) * (c) + (b) * ((1.0f) - (c)))
 #define CLAMP(x, low, high) (((x) > (high)) ? (high) : (((x) < (low)) ? (low) : (x)))
 
-#define TTIP_AVG_FILTER 0.9f
+#define TTIP_AVG_FILTER 0.93f
 #define MIN_DUTY 0
 #define MAX_DUTY 4050
 
@@ -84,7 +84,7 @@ struct reg_t{
   float Ki;
   float Kd;
   float deadband;
-}r = {.Kp = 0.4f,.Ki = 0.05f,.Kd = 0.2f,.cycletime = 0.1f,.imax=200.0f,.target=220.0f,.deadband=12.0f};
+}r = {.Kp = 0.3f,.Ki = 0.13f,.Kd = 0.3f,.cycletime = 0.1f,.imax=200.0f,.target=220.0f,.deadband=12.0f};
 
 struct tipcal_t{
   float offset;
