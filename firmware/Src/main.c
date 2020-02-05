@@ -36,6 +36,8 @@ I2C_HandleTypeDef hi2c2;
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim3;
 
+IWDG_HandleTypeDef hiwdg;
+
 USBD_HandleTypeDef USBD_Device;
 
 void SystemClock_Config(void);
@@ -46,6 +48,7 @@ static void MX_I2C1_Init(void);
 static void MX_I2C2_Init(void);
 static void MX_TIM1_Init(void);
 static void TIM3_Init(void);
+static void MX_IWDG_Init(void);
 
 void reg(void);
 void disp_init(void);
@@ -56,6 +59,7 @@ void write_pixel(int16_t x, int16_t y, uint8_t color);
 void draw_char(unsigned char  c, uint8_t x, uint8_t y, uint8_t brightness);
 void draw_string(const unsigned char * str, uint8_t x, uint8_t y, uint8_t brightness);
 void draw_v_line(int16_t x, int16_t y, uint16_t h, uint8_t color);
+void USB_printfloat(float _buf);
 
 struct status_t{
   float ttip;
@@ -106,6 +110,7 @@ int main(void)
   MX_TIM1_Init();
   TIM3_Init();
 
+
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   HAL_TIM_OC_Start(&htim1, TIM_CHANNEL_4);
 
@@ -136,6 +141,7 @@ int main(void)
   }
 
   HAL_Delay(1000);
+  MX_IWDG_Init();
 
   r.target = *((uint16_t *) 0x0800e400);
   if(r.target > 400) r.target = 220;  //initial temp set
@@ -178,8 +184,7 @@ int main(void)
     }
 
     // send temperature via USB CDC
-    sprintf(UserTxBuffer, "%d.%d \r\n", (uint16_t)s.ttipavg,(uint16_t)((s.ttipavg-(uint16_t)s.ttipavg)*10.0f));
-    sendDataUSB = 1;
+    USB_printfloat(r.error);
 
     //super shitty display code
     char str1[10] = "          ";
@@ -199,6 +204,7 @@ int main(void)
     }
 
     refresh();
+    HAL_IWDG_Refresh(&hiwdg);
   }
 }
 
@@ -243,6 +249,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) //send USB cdc data
     USBD_CDC_SetTxBuffer(&USBD_Device, (uint8_t*)&UserTxBuffer[0], APP_TX_DATA_SIZE);
     USBD_CDC_TransmitPacket(&USBD_Device);
   }
+}
+
+void USB_printfloat(float _buf){
+  memset(UserTxBuffer, 0, APP_TX_DATA_SIZE);
+  sprintf(UserTxBuffer, "%d.%d \r\n", (uint16_t)_buf,(uint16_t)((_buf-(uint16_t)_buf)*10.0f));
+  sendDataUSB = 1;
 }
 
 
@@ -455,6 +467,15 @@ static void MX_I2C2_Init(void)
   HAL_I2CEx_ConfigAnalogFilter(&hi2c2, I2C_ANALOGFILTER_ENABLE);
 
   HAL_I2CEx_ConfigDigitalFilter(&hi2c2, 0);
+}
+
+static void MX_IWDG_Init(void)
+{
+  hiwdg.Instance = IWDG;
+  hiwdg.Init.Prescaler = IWDG_PRESCALER_4;
+  hiwdg.Init.Window = 4095;
+  hiwdg.Init.Reload = 4095;
+  HAL_IWDG_Init(&hiwdg);
 }
 
 static void TIM3_Init(void)
