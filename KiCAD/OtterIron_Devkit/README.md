@@ -1,5 +1,3 @@
-[BOM](KiCAD/production/kitspace_bom.csv)
-
-[Gerber](KiCAD/production/TS100CV2.3.zip)
-
-[Kitspace](https://kitspace.org/boards/github.com/jan--henrik/otter-iron/)
+![](/KiCAD/OtterIron_Devkit/3D1.png)
+![](/KiCAD/OtterIron_Devkit/3D2.png)
+![](/KiCAD/OtterIron_Devkit/3D3.png)
