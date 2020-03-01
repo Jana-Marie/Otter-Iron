@@ -418,7 +418,7 @@ Wire Wire Line
 Wire Wire Line
 	13600 3050 13600 3150
 $Comp
-L TS100C-rescue:DMP3017SFG-pd-buddy-pd-buddy-sink-rescue-pd-buddy-sink-rescue-usb-c-otter-rescue-usb-c-otter-rescue Q?
+L OtterIron_Devkit-rescue:DMP3017SFG-pd-buddy-pd-buddy-sink-rescue-pd-buddy-sink-rescue-usb-c-otter-rescue-usb-c-otter-rescue-TS100C-rescue Q?
 U 1 1 5BD78C00
 P 14450 3550
 AR Path="/588FA3A4/5BD78C00" Ref="Q?"  Part="1" 
@@ -626,7 +626,7 @@ F 3 "" H 3450 2850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TS100C-rescue:TC2030-CTX-Tag-Connect-pd-buddy-sink-rescue-usb-c-otter-rescue-usb-c-otter-rescue P1
+L OtterIron_Devkit-rescue:TC2030-CTX-Tag-Connect-pd-buddy-sink-rescue-usb-c-otter-rescue-usb-c-otter-rescue-TS100C-rescue P1
 U 1 1 5BE3611C
 P 1700 5700
 F 0 "P1" H 1700 5992 40  0000 C CNN
