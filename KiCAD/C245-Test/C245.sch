@@ -532,15 +532,15 @@ $EndComp
 $Comp
 L Device:C C?
 U 1 1 5BD7CA35
-P 6600 5150
+P 6150 5150
 AR Path="/588FB1D7/5BD7CA35" Ref="C?"  Part="1" 
 AR Path="/588FD270/5BD7CA35" Ref="C?"  Part="1" 
 AR Path="/5BD7CA35" Ref="C10"  Part="1" 
-F 0 "C10" H 6715 5196 50  0000 L CNN
-F 1 "0.1μF" H 6715 5105 50  0000 L CNN
-F 2 "otter:C_0402" H 6638 5000 50  0001 C CNN
-F 3 "~" H 6600 5150 50  0001 C CNN
-	1    6600 5150
+F 0 "C10" H 6265 5196 50  0000 L CNN
+F 1 "0.1μF" H 6265 5105 50  0000 L CNN
+F 2 "otter:C_0402" H 6188 5000 50  0001 C CNN
+F 3 "~" H 6150 5150 50  0001 C CNN
+	1    6150 5150
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1885,4 +1885,18 @@ Wire Wire Line
 Connection ~ 6350 1600
 Wire Wire Line
 	6350 1600 6750 1600
+$Comp
+L Device:C C?
+U 1 1 5E7E7440
+P 6600 5150
+AR Path="/588FB1D7/5E7E7440" Ref="C?"  Part="1" 
+AR Path="/588FD270/5E7E7440" Ref="C?"  Part="1" 
+AR Path="/5E7E7440" Ref="C?"  Part="1" 
+F 0 "C?" H 6715 5196 50  0000 L CNN
+F 1 "1μF 25V" H 6715 5105 50  0000 L CNN
+F 2 "otter:C_0603" H 6638 5000 50  0001 C CNN
+F 3 "~" H 6600 5150 50  0001 C CNN
+	1    6600 5150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

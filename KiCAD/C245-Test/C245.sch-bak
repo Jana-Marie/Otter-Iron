@@ -299,17 +299,6 @@ F 3 "~" H 5650 5150 50  0001 C CNN
 	1    5650 5150
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:C C9
-U 1 1 5A9C1C7E
-P 6150 5150
-F 0 "C9" H 6265 5196 50  0000 L CNN
-F 1 "1μF 25V" H 6265 5105 50  0000 L CNN
-F 2 "otter:C_0603" H 6188 5000 50  0001 C CNN
-F 3 "~" H 6150 5150 50  0001 C CNN
-	1    6150 5150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	7550 1100 7650 1100
 Wire Wire Line
@@ -1896,4 +1885,15 @@ Wire Wire Line
 Connection ~ 6350 1600
 Wire Wire Line
 	6350 1600 6750 1600
+$Comp
+L Device:C C?
+U 1 1 5E7ADDAC
+P 6150 5100
+F 0 "C?" H 6265 5146 50  0000 L CNN
+F 1 "0.1μF" H 6265 5055 50  0000 L CNN
+F 2 "otter:C_0402" H 6188 4950 50  0001 C CNN
+F 3 "~" H 6150 5100 50  0001 C CNN
+	1    6150 5100
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
