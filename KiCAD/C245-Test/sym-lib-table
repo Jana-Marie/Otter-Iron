@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name TS100C-rescue)(type Legacy)(uri ${KIPRJMOD}/TS100C-rescue.lib)(options "")(descr ""))
-)
