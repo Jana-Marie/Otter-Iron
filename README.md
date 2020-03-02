@@ -1,6 +1,6 @@
 # Otter-Iron
 
-Replacement PCB for TS100, adds USB-C PD to every hackers favourite tool!
+Replacement PCB for TS100, adds USB-C PD to every hacker's favourite tool!
 
 ![4](images/4.jpg)
 
@@ -8,15 +8,15 @@ Hardware is finished and working, software V0.3 is released!
 
 Features:
  - You can solder!
- - Tmperature can be adjusted via buttons
+ - Temperature can be adjusted via buttons
  - USB-PD requests highest voltage
  - Display shows set-temperature, temperature, input-voltage and power applied
  - Saves last set-temperature
  - Designed by an Otter *chirps* :3
 
-## Ordering and assmebly instructions
+## Ordering and assembly instructions
 
-The BOM can be found at [KiCAD/production/kitspace_bom.csv](KiCAD/production/kitspace_bom.csv). Most parts are generic parts, which can be ordered and assembled regulary. However the display and tip-holders need special attention. The PCB has to be ordered with a thickness of 1mm (1.6mm works too, but 1mm has a better fit).
+The BOM can be found at [KiCAD/production/kitspace_bom.csv](KiCAD/production/kitspace_bom.csv). Most parts are generic parts, which can be ordered and assembled regularly. However, the display and tip-holders need special attention. The PCB has to be ordered with a thickness of 1mm (1.6mm works too, but 1mm has a better fit).
 
 ### Known hardware issues/notes
 
@@ -35,13 +35,13 @@ You can also buy the littlefuse fuseholders mentioned in the BOM. Those however 
 
 ### Display
 
-The display can be bought from [LCSC](https://lcsc.com/product-detail/OLED-Displays-Modules_UG-Univision-Semicon-UG-9616TSWCG02_C88335.html) or [Aliexpress](https://de.aliexpress.com/item/32808645444.html), I haven't found it at Mouser yet ([Maybe its this display?](https://www.mouser.de/ProductDetail/ELECTRONIC-ASSEMBLY/EA-W096016-XALW?qs=f9yNj16SXrJLTMk24BHqcA%3D%3D)). It is the last part to be assembled, it is soldered on the back of the pcb facing the PCB and the tip-end. 
+The display can be bought from [LCSC](https://lcsc.com/product-detail/OLED-Displays-Modules_UG-Univision-Semicon-UG-9616TSWCG02_C88335.html) or [Aliexpress](https://de.aliexpress.com/item/32808645444.html), I haven't found it at Mouser yet ([Maybe its this display?](https://www.mouser.de/ProductDetail/ELECTRONIC-ASSEMBLY/EA-W096016-XALW?qs=f9yNj16SXrJLTMk24BHqcA%3D%3D)). It is the last part to be assembled, it is soldered on the back of the PCB facing the PCB and the tip-end. 
 
 ## Flashing
 
 To flash the Otter-Iron short the DFU-jumper shown in the image below while plugging it into your computer. This will put the iron into DFU mode allowing you to flash it via DFU/USB. 
 
-If you already have ad firmware >= v0.2 flashed you can press both buttons while plugging in to enter DFU mode.
+If you already have ad firmware >= v0.2 flashed, you can press both buttons while plugging in to enter DFU mode.
 
 Run this command to flash the downloaded binary.
 
