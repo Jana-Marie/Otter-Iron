@@ -1,2 +1,2 @@
-gebers: KiCAD/gerber
-bom: KiCAD/production/kitspace_bom.csv  
+gebers: KiCAD/Otter-Iron/gerber
+bom: KiCAD/Otter-Iron/production/kitspace_bom.csv
