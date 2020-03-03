@@ -1,4 +1,5 @@
-build/*
+firmware/build/*
+firmware/Drivers/**
 .mxproject
 *.jdebug.user
 *.stl

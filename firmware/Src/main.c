@@ -20,7 +20,10 @@
 #include "main.h"
 #include "font.h"
 
-#define ENABLESERIAL
+// Enable serial printing via CDC, quite buggy
+//#define ENABLESERIAL
+// Enable Current display, shows up after a few millisecconds instead of temp-target
+#define DISPLAYCURRENT
 
 #define FILT(a, b, c) ((a) * (c) + (b) * ((1.0f) - (c)))
 #define CLAMP(x, low, high) (((x) > (high)) ? (high) : (((x) < (low)) ? (low) : (x)))
@@ -71,6 +74,9 @@ struct status_t{
   float tref;
   uint8_t writeFlash;
   uint8_t button[2];
+#ifdef DISPLAYCURRENT
+  uint8_t timeout;
+#endif
 }s = {.writeFlash = 0};
 
 struct reg_t{
@@ -142,6 +148,9 @@ int main(void)
     HAL_TIM_Base_Start_IT(&htim3);
     USBD_Start(&USBD_Device);
 #endif
+#ifdef DISPLAYCURRENT
+      s.timeout = 20;
+#endif
   }
 
   HAL_Delay(1000);
@@ -161,18 +170,18 @@ int main(void)
     if(s.button[0] == 1){
       r.target -= 5;
       s.writeFlash = 1;
-      HAL_Delay(50);
+      HAL_Delay(40);
     }
 
     if(s.button[1] == 1){
       r.target += 5;
       s.writeFlash = 1;
-      HAL_Delay(50);
+      HAL_Delay(40);
     }
 
     r.target = CLAMP(r.target, 20, 400);
 
-    if(s.writeFlash = 1){
+    if(s.writeFlash == 1){
       HAL_FLASH_Unlock();
       FLASH->CR |= FLASH_CR_PER;
       FLASH->AR = 0x0800e400;
@@ -185,6 +194,9 @@ int main(void)
         HAL_FLASH_Lock();
         s.writeFlash = 0;
       }
+      #ifdef DISPLAYCURRENT
+            s.timeout = 12;
+      #endif
     }
 
 #ifdef ENABLESERIAL
@@ -196,14 +208,23 @@ int main(void)
     char str1[10] = "          ";
     char str2[10] = "          ";
     char str3[10] = "          ";
-    sprintf(str1, "%d C", (uint16_t)r.target);
+    char str4[10] = "          ";
+    sprintf(str1, "%d C   ", (uint16_t)r.target);
     sprintf(str2, "%d.%d C", (uint16_t)s.ttipavg,(uint16_t)((s.ttipavg-(uint16_t)s.ttipavg)*10.0f));
     sprintf(str3, "%d.%d V", (uint16_t)s.uin,(uint16_t)((s.uin-(uint16_t)s.uin)*10.0f));
+    sprintf(str4, "%d.%d A", (uint16_t)s.iin,(uint16_t)((s.iin-(uint16_t)s.iin)*10.0f));
 
     clear_screen();
     draw_string(str1, 10, 1 ,1);
     draw_string(str2, 10, 9 ,1);
     draw_string(str3, 60, 1 ,1);
+#ifdef DISPLAYCURRENT
+    if(s.timeout == 0){
+      draw_string(str4, 10, 1 ,1);
+    } else {
+      s.timeout--;
+    }
+#endif
 
     for(uint16_t i = 0; i <=  CLAMP(r.error*3.0f,0,30); i++){
       draw_v_line(60+i, 8, 8, 1);
@@ -219,7 +240,7 @@ void reg(void) {
   s.tref = ((((float)ADC_raw[3]/4095.0)*3.3)-0.5)/0.01;
   s.ttip = ((ADC_raw[1]-tipcal.offset)*tipcal.coefficient)/1000+s.tref;
   s.uin = ((ADC_raw[2]/4095.0)*3.3)*6.6;
-  s.iin = ((ADC_raw[0]/4095.0)*3.3);
+  s.iin = FILT(s.iin, ((ADC_raw[0]/4095.0)*3.3*1.659)/(0.01*(2370/33)), TTIP_AVG_FILTER);
 
   s.ttipavg = FILT(s.ttipavg, s.ttip, TTIP_AVG_FILTER);
 
@@ -244,6 +265,7 @@ void reg(void) {
   r.duty = CLAMP(r.duty, MIN_DUTY, MAX_DUTY); // Clamp to duty cycle
 
   __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, r.duty);
+  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, r.duty+3);
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) //send USB cdc data
@@ -422,7 +444,7 @@ static void MX_ADC_Init(void)
 
   sConfig.Channel = ADC_CHANNEL_0;
   sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
-  sConfig.SamplingTime = ADC_SAMPLETIME_13CYCLES_5;
+  sConfig.SamplingTime = ADC_SAMPLETIME_71CYCLES_5;
   HAL_ADC_ConfigChannel(&hadc, &sConfig);
 
   sConfig.Channel = ADC_CHANNEL_1;
@@ -548,7 +570,7 @@ static void MX_TIM1_Init(void)
   HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_1);
 
   sConfigOC.OCMode = TIM_OCMODE_PWM2;
-  sConfigOC.Pulse = 4090;
+  sConfigOC.Pulse = 10;
   HAL_TIM_OC_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_4);
 
   sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
