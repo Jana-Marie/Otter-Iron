@@ -20,6 +20,8 @@
 #include "main.h"
 #include "font.h"
 
+#define ENABLESERIAL
+
 #define FILT(a, b, c) ((a) * (c) + (b) * ((1.0f) - (c)))
 #define CLAMP(x, low, high) (((x) > (high)) ? (high) : (((x) < (low)) ? (low) : (x)))
 
@@ -132,12 +134,14 @@ int main(void)
     draw_string("Otter-Iron", 15, 1 ,1);
     draw_string("by Jan Henrik", 10, 9 ,1);
     refresh();
+#ifdef ENABLESERIAL
     //start USB CDC
     USBD_Init(&USBD_Device, &VCP_Desc, 0);
     USBD_RegisterClass(&USBD_Device, &USBD_CDC);
     USBD_CDC_RegisterInterface(&USBD_Device, &USBD_CDC_fops);
     HAL_TIM_Base_Start_IT(&htim3);
     USBD_Start(&USBD_Device);
+#endif
   }
 
   HAL_Delay(1000);
@@ -183,8 +187,10 @@ int main(void)
       }
     }
 
+#ifdef ENABLESERIAL
     // send temperature via USB CDC
     USB_printfloat(r.error);
+#endif
 
     //super shitty display code
     char str1[10] = "          ";
