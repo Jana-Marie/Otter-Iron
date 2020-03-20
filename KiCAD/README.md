@@ -4,7 +4,7 @@
 
 Replacement PCB for the TS100.
 
-![4](images/4.jpg)
+![](/images/4.jpg)
 
 ## Otter-Iron_Devkit
 
