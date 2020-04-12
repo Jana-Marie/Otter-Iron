@@ -28,9 +28,9 @@
 #define FILT(a, b, c) ((a) * (c) + (b) * ((1.0f) - (c)))
 #define CLAMP(x, low, high) (((x) > (high)) ? (high) : (((x) < (low)) ? (low) : (x)))
 
-#define TTIP_AVG_FILTER 0.93f
+#define TTIP_AVG_FILTER 0.98f
 #define MIN_DUTY 0
-#define MAX_DUTY 4050
+uint16_t MAX_DUTY = 3950;
 
 ADC_HandleTypeDef hadc;
 DMA_HandleTypeDef hdma_adc;
@@ -71,13 +71,14 @@ struct status_t{
   float ttipavg;
   float uin;
   float iin;
+  float imax;
   float tref;
   uint8_t writeFlash;
   uint8_t button[2];
 #ifdef DISPLAYCURRENT
   uint8_t timeout;
 #endif
-}s = {.writeFlash = 0};
+}s = {.writeFlash = 0, .imax = 1.1f};
 
 struct reg_t{
   float target;
@@ -92,7 +93,7 @@ struct reg_t{
   float Ki;
   float Kd;
   float deadband;
-}r = {.Kp = 0.3f,.Ki = 0.13f,.Kd = 0.3f,.cycletime = 0.1f,.imax=200.0f,.target=220.0f,.deadband=12.0f};
+}r = {.Kp = 0.3f,.Ki = 0.13f,.Kd = 0.3f,.cycletime = 0.001f,.imax=200.0f,.target=220.0f,.deadband=12.0f};
 
 struct tipcal_t{
   float offset;
@@ -126,7 +127,7 @@ int main(void)
 
   HAL_Delay(20);
   disp_init();
-  HAL_Delay(60);
+  HAL_Delay(150);
   clear_screen();
   // DFU bootloader
   if(HAL_GPIO_ReadPin(GPIOA,B1_Pin) && HAL_GPIO_ReadPin(GPIOA,B2_Pin)){
@@ -165,7 +166,7 @@ int main(void)
 
     //UI
     s.button[0] = HAL_GPIO_ReadPin(GPIOA,B1_Pin);
-    s.button[1] = HAL_GPIO_ReadPin(GPIOA,B2_Pin);
+    s.button[1] = HAL_GPIO_ReadPin(GPIOA,B2_Pin) | HAL_GPIO_ReadPin(GPIOC, B1_1_Pin);
 
     if(s.button[0] == 1){
       r.target -= 5;
@@ -264,8 +265,17 @@ void reg(void) {
 
   r.duty = CLAMP(r.duty, MIN_DUTY, MAX_DUTY); // Clamp to duty cycle
 
+  if(s.iin > s.imax && r.duty > 100){ // Current limiting
+    MAX_DUTY = r.duty - 1;
+    r.duty -= 100;
+  } else {
+    MAX_DUTY++;
+    if(MAX_DUTY >= 3990) MAX_DUTY = 3990;
+  }
+
   __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, r.duty);
-  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, r.duty+3);
+
+  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, 4050);
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) //send USB cdc data
@@ -542,10 +552,10 @@ static void MX_TIM1_Init(void)
   TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
 
   htim1.Instance = TIM1;
-  htim1.Init.Prescaler = 2048;
+  htim1.Init.Prescaler = 16; // 2048
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 4096;
-  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV4;
+  htim1.Init.Period = 4096; // 4096
+  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   HAL_TIM_Base_Init(&htim1);
@@ -561,7 +571,7 @@ static void MX_TIM1_Init(void)
   HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig);
 
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 50;
+  sConfigOC.Pulse = 0;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
@@ -641,11 +651,18 @@ static void MX_GPIO_Init(void)
 
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
 
   GPIO_InitStruct.Pin = B1_Pin|B2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  GPIO_InitStruct.Pin = B1_1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
 
   GPIO_InitStruct.Pin = INT_N_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
