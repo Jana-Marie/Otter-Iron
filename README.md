@@ -16,7 +16,7 @@ Features:
 
 ## Ordering and assembly instructions
 
-The BOM can be found at [KiCAD/production/kitspace_bom.csv](KiCAD/production/kitspace_bom.csv). Most parts are generic parts, which can be ordered and assembled regularly. However, the display and tip-holders need special attention. The PCB has to be ordered with a thickness of 1mm (1.6mm works too, but 1mm has a better fit).
+The BOM can be found at [KiCAD/Otter-Iron/production/kitspace_bom.csv](./KiCAD/Otter-Iron/production/kitspace_bom.csv). Most parts are generic parts, which can be ordered and assembled regularly. However, the display and tip-holders need special attention. The PCB has to be ordered with a thickness of 1mm (1.6mm works too, but 1mm has a better fit).
 
 ### Known hardware issues/notes
 
