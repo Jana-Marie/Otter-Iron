@@ -78,3 +78,4 @@ Todo next hardware revision:
  - [x] Fix Tag-Connect [see #4](https://github.com/Jan--Henrik/Otter-Iron/issues/4)
  - [x] Optimize display-connector
  - [x] Add display reset pullup
+## This readme clearly shows how to use make the project step by step in simple ways happy making :)
