@@ -18,19 +18,30 @@
  */
 
 #include "main.h"
+#include <math.h>
 #include "font.h"
+#include "stusb4500.h"
 
 // Enable serial printing via CDC, quite buggy
 //#define ENABLESERIAL
 // Enable Current display, shows up after a few millisecconds instead of temp-target
-#define DISPLAYCURRENT
+//#define DISPLAYCURRENT
+// Enable Current limiting
+//#define CURRENTLIM
+// Enable check of USB PD profile capable before beforing iron
+#define CHECKUSBPD
 
 #define FILT(a, b, c) ((a) * (c) + (b) * ((1.0f) - (c)))
 #define CLAMP(x, low, high) (((x) > (high)) ? (high) : (((x) < (low)) ? (low) : (x)))
 
-#define TTIP_AVG_FILTER 0.98f
+#define TTIP_AVG_FILTER 0.9f
+#define DISP_AVG_FILTER 0.9f
+
 #define MIN_DUTY 0
-uint16_t MAX_DUTY = 3950;
+uint16_t MAX_DUTY = 3990;
+
+#define MIN_VOLTAGE 15.0f
+#define MIN_CURRENT 1.0f
 
 ADC_HandleTypeDef hadc;
 DMA_HandleTypeDef hdma_adc;
@@ -71,13 +82,17 @@ struct status_t{
   float ttipavg;
   float uin;
   float iin;
+  float iinavg;
   float imax;
   float tref;
   uint8_t writeFlash;
   uint8_t button[2];
+  float drawlineavg;
 #ifdef DISPLAYCURRENT
   uint8_t timeout;
 #endif
+  uint8_t active;
+  uint8_t pdo;
 }s = {.writeFlash = 0, .imax = 1.1f};
 
 struct reg_t{
@@ -93,7 +108,7 @@ struct reg_t{
   float Ki;
   float Kd;
   float deadband;
-}r = {.Kp = 0.3f,.Ki = 0.13f,.Kd = 0.3f,.cycletime = 0.001f,.imax=200.0f,.target=220.0f,.deadband=12.0f};
+}r = {.Kp = 0.3f,.Ki = 0.13f,.Kd = 0.3f,.cycletime = 0.1f,.imax=200.0f,.target=220.0f,.deadband=12.0f};
 
 struct tipcal_t{
   float offset;
@@ -104,6 +119,10 @@ static uint16_t ADC_raw[4];
 
 extern uint8_t UserTxBuffer[APP_TX_DATA_SIZE];/* Received Data over UART (CDC interface) are stored in this buffer */
 uint32_t sendDataUSB;
+
+const unsigned char* dfu_string = (unsigned char*) "dfu dfu dfu dfu";
+const unsigned char* otter_string = (unsigned char*) "Otter-Iron";
+const unsigned char* by_string = (unsigned char*) "by Jan Henrik";
 
 int main(void)
 {
@@ -119,27 +138,34 @@ int main(void)
   MX_TIM1_Init();
   TIM3_Init();
 
+  // setup STUSB4500 PD requests before starting controller IT
+  stusb_update_pdo(1, 5000, 500); // allows comms on standard 5 V
+  // 30 W and 80 W - ensures iron is well behaved and enumerates PD profile before drawing it
+  stusb_update_pdo(2, 15000, 1500);
+  stusb_update_pdo(3, 20000, 4000);
+  stusb_set_valid_pdo(3);
+
+  HAL_Delay(50);
+  disp_init();
+  HAL_Delay(150);
+  clear_screen();
 
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   HAL_TIM_OC_Start(&htim1, TIM_CHANNEL_4);
 
   HAL_ADC_Start_DMA(&hadc, (uint32_t *)ADC_raw, 4);
 
-  HAL_Delay(20);
-  disp_init();
-  HAL_Delay(150);
-  clear_screen();
   // DFU bootloader
   if(HAL_GPIO_ReadPin(GPIOA,B1_Pin) && HAL_GPIO_ReadPin(GPIOA,B2_Pin)){
-    draw_string("dfudfudfudfudfu", 1, 1 ,1);
-    draw_string("dfudfudfudfudfu", 1, 8 ,1);
+    draw_string(dfu_string, 1, 1 ,1);
+    draw_string(dfu_string, 1, 8 ,1);
     refresh();
     HAL_Delay(40);
     *((unsigned long *)0x20003FF0) = 0xDEADBEEF;
     NVIC_SystemReset();
   } else {
-    draw_string("Otter-Iron", 15, 1 ,1);
-    draw_string("by Jan Henrik", 10, 9 ,1);
+    draw_string(otter_string, 15, 1 ,1);
+    draw_string(by_string, 10, 9 ,1);
     refresh();
 #ifdef ENABLESERIAL
     //start USB CDC
@@ -151,6 +177,31 @@ int main(void)
 #endif
 #ifdef DISPLAYCURRENT
       s.timeout = 20;
+#endif
+#ifdef CHECKUSBPD
+    unsigned char line1[22];
+    unsigned char line2[22];
+    STUSB_GEN1S_RDO_REG_STATUS_RegTypeDef Nego_RDO;
+
+    if (stusb_read_rdo(&Nego_RDO) == HAL_OK) {
+      s.imax = (float) Nego_RDO.b.MaxCurrent / 100.0;
+      s.pdo = Nego_RDO.b.Object_Pos;
+    } else {
+      s.pdo = 0;
+    }
+
+    if (s.pdo > 0) {
+      sprintf((char * restrict) line1, "PD %s %1d", s.pdo > 3 ? "Adjust" : "Profile", s.pdo);
+      sprintf((char * restrict) line2, "%1d.%1d A %2d W", (uint16_t)s.imax,(uint16_t)((s.imax-(uint16_t)s.imax)*10.0f), (uint16_t) (ceil(s.uin) * s.imax));
+    } else {
+      sprintf((char * restrict) line1, "USB !USB-PD");
+      sprintf((char * restrict) line2, "Iron Disabled");
+    }
+    clear_screen();
+    draw_string(line1, 10, 1 ,1);
+    draw_string(line2, 10, 9 ,1);
+    refresh();
+    HAL_Delay(1000);
 #endif
   }
 
@@ -206,14 +257,14 @@ int main(void)
 #endif
 
     //super shitty display code
-    char str1[10] = "          ";
-    char str2[10] = "          ";
-    char str3[10] = "          ";
-    char str4[10] = "          ";
-    sprintf(str1, "%d C   ", (uint16_t)r.target);
-    sprintf(str2, "%d.%d C", (uint16_t)s.ttipavg,(uint16_t)((s.ttipavg-(uint16_t)s.ttipavg)*10.0f));
-    sprintf(str3, "%d.%d V", (uint16_t)s.uin,(uint16_t)((s.uin-(uint16_t)s.uin)*10.0f));
-    sprintf(str4, "%d.%d A", (uint16_t)s.iin,(uint16_t)((s.iin-(uint16_t)s.iin)*10.0f));
+    unsigned char str1[14] = "          ";
+    unsigned char str2[14] = "          ";
+    unsigned char str3[14] = "          ";
+    unsigned char str4[14] = "          ";
+    sprintf((char * restrict) str1, "%d C   ", (uint16_t)r.target);
+    sprintf((char * restrict) str2, "%d.%d C", (uint16_t)s.ttipavg,(uint16_t)((s.ttipavg-(uint16_t)s.ttipavg)*10.0f));
+    sprintf((char * restrict) str3, "%d.%d V", (uint16_t)s.uin,(uint16_t)((s.uin-(uint16_t)s.uin)*10.0f));
+    sprintf((char * restrict) str4, "%d.%d A", (uint16_t)s.iin,(uint16_t)((s.iin-(uint16_t)s.iin)*10.0f));
 
     clear_screen();
     draw_string(str1, 10, 1 ,1);
@@ -226,14 +277,28 @@ int main(void)
       s.timeout--;
     }
 #endif
+    s.iinavg = (s.iinavg * DISP_AVG_FILTER) + (s.iin*(1.0-DISP_AVG_FILTER));
 
-    for(uint16_t i = 0; i <=  CLAMP(r.error*3.0f,0,30); i++){
-      draw_v_line(60+i, 8, 8, 1);
+    if (s.active) {
+      s.drawlineavg = (s.drawlineavg * DISP_AVG_FILTER) + (CLAMP(r.error*3.0f,0,30)*(1.0-DISP_AVG_FILTER));
+      for(uint16_t i = 0; i <= (int)s.drawlineavg; i++){
+        draw_v_line(60+i, 8, 8, 1);
+      }
+    } else {
+      draw_string((const unsigned char*) ((s.pdo > 0) ? "!ACTV" : "!PWRD"), 60, 9, 1);
     }
 
     refresh();
     HAL_IWDG_Refresh(&hiwdg);
   }
+}
+
+uint8_t check_usbpd(void) {
+ #ifdef CHECKUSBPD
+  return (s.uin >= MIN_VOLTAGE && s.imax >= MIN_CURRENT);
+ #else
+  return 1;
+ #endif
 }
 
 // Main PID+two-way controller and ADC readout
@@ -265,6 +330,7 @@ void reg(void) {
 
   r.duty = CLAMP(r.duty, MIN_DUTY, MAX_DUTY); // Clamp to duty cycle
 
+#ifdef CURRENTLIM
   if(s.iin > s.imax && r.duty > 100){ // Current limiting
     MAX_DUTY = r.duty - 1;
     r.duty -= 100;
@@ -272,9 +338,9 @@ void reg(void) {
     MAX_DUTY++;
     if(MAX_DUTY >= 3990) MAX_DUTY = 3990;
   }
+#endif
 
   __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, r.duty);
-
   __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, 4050);
 }
 
@@ -289,11 +355,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) //send USB cdc data
   }
 }
 
+#ifdef ENABLESERIAL
 void USB_printfloat(float _buf){
   memset(UserTxBuffer, 0, APP_TX_DATA_SIZE);
   sprintf(UserTxBuffer, "%d.%d \r\n", (uint16_t)_buf,(uint16_t)((_buf-(uint16_t)_buf)*10.0f));
   sendDataUSB = 1;
 }
+#endif
 
 
 // init code sequence by Ralim, thanks alot!
@@ -376,7 +444,7 @@ void draw_char(unsigned char c, uint8_t x, uint8_t y, uint8_t brightness) {
     } else {
         c -= ' ';
     }
-    uint8_t * chr = font[c];
+    uint8_t * chr = (uint8_t *) font[c];
     for (uint8_t j=0; j<CHAR_WIDTH; j++) {
         for (uint8_t i=0; i<CHAR_HEIGHT; i++) {
             if (chr[j] & (1<<i)) {
@@ -552,10 +620,10 @@ static void MX_TIM1_Init(void)
   TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
 
   htim1.Instance = TIM1;
-  htim1.Init.Prescaler = 16; // 2048
+  htim1.Init.Prescaler = 2048; // 2048
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim1.Init.Period = 4096; // 4096
-  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV4;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   HAL_TIM_Base_Init(&htim1);
@@ -571,7 +639,7 @@ static void MX_TIM1_Init(void)
   HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig);
 
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
+  sConfigOC.Pulse = 50;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
@@ -580,7 +648,7 @@ static void MX_TIM1_Init(void)
   HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_1);
 
   sConfigOC.OCMode = TIM_OCMODE_PWM2;
-  sConfigOC.Pulse = 10;
+  sConfigOC.Pulse = 4050;
   HAL_TIM_OC_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_4);
 
   sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
@@ -662,6 +730,7 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
 
 
   GPIO_InitStruct.Pin = INT_N_Pin;
