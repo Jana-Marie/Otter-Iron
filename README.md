@@ -16,7 +16,7 @@ Features:
 
 ## Ordering and assembly instructions
 
-The BOM can be found at [KiCAD/production/kitspace_bom.csv](KiCAD/production/kitspace_bom.csv). Most parts are generic parts, which can be ordered and assembled regularly. However, the display and tip-holders need special attention. The PCB has to be ordered with a thickness of 1mm (1.6mm works too, but 1mm has a better fit).
+The BOM can be found at [KiCAD/Otter-Iron/production/kitspace_bom.csv](./KiCAD/Otter-Iron/production/kitspace_bom.csv). Most parts are generic parts, which can be ordered and assembled regularly. However, the display and tip-holders need special attention. The PCB has to be ordered with a thickness of 1mm (1.6mm works too, but 1mm has a better fit).
 
 ### Known hardware issues/notes
 
@@ -35,7 +35,7 @@ You can also buy the littlefuse fuseholders mentioned in the BOM. Those however 
 
 ### Display
 
-The display can be bought from [LCSC](https://lcsc.com/product-detail/OLED-Displays-Modules_UG-Univision-Semicon-UG-9616TSWCG02_C88335.html) or [Aliexpress](https://de.aliexpress.com/item/32808645444.html), I haven't found it at Mouser yet ([Maybe its this display?](https://www.mouser.de/ProductDetail/ELECTRONIC-ASSEMBLY/EA-W096016-XALW?qs=f9yNj16SXrJLTMk24BHqcA%3D%3D)). It is the last part to be assembled, it is soldered on the back of the PCB facing the PCB and the tip-end. 
+The display can be bought from ~~[LCSC](https://lcsc.com/product-detail/OLED-Displays-Modules_UG-Univision-Semicon-UG-9616TSWCG02_C88335.html)~~ **note: Do not buy displays from LCSC, they seem to be faulty!** or [Aliexpress](https://de.aliexpress.com/item/32808645444.html), I haven't found it at Mouser yet ([Maybe its this display?](https://www.mouser.de/ProductDetail/ELECTRONIC-ASSEMBLY/EA-W096016-XALW?qs=f9yNj16SXrJLTMk24BHqcA%3D%3D)). It is the last part to be assembled, it is soldered on the back of the PCB facing the PCB and the tip-end. 
 
 ## Flashing
 
