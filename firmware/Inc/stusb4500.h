@@ -6,6 +6,11 @@
 #define STUSB4500_ADDR         0x28
 #define RDO_REG_STATUS         0x91
 
+#define ATTACHED_STATUS        0x01
+#define PORT_STATUS            0x0E
+#define TX_HEADER              0x51
+#define CMD_CTRL               0x1A
+
 typedef union {
   uint32_t d32;
   struct {
@@ -59,5 +64,6 @@ typedef union {
 HAL_StatusTypeDef stusb_read_rdo(STUSB_GEN1S_RDO_REG_STATUS_RegTypeDef *Nego_RDO);
 HAL_StatusTypeDef stusb_update_pdo(uint8_t pdo_number, uint16_t voltage_mv, uint16_t current_ma);
 HAL_StatusTypeDef stusb_set_valid_pdo(uint8_t valid_count);
+HAL_StatusTypeDef stusb_soft_reset();
 
 #endif

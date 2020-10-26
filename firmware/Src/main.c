@@ -142,7 +142,7 @@ int main(void)
   stusb_update_pdo(1, 5000, 500); // allows comms on standard 5 V
   // 30 W and 80 W - ensures iron is well behaved and enumerates PD profile before drawing it
   stusb_update_pdo(2, 15000, 1500);
-  stusb_update_pdo(3, 20000, 4000);
+  stusb_update_pdo(3, 20000, 2000);
   stusb_set_valid_pdo(3);
 
   HAL_Delay(50);
@@ -183,12 +183,21 @@ int main(void)
     unsigned char line2[22];
     STUSB_GEN1S_RDO_REG_STATUS_RegTypeDef Nego_RDO;
 
-    if (stusb_read_rdo(&Nego_RDO) == HAL_OK) {
-      s.imax = (float) Nego_RDO.b.MaxCurrent / 100.0;
-      s.pdo = Nego_RDO.b.Object_Pos;
-    } else {
-      s.pdo = 0;
-    }
+      if (stusb_read_rdo(&Nego_RDO) == HAL_OK && Nego_RDO.b.Object_Pos != 0) {
+        s.imax = (float) Nego_RDO.b.MaxCurrent / 100.0;
+        s.pdo = Nego_RDO.b.Object_Pos;
+      } else {
+        stusb_update_pdo(2, 9000, 900);
+        stusb_update_pdo(3, 12000, 1000);
+        stusb_soft_reset();
+        HAL_Delay(300);
+        if (stusb_read_rdo(&Nego_RDO) == HAL_OK) {
+          s.imax = (float) Nego_RDO.b.MaxCurrent / 100.0;
+          s.pdo = Nego_RDO.b.Object_Pos;
+        } else {
+          s.pdo = 0;
+        }
+      }
 
     if (s.pdo > 0) {
       sprintf((char * restrict) line1, "PD %s %1d", s.pdo > 3 ? "Adjust" : "Profile", s.pdo);

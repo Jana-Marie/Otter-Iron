@@ -8,16 +8,16 @@
 #include "stusb4500.h"
 
 USB_PD_SNK_PDO_TypeDef pdo_profile[3];
-extern I2C_HandleTypeDef hi2c1;
+extern I2C_HandleTypeDef hi2c2;
 
 static HAL_StatusTypeDef read_register(uint8_t device, uint8_t reg, uint8_t *data, uint8_t len)
 {
-  return HAL_I2C_Mem_Read(&hi2c1, (device << 1), (uint16_t) reg, I2C_MEMADD_SIZE_8BIT, data, len, 1000);
+  return HAL_I2C_Mem_Read(&hi2c2, (device << 1), (uint16_t) reg, I2C_MEMADD_SIZE_8BIT, data, len, 1000);
 }
 
 static HAL_StatusTypeDef write_register(uint8_t device, uint8_t reg, uint8_t *data, uint8_t len)
 {
-  return HAL_I2C_Mem_Write(&hi2c1, (device << 1), (uint16_t) reg, I2C_MEMADD_SIZE_8BIT, data, len, 1000);
+  return HAL_I2C_Mem_Write(&hi2c2, (device << 1), (uint16_t) reg, I2C_MEMADD_SIZE_8BIT, data, len, 1000);
 }
 
 HAL_StatusTypeDef stusb_read_rdo(STUSB_GEN1S_RDO_REG_STATUS_RegTypeDef *Nego_RDO) {
@@ -62,6 +62,19 @@ HAL_StatusTypeDef stusb_set_valid_pdo(uint8_t valid_count) {
   HAL_StatusTypeDef ret = -1;
   if (valid_count <= 3) {
     ret = write_register(STUSB4500_ADDR, DPM_PDO_NUMB, &valid_count, 1);
+  }
+  return ret;
+}
+
+HAL_StatusTypeDef stusb_soft_reset() {
+  HAL_StatusTypeDef ret = -1;
+  uint8_t data;
+
+  // read CC pin Attachement status
+  ret = read_register(STUSB4500_ADDR, PORT_STATUS , &data, 1);
+  if((data & ATTACHED_STATUS) == 1) {
+    ret = write_register(STUSB4500_ADDR, TX_HEADER, (uint8_t *)0x000D, 2 );
+    ret = write_register(STUSB4500_ADDR, CMD_CTRL, (uint8_t *)0x26, 1 );
   }
   return ret;
 }
