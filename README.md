@@ -79,3 +79,4 @@ Todo next hardware revision:
  - [x] Optimize display-connector
  - [x] Add display reset pullup
  - [ ] Add display reset line
+ - [ ] Add inrush current protection
