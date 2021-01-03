@@ -4,7 +4,7 @@ Replacement PCB for TS100, adds USB-C PD to every hacker's favourite tool!
 
 ![4](images/4.jpg)
 
-Hardware is finished and working, software V0.3 is released!
+Hardware is finished and working, software [v0.6](https://github.com/Jan--Henrik/Otter-Iron/releases) is released!
 
 Features:
  - You can solder!
@@ -65,10 +65,10 @@ Run this command to flash the downloaded binary.
 ## Todo software
 
  - [x] Write a better regulation
- - [ ] Current measurement
+ - [x] Current measurement
  - [x] Store last setpoint
- - [ ] Better Fonts/UI
- - [ ] PD-Profile cycling
+ - [x] Better Fonts/UI
+ - [x] PD-Profile cycling
  
 ## Todo Hardware
 
@@ -78,3 +78,4 @@ Todo next hardware revision:
  - [x] Fix Tag-Connect [see #4](https://github.com/Jan--Henrik/Otter-Iron/issues/4)
  - [x] Optimize display-connector
  - [x] Add display reset pullup
+ - [ ] Add display reset line
