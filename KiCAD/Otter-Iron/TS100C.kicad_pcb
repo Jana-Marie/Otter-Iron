@@ -2864,6 +2864,11 @@
       (net 1 "GND") (tstamp b0906e10-2fbc-4309-a8b4-6fc4cd1a5490))
     (pad "S1" thru_hole oval locked (at -4.32 -0.915 90) (size 1 2.1) (drill oval 0.6 1.7) (layers *.Cu *.Mask)
       (net 1 "GND") (tstamp feb26ecb-9193-46ea-a41b-d09305bf0a3e))
+    (model ":USER3D:HRO_TYPE-C-31-M-12(1).step"
+      (offset (xyz -4.5 -7.7 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 0))
+    )
   )
 
   (footprint "Resistor_SMD:R_0402_1005Metric" (layer "B.Cu")
