@@ -4,7 +4,7 @@ Replacement PCB for TS100, adds USB-C PD to every hacker's favourite tool!
 
 ![4](images/4.jpg)
 
-Hardware is finished and working, software [v0.6](https://github.com/Jan--Henrik/Otter-Iron/releases) is released!
+Hardware v2.4 is released, changelog: you don't need to solder the tip connector anymore, software [v0.6](https://github.com/Jana-Marie/Otter-Iron/releases) is released!
 
 Features:
  - You can solder!
@@ -22,7 +22,7 @@ The BOM can be found at [KiCAD/Otter-Iron/production/kitspace_bom.csv](./KiCAD/O
 
  * **Note: C19 and C20 changed from 100nF to 1µF in the last revision, please make sure to populate 1µF!**
  * Please add a pullup to the displays reset if the display does not work. See image below:
- 
+
  ![](images/pullup.png)
 
 ### Tip-Holders / mechanical parts
@@ -35,11 +35,11 @@ You can also buy the littlefuse fuseholders mentioned in the BOM. Those however 
 
 ### Display
 
-The display can be bought from ~~[LCSC](https://lcsc.com/product-detail/OLED-Displays-Modules_UG-Univision-Semicon-UG-9616TSWCG02_C88335.html)~~ **note: Do not buy displays from LCSC, they seem to be faulty!** or [Aliexpress](https://de.aliexpress.com/item/32808645444.html), I haven't found it at Mouser yet ([Maybe its this display?](https://www.mouser.de/ProductDetail/ELECTRONIC-ASSEMBLY/EA-W096016-XALW?qs=f9yNj16SXrJLTMk24BHqcA%3D%3D)). It is the last part to be assembled, it is soldered on the back of the PCB facing the PCB and the tip-end. 
+The display can be bought from ~~[LCSC](https://lcsc.com/product-detail/OLED-Displays-Modules_UG-Univision-Semicon-UG-9616TSWCG02_C88335.html)~~ **note: Do not buy displays from LCSC, they seem to be faulty!** or [Aliexpress](https://de.aliexpress.com/item/32808645444.html), I haven't found it at Mouser yet ([Maybe its this display?](https://www.mouser.de/ProductDetail/ELECTRONIC-ASSEMBLY/EA-W096016-XALW?qs=f9yNj16SXrJLTMk24BHqcA%3D%3D)). It is the last part to be assembled, it is soldered on the back of the PCB facing the PCB and the tip-end.
 
 ## Flashing
 
-To flash the Otter-Iron short the DFU-jumper shown in the image below while plugging it into your computer. This will put the iron into DFU mode allowing you to flash it via DFU/USB. 
+To flash the Otter-Iron short the DFU-jumper shown in the image below while plugging it into your computer. This will put the iron into DFU mode allowing you to flash it via DFU/USB.
 
 If you already have ad firmware >= v0.2 flashed, you can press both buttons while plugging in to enter DFU mode.
 
@@ -51,7 +51,7 @@ Run this command to flash the downloaded binary.
 
 ## Video
 
-[![Video](images/thumb.jpg)](https://twitter.com/JanHenrikH/status/1208867279540232192)
+[![Video](images/thumb.jpg)](https://twitter.com/_Jana_Marie/status/1208867279540232192)
 
 ## Images
 
@@ -69,13 +69,13 @@ Run this command to flash the downloaded binary.
  - [x] Store last setpoint
  - [x] Better Fonts/UI
  - [x] PD-Profile cycling
- 
+
 ## Todo Hardware
 
 Todo next hardware revision:
  - [ ] Add barrel jack
  - [ ] Add grounding solution
- - [x] Fix Tag-Connect [see #4](https://github.com/Jan--Henrik/Otter-Iron/issues/4)
+ - [x] Fix Tag-Connect [see #4](https://github.com/Jana-Marie/Otter-Iron/issues/4)
  - [x] Optimize display-connector
  - [x] Add display reset pullup
  - [ ] Add display reset line
