@@ -122,7 +122,7 @@ uint32_t sendDataUSB;
 
 const unsigned char* dfu_string = (unsigned char*) "dfu dfu dfu dfu";
 const unsigned char* otter_string = (unsigned char*) "Otter-Iron";
-const unsigned char* by_string = (unsigned char*) "by Jan Henrik";
+const unsigned char* by_string = (unsigned char*) "by Jana Marie";
 
 int main(void)
 {
